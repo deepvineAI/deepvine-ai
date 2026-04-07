@@ -19,13 +19,7 @@
 }
 html{scroll-behavior:smooth;}
 body{background:var(--white);color:var(--text);font-family:var(--font-body);font-size:17px;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
-
-/* ALL HEADINGS — locked to Syne 700, same rendering */
-h1,h2,h3,.sh2,.cta-h2,.network-h2,.eq-headline{
-  font-family:var(--font-head);
-  font-weight:700;
-  -webkit-font-smoothing:antialiased;
-}
+h1,h2,h3,.sh2,.cta-h2,.network-h2,.eq-headline{font-family:var(--font-head);font-weight:700;-webkit-font-smoothing:antialiased;}
 
 /* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,0.97);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);height:68px;display:flex;align-items:center;padding:0 5%;}
@@ -51,25 +45,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,
 .badge{display:inline-flex;align-items:center;gap:8px;background:var(--accent-light);color:var(--accent-dark);padding:6px 18px 6px 12px;border-radius:100px;font-size:0.875rem;font-weight:500;margin-bottom:2rem;border:1px solid rgba(22,163,74,0.2);position:relative;z-index:1;}
 .badge-dot{width:7px;height:7px;border-radius:50%;background:var(--accent);animation:blink 2s ease-in-out infinite;}
 @keyframes blink{0%,100%{opacity:1;}50%{opacity:0.3;}}
-
-/* H1 — clean Syne 700, locked size, max-width so it wraps cleanly */
-.hero h1{
-  font-family:var(--font-head);
-  font-weight:700;
-  font-size:3.25rem;
-  line-height:1.1;
-  letter-spacing:-0.025em;
-  color:var(--text);
-  margin:0 auto 1.5rem;
-  max-width:720px;
-  position:relative;z-index:1;
-}
-.hero h1 span{
-  color:var(--accent);
-  font-family:var(--font-head);
-  font-weight:700;
-  display:inline;
-}
+.hero h1{font-family:var(--font-head);font-weight:700;font-size:3.25rem;line-height:1.1;letter-spacing:-0.025em;color:var(--text);margin:0 auto 1.5rem;max-width:720px;position:relative;z-index:1;}
+.hero h1 span{color:var(--accent);font-family:var(--font-head);font-weight:700;}
 .hero-sub{font-size:1.125rem;color:var(--text3);max-width:500px;margin:0 auto 2.75rem;line-height:1.8;position:relative;z-index:1;}
 .hero-actions{display:flex;align-items:center;justify-content:center;gap:1rem;margin-bottom:4.5rem;position:relative;z-index:1;flex-wrap:wrap;}
 .btn-p{padding:0.9375rem 2rem;background:var(--accent);border:none;border-radius:10px;font-family:var(--font-body);font-size:1.0625rem;font-weight:500;color:#fff;cursor:pointer;transition:all 0.2s;}
@@ -114,7 +91,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,
 .logos-row{display:flex;align-items:center;justify-content:center;gap:0.625rem;flex-wrap:wrap;}
 .logo-pill{background:var(--white);border:1px solid var(--border);border-radius:6px;padding:0.4rem 1.0625rem;font-size:0.9375rem;font-weight:500;color:var(--text3);}
 
-/* NETWORK SECTION */
+/* =============================================
+   NETWORK SECTION
+   ============================================= */
 .network-section{background:#0d1117;padding:6rem 5%;position:relative;overflow:hidden;}
 .network-section::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(34,197,94,0.04) 1px, transparent 1px);background-size:32px 32px;pointer-events:none;}
 .network-glow{position:absolute;top:50%;left:42%;transform:translate(-50%,-50%);width:700px;height:700px;background:radial-gradient(circle, rgba(22,163,74,0.1) 0%, transparent 65%);pointer-events:none;}
@@ -124,8 +103,73 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,
 .network-h2{font-family:var(--font-head);font-weight:700;font-size:2.5rem;letter-spacing:-0.025em;line-height:1.1;color:#fff;margin-bottom:1rem;}
 .network-h2 span{color:var(--accent-mid);font-family:var(--font-head);font-weight:700;}
 .network-desc{font-size:1.0625rem;color:rgba(255,255,255,0.45);max-width:520px;margin:0 auto;line-height:1.75;}
-.diagram-wrap{position:relative;max-width:1080px;margin:0 auto;}
-.network-svg{width:100%;height:auto;display:block;}
+
+/* DESKTOP diagram — shown on large screens only */
+.diagram-desktop{display:block;}
+.diagram-desktop svg{width:100%;height:auto;display:block;}
+
+/* MOBILE diagram — shown on small screens only */
+.diagram-mobile{display:none;}
+
+/* Mobile connection cards */
+.mobile-network{display:flex;flex-direction:column;gap:1rem;}
+.mobile-llm-center{
+  background:linear-gradient(135deg,#0a1f12,#111827);
+  border:2px solid #22c55e;
+  border-radius:16px;
+  padding:2rem;
+  text-align:center;
+  position:relative;
+}
+.mobile-llm-center::before{
+  content:'';
+  position:absolute;inset:-1px;
+  border-radius:16px;
+  background:linear-gradient(135deg,rgba(34,197,94,0.15),transparent);
+  pointer-events:none;
+}
+.mobile-llm-icon{font-size:3rem;display:block;margin-bottom:0.75rem;}
+.mobile-llm-title{font-family:var(--font-head);font-size:1.375rem;font-weight:700;color:#22c55e;margin-bottom:0.25rem;letter-spacing:0.02em;}
+.mobile-llm-sub{font-size:0.875rem;color:rgba(255,255,255,0.4);letter-spacing:0.05em;text-transform:uppercase;}
+
+.mobile-sources-label{font-size:0.75rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.3);text-align:center;margin:0.5rem 0;}
+
+.mobile-sources{display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;}
+.mobile-source{
+  background:#111827;
+  border:1px solid #1e293b;
+  border-radius:12px;
+  padding:1rem;
+  display:flex;align-items:center;gap:0.75rem;
+}
+.ms-icon{font-size:1.5rem;flex-shrink:0;}
+.ms-name{font-family:var(--font-head);font-size:0.875rem;font-weight:700;color:#f1f5f9;line-height:1.2;}
+.ms-desc{font-size:0.75rem;color:rgba(255,255,255,0.35);margin-top:0.125rem;}
+
+.mobile-arrow{text-align:center;color:#22c55e;font-size:1.25rem;opacity:0.6;margin:0.25rem 0;}
+
+.mobile-chat-panel{
+  background:#111827;
+  border:1.5px solid #22c55e;
+  border-radius:16px;
+  overflow:hidden;
+}
+.mcp-header{
+  background:#0a1f12;
+  padding:0.875rem 1.125rem;
+  display:flex;align-items:center;gap:0.5rem;
+}
+.mcp-dot{width:8px;height:8px;border-radius:50%;background:#22c55e;}
+.mcp-title{font-family:var(--font-head);font-size:0.875rem;font-weight:700;color:#22c55e;}
+.mcp-live{margin-left:auto;font-size:0.75rem;color:rgba(255,255,255,0.35);}
+.mcp-body{padding:1rem 1.125rem;display:flex;flex-direction:column;gap:0.75rem;}
+.mcp-msg-user{align-self:flex-end;background:#1a3a2a;border-radius:10px 2px 10px 10px;padding:0.625rem 0.875rem;font-size:0.875rem;color:rgba(255,255,255,0.9);font-style:italic;max-width:85%;}
+.mcp-msg-ai{background:#1c2432;border:1px solid #2d3a4a;border-radius:2px 10px 10px 10px;padding:0.625rem 0.875rem;font-size:0.875rem;color:rgba(255,255,255,0.75);max-width:100%;}
+.mcp-chips{display:flex;gap:0.5rem;flex-wrap:wrap;margin-top:0.5rem;}
+.mcp-chip{background:#0a1f12;border:1px solid #22c55e;border-radius:6px;padding:0.3rem 0.625rem;font-size:0.75rem;color:#22c55e;font-weight:600;}
+.mcp-input{border-top:1px solid #1e293b;padding:0.75rem 1.125rem;display:flex;align-items:center;gap:0.5rem;}
+.mcp-field{flex:1;background:#0f1117;border:1px solid #2d3a4a;border-radius:7px;padding:0.5rem 0.875rem;font-size:0.8125rem;color:rgba(255,255,255,0.25);font-family:var(--font-body);}
+.mcp-send{width:30px;height:30px;background:#22c55e;border:none;border-radius:7px;color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:0.875rem;font-weight:700;}
 
 /* SECTIONS */
 .section{padding:6rem 5%;}
@@ -240,7 +284,16 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:2.25rem 5
 .foot-links a:hover{color:var(--text2);}
 footer p{font-size:0.9375rem;color:var(--text4);}
 
-/* RESPONSIVE */
+/* =============================================
+   RESPONSIVE BREAKPOINTS
+   ============================================= */
+
+/* Tablet — hide SVG diagram, show mobile version */
+@media(max-width:900px){
+  .diagram-desktop{display:none;}
+  .diagram-mobile{display:block;}
+}
+
 @media(max-width:1024px){
   .hero h1{font-size:2.75rem;}
   .sh2,.cta-h2,.network-h2{font-size:2.125rem;}
@@ -248,12 +301,13 @@ footer p{font-size:0.9375rem;color:var(--text4);}
   .formula-card{padding:2.25rem 1.5rem;}
   .f-icon-wrap{width:68px;height:68px;font-size:1.875rem;}
 }
+
 @media(max-width:768px){
   nav{padding:0 4%;}
   .nav-links-desktop{display:none;}
   .hamburger{display:flex;}
   .hero{padding:104px 4% 64px;}
-  .hero h1{font-size:2.25rem;max-width:100%;}
+  .hero h1{font-size:2.125rem;max-width:100%;}
   .app-body{grid-template-columns:1fr;height:auto;}
   .app-sidebar{display:none;}
   .logos-bar,.section,.cta{padding-left:4%;padding-right:4%;}
@@ -272,7 +326,9 @@ footer p{font-size:0.9375rem;color:var(--text4);}
   .tdiv{width:48px;height:1px;}
   footer{padding-left:4%;padding-right:4%;}
   .foot-inner{flex-direction:column;align-items:flex-start;gap:1rem;}
+  .mobile-sources{grid-template-columns:1fr 1fr;}
 }
+
 @media(max-width:480px){
   nav{height:64px;padding:0 4%;}
   .mobile-menu{top:64px;}
@@ -286,6 +342,7 @@ footer p{font-size:0.9375rem;color:var(--text4);}
   .step{flex-direction:column;gap:0.875rem;padding:1.5rem;}
   .f-icon-wrap{width:60px;height:60px;font-size:1.625rem;}
   footer{padding:1.75rem 4%;}
+  .mobile-sources{grid-template-columns:1fr;}
 }
 </style>
 </head>
@@ -295,6 +352,7 @@ footer p{font-size:0.9375rem;color:var(--text4);}
   <a href="#features" onclick="closeMobileMenu()">Features</a>
   <button class="mobile-cta" onclick="closeMobileMenu();openCalendly()">Book a Discovery Call</button>
 </div>
+
 <nav>
   <div class="nav-inner">
     <a class="logo" href="#"><div class="logo-mark"><svg viewBox="0 0 18 18"><circle cx="9" cy="9" r="6"/><path d="M9 3v12M3 9h12"/></svg></div>Deepvine AI</a>
@@ -328,8 +386,7 @@ footer p{font-size:0.9375rem;color:var(--text4);}
         <div class="sitem"><div class="sdotg"></div>Analytics</div>
         <div class="sitem"><div class="sdotg"></div>Data Sources</div>
         <div class="sitem"><div class="sdotg"></div>Settings</div>
-        <div style="margin-top:1rem">
-          <div class="slabel">Connected</div>
+        <div style="margin-top:1rem"><div class="slabel">Connected</div>
           <div class="sitem" style="color:var(--accent);font-size:0.75rem">✓ Salesforce</div>
           <div class="sitem" style="color:var(--accent);font-size:0.75rem">✓ QuickBooks</div>
           <div class="sitem" style="color:var(--accent);font-size:0.75rem">✓ Shopify</div>
@@ -353,7 +410,7 @@ footer p{font-size:0.9375rem;color:var(--text4);}
   </div>
 </div>
 
-<!-- LLM NETWORK DIAGRAM — larger nodes, center, chat -->
+<!-- NETWORK DIAGRAM SECTION -->
 <section class="network-section" id="network">
   <div class="network-glow"></div>
   <div class="network-inner">
@@ -362,15 +419,15 @@ footer p{font-size:0.9375rem;color:var(--text4);}
       <h2 class="network-h2">Your business data.<br><span>One connected brain.</span></h2>
       <p class="network-desc">Every tool, every system, every data source flows into your private LLM — and your team talks to it directly in plain English.</p>
     </div>
-    <div class="diagram-wrap">
-      <svg class="network-svg" viewBox="0 0 1100 640" xmlns="http://www.w3.org/2000/svg">
+
+    <!-- DESKTOP: Full SVG diagram -->
+    <div class="diagram-desktop">
+      <svg viewBox="0 0 1100 640" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
             <path d="M2 1L8 5L2 9" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
           </marker>
         </defs>
-
-        <!-- CONNECTION LINES -->
         <line x1="178" y1="118" x2="398" y2="268" stroke="#22c55e" stroke-width="1.5" stroke-dasharray="7,5" opacity="0.45" marker-end="url(#arr)"/>
         <line x1="338" y1="72" x2="420" y2="242" stroke="#22c55e" stroke-width="1.5" stroke-dasharray="7,5" opacity="0.45" marker-end="url(#arr)"/>
         <line x1="528" y1="54" x2="468" y2="232" stroke="#22c55e" stroke-width="1.5" stroke-dasharray="7,5" opacity="0.45" marker-end="url(#arr)"/>
@@ -379,119 +436,136 @@ footer p{font-size:0.9375rem;color:var(--text4);}
         <line x1="210" y1="460" x2="402" y2="352" stroke="#22c55e" stroke-width="1.5" stroke-dasharray="7,5" opacity="0.45" marker-end="url(#arr)"/>
         <line x1="448" y1="518" x2="462" y2="380" stroke="#22c55e" stroke-width="1.5" stroke-dasharray="7,5" opacity="0.45" marker-end="url(#arr)"/>
         <line x1="638" y1="480" x2="540" y2="366" stroke="#22c55e" stroke-width="1.5" stroke-dasharray="7,5" opacity="0.45" marker-end="url(#arr)"/>
-
-        <!-- LINE from LLM to Chat -->
         <line x1="608" y1="312" x2="800" y2="312" stroke="#22c55e" stroke-width="2" stroke-dasharray="9,6" opacity="0.75" marker-end="url(#arr)"/>
         <text x="704" y="300" font-family="Inter,sans-serif" font-size="12" fill="#22c55e" opacity="0.75" text-anchor="middle" font-weight="500">intelligence</text>
-
-        <!-- ===== LLM CENTER — larger ===== -->
+        <!-- LLM center -->
         <circle cx="490" cy="312" r="110" fill="none" stroke="#22c55e" stroke-width="1" opacity="0.08"/>
         <circle cx="490" cy="312" r="90" fill="none" stroke="#22c55e" stroke-width="1" opacity="0.14"/>
         <circle cx="490" cy="312" r="72" fill="none" stroke="#22c55e" stroke-width="1.5" opacity="0.22"/>
-        <!-- Main filled circle -->
         <circle cx="490" cy="312" r="56" fill="#0a1f12" stroke="#22c55e" stroke-width="2.5"/>
-        <!-- Brain emoji -->
         <text x="490" y="302" font-size="30" text-anchor="middle" fill="#22c55e">🧠</text>
-        <!-- YOUR LLM text -->
         <text x="490" y="324" font-family="Syne,Inter,sans-serif" font-size="12" font-weight="700" text-anchor="middle" fill="#22c55e" letter-spacing="1">YOUR LLM</text>
         <text x="490" y="342" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" fill="rgba(255,255,255,0.35)" letter-spacing="0.5">DEEPVINE AI</text>
-
-        <!-- ===== SOURCE NODES — larger ===== -->
-        <!-- Google Cloud -->
+        <!-- Source nodes -->
         <rect x="52" y="84" width="196" height="68" rx="13" fill="#111827" stroke="#1e293b" stroke-width="1.5"/>
         <text x="76" y="114" font-size="22">☁️</text>
         <text x="106" y="112" font-family="Syne,Inter,sans-serif" font-size="13" font-weight="700" fill="#f1f5f9">Google Cloud</text>
         <text x="106" y="130" font-family="Inter,sans-serif" font-size="11" fill="rgba(255,255,255,0.4)">Cloud storage &amp; compute</text>
-
-        <!-- Google Drive -->
         <rect x="246" y="38" width="188" height="68" rx="13" fill="#111827" stroke="#1e293b" stroke-width="1.5"/>
         <text x="268" y="68" font-size="22">📁</text>
         <text x="298" y="66" font-family="Syne,Inter,sans-serif" font-size="13" font-weight="700" fill="#f1f5f9">Google Drive</text>
         <text x="298" y="84" font-family="Inter,sans-serif" font-size="11" fill="rgba(255,255,255,0.4)">Documents &amp; files</text>
-
-        <!-- Microsoft 365 -->
         <rect x="446" y="20" width="188" height="68" rx="13" fill="#111827" stroke="#1e293b" stroke-width="1.5"/>
         <text x="468" y="50" font-size="22">💼</text>
         <text x="498" y="48" font-family="Syne,Inter,sans-serif" font-size="13" font-weight="700" fill="#f1f5f9">Microsoft 365</text>
         <text x="498" y="66" font-family="Inter,sans-serif" font-size="11" fill="rgba(255,255,255,0.4)">Teams, Excel, Outlook</text>
-
-        <!-- Zoom -->
         <rect x="646" y="56" width="176" height="68" rx="13" fill="#111827" stroke="#1e293b" stroke-width="1.5"/>
         <text x="668" y="86" font-size="22">📹</text>
         <text x="698" y="84" font-family="Syne,Inter,sans-serif" font-size="13" font-weight="700" fill="#f1f5f9">Zoom</text>
         <text x="698" y="102" font-family="Inter,sans-serif" font-size="11" fill="rgba(255,255,255,0.4)">Voice &amp; meeting notes</text>
-
-        <!-- HubSpot CRM -->
         <rect x="38" y="284" width="196" height="68" rx="13" fill="#111827" stroke="#1e293b" stroke-width="1.5"/>
         <text x="62" y="314" font-size="22">🔗</text>
         <text x="92" y="312" font-family="Syne,Inter,sans-serif" font-size="13" font-weight="700" fill="#f1f5f9">HubSpot CRM</text>
         <text x="92" y="330" font-family="Inter,sans-serif" font-size="11" fill="rgba(255,255,255,0.4)">Marketing &amp; pipeline</text>
-
-        <!-- Databases -->
         <rect x="70" y="428" width="196" height="68" rx="13" fill="#111827" stroke="#1e293b" stroke-width="1.5"/>
         <text x="92" y="458" font-size="22">🗄️</text>
         <text x="122" y="456" font-family="Syne,Inter,sans-serif" font-size="13" font-weight="700" fill="#f1f5f9">Databases</text>
         <text x="122" y="474" font-family="Inter,sans-serif" font-size="11" fill="rgba(255,255,255,0.4)">SQL, Postgres, custom</text>
-
-        <!-- Salesforce -->
         <rect x="348" y="490" width="208" height="68" rx="13" fill="#111827" stroke="#1e293b" stroke-width="1.5"/>
         <text x="370" y="520" font-size="22">☁️</text>
         <text x="400" y="518" font-family="Syne,Inter,sans-serif" font-size="13" font-weight="700" fill="#f1f5f9">Salesforce CRM</text>
         <text x="400" y="536" font-family="Inter,sans-serif" font-size="11" fill="rgba(255,255,255,0.4)">Sales &amp; customer data</text>
-
-        <!-- ERP -->
         <rect x="570" y="444" width="176" height="68" rx="13" fill="#111827" stroke="#1e293b" stroke-width="1.5"/>
         <text x="592" y="474" font-size="22">⚙️</text>
         <text x="622" y="472" font-family="Syne,Inter,sans-serif" font-size="13" font-weight="700" fill="#f1f5f9">ERP System</text>
         <text x="622" y="490" font-family="Inter,sans-serif" font-size="11" fill="rgba(255,255,255,0.4)">Operations &amp; inventory</text>
-
-        <!-- ===== CHAT PANEL — larger ===== -->
+        <!-- Chat panel -->
         <rect x="806" y="138" width="266" height="348" rx="16" fill="#111827" stroke="#22c55e" stroke-width="1.5" opacity="0.95"/>
-        <!-- Header -->
         <rect x="806" y="138" width="266" height="52" rx="16" fill="#0a1f12"/>
         <rect x="806" y="172" width="266" height="18" fill="#0a1f12"/>
         <circle cx="832" cy="165" r="9" fill="#22c55e" opacity="0.9"/>
         <text x="848" y="170" font-family="Syne,Inter,sans-serif" font-size="12" font-weight="700" fill="#22c55e">Deepvine Chat</text>
         <rect x="1040" y="156" width="8" height="8" rx="4" fill="#22c55e" opacity="0.6"/>
         <text x="1056" y="164" font-family="Inter,sans-serif" font-size="10" fill="rgba(255,255,255,0.4)">Live</text>
-
-        <!-- User message -->
         <rect x="866" y="204" width="186" height="50" rx="12" fill="#1a3a2a"/>
         <text x="878" y="222" font-family="Inter,sans-serif" font-size="10.5" fill="rgba(255,255,255,0.9)" font-style="italic">"What's our best</text>
         <text x="878" y="238" font-family="Inter,sans-serif" font-size="10.5" fill="rgba(255,255,255,0.9)" font-style="italic">performing region?"</text>
-
-        <!-- AI response -->
         <rect x="818" y="268" width="230" height="66" rx="12" fill="#1c2432" stroke="#2d3a4a" stroke-width="1"/>
         <text x="830" y="286" font-family="Inter,sans-serif" font-size="10.5" fill="rgba(255,255,255,0.75)">Southeast — up 23% YoY.</text>
         <text x="830" y="302" font-family="Inter,sans-serif" font-size="10.5" fill="rgba(255,255,255,0.75)">3 reps driving 68% of</text>
         <text x="830" y="318" font-family="Inter,sans-serif" font-size="10.5" fill="rgba(255,255,255,0.75)">revenue. Want details?</text>
-
-        <!-- Metric chips -->
         <rect x="818" y="348" width="68" height="32" rx="8" fill="#0a1f12" stroke="#22c55e" stroke-width="1.2"/>
         <text x="852" y="362" font-family="Inter,sans-serif" font-size="10" font-weight="600" fill="#22c55e" text-anchor="middle">+23%</text>
         <text x="852" y="374" font-family="Inter,sans-serif" font-size="8.5" fill="rgba(255,255,255,0.4)" text-anchor="middle">YoY</text>
-
         <rect x="894" y="348" width="62" height="32" rx="8" fill="#1c2432" stroke="#2d3a4a" stroke-width="1"/>
         <text x="925" y="362" font-family="Inter,sans-serif" font-size="10" font-weight="600" fill="rgba(255,255,255,0.85)" text-anchor="middle">SE</text>
         <text x="925" y="374" font-family="Inter,sans-serif" font-size="8.5" fill="rgba(255,255,255,0.4)" text-anchor="middle">Region</text>
-
         <rect x="964" y="348" width="62" height="32" rx="8" fill="#1c2432" stroke="#2d3a4a" stroke-width="1"/>
         <text x="995" y="362" font-family="Inter,sans-serif" font-size="10" font-weight="600" fill="rgba(255,255,255,0.85)" text-anchor="middle">3</text>
         <text x="995" y="374" font-family="Inter,sans-serif" font-size="8.5" fill="rgba(255,255,255,0.4)" text-anchor="middle">Top Reps</text>
-
-        <!-- Second exchange -->
         <rect x="866" y="394" width="186" height="36" rx="10" fill="#1a3a2a"/>
         <text x="878" y="415" font-family="Inter,sans-serif" font-size="10.5" fill="rgba(255,255,255,0.9)" font-style="italic">"Show me their accounts"</text>
-
-        <!-- Input bar -->
         <rect x="818" y="444" width="230" height="32" rx="9" fill="#0f1117" stroke="#2d3a4a" stroke-width="1"/>
         <text x="832" y="465" font-family="Inter,sans-serif" font-size="10" fill="rgba(255,255,255,0.25)">Ask anything about your business...</text>
         <rect x="1030" y="448" width="10" height="24" rx="4" fill="#22c55e" opacity="0.6"/>
-
-        <!-- Label -->
         <text x="939" y="504" font-family="Inter,sans-serif" font-size="11" fill="rgba(255,255,255,0.35)" text-anchor="middle">Your team's intelligent interface</text>
       </svg>
     </div>
+
+    <!-- MOBILE: Clean card version -->
+    <div class="diagram-mobile">
+      <div class="mobile-network">
+        <!-- Data sources grid -->
+        <div class="mobile-sources">
+          <div class="mobile-source"><span class="ms-icon">☁️</span><div><div class="ms-name">Google Cloud</div><div class="ms-desc">Cloud storage</div></div></div>
+          <div class="mobile-source"><span class="ms-icon">📁</span><div><div class="ms-name">Google Drive</div><div class="ms-desc">Docs &amp; files</div></div></div>
+          <div class="mobile-source"><span class="ms-icon">💼</span><div><div class="ms-name">Microsoft 365</div><div class="ms-desc">Teams, Excel</div></div></div>
+          <div class="mobile-source"><span class="ms-icon">📹</span><div><div class="ms-name">Zoom</div><div class="ms-desc">Meeting notes</div></div></div>
+          <div class="mobile-source"><span class="ms-icon">🔗</span><div><div class="ms-name">HubSpot CRM</div><div class="ms-desc">Marketing</div></div></div>
+          <div class="mobile-source"><span class="ms-icon">📊</span><div><div class="ms-name">QuickBooks</div><div class="ms-desc">Finance</div></div></div>
+          <div class="mobile-source"><span class="ms-icon">⚙️</span><div><div class="ms-name">ERP System</div><div class="ms-desc">Operations</div></div></div>
+          <div class="mobile-source"><span class="ms-icon">🗄️</span><div><div class="ms-name">Databases</div><div class="ms-desc">SQL &amp; custom</div></div></div>
+        </div>
+
+        <!-- Arrow down -->
+        <div class="mobile-arrow">↓ all data flows in ↓</div>
+
+        <!-- LLM center -->
+        <div class="mobile-llm-center">
+          <span class="mobile-llm-icon">🧠</span>
+          <div class="mobile-llm-title">Your Private LLM</div>
+          <div class="mobile-llm-sub">Deepvine AI — Your Business Brain</div>
+        </div>
+
+        <!-- Arrow down to chat -->
+        <div class="mobile-arrow">↓ intelligence flows out ↓</div>
+
+        <!-- Chat panel -->
+        <div class="mobile-chat-panel">
+          <div class="mcp-header">
+            <div class="mcp-dot"></div>
+            <div class="mcp-title">Deepvine Chat</div>
+            <div class="mcp-live">● Live</div>
+          </div>
+          <div class="mcp-body">
+            <div class="mcp-msg-user">"What's our best performing region?"</div>
+            <div class="mcp-msg-ai">
+              Southeast — up 23% YoY. 3 reps driving 68% of revenue. Want details?
+              <div class="mcp-chips">
+                <div class="mcp-chip">+23% YoY</div>
+                <div class="mcp-chip">SE Region</div>
+                <div class="mcp-chip">3 Top Reps</div>
+              </div>
+            </div>
+          </div>
+          <div class="mcp-input">
+            <input class="mcp-field" type="text" placeholder="Ask anything about your business..." readonly>
+            <button class="mcp-send">↑</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -523,11 +597,11 @@ footer p{font-size:0.9375rem;color:var(--text4);}
     <div class="formula-section">
       <div class="formula-label">The Deepvine Formula</div>
       <div class="formula-row">
-        <div class="formula-card"><div class="f-icon-wrap green">⚡</div><h3>Your Automation</h3><p>One specific business problem, solved and connected to your data</p></div>
+        <div class="formula-card"><div class="f-icon-wrap green">⚡</div><h3>Your Automation</h3><p>One specific business problem, solved and connected</p></div>
         <div class="formula-op-col"><div class="formula-op-symbol">+</div></div>
-        <div class="formula-card"><div class="f-icon-wrap green">🧠</div><h3>Your Private LLM</h3><p>A living intelligence trained exclusively on your business data</p></div>
+        <div class="formula-card"><div class="f-icon-wrap green">🧠</div><h3>Your Private LLM</h3><p>A living intelligence trained exclusively on your data</p></div>
         <div class="formula-op-col"><div class="formula-op-symbol">=</div></div>
-        <div class="formula-card result"><div class="f-icon-wrap dark">📈</div><h3>Compounding ROI</h3><p>Intelligence that grows smarter and more valuable every single day</p></div>
+        <div class="formula-card result"><div class="f-icon-wrap dark">📈</div><h3>Compounding ROI</h3><p>Intelligence that grows smarter every single day</p></div>
       </div>
     </div>
     <div class="steps">
