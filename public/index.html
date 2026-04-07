@@ -6,7 +6,7 @@
 <title>Deepvine AI — Business Intelligence That Compounds</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Syne:wght@700&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
 :root{
@@ -14,27 +14,36 @@
   --border:#e5e7eb;--border2:#d1d5db;
   --text:#0a0a0a;--text2:#374151;--text3:#6b7280;--text4:#9ca3af;
   --accent:#16a34a;--accent-light:#dcfce7;--accent-mid:#22c55e;--accent-dark:#14532d;
+  --font-head:'Syne',system-ui,sans-serif;
+  --font-body:'Inter',system-ui,sans-serif;
 }
 html{scroll-behavior:smooth;}
-body{background:var(--white);color:var(--text);font-family:'Inter',system-ui,sans-serif;font-size:17px;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+body{background:var(--white);color:var(--text);font-family:var(--font-body);font-size:17px;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+
+/* ALL HEADINGS — locked to Syne 700, same rendering */
+h1,h2,h3,.sh2,.cta-h2,.network-h2,.eq-headline{
+  font-family:var(--font-head);
+  font-weight:700;
+  -webkit-font-smoothing:antialiased;
+}
 
 /* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,0.97);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);height:68px;display:flex;align-items:center;padding:0 5%;}
 .nav-inner{width:100%;max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;}
-.logo{display:flex;align-items:center;gap:10px;font-family:'Syne',sans-serif;font-size:1.2rem;font-weight:700;color:var(--text);letter-spacing:-0.01em;text-decoration:none;}
+.logo{display:flex;align-items:center;gap:10px;font-family:var(--font-head);font-size:1.2rem;font-weight:700;color:var(--text);letter-spacing:-0.01em;text-decoration:none;}
 .logo-mark{width:34px;height:34px;background:var(--text);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
 .logo-mark svg{width:18px;height:18px;stroke:#fff;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
 .nav-links-desktop{display:flex;align-items:center;gap:2rem;}
 .nav-link{color:var(--text3);text-decoration:none;font-size:1rem;font-weight:400;transition:color 0.2s;}
 .nav-link:hover{color:var(--text);}
-.btn-nav{padding:0.55rem 1.375rem;background:var(--accent);border:none;border-radius:8px;font-family:'Inter',sans-serif;font-size:1rem;font-weight:500;color:#fff;cursor:pointer;transition:background 0.2s;}
+.btn-nav{padding:0.55rem 1.375rem;background:var(--accent);border:none;border-radius:8px;font-family:var(--font-body);font-size:1rem;font-weight:500;color:#fff;cursor:pointer;transition:background 0.2s;}
 .btn-nav:hover{background:#15803d;}
 .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none;}
 .hamburger span{display:block;width:22px;height:2px;background:var(--text);border-radius:2px;transition:all 0.3s;}
 .mobile-menu{display:none;position:fixed;top:68px;left:0;right:0;background:var(--white);border-bottom:1px solid var(--border);padding:1.25rem 5%;z-index:99;flex-direction:column;}
 .mobile-menu.open{display:flex;}
 .mobile-menu a{display:block;padding:0.875rem 0;border-bottom:1px solid var(--border);color:var(--text2);text-decoration:none;font-size:1.0625rem;}
-.mobile-cta{margin-top:0.75rem;background:var(--accent);color:#fff;padding:0.875rem;border-radius:8px;border:none;font-weight:500;font-family:'Inter',sans-serif;font-size:1.0625rem;cursor:pointer;width:100%;}
+.mobile-cta{margin-top:0.75rem;background:var(--accent);color:#fff;padding:0.875rem;border-radius:8px;border:none;font-weight:500;font-family:var(--font-body);font-size:1.0625rem;cursor:pointer;width:100%;}
 
 /* HERO */
 .hero{padding:128px 5% 88px;text-align:center;position:relative;overflow:hidden;}
@@ -43,14 +52,29 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,
 .badge-dot{width:7px;height:7px;border-radius:50%;background:var(--accent);animation:blink 2s ease-in-out infinite;}
 @keyframes blink{0%,100%{opacity:1;}50%{opacity:0.3;}}
 
-/* H1 — large and commanding */
-.hero h1{font-family:'Syne',sans-serif;font-size:3.5rem;font-weight:800;line-height:1.06;letter-spacing:-0.035em;color:var(--text);margin:0 auto 1.5rem;max-width:780px;position:relative;z-index:1;}
-.hero h1 span{color:var(--accent);}
-.hero-sub{font-size:1.1875rem;color:var(--text3);max-width:520px;margin:0 auto 2.75rem;line-height:1.8;position:relative;z-index:1;}
+/* H1 — clean Syne 700, locked size, max-width so it wraps cleanly */
+.hero h1{
+  font-family:var(--font-head);
+  font-weight:700;
+  font-size:3.25rem;
+  line-height:1.1;
+  letter-spacing:-0.025em;
+  color:var(--text);
+  margin:0 auto 1.5rem;
+  max-width:720px;
+  position:relative;z-index:1;
+}
+.hero h1 span{
+  color:var(--accent);
+  font-family:var(--font-head);
+  font-weight:700;
+  display:inline;
+}
+.hero-sub{font-size:1.125rem;color:var(--text3);max-width:500px;margin:0 auto 2.75rem;line-height:1.8;position:relative;z-index:1;}
 .hero-actions{display:flex;align-items:center;justify-content:center;gap:1rem;margin-bottom:4.5rem;position:relative;z-index:1;flex-wrap:wrap;}
-.btn-p{padding:0.9375rem 2rem;background:var(--accent);border:none;border-radius:10px;font-family:'Inter',sans-serif;font-size:1.0625rem;font-weight:500;color:#fff;cursor:pointer;transition:all 0.2s;}
+.btn-p{padding:0.9375rem 2rem;background:var(--accent);border:none;border-radius:10px;font-family:var(--font-body);font-size:1.0625rem;font-weight:500;color:#fff;cursor:pointer;transition:all 0.2s;}
 .btn-p:hover{background:#15803d;transform:translateY(-1px);}
-.btn-s{padding:0.9375rem 2rem;background:var(--text);border:none;border-radius:10px;font-family:'Inter',sans-serif;font-size:1.0625rem;font-weight:500;color:#fff;cursor:pointer;transition:all 0.2s;}
+.btn-s{padding:0.9375rem 2rem;background:var(--text);border:none;border-radius:10px;font-family:var(--font-body);font-size:1.0625rem;font-weight:500;color:#fff;cursor:pointer;transition:all 0.2s;}
 .btn-s:hover{background:#222;transform:translateY(-1px);}
 
 /* APP MOCKUP */
@@ -81,7 +105,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,
 .metric strong{display:block;font-size:0.875rem;font-weight:600;line-height:1.2;}
 .metric span{color:var(--text4);}
 .chat-input{border-top:1px solid var(--border);padding:0.6875rem 1.0625rem;display:flex;align-items:center;gap:0.5rem;}
-.chat-field{flex:1;background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:0.4375rem 0.9375rem;font-size:0.825rem;color:var(--text4);font-family:'Inter',sans-serif;}
+.chat-field{flex:1;background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:0.4375rem 0.9375rem;font-size:0.825rem;color:var(--text4);font-family:var(--font-body);}
 .send-btn{width:32px;height:32px;background:var(--text);border:none;border-radius:8px;color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:0.9rem;}
 
 /* LOGOS */
@@ -90,83 +114,25 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,
 .logos-row{display:flex;align-items:center;justify-content:center;gap:0.625rem;flex-wrap:wrap;}
 .logo-pill{background:var(--white);border:1px solid var(--border);border-radius:6px;padding:0.4rem 1.0625rem;font-size:0.9375rem;font-weight:500;color:var(--text3);}
 
-/* =============================================
-   LLM NETWORK DIAGRAM SECTION
-   ============================================= */
-.network-section{
-  background:#0d1117;
-  padding:6rem 5%;
-  position:relative;
-  overflow:hidden;
-}
-
-.network-section::before{
-  content:'';
-  position:absolute;inset:0;
-  background-image:radial-gradient(rgba(34,197,94,0.04) 1px, transparent 1px);
-  background-size:32px 32px;
-  pointer-events:none;
-}
-
-.network-glow{
-  position:absolute;top:50%;left:40%;
-  transform:translate(-50%,-50%);
-  width:600px;height:600px;
-  background:radial-gradient(circle, rgba(22,163,74,0.12) 0%, transparent 65%);
-  pointer-events:none;
-}
-
-.network-inner{
-  max-width:1200px;margin:0 auto;
-  position:relative;z-index:1;
-}
-
-.network-header{
-  text-align:center;
-  margin-bottom:3.5rem;
-}
-
-.network-tag{
-  display:inline-block;
-  font-size:0.75rem;font-weight:600;
-  letter-spacing:0.12em;text-transform:uppercase;
-  color:var(--accent-mid);margin-bottom:1rem;
-}
-
-.network-h2{
-  font-family:'Syne',sans-serif;
-  font-size:2.5rem;font-weight:800;
-  letter-spacing:-0.03em;line-height:1.1;
-  color:#fff;margin-bottom:1rem;
-}
-
-.network-h2 span{color:var(--accent-mid);}
-
-.network-desc{
-  font-size:1.0625rem;
-  color:rgba(255,255,255,0.45);
-  max-width:520px;margin:0 auto;
-  line-height:1.75;
-}
-
-/* The diagram container */
-.diagram-wrap{
-  position:relative;
-  max-width:1000px;
-  margin:0 auto;
-}
-
-/* SVG diagram styles */
+/* NETWORK SECTION */
+.network-section{background:#0d1117;padding:6rem 5%;position:relative;overflow:hidden;}
+.network-section::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(34,197,94,0.04) 1px, transparent 1px);background-size:32px 32px;pointer-events:none;}
+.network-glow{position:absolute;top:50%;left:42%;transform:translate(-50%,-50%);width:700px;height:700px;background:radial-gradient(circle, rgba(22,163,74,0.1) 0%, transparent 65%);pointer-events:none;}
+.network-inner{max-width:1100px;margin:0 auto;position:relative;z-index:1;}
+.network-header{text-align:center;margin-bottom:3.5rem;}
+.network-tag{display:inline-block;font-size:0.75rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent-mid);margin-bottom:1rem;}
+.network-h2{font-family:var(--font-head);font-weight:700;font-size:2.5rem;letter-spacing:-0.025em;line-height:1.1;color:#fff;margin-bottom:1rem;}
+.network-h2 span{color:var(--accent-mid);font-family:var(--font-head);font-weight:700;}
+.network-desc{font-size:1.0625rem;color:rgba(255,255,255,0.45);max-width:520px;margin:0 auto;line-height:1.75;}
+.diagram-wrap{position:relative;max-width:1080px;margin:0 auto;}
 .network-svg{width:100%;height:auto;display:block;}
 
 /* SECTIONS */
 .section{padding:6rem 5%;}
 .inner{max-width:1200px;margin:0 auto;}
 .stag{display:inline-block;font-size:0.8rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);margin-bottom:1rem;}
-
-/* H2 — larger, more commanding */
-.sh2{font-family:'Syne',sans-serif;font-size:2.5rem;font-weight:800;letter-spacing:-0.03em;line-height:1.1;color:var(--text);margin-bottom:1.25rem;}
-.sh2 span{color:var(--accent);}
+.sh2{font-family:var(--font-head);font-weight:700;font-size:2.5rem;letter-spacing:-0.025em;line-height:1.1;color:var(--text);margin-bottom:1.25rem;}
+.sh2 span{color:var(--accent);font-family:var(--font-head);font-weight:700;}
 .sdesc{font-size:1.0625rem;color:var(--text3);line-height:1.78;}
 
 /* PROBLEM */
@@ -174,8 +140,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,
 .pain-list{display:flex;flex-direction:column;}
 .pain{display:flex;align-items:flex-start;gap:1.25rem;padding:1.375rem 0;border-bottom:1px solid var(--border);}
 .pain:first-child{border-top:1px solid var(--border);}
-.pnum{font-family:'Syne',sans-serif;font-size:1.125rem;font-weight:700;color:var(--border2);line-height:1;min-width:26px;padding-top:3px;}
-.pain h3{font-size:1.0625rem;font-weight:600;margin-bottom:0.3rem;color:var(--text);}
+.pnum{font-family:var(--font-head);font-size:1.125rem;font-weight:700;color:var(--border2);line-height:1;min-width:26px;padding-top:3px;}
+.pain h3{font-family:var(--font-head);font-size:1.0625rem;font-weight:700;margin-bottom:0.3rem;color:var(--text);}
 .pain p{font-size:1rem;color:var(--text3);line-height:1.65;}
 
 /* HOW IT WORKS */
@@ -193,31 +159,30 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,
 .f-icon-wrap{width:80px;height:80px;border-radius:20px;display:flex;align-items:center;justify-content:center;font-size:2.25rem;margin:0 auto 1.625rem;}
 .f-icon-wrap.green{background:var(--accent-light);border:1.5px solid rgba(22,163,74,0.2);}
 .f-icon-wrap.dark{background:rgba(255,255,255,0.1);border:1.5px solid rgba(255,255,255,0.12);}
-.formula-card h3{font-family:'Syne',sans-serif;font-size:1.25rem;font-weight:700;color:var(--text);margin-bottom:0.75rem;letter-spacing:-0.015em;line-height:1.2;}
+.formula-card h3{font-family:var(--font-head);font-size:1.25rem;font-weight:700;color:var(--text);margin-bottom:0.75rem;letter-spacing:-0.015em;line-height:1.2;}
 .formula-card p{font-size:1rem;color:var(--text3);line-height:1.6;max-width:200px;}
 .formula-card.result{background:var(--text);}
-.formula-card.result h3{color:#fff;}
+.formula-card.result h3{color:#fff;font-family:var(--font-head);font-weight:700;}
 .formula-card.result p{color:rgba(255,255,255,0.5);}
 .formula-op-col{display:flex;align-items:center;justify-content:center;padding:0 1.5rem;background:var(--bg);border-right:1px solid var(--border);}
-.formula-op-symbol{font-family:'Syne',sans-serif;font-size:2rem;font-weight:800;color:var(--border2);}
+.formula-op-symbol{font-family:var(--font-head);font-size:2rem;font-weight:700;color:var(--border2);}
 
 /* STEPS */
 .steps{display:grid;grid-template-columns:repeat(2,1fr);gap:1.375rem;margin-bottom:2.25rem;}
 .step{background:var(--white);border:1px solid var(--border);border-radius:14px;padding:2rem;display:flex;gap:1.25rem;align-items:flex-start;transition:box-shadow 0.2s,transform 0.2s;}
 .step:hover{box-shadow:0 4px 24px rgba(0,0,0,0.07);transform:translateY(-2px);}
 .step.hi{border-color:rgba(22,163,74,0.2);background:linear-gradient(135deg,#fafffe 0%,#f0fdf4 100%);}
-.snbadge{width:42px;height:42px;border-radius:10px;background:var(--bg2);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-size:0.875rem;font-weight:700;color:var(--text3);flex-shrink:0;}
+.snbadge{width:42px;height:42px;border-radius:10px;background:var(--bg2);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-family:var(--font-head);font-size:0.875rem;font-weight:700;color:var(--text3);flex-shrink:0;}
 .step.hi .snbadge{background:var(--accent-light);border-color:rgba(22,163,74,0.15);color:var(--accent-dark);}
 .step-tag{font-size:0.7rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--text4);margin-bottom:0.375rem;}
 .step.hi .step-tag{color:var(--accent);}
-.step h3{font-size:1.0625rem;font-weight:600;margin-bottom:0.4rem;color:var(--text);}
+.step h3{font-family:var(--font-head);font-size:1.0625rem;font-weight:700;margin-bottom:0.4rem;color:var(--text);}
 .step p{font-size:1rem;color:var(--text3);line-height:1.65;}
 .spills{display:flex;gap:5px;flex-wrap:wrap;margin-top:0.875rem;}
 .spill{background:var(--bg);border:1px solid var(--border);border-radius:100px;padding:4px 11px;font-size:0.8125rem;color:var(--text3);}
 .step.hi .spill{background:rgba(22,163,74,0.05);border-color:rgba(22,163,74,0.12);color:var(--accent-dark);}
-
 .tagline-bar{padding:1.75rem 2rem;background:var(--white);border:1px solid var(--border);border-radius:14px;display:flex;align-items:center;justify-content:center;gap:1.5rem;flex-wrap:wrap;text-align:center;}
-.tl-text{font-family:'Syne',sans-serif;font-size:1.0625rem;font-weight:700;color:var(--text);}
+.tl-text{font-family:var(--font-head);font-size:1.0625rem;font-weight:700;color:var(--text);}
 .tl-sub{font-size:0.9375rem;color:var(--text3);}
 .tdiv{width:1px;height:30px;background:var(--border);flex-shrink:0;}
 
@@ -226,7 +191,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,
 .feat{background:var(--white);padding:2.25rem 2rem;transition:background 0.2s;}
 .feat:hover{background:var(--bg);}
 .ficon2{width:48px;height:48px;border-radius:12px;border:1px solid var(--border);background:var(--bg);display:flex;align-items:center;justify-content:center;font-size:1.25rem;margin-bottom:1.125rem;}
-.feat h3{font-size:1.0625rem;font-weight:600;margin-bottom:0.5rem;color:var(--text);}
+.feat h3{font-family:var(--font-head);font-size:1.0625rem;font-weight:700;margin-bottom:0.5rem;color:var(--text);}
 .feat p{font-size:1rem;color:var(--text3);line-height:1.7;}
 
 /* EQUITY */
@@ -236,9 +201,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,
 .eq-inner{max-width:780px;margin:0 auto;position:relative;z-index:1;}
 .eq-badge{display:inline-flex;align-items:center;gap:8px;font-size:0.8rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent-mid);margin-bottom:2rem;border:1px solid rgba(34,197,94,0.18);padding:5px 16px;border-radius:100px;background:rgba(34,197,94,0.05);}
 .eq-badge-dot{width:6px;height:6px;border-radius:50%;background:var(--accent-mid);}
-.eq-kicker{font-family:'Syne',sans-serif;font-size:0.9375rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:1.125rem;}
-.eq-headline{font-family:'Syne',sans-serif;font-size:3.25rem;font-weight:800;line-height:1.08;letter-spacing:-0.03em;color:#fff;margin-bottom:1.75rem;}
-.eq-headline span{color:var(--accent-mid);}
+.eq-kicker{font-family:var(--font-head);font-size:0.9375rem;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:1.125rem;}
+.eq-headline{font-family:var(--font-head);font-weight:700;font-size:3rem;line-height:1.08;letter-spacing:-0.025em;color:#fff;margin-bottom:1.75rem;}
+.eq-headline span{color:var(--accent-mid);font-family:var(--font-head);font-weight:700;}
 .eq-rule{width:44px;height:1px;background:rgba(34,197,94,0.35);margin:2rem auto;}
 .eq-body{font-size:1.125rem;color:rgba(255,255,255,0.5);line-height:1.82;max-width:600px;margin:0 auto 2.75rem;}
 .eq-body strong{color:rgba(255,255,255,0.82);font-weight:500;}
@@ -251,24 +216,24 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,
 .stats{background:#0f0f0f;padding:5.5rem 5%;border-top:1px solid rgba(255,255,255,0.08);}
 .stats-inner{max-width:1080px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;text-align:center;}
 .stat-item{padding:2.25rem 1rem;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:14px;}
-.stat-n{font-family:'Syne',sans-serif;font-size:3.25rem;font-weight:800;color:var(--accent-mid);line-height:1;display:block;margin-bottom:0.75rem;}
+.stat-n{font-family:var(--font-head);font-size:3.25rem;font-weight:700;color:var(--accent-mid);line-height:1;display:block;margin-bottom:0.75rem;}
 .stat-l{font-size:1rem;color:rgba(255,255,255,0.55);line-height:1.4;}
 
 /* CTA */
 .cta{padding:7rem 5%;text-align:center;position:relative;overflow:hidden;}
 .cta-glow{position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:700px;height:350px;background:radial-gradient(ellipse at 50% 100%, rgba(22,163,74,0.07) 0%, transparent 70%);pointer-events:none;}
 .cta .stag{display:block;margin-bottom:0.875rem;}
-.cta-h2{font-family:'Syne',sans-serif;font-size:2.5rem;font-weight:800;letter-spacing:-0.03em;line-height:1.1;color:var(--text);margin:0 auto 1.25rem;max-width:600px;}
-.cta-h2 span{color:var(--accent);}
+.cta-h2{font-family:var(--font-head);font-weight:700;font-size:2.5rem;letter-spacing:-0.025em;line-height:1.1;color:var(--text);margin:0 auto 1.25rem;max-width:600px;}
+.cta-h2 span{color:var(--accent);font-family:var(--font-head);font-weight:700;}
 .cta-sub{font-size:1.125rem;color:var(--text3);max-width:460px;margin:0 auto 2.5rem;line-height:1.78;}
-.cta-btn{padding:1.0625rem 2.5rem;background:var(--accent);border:none;border-radius:10px;font-family:'Inter',sans-serif;font-size:1.0625rem;font-weight:500;color:#fff;cursor:pointer;transition:all 0.2s;}
+.cta-btn{padding:1.0625rem 2.5rem;background:var(--accent);border:none;border-radius:10px;font-family:var(--font-body);font-size:1.0625rem;font-weight:500;color:#fff;cursor:pointer;transition:all 0.2s;}
 .cta-btn:hover{background:#15803d;transform:translateY(-1px);}
 .cta-note{margin-top:1.125rem;font-size:0.9375rem;color:var(--text4);}
 
 /* FOOTER */
 footer{background:var(--bg);border-top:1px solid var(--border);padding:2.25rem 5%;}
 .foot-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap;}
-.foot-logo{display:flex;align-items:center;gap:10px;font-family:'Syne',sans-serif;font-size:1.0625rem;font-weight:700;color:var(--text);}
+.foot-logo{display:flex;align-items:center;gap:10px;font-family:var(--font-head);font-size:1.0625rem;font-weight:700;color:var(--text);}
 .foot-logo .logo-mark{width:26px;height:26px;border-radius:6px;}
 .foot-links{display:flex;gap:1.5rem;}
 .foot-links a{font-size:0.9375rem;color:var(--text4);text-decoration:none;transition:color 0.2s;}
@@ -277,21 +242,18 @@ footer p{font-size:0.9375rem;color:var(--text4);}
 
 /* RESPONSIVE */
 @media(max-width:1024px){
-  .hero h1{font-size:3rem;}
-  .sh2{font-size:2.125rem;}
-  .network-h2{font-size:2.125rem;}
-  .eq-headline{font-size:2.75rem;}
-  .cta-h2{font-size:2.125rem;}
+  .hero h1{font-size:2.75rem;}
+  .sh2,.cta-h2,.network-h2{font-size:2.125rem;}
+  .eq-headline{font-size:2.5rem;}
   .formula-card{padding:2.25rem 1.5rem;}
   .f-icon-wrap{width:68px;height:68px;font-size:1.875rem;}
-  .formula-card h3{font-size:1.125rem;}
 }
 @media(max-width:768px){
   nav{padding:0 4%;}
   .nav-links-desktop{display:none;}
   .hamburger{display:flex;}
   .hero{padding:104px 4% 64px;}
-  .hero h1{font-size:2.375rem;max-width:100%;}
+  .hero h1{font-size:2.25rem;max-width:100%;}
   .app-body{grid-template-columns:1fr;height:auto;}
   .app-sidebar{display:none;}
   .logos-bar,.section,.cta{padding-left:4%;padding-right:4%;}
@@ -315,13 +277,11 @@ footer p{font-size:0.9375rem;color:var(--text4);}
   nav{height:64px;padding:0 4%;}
   .mobile-menu{top:64px;}
   .hero{padding:92px 4% 56px;}
-  .hero h1{font-size:2rem;}
+  .hero h1{font-size:1.875rem;}
   .hero-actions{flex-direction:column;align-items:stretch;}
   .btn-p,.btn-s{width:100%;text-align:center;}
-  .sh2{font-size:1.75rem;}
-  .network-h2{font-size:1.75rem;}
+  .sh2,.cta-h2,.network-h2{font-size:1.75rem;}
   .eq-headline{font-size:1.875rem;}
-  .cta-h2{font-size:1.75rem;}
   .stat-n{font-size:2.625rem;}
   .step{flex-direction:column;gap:0.875rem;padding:1.5rem;}
   .f-icon-wrap{width:60px;height:60px;font-size:1.625rem;}
@@ -337,18 +297,13 @@ footer p{font-size:0.9375rem;color:var(--text4);}
 </div>
 <nav>
   <div class="nav-inner">
-    <a class="logo" href="#">
-      <div class="logo-mark"><svg viewBox="0 0 18 18"><circle cx="9" cy="9" r="6"/><path d="M9 3v12M3 9h12"/></svg></div>
-      Deepvine AI
-    </a>
+    <a class="logo" href="#"><div class="logo-mark"><svg viewBox="0 0 18 18"><circle cx="9" cy="9" r="6"/><path d="M9 3v12M3 9h12"/></svg></div>Deepvine AI</a>
     <div class="nav-links-desktop">
       <a class="nav-link" href="#how">How It Works</a>
       <a class="nav-link" href="#features">Features</a>
       <button class="btn-nav" onclick="openCalendly()">Book a Call</button>
     </div>
-    <button class="hamburger" id="hamburger" onclick="toggleMenu()">
-      <span></span><span></span><span></span>
-    </button>
+    <button class="hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
   </div>
 </nav>
 
@@ -363,11 +318,7 @@ footer p{font-size:0.9375rem;color:var(--text4);}
   </div>
   <div class="hero-visual">
     <div class="app-bar">
-      <div class="app-dots">
-        <div class="app-dot" style="background:#ff5f57"></div>
-        <div class="app-dot" style="background:#febc2e"></div>
-        <div class="app-dot" style="background:#28c840"></div>
-      </div>
+      <div class="app-dots"><div class="app-dot" style="background:#ff5f57"></div><div class="app-dot" style="background:#febc2e"></div><div class="app-dot" style="background:#28c840"></div></div>
       <div class="app-url">app.deepvine.ai — Business Intelligence</div>
     </div>
     <div class="app-body">
@@ -386,25 +337,10 @@ footer p{font-size:0.9375rem;color:var(--text4);}
       </div>
       <div class="app-main">
         <div class="chat-area">
-          <div class="mrow u">
-            <div class="av u">JM</div>
-            <div class="bubble u">Which product line had the biggest margin drop last quarter?</div>
-          </div>
-          <div class="mrow">
-            <div class="av ai">DV</div>
-            <div class="bubble ai">Your Commercial HVAC line saw a 4.2% margin decline in Q3 — driven by a 12% supplier cost increase not passed through to 7 legacy contracts. Renewing recovers ~$340K annually.
-              <div class="metrics">
-                <div class="metric"><strong style="color:#dc2626">-4.2%</strong><span>Margin</span></div>
-                <div class="metric"><strong style="color:#16a34a">$340K</strong><span>Recovery</span></div>
-                <div class="metric"><strong>7</strong><span>Contracts</span></div>
-              </div>
-            </div>
-          </div>
+          <div class="mrow u"><div class="av u">JM</div><div class="bubble u">Which product line had the biggest margin drop last quarter?</div></div>
+          <div class="mrow"><div class="av ai">DV</div><div class="bubble ai">Your Commercial HVAC line saw a 4.2% margin decline in Q3 — driven by a 12% supplier cost increase not passed through to 7 legacy contracts. Renewing recovers ~$340K annually.<div class="metrics"><div class="metric"><strong style="color:#dc2626">-4.2%</strong><span>Margin</span></div><div class="metric"><strong style="color:#16a34a">$340K</strong><span>Recovery</span></div><div class="metric"><strong>7</strong><span>Contracts</span></div></div></div></div>
         </div>
-        <div class="chat-input">
-          <input class="chat-field" type="text" placeholder="Ask your business anything..." readonly>
-          <button class="send-btn">↑</button>
-        </div>
+        <div class="chat-input"><input class="chat-field" type="text" placeholder="Ask your business anything..." readonly><button class="send-btn">↑</button></div>
       </div>
     </div>
   </div>
@@ -413,17 +349,11 @@ footer p{font-size:0.9375rem;color:var(--text4);}
 <div class="logos-bar">
   <div class="logos-label">Connects with your existing tools</div>
   <div class="logos-row">
-    <div class="logo-pill">Salesforce</div>
-    <div class="logo-pill">QuickBooks</div>
-    <div class="logo-pill">HubSpot</div>
-    <div class="logo-pill">Shopify</div>
-    <div class="logo-pill">NetSuite</div>
-    <div class="logo-pill">PostgreSQL</div>
-    <div class="logo-pill">+ 200 more</div>
+    <div class="logo-pill">Salesforce</div><div class="logo-pill">QuickBooks</div><div class="logo-pill">HubSpot</div><div class="logo-pill">Shopify</div><div class="logo-pill">NetSuite</div><div class="logo-pill">PostgreSQL</div><div class="logo-pill">+ 200 more</div>
   </div>
 </div>
 
-<!-- LLM NETWORK DIAGRAM -->
+<!-- LLM NETWORK DIAGRAM — larger nodes, center, chat -->
 <section class="network-section" id="network">
   <div class="network-glow"></div>
   <div class="network-inner">
@@ -433,147 +363,133 @@ footer p{font-size:0.9375rem;color:var(--text4);}
       <p class="network-desc">Every tool, every system, every data source flows into your private LLM — and your team talks to it directly in plain English.</p>
     </div>
     <div class="diagram-wrap">
-      <svg class="network-svg" viewBox="0 0 1000 580" xmlns="http://www.w3.org/2000/svg">
+      <svg class="network-svg" viewBox="0 0 1100 640" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
             <path d="M2 1L8 5L2 9" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
           </marker>
-          <filter id="glow">
-            <feGaussianBlur stdDeviation="3" result="blur"/>
-            <feComposite in="SourceGraphic" in2="blur" operator="over"/>
-          </filter>
         </defs>
 
-        <!-- CONNECTION LINES from sources to LLM center -->
-        <!-- Top left: Google Cloud -->
-        <line x1="148" y1="108" x2="388" y2="248" stroke="#22c55e" stroke-width="1.5" stroke-dasharray="6,4" opacity="0.5" marker-end="url(#arr)"/>
-        <!-- Top center: Google Drive -->
-        <line x1="310" y1="72" x2="410" y2="228" stroke="#22c55e" stroke-width="1.5" stroke-dasharray="6,4" opacity="0.5" marker-end="url(#arr)"/>
-        <!-- Top right: Microsoft -->
-        <line x1="500" y1="58" x2="470" y2="222" stroke="#22c55e" stroke-width="1.5" stroke-dasharray="6,4" opacity="0.5" marker-end="url(#arr)"/>
-        <!-- Right top: Zoom -->
-        <line x1="690" y1="88" x2="540" y2="238" stroke="#22c55e" stroke-width="1.5" stroke-dasharray="6,4" opacity="0.5" marker-end="url(#arr)"/>
-        <!-- Right: QuickBooks -->
-        <line x1="760" y1="238" x2="580" y2="278" stroke="#22c55e" stroke-width="1.5" stroke-dasharray="6,4" opacity="0.5" marker-end="url(#arr)"/>
-        <!-- Bottom right: ERP -->
-        <line x1="720" y1="400" x2="558" y2="326" stroke="#22c55e" stroke-width="1.5" stroke-dasharray="6,4" opacity="0.5" marker-end="url(#arr)"/>
-        <!-- Bottom: Salesforce -->
-        <line x1="500" y1="480" x2="480" y2="358" stroke="#22c55e" stroke-width="1.5" stroke-dasharray="6,4" opacity="0.5" marker-end="url(#arr)"/>
-        <!-- Bottom left: External DB -->
-        <line x1="290" y1="438" x2="418" y2="340" stroke="#22c55e" stroke-width="1.5" stroke-dasharray="6,4" opacity="0.5" marker-end="url(#arr)"/>
-        <!-- Left: CRM -->
-        <line x1="152" y1="310" x2="378" y2="288" stroke="#22c55e" stroke-width="1.5" stroke-dasharray="6,4" opacity="0.5" marker-end="url(#arr)"/>
+        <!-- CONNECTION LINES -->
+        <line x1="178" y1="118" x2="398" y2="268" stroke="#22c55e" stroke-width="1.5" stroke-dasharray="7,5" opacity="0.45" marker-end="url(#arr)"/>
+        <line x1="338" y1="72" x2="420" y2="242" stroke="#22c55e" stroke-width="1.5" stroke-dasharray="7,5" opacity="0.45" marker-end="url(#arr)"/>
+        <line x1="528" y1="54" x2="468" y2="232" stroke="#22c55e" stroke-width="1.5" stroke-dasharray="7,5" opacity="0.45" marker-end="url(#arr)"/>
+        <line x1="718" y1="90" x2="548" y2="246" stroke="#22c55e" stroke-width="1.5" stroke-dasharray="7,5" opacity="0.45" marker-end="url(#arr)"/>
+        <line x1="162" y1="318" x2="386" y2="308" stroke="#22c55e" stroke-width="1.5" stroke-dasharray="7,5" opacity="0.45" marker-end="url(#arr)"/>
+        <line x1="210" y1="460" x2="402" y2="352" stroke="#22c55e" stroke-width="1.5" stroke-dasharray="7,5" opacity="0.45" marker-end="url(#arr)"/>
+        <line x1="448" y1="518" x2="462" y2="380" stroke="#22c55e" stroke-width="1.5" stroke-dasharray="7,5" opacity="0.45" marker-end="url(#arr)"/>
+        <line x1="638" y1="480" x2="540" y2="366" stroke="#22c55e" stroke-width="1.5" stroke-dasharray="7,5" opacity="0.45" marker-end="url(#arr)"/>
 
-        <!-- LINE from LLM to Chat panel -->
-        <line x1="590" y1="290" x2="760" y2="290" stroke="#22c55e" stroke-width="2" stroke-dasharray="8,5" opacity="0.7" marker-end="url(#arr)"/>
-        <text x="668" y="278" font-family="Inter,sans-serif" font-size="11" fill="#22c55e" opacity="0.7" text-anchor="middle">intelligence</text>
+        <!-- LINE from LLM to Chat -->
+        <line x1="608" y1="312" x2="800" y2="312" stroke="#22c55e" stroke-width="2" stroke-dasharray="9,6" opacity="0.75" marker-end="url(#arr)"/>
+        <text x="704" y="300" font-family="Inter,sans-serif" font-size="12" fill="#22c55e" opacity="0.75" text-anchor="middle" font-weight="500">intelligence</text>
 
-        <!-- ===== LLM CENTER NODE ===== -->
-        <!-- Outer glow ring -->
-        <circle cx="480" cy="290" r="92" fill="none" stroke="#22c55e" stroke-width="1" opacity="0.15"/>
-        <circle cx="480" cy="290" r="75" fill="none" stroke="#22c55e" stroke-width="1.5" opacity="0.25"/>
-        <!-- Main circle -->
-        <circle cx="480" cy="290" r="60" fill="#0d2218" stroke="#22c55e" stroke-width="2.5"/>
-        <!-- Brain icon simplified -->
-        <text x="480" y="278" font-family="Inter,sans-serif" font-size="26" text-anchor="middle" fill="#22c55e">🧠</text>
-        <text x="480" y="302" font-family="Syne,Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" fill="#22c55e" letter-spacing="0.5">YOUR LLM</text>
-        <text x="480" y="318" font-family="Inter,sans-serif" font-size="9.5" text-anchor="middle" fill="rgba(255,255,255,0.4)" letter-spacing="0.3">DEEPVINE AI</text>
+        <!-- ===== LLM CENTER — larger ===== -->
+        <circle cx="490" cy="312" r="110" fill="none" stroke="#22c55e" stroke-width="1" opacity="0.08"/>
+        <circle cx="490" cy="312" r="90" fill="none" stroke="#22c55e" stroke-width="1" opacity="0.14"/>
+        <circle cx="490" cy="312" r="72" fill="none" stroke="#22c55e" stroke-width="1.5" opacity="0.22"/>
+        <!-- Main filled circle -->
+        <circle cx="490" cy="312" r="56" fill="#0a1f12" stroke="#22c55e" stroke-width="2.5"/>
+        <!-- Brain emoji -->
+        <text x="490" y="302" font-size="30" text-anchor="middle" fill="#22c55e">🧠</text>
+        <!-- YOUR LLM text -->
+        <text x="490" y="324" font-family="Syne,Inter,sans-serif" font-size="12" font-weight="700" text-anchor="middle" fill="#22c55e" letter-spacing="1">YOUR LLM</text>
+        <text x="490" y="342" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" fill="rgba(255,255,255,0.35)" letter-spacing="0.5">DEEPVINE AI</text>
 
-        <!-- ===== SOURCE NODES ===== -->
-        <!-- Google Cloud - top left -->
-        <rect x="62" y="76" width="172" height="64" rx="12" fill="#111827" stroke="#1f2937" stroke-width="1.5"/>
-        <text x="98" y="103" font-size="20">☁️</text>
-        <text x="126" y="101" font-family="Syne,Inter,sans-serif" font-size="12" font-weight="700" fill="#f9fafb">Google Cloud</text>
-        <text x="126" y="118" font-family="Inter,sans-serif" font-size="10" fill="rgba(255,255,255,0.4)">Cloud storage &amp; compute</text>
+        <!-- ===== SOURCE NODES — larger ===== -->
+        <!-- Google Cloud -->
+        <rect x="52" y="84" width="196" height="68" rx="13" fill="#111827" stroke="#1e293b" stroke-width="1.5"/>
+        <text x="76" y="114" font-size="22">☁️</text>
+        <text x="106" y="112" font-family="Syne,Inter,sans-serif" font-size="13" font-weight="700" fill="#f1f5f9">Google Cloud</text>
+        <text x="106" y="130" font-family="Inter,sans-serif" font-size="11" fill="rgba(255,255,255,0.4)">Cloud storage &amp; compute</text>
 
-        <!-- Google Drive - top center-left -->
-        <rect x="226" y="38" width="168" height="64" rx="12" fill="#111827" stroke="#1f2937" stroke-width="1.5"/>
-        <text x="246" y="65" font-size="20">📁</text>
-        <text x="274" y="63" font-family="Syne,Inter,sans-serif" font-size="12" font-weight="700" fill="#f9fafb">Google Drive</text>
-        <text x="274" y="80" font-family="Inter,sans-serif" font-size="10" fill="rgba(255,255,255,0.4)">Documents &amp; files</text>
+        <!-- Google Drive -->
+        <rect x="246" y="38" width="188" height="68" rx="13" fill="#111827" stroke="#1e293b" stroke-width="1.5"/>
+        <text x="268" y="68" font-size="22">📁</text>
+        <text x="298" y="66" font-family="Syne,Inter,sans-serif" font-size="13" font-weight="700" fill="#f1f5f9">Google Drive</text>
+        <text x="298" y="84" font-family="Inter,sans-serif" font-size="11" fill="rgba(255,255,255,0.4)">Documents &amp; files</text>
 
-        <!-- Microsoft 365 - top center -->
-        <rect x="416" y="22" width="168" height="64" rx="12" fill="#111827" stroke="#1f2937" stroke-width="1.5"/>
-        <text x="436" y="49" font-size="20">💼</text>
-        <text x="464" y="47" font-family="Syne,Inter,sans-serif" font-size="12" font-weight="700" fill="#f9fafb">Microsoft 365</text>
-        <text x="464" y="64" font-family="Inter,sans-serif" font-size="10" fill="rgba(255,255,255,0.4)">Teams, Excel, Outlook</text>
+        <!-- Microsoft 365 -->
+        <rect x="446" y="20" width="188" height="68" rx="13" fill="#111827" stroke="#1e293b" stroke-width="1.5"/>
+        <text x="468" y="50" font-size="22">💼</text>
+        <text x="498" y="48" font-family="Syne,Inter,sans-serif" font-size="13" font-weight="700" fill="#f1f5f9">Microsoft 365</text>
+        <text x="498" y="66" font-family="Inter,sans-serif" font-size="11" fill="rgba(255,255,255,0.4)">Teams, Excel, Outlook</text>
 
-        <!-- Zoom - top right -->
-        <rect x="612" y="56" width="152" height="64" rx="12" fill="#111827" stroke="#1f2937" stroke-width="1.5"/>
-        <text x="632" y="83" font-size="20">📹</text>
-        <text x="660" y="81" font-family="Syne,Inter,sans-serif" font-size="12" font-weight="700" fill="#f9fafb">Zoom</text>
-        <text x="660" y="98" font-family="Inter,sans-serif" font-size="10" fill="rgba(255,255,255,0.4)">Voice &amp; meeting notes</text>
+        <!-- Zoom -->
+        <rect x="646" y="56" width="176" height="68" rx="13" fill="#111827" stroke="#1e293b" stroke-width="1.5"/>
+        <text x="668" y="86" font-size="22">📹</text>
+        <text x="698" y="84" font-family="Syne,Inter,sans-serif" font-size="13" font-weight="700" fill="#f1f5f9">Zoom</text>
+        <text x="698" y="102" font-family="Inter,sans-serif" font-size="11" fill="rgba(255,255,255,0.4)">Voice &amp; meeting notes</text>
 
-        <!-- QuickBooks - right -->
-        <rect x="774" y="206" width="160" height="64" rx="12" fill="#111827" stroke="#1f2937" stroke-width="1.5"/>
-        <text x="794" y="233" font-size="20">📊</text>
-        <text x="822" y="231" font-family="Syne,Inter,sans-serif" font-size="12" font-weight="700" fill="#f9fafb">QuickBooks</text>
-        <text x="822" y="248" font-family="Inter,sans-serif" font-size="10" fill="rgba(255,255,255,0.4)">Finance &amp; accounting</text>
+        <!-- HubSpot CRM -->
+        <rect x="38" y="284" width="196" height="68" rx="13" fill="#111827" stroke="#1e293b" stroke-width="1.5"/>
+        <text x="62" y="314" font-size="22">🔗</text>
+        <text x="92" y="312" font-family="Syne,Inter,sans-serif" font-size="13" font-weight="700" fill="#f1f5f9">HubSpot CRM</text>
+        <text x="92" y="330" font-family="Inter,sans-serif" font-size="11" fill="rgba(255,255,255,0.4)">Marketing &amp; pipeline</text>
 
-        <!-- ERP - bottom right -->
-        <rect x="638" y="370" width="160" height="64" rx="12" fill="#111827" stroke="#1f2937" stroke-width="1.5"/>
-        <text x="658" y="397" font-size="20">⚙️</text>
-        <text x="686" y="395" font-family="Syne,Inter,sans-serif" font-size="12" font-weight="700" fill="#f9fafb">ERP System</text>
-        <text x="686" y="412" font-family="Inter,sans-serif" font-size="10" fill="rgba(255,255,255,0.4)">Operations &amp; inventory</text>
+        <!-- Databases -->
+        <rect x="70" y="428" width="196" height="68" rx="13" fill="#111827" stroke="#1e293b" stroke-width="1.5"/>
+        <text x="92" y="458" font-size="22">🗄️</text>
+        <text x="122" y="456" font-family="Syne,Inter,sans-serif" font-size="13" font-weight="700" fill="#f1f5f9">Databases</text>
+        <text x="122" y="474" font-family="Inter,sans-serif" font-size="11" fill="rgba(255,255,255,0.4)">SQL, Postgres, custom</text>
 
-        <!-- Salesforce - bottom center -->
-        <rect x="408" y="446" width="184" height="64" rx="12" fill="#111827" stroke="#1f2937" stroke-width="1.5"/>
-        <text x="428" y="473" font-size="20">☁️</text>
-        <text x="456" y="471" font-family="Syne,Inter,sans-serif" font-size="12" font-weight="700" fill="#f9fafb">Salesforce CRM</text>
-        <text x="456" y="488" font-family="Inter,sans-serif" font-size="10" fill="rgba(255,255,255,0.4)">Sales &amp; customer data</text>
+        <!-- Salesforce -->
+        <rect x="348" y="490" width="208" height="68" rx="13" fill="#111827" stroke="#1e293b" stroke-width="1.5"/>
+        <text x="370" y="520" font-size="22">☁️</text>
+        <text x="400" y="518" font-family="Syne,Inter,sans-serif" font-size="13" font-weight="700" fill="#f1f5f9">Salesforce CRM</text>
+        <text x="400" y="536" font-family="Inter,sans-serif" font-size="11" fill="rgba(255,255,255,0.4)">Sales &amp; customer data</text>
 
-        <!-- External DB - bottom left -->
-        <rect x="190" y="408" width="180" height="64" rx="12" fill="#111827" stroke="#1f2937" stroke-width="1.5"/>
-        <text x="210" y="435" font-size="20">🗄️</text>
-        <text x="238" y="433" font-family="Syne,Inter,sans-serif" font-size="12" font-weight="700" fill="#f9fafb">Databases</text>
-        <text x="238" y="450" font-family="Inter,sans-serif" font-size="10" fill="rgba(255,255,255,0.4)">SQL, Postgres, custom</text>
+        <!-- ERP -->
+        <rect x="570" y="444" width="176" height="68" rx="13" fill="#111827" stroke="#1e293b" stroke-width="1.5"/>
+        <text x="592" y="474" font-size="22">⚙️</text>
+        <text x="622" y="472" font-family="Syne,Inter,sans-serif" font-size="13" font-weight="700" fill="#f1f5f9">ERP System</text>
+        <text x="622" y="490" font-family="Inter,sans-serif" font-size="11" fill="rgba(255,255,255,0.4)">Operations &amp; inventory</text>
 
-        <!-- CRM - left -->
-        <rect x="52" y="278" width="172" height="64" rx="12" fill="#111827" stroke="#1f2937" stroke-width="1.5"/>
-        <text x="72" y="305" font-size="20">🔗</text>
-        <text x="100" y="303" font-family="Syne,Inter,sans-serif" font-size="12" font-weight="700" fill="#f9fafb">HubSpot CRM</text>
-        <text x="100" y="320" font-family="Inter,sans-serif" font-size="10" fill="rgba(255,255,255,0.4)">Marketing &amp; pipeline</text>
+        <!-- ===== CHAT PANEL — larger ===== -->
+        <rect x="806" y="138" width="266" height="348" rx="16" fill="#111827" stroke="#22c55e" stroke-width="1.5" opacity="0.95"/>
+        <!-- Header -->
+        <rect x="806" y="138" width="266" height="52" rx="16" fill="#0a1f12"/>
+        <rect x="806" y="172" width="266" height="18" fill="#0a1f12"/>
+        <circle cx="832" cy="165" r="9" fill="#22c55e" opacity="0.9"/>
+        <text x="848" y="170" font-family="Syne,Inter,sans-serif" font-size="12" font-weight="700" fill="#22c55e">Deepvine Chat</text>
+        <rect x="1040" y="156" width="8" height="8" rx="4" fill="#22c55e" opacity="0.6"/>
+        <text x="1056" y="164" font-family="Inter,sans-serif" font-size="10" fill="rgba(255,255,255,0.4)">Live</text>
 
-        <!-- ===== CHAT PANEL ===== -->
-        <rect x="762" y="168" width="224" height="244" rx="14" fill="#111827" stroke="#22c55e" stroke-width="1.5" opacity="0.9"/>
-        <!-- Chat header -->
-        <rect x="762" y="168" width="224" height="44" rx="14" fill="#0d2218"/>
-        <rect x="762" y="190" width="224" height="22" fill="#0d2218"/>
-        <circle cx="786" cy="190" r="7" fill="#22c55e" opacity="0.8"/>
-        <text x="800" y="194" font-family="Syne,Inter,sans-serif" font-size="10.5" font-weight="700" fill="#22c55e">Deepvine Chat</text>
-        <text x="966" y="188" font-family="Inter,sans-serif" font-size="9" fill="rgba(255,255,255,0.3)">● Live</text>
+        <!-- User message -->
+        <rect x="866" y="204" width="186" height="50" rx="12" fill="#1a3a2a"/>
+        <text x="878" y="222" font-family="Inter,sans-serif" font-size="10.5" fill="rgba(255,255,255,0.9)" font-style="italic">"What's our best</text>
+        <text x="878" y="238" font-family="Inter,sans-serif" font-size="10.5" fill="rgba(255,255,255,0.9)" font-style="italic">performing region?"</text>
 
-        <!-- User message bubble -->
-        <rect x="810" y="224" width="158" height="42" rx="10" fill="#1a3a2a"/>
-        <text x="820" y="239" font-family="Inter,sans-serif" font-size="9.5" fill="rgba(255,255,255,0.85)" font-style="italic">"What's our best</text>
-        <text x="820" y="253" font-family="Inter,sans-serif" font-size="9.5" fill="rgba(255,255,255,0.85)" font-style="italic">performing region?"</text>
-
-        <!-- AI response bubble -->
-        <rect x="770" y="278" width="196" height="54" rx="10" fill="#1c2432" stroke="#2d3748" stroke-width="1"/>
-        <text x="780" y="294" font-family="Inter,sans-serif" font-size="9" fill="rgba(255,255,255,0.7)">Southeast — up 23% YoY.</text>
-        <text x="780" y="308" font-family="Inter,sans-serif" font-size="9" fill="rgba(255,255,255,0.7)">3 reps driving 68% of</text>
-        <text x="780" y="322" font-family="Inter,sans-serif" font-size="9" fill="rgba(255,255,255,0.7)">revenue. Want details?</text>
+        <!-- AI response -->
+        <rect x="818" y="268" width="230" height="66" rx="12" fill="#1c2432" stroke="#2d3a4a" stroke-width="1"/>
+        <text x="830" y="286" font-family="Inter,sans-serif" font-size="10.5" fill="rgba(255,255,255,0.75)">Southeast — up 23% YoY.</text>
+        <text x="830" y="302" font-family="Inter,sans-serif" font-size="10.5" fill="rgba(255,255,255,0.75)">3 reps driving 68% of</text>
+        <text x="830" y="318" font-family="Inter,sans-serif" font-size="10.5" fill="rgba(255,255,255,0.75)">revenue. Want details?</text>
 
         <!-- Metric chips -->
-        <rect x="770" y="344" width="58" height="26" rx="6" fill="#0d2218" stroke="#22c55e" stroke-width="1" opacity="0.8"/>
-        <text x="799" y="357" font-family="Inter,sans-serif" font-size="9" font-weight="600" fill="#22c55e" text-anchor="middle">+23%</text>
-        <text x="799" y="367" font-family="Inter,sans-serif" font-size="7.5" fill="rgba(255,255,255,0.4)" text-anchor="middle">YoY</text>
+        <rect x="818" y="348" width="68" height="32" rx="8" fill="#0a1f12" stroke="#22c55e" stroke-width="1.2"/>
+        <text x="852" y="362" font-family="Inter,sans-serif" font-size="10" font-weight="600" fill="#22c55e" text-anchor="middle">+23%</text>
+        <text x="852" y="374" font-family="Inter,sans-serif" font-size="8.5" fill="rgba(255,255,255,0.4)" text-anchor="middle">YoY</text>
 
-        <rect x="836" y="344" width="52" height="26" rx="6" fill="#1c2432" stroke="#2d3748" stroke-width="1"/>
-        <text x="862" y="357" font-family="Inter,sans-serif" font-size="9" font-weight="600" fill="rgba(255,255,255,0.8)" text-anchor="middle">SE</text>
-        <text x="862" y="367" font-family="Inter,sans-serif" font-size="7.5" fill="rgba(255,255,255,0.4)" text-anchor="middle">Region</text>
+        <rect x="894" y="348" width="62" height="32" rx="8" fill="#1c2432" stroke="#2d3a4a" stroke-width="1"/>
+        <text x="925" y="362" font-family="Inter,sans-serif" font-size="10" font-weight="600" fill="rgba(255,255,255,0.85)" text-anchor="middle">SE</text>
+        <text x="925" y="374" font-family="Inter,sans-serif" font-size="8.5" fill="rgba(255,255,255,0.4)" text-anchor="middle">Region</text>
 
-        <rect x="896" y="344" width="52" height="26" rx="6" fill="#1c2432" stroke="#2d3748" stroke-width="1"/>
-        <text x="922" y="357" font-family="Inter,sans-serif" font-size="9" font-weight="600" fill="rgba(255,255,255,0.8)" text-anchor="middle">3</text>
-        <text x="922" y="367" font-family="Inter,sans-serif" font-size="7.5" fill="rgba(255,255,255,0.4)" text-anchor="middle">Reps</text>
+        <rect x="964" y="348" width="62" height="32" rx="8" fill="#1c2432" stroke="#2d3a4a" stroke-width="1"/>
+        <text x="995" y="362" font-family="Inter,sans-serif" font-size="10" font-weight="600" fill="rgba(255,255,255,0.85)" text-anchor="middle">3</text>
+        <text x="995" y="374" font-family="Inter,sans-serif" font-size="8.5" fill="rgba(255,255,255,0.4)" text-anchor="middle">Top Reps</text>
+
+        <!-- Second exchange -->
+        <rect x="866" y="394" width="186" height="36" rx="10" fill="#1a3a2a"/>
+        <text x="878" y="415" font-family="Inter,sans-serif" font-size="10.5" fill="rgba(255,255,255,0.9)" font-style="italic">"Show me their accounts"</text>
 
         <!-- Input bar -->
-        <rect x="770" y="382" width="196" height="26" rx="7" fill="#0f0f0f" stroke="#2d3748" stroke-width="1"/>
-        <text x="780" y="399" font-family="Inter,sans-serif" font-size="9" fill="rgba(255,255,255,0.25)">Ask anything...</text>
-        <rect x="952" y="385" width="8" height="20" rx="3" fill="#22c55e" opacity="0.7"/>
+        <rect x="818" y="444" width="230" height="32" rx="9" fill="#0f1117" stroke="#2d3a4a" stroke-width="1"/>
+        <text x="832" y="465" font-family="Inter,sans-serif" font-size="10" fill="rgba(255,255,255,0.25)">Ask anything about your business...</text>
+        <rect x="1030" y="448" width="10" height="24" rx="4" fill="#22c55e" opacity="0.6"/>
 
-        <!-- "Your team" label below chat -->
-        <text x="874" y="428" font-family="Inter,sans-serif" font-size="10" fill="rgba(255,255,255,0.35)" text-anchor="middle">Your team's intelligent interface</text>
+        <!-- Label -->
+        <text x="939" y="504" font-family="Inter,sans-serif" font-size="11" fill="rgba(255,255,255,0.35)" text-anchor="middle">Your team's intelligent interface</text>
       </svg>
     </div>
   </div>
@@ -607,70 +523,18 @@ footer p{font-size:0.9375rem;color:var(--text4);}
     <div class="formula-section">
       <div class="formula-label">The Deepvine Formula</div>
       <div class="formula-row">
-        <div class="formula-card">
-          <div class="f-icon-wrap green">⚡</div>
-          <h3>Your Automation</h3>
-          <p>One specific business problem, solved and connected to your data</p>
-        </div>
+        <div class="formula-card"><div class="f-icon-wrap green">⚡</div><h3>Your Automation</h3><p>One specific business problem, solved and connected to your data</p></div>
         <div class="formula-op-col"><div class="formula-op-symbol">+</div></div>
-        <div class="formula-card">
-          <div class="f-icon-wrap green">🧠</div>
-          <h3>Your Private LLM</h3>
-          <p>A living intelligence trained exclusively on your business data</p>
-        </div>
+        <div class="formula-card"><div class="f-icon-wrap green">🧠</div><h3>Your Private LLM</h3><p>A living intelligence trained exclusively on your business data</p></div>
         <div class="formula-op-col"><div class="formula-op-symbol">=</div></div>
-        <div class="formula-card result">
-          <div class="f-icon-wrap dark">📈</div>
-          <h3>Compounding ROI</h3>
-          <p>Intelligence that grows smarter and more valuable every single day</p>
-        </div>
+        <div class="formula-card result"><div class="f-icon-wrap dark">📈</div><h3>Compounding ROI</h3><p>Intelligence that grows smarter and more valuable every single day</p></div>
       </div>
     </div>
     <div class="steps">
-      <div class="step hi">
-        <div class="snbadge">01</div>
-        <div>
-          <div class="step-tag">Your Starting Point</div>
-          <h3>Pick Your First Automation</h3>
-          <p>Tell us your biggest pain point. We build an automation that solves it and pipes data directly into your private LLM.</p>
-          <div class="spills">
-            <div class="spill">Invoice automation</div>
-            <div class="spill">Sales pipeline</div>
-            <div class="spill">Inventory sync</div>
-            <div class="spill">Cash flow</div>
-          </div>
-        </div>
-      </div>
-      <div class="step">
-        <div class="snbadge">02</div>
-        <div>
-          <div class="step-tag">The Foundation</div>
-          <h3>We Build Your LLM Foundation</h3>
-          <p>Your first automation becomes the seed of your private intelligence — trained on your business, not anyone else's.</p>
-        </div>
-      </div>
-      <div class="step">
-        <div class="snbadge">03</div>
-        <div>
-          <div class="step-tag">Instant Value</div>
-          <h3>Ask It Anything From Day One</h3>
-          <p>Immediately query your intelligence about trends, anomalies, and forecasts in plain English. No dashboards needed.</p>
-        </div>
-      </div>
-      <div class="step hi">
-        <div class="snbadge">04</div>
-        <div>
-          <div class="step-tag">Expand On Your Terms</div>
-          <h3>Add Automations. Deepen the Intelligence.</h3>
-          <p>Every additional automation feeds more data into your LLM. Each layer compounds on the last. You control the pace.</p>
-          <div class="spills">
-            <div class="spill">+ HR &amp; payroll</div>
-            <div class="spill">+ Customer analytics</div>
-            <div class="spill">+ Marketing ROI</div>
-            <div class="spill">+ Operations</div>
-          </div>
-        </div>
-      </div>
+      <div class="step hi"><div class="snbadge">01</div><div><div class="step-tag">Your Starting Point</div><h3>Pick Your First Automation</h3><p>Tell us your biggest pain point. We build an automation that solves it and pipes data directly into your private LLM.</p><div class="spills"><div class="spill">Invoice automation</div><div class="spill">Sales pipeline</div><div class="spill">Inventory sync</div><div class="spill">Cash flow</div></div></div></div>
+      <div class="step"><div class="snbadge">02</div><div><div class="step-tag">The Foundation</div><h3>We Build Your LLM Foundation</h3><p>Your first automation becomes the seed of your private intelligence — trained on your business, not anyone else's.</p></div></div>
+      <div class="step"><div class="snbadge">03</div><div><div class="step-tag">Instant Value</div><h3>Ask It Anything From Day One</h3><p>Immediately query your intelligence about trends, anomalies, and forecasts in plain English. No dashboards needed.</p></div></div>
+      <div class="step hi"><div class="snbadge">04</div><div><div class="step-tag">Expand On Your Terms</div><h3>Add Automations. Deepen the Intelligence.</h3><p>Every additional automation feeds more data into your LLM. Each layer compounds on the last. You control the pace.</p><div class="spills"><div class="spill">+ HR &amp; payroll</div><div class="spill">+ Customer analytics</div><div class="spill">+ Marketing ROI</div><div class="spill">+ Operations</div></div></div></div>
     </div>
     <div class="tagline-bar">
       <div><div class="tl-text">Start with one automation.</div><div class="tl-sub">Build an intelligence that knows your entire business.</div></div>
@@ -733,15 +597,8 @@ footer p{font-size:0.9375rem;color:var(--text4);}
 
 <footer>
   <div class="foot-inner">
-    <div class="foot-logo">
-      <div class="logo-mark"><svg viewBox="0 0 18 18" style="width:14px;height:14px;stroke:#fff;fill:none;stroke-width:2;stroke-linecap:round"><circle cx="9" cy="9" r="6"/><path d="M9 3v12M3 9h12"/></svg></div>
-      Deepvine AI
-    </div>
-    <div class="foot-links">
-      <a href="#">Privacy</a>
-      <a href="#">Terms</a>
-      <a href="mailto:info@deepvine.ai">info@deepvine.ai</a>
-    </div>
+    <div class="foot-logo"><div class="logo-mark"><svg viewBox="0 0 18 18" style="width:14px;height:14px;stroke:#fff;fill:none;stroke-width:2;stroke-linecap:round"><circle cx="9" cy="9" r="6"/><path d="M9 3v12M3 9h12"/></svg></div>Deepvine AI</div>
+    <div class="foot-links"><a href="#">Privacy</a><a href="#">Terms</a><a href="mailto:info@deepvine.ai">info@deepvine.ai</a></div>
     <p>© 2026 Deepvine AI</p>
   </div>
 </footer>
