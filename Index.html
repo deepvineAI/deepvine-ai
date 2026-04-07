@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Deepvine AI — Business Intelligence That Compounds</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --white:#ffffff;--bg:#f9fafb;--bg2:#f3f4f6;
+  --border:#e5e7eb;--border2:#d1d5db;
+  --text:#0a0a0a;--text2:#374151;--text3:#6b7280;--text4:#9ca3af;
+  --accent:#16a34a;--accent-light:#dcfce7;--accent-mid:#22c55e;--accent-dark:#14532d;
+}
+html{scroll-behavior:smooth;}
+body{background:var(--white);color:var(--text);font-family:'Inter',sans-serif;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+
+/* ========== NAV ========== */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,0.97);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);height:64px;display:flex;align-items:center;padding:0 5%;}
+.nav-inner{width:100%;max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;}
+.logo{display:flex;align-items:center;gap:10px;font-family:'Syne',sans-serif;font-size:1.15rem;font-weight:700;color:var(--text);letter-spacing:-0.02em;text-decoration:none;}
+.logo-mark{width:30px;height:30px;background:var(--text);border-radius:7px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.logo-mark svg{width:16px;height:16px;stroke:#fff;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+.nav-right{display:flex;align-items:center;gap:1.75rem;}
+.nav-link{color:var(--text3);text-decoration:none;font-size:0.875rem;font-weight:450;transition:color 0.2s;}
+.nav-link:hover{color:var(--text);}
+.btn-nav{padding:0.5rem 1.125rem;background:var(--accent);border:none;border-radius:8px;font-family:'Inter',sans-serif;font-size:0.875rem;font-weight:500;color:#fff;cursor:pointer;transition:all 0.2s;white-space:nowrap;}
+.btn-nav:hover{background:#15803d;}
+.nav-links-desktop{display:flex;gap:1.75rem;}
+
+/* Mobile menu */
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none;}
+.hamburger span{display:block;width:22px;height:2px;background:var(--text);border-radius:2px;transition:all 0.3s;}
+.mobile-menu{display:none;position:fixed;top:64px;left:0;right:0;background:var(--white);border-bottom:1px solid var(--border);padding:1.25rem 5%;z-index:99;flex-direction:column;gap:0;}
+.mobile-menu.open{display:flex;}
+.mobile-menu a, .mobile-menu button{display:block;padding:0.875rem 0;border-bottom:1px solid var(--border);color:var(--text2);text-decoration:none;font-size:0.9375rem;font-weight:450;background:none;border-left:none;border-right:none;border-top:none;text-align:left;font-family:'Inter',sans-serif;cursor:pointer;width:100%;}
+.mobile-menu button.mobile-cta{margin-top:0.75rem;background:var(--accent);color:#fff;padding:0.875rem;border-radius:8px;border:none;font-weight:500;text-align:center;}
+
+/* ========== HERO ========== */
+.hero{padding:120px 5% 80px;text-align:center;position:relative;overflow:hidden;background:var(--white);}
+.hero-glow{position:absolute;top:0;left:50%;transform:translateX(-50%);width:100%;max-width:800px;height:500px;background:radial-gradient(ellipse at 50% 0%, rgba(22,163,74,0.08) 0%, transparent 70%);pointer-events:none;}
+.badge{display:inline-flex;align-items:center;gap:7px;background:var(--accent-light);color:var(--accent-dark);padding:5px 14px 5px 10px;border-radius:100px;font-size:0.75rem;font-weight:500;margin-bottom:1.5rem;border:1px solid rgba(22,163,74,0.25);position:relative;z-index:1;}
+.badge-dot{width:7px;height:7px;border-radius:50%;background:var(--accent);animation:blink 2s ease-in-out infinite;}
+@keyframes blink{0%,100%{opacity:1;}50%{opacity:0.3;}}
+.hero h1{font-family:'Syne',sans-serif;font-size:clamp(2.2rem,6vw,4.75rem);font-weight:800;line-height:1.06;letter-spacing:-0.03em;color:var(--text);margin-bottom:1.25rem;position:relative;z-index:1;}
+.hero h1 span{color:var(--accent);}
+.hero-sub{font-size:clamp(1rem,2.5vw,1.125rem);color:var(--text3);max-width:520px;margin:0 auto 2rem;line-height:1.8;font-weight:400;position:relative;z-index:1;}
+.hero-actions{display:flex;align-items:center;justify-content:center;gap:0.75rem;margin-bottom:4rem;position:relative;z-index:1;flex-wrap:wrap;}
+.btn-lg{padding:0.875rem 1.75rem;background:var(--text);border:none;border-radius:10px;font-family:'Inter',sans-serif;font-size:0.9375rem;font-weight:500;color:#fff;cursor:pointer;transition:all 0.2s;}
+.btn-lg:hover{background:#1a1a1a;transform:translateY(-1px);}
+.btn-lg-green{padding:0.875rem 1.75rem;background:var(--accent);border:none;border-radius:10px;font-family:'Inter',sans-serif;font-size:0.9375rem;font-weight:500;color:#fff;cursor:pointer;transition:all 0.2s;}
+.btn-lg-green:hover{background:#15803d;transform:translateY(-1px);}
+
+/* Hero visual */
+.hero-visual{max-width:860px;margin:0 auto;background:var(--white);border:1px solid var(--border);border-radius:14px;overflow:hidden;box-shadow:0 2px 4px rgba(0,0,0,0.04),0 20px 64px rgba(0,0,0,0.1);position:relative;z-index:1;}
+.app-bar{background:var(--bg);border-bottom:1px solid var(--border);padding:12px 16px;display:flex;align-items:center;gap:8px;}
+.app-dots{display:flex;gap:5px;}
+.app-dot{width:10px;height:10px;border-radius:50%;}
+.app-url{flex:1;background:var(--white);border:1px solid var(--border);border-radius:5px;padding:3px 10px;font-size:0.7rem;color:var(--text4);text-align:center;max-width:260px;margin:0 auto;}
+.app-body{display:grid;grid-template-columns:160px 1fr;height:280px;}
+.app-sidebar{background:var(--bg);border-right:1px solid var(--border);padding:1rem 0.75rem;}
+.sidebar-section-label{font-size:0.6rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--text4);font-weight:600;padding:0 0.5rem;margin-bottom:0.5rem;}
+.s-item{display:flex;align-items:center;gap:7px;padding:0.4rem 0.5rem;border-radius:6px;font-size:0.72rem;color:var(--text3);margin-bottom:1px;}
+.s-item.active{background:var(--white);color:var(--text);font-weight:500;box-shadow:0 1px 3px rgba(0,0,0,0.06);}
+.s-dot{width:5px;height:5px;border-radius:50%;background:var(--accent);flex-shrink:0;}
+.s-dot-gray{width:5px;height:5px;border-radius:50%;background:var(--border2);flex-shrink:0;}
+.app-chat{display:flex;flex-direction:column;}
+.chat-msgs{flex:1;padding:1rem 1.25rem;display:flex;flex-direction:column;gap:0.75rem;overflow:hidden;}
+.msg-row{display:flex;gap:8px;align-items:flex-start;}
+.msg-row.user{flex-direction:row-reverse;}
+.av{width:24px;height:24px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:0.55rem;font-weight:600;}
+.av.ai{background:var(--accent-light);color:var(--accent-dark);}
+.av.user{background:#f3f4f6;color:var(--text2);}
+.bub{max-width:80%;padding:0.5rem 0.75rem;font-size:0.75rem;line-height:1.5;border-radius:10px;}
+.bub.ai{background:var(--bg);border:1px solid var(--border);color:var(--text2);border-radius:4px 10px 10px 10px;}
+.bub.user{background:var(--text);color:#fff;border-radius:10px 4px 10px 10px;}
+.chips{display:flex;gap:5px;margin-top:6px;flex-wrap:wrap;}
+.chip{background:var(--white);border:1px solid var(--border);border-radius:5px;padding:4px 8px;font-size:0.65rem;}
+.chip strong{display:block;font-size:0.8rem;font-weight:600;color:var(--text);line-height:1.2;}
+.chip span{color:var(--text4);}
+.chat-input-row{border-top:1px solid var(--border);padding:0.625rem 1rem;display:flex;align-items:center;gap:0.5rem;}
+.chat-field{flex:1;background:var(--bg);border:1px solid var(--border);border-radius:7px;padding:0.4rem 0.875rem;font-size:0.75rem;color:var(--text4);font-family:'Inter',sans-serif;}
+.send-btn{width:28px;height:28px;background:var(--text);border:none;border-radius:7px;color:#fff;cursor:pointer;font-size:0.875rem;display:flex;align-items:center;justify-content:center;}
+
+/* ========== LOGOS ========== */
+.logos-bar{padding:2rem 5%;border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:var(--bg);text-align:center;}
+.logos-label{font-size:0.72rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--text4);font-weight:500;margin-bottom:1.25rem;}
+.logos-row{display:flex;align-items:center;justify-content:center;gap:0.5rem;flex-wrap:wrap;}
+.logo-pill{background:var(--white);border:1px solid var(--border);border-radius:6px;padding:0.35rem 0.875rem;font-size:0.78rem;font-weight:500;color:var(--text3);}
+
+/* ========== SECTIONS ========== */
+.section{padding:5rem 5%;}
+.section-inner{max-width:1200px;margin:0 auto;}
+.section-tag{display:inline-block;font-size:0.7rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);margin-bottom:1rem;}
+h2{font-family:'Syne',sans-serif;font-size:clamp(1.75rem,3.5vw,2.875rem);font-weight:800;letter-spacing:-0.025em;line-height:1.1;color:var(--text);margin-bottom:1rem;}
+h2 span{color:var(--accent);}
+.section-desc{font-size:1.0625rem;color:var(--text3);line-height:1.75;}
+
+/* ========== PROBLEM ========== */
+.problem-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:5rem;align-items:center;}
+.pain-list{display:flex;flex-direction:column;}
+.pain-item{display:flex;align-items:flex-start;gap:1.25rem;padding:1.25rem 0;border-bottom:1px solid var(--border);}
+.pain-item:first-child{border-top:1px solid var(--border);}
+.pain-n{font-family:'Syne',sans-serif;font-size:1.25rem;font-weight:800;color:var(--border2);line-height:1;min-width:26px;padding-top:2px;}
+.pain-item h3{font-size:0.9375rem;font-weight:600;margin-bottom:0.25rem;color:var(--text);}
+.pain-item p{font-size:0.85rem;color:var(--text3);line-height:1.65;}
+
+/* ========== HOW IT WORKS ========== */
+.how-section{background:var(--bg);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:5rem 5%;}
+.how-inner{max-width:1200px;margin:0 auto;}
+.how-header{text-align:center;margin-bottom:4rem;}
+.how-header .section-desc{margin:0 auto;max-width:480px;}
+
+.formula-bar{display:flex;align-items:stretch;margin:0 auto 4rem;max-width:860px;background:var(--white);border:1px solid var(--border);border-radius:14px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,0.04);}
+.formula-piece{flex:1;padding:1.5rem 1.25rem;text-align:center;}
+.formula-piece:not(:last-child){border-right:1px solid var(--border);}
+.formula-icon{font-size:1.4rem;margin-bottom:0.625rem;display:block;}
+.formula-piece h4{font-family:'Syne',sans-serif;font-size:0.875rem;font-weight:700;color:var(--text);margin-bottom:0.25rem;}
+.formula-piece p{font-size:0.775rem;color:var(--text3);line-height:1.5;}
+.formula-op{font-family:'Syne',sans-serif;font-size:1.25rem;font-weight:800;color:var(--border2);padding:0 0.125rem;flex-shrink:0;display:flex;align-items:center;}
+.formula-result{background:var(--text);flex:1.2;}
+.formula-result h4{color:#fff;}
+.formula-result p{color:rgba(255,255,255,0.5);}
+
+.steps-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem;margin-bottom:2rem;}
+.step-card{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:1.75rem;display:flex;gap:1.25rem;align-items:flex-start;transition:box-shadow 0.2s,transform 0.2s;}
+.step-card:hover{box-shadow:0 4px 20px rgba(0,0,0,0.07);transform:translateY(-2px);}
+.step-card.highlight{border-color:rgba(22,163,74,0.25);background:linear-gradient(135deg,#fafffe 0%,#f0fdf4 100%);}
+.step-left{flex-shrink:0;}
+.step-num-badge{width:38px;height:38px;border-radius:9px;background:var(--bg2);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-size:0.8rem;font-weight:800;color:var(--text3);}
+.step-card.highlight .step-num-badge{background:var(--accent-light);border-color:rgba(22,163,74,0.2);color:var(--accent-dark);}
+.step-tag{font-size:0.62rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--text4);margin-bottom:0.35rem;}
+.step-card.highlight .step-tag{color:var(--accent);}
+.step-card h3{font-size:0.9375rem;font-weight:600;margin-bottom:0.35rem;color:var(--text);}
+.step-card p{font-size:0.8375rem;color:var(--text3);line-height:1.65;}
+.step-examples{display:flex;gap:5px;flex-wrap:wrap;margin-top:0.75rem;}
+.step-example-pill{background:var(--bg);border:1px solid var(--border);border-radius:100px;padding:3px 9px;font-size:0.7rem;color:var(--text3);}
+.step-card.highlight .step-example-pill{background:rgba(22,163,74,0.06);border-color:rgba(22,163,74,0.15);color:var(--accent-dark);}
+
+.how-tagline{text-align:center;padding:1.5rem;background:var(--white);border:1px solid var(--border);border-radius:12px;display:flex;align-items:center;justify-content:center;gap:1rem;flex-wrap:wrap;}
+.how-tagline-text{font-family:'Syne',sans-serif;font-size:0.9375rem;font-weight:700;color:var(--text);}
+.how-tagline-sub{font-size:0.8rem;color:var(--text3);}
+.tagline-divider{width:1px;height:28px;background:var(--border);flex-shrink:0;}
+
+/* ========== FEATURES ========== */
+.features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:14px;overflow:hidden;margin-top:3.5rem;}
+.feat{background:var(--white);padding:2rem 1.75rem;transition:background 0.2s;}
+.feat:hover{background:var(--bg);}
+.feat-icon{width:40px;height:40px;border-radius:9px;border:1px solid var(--border);background:var(--bg);display:flex;align-items:center;justify-content:center;font-size:1rem;margin-bottom:1.125rem;}
+.feat h3{font-size:0.9375rem;font-weight:600;margin-bottom:0.4rem;color:var(--text);}
+.feat p{font-size:0.8375rem;color:var(--text3);line-height:1.7;}
+
+/* ========== EQUITY ========== */
+.equity-section{background:var(--text);padding:7rem 5%;position:relative;overflow:hidden;text-align:center;}
+.equity-section::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.04) 1px, transparent 1px);background-size:32px 32px;pointer-events:none;}
+.equity-glow{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:700px;height:400px;background:radial-gradient(ellipse, rgba(22,163,74,0.15) 0%, transparent 70%);pointer-events:none;}
+.equity-inner{max-width:800px;margin:0 auto;position:relative;z-index:1;}
+.equity-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:0.7rem;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:var(--accent-mid);margin-bottom:2rem;border:1px solid rgba(34,197,94,0.2);padding:5px 14px;border-radius:100px;background:rgba(34,197,94,0.06);}
+.equity-eyebrow-dot{width:6px;height:6px;border-radius:50%;background:var(--accent-mid);}
+.equity-kicker{font-family:'Syne',sans-serif;font-size:clamp(0.8rem,1.5vw,1rem);font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:1rem;}
+.equity-headline{font-family:'Syne',sans-serif;font-size:clamp(1.75rem,4.5vw,3.75rem);font-weight:800;line-height:1.1;letter-spacing:-0.03em;color:#fff;margin-bottom:1.5rem;}
+.equity-headline span{color:var(--accent-mid);}
+.equity-rule{width:40px;height:1px;background:rgba(34,197,94,0.4);margin:1.75rem auto;}
+.equity-body{font-size:1rem;color:rgba(255,255,255,0.5);line-height:1.85;max-width:600px;margin:0 auto 2.5rem;}
+.equity-body strong{color:rgba(255,255,255,0.8);font-weight:500;}
+.equity-pills{display:flex;gap:0.625rem;justify-content:center;flex-wrap:wrap;}
+.equity-pill{display:flex;align-items:center;gap:7px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:100px;padding:0.4rem 0.875rem;font-size:0.78rem;color:rgba(255,255,255,0.55);transition:border-color 0.2s,color 0.2s;}
+.equity-pill:hover{border-color:rgba(34,197,94,0.3);color:rgba(255,255,255,0.8);}
+.pill-dot{width:5px;height:5px;border-radius:50%;background:var(--accent-mid);flex-shrink:0;}
+
+/* ========== STATS ========== */
+.stats-section{background:#111;padding:4.5rem 5%;border-top:1px solid rgba(255,255,255,0.06);}
+.stats-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;text-align:center;}
+.stat-n{font-family:'Syne',sans-serif;font-size:clamp(2rem,4vw,3rem);font-weight:800;color:var(--accent-mid);line-height:1;display:block;margin-bottom:0.5rem;}
+.stat-l{font-size:0.8rem;color:rgba(255,255,255,0.35);}
+
+/* ========== CTA ========== */
+.cta-section{padding:7rem 5%;text-align:center;position:relative;overflow:hidden;}
+.cta-glow{position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:700px;height:400px;background:radial-gradient(ellipse at 50% 100%, rgba(22,163,74,0.07) 0%, transparent 70%);pointer-events:none;}
+.cta-section .section-tag{display:block;margin-bottom:0.75rem;}
+.cta-section h2{max-width:640px;margin:0 auto 1.25rem;}
+.cta-sub{font-size:1rem;color:var(--text3);max-width:440px;margin:0 auto 2.25rem;line-height:1.75;}
+.cta-actions{display:flex;align-items:center;justify-content:center;}
+.cta-note{margin-top:1.125rem;font-size:0.8rem;color:var(--text4);}
+
+/* ========== FOOTER ========== */
+footer{background:var(--bg);border-top:1px solid var(--border);padding:2rem 5%;}
+.footer-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap;}
+.footer-logo{display:flex;align-items:center;gap:8px;font-family:'Syne',sans-serif;font-size:0.95rem;font-weight:700;color:var(--text);}
+.footer-logo .logo-mark{width:22px;height:22px;border-radius:6px;}
+.footer-links{display:flex;gap:1.25rem;flex-wrap:wrap;}
+.footer-links a{font-size:0.8rem;color:var(--text4);text-decoration:none;transition:color 0.2s;}
+.footer-links a:hover{color:var(--text2);}
+footer p{font-size:0.8rem;color:var(--text4);}
+
+/* ========================================
+   TABLET — 768px
+   ======================================== */
+@media (max-width:768px){
+  nav{padding:0 4%;}
+  .nav-links-desktop{display:none;}
+  .hamburger{display:flex;}
+
+  .hero{padding:100px 4% 60px;}
+  .hero h1 br{display:none;}
+
+  .hero-visual .app-body{grid-template-columns:1fr;height:auto;}
+  .app-sidebar{display:none;}
+  .app-bar .app-url{max-width:200px;}
+
+  .logos-bar{padding:1.75rem 4%;}
+  .logos-row{gap:0.4rem;}
+
+  .section{padding:4rem 4%;}
+
+  .problem-grid{grid-template-columns:1fr;gap:3rem;}
+  .problem-grid .section-desc{max-width:100%;}
+
+  .how-section{padding:4rem 4%;}
+  .formula-bar{flex-direction:column;max-width:480px;}
+  .formula-piece{border-right:none !important;border-bottom:1px solid var(--border);}
+  .formula-piece:last-child{border-bottom:none;}
+  .formula-op{display:none;}
+  .formula-result{border-radius:0;}
+
+  .steps-grid{grid-template-columns:1fr;gap:1rem;}
+
+  .how-tagline{flex-direction:column;gap:1rem;text-align:center;}
+  .tagline-divider{width:40px;height:1px;}
+
+  .features-grid{grid-template-columns:1fr;}
+
+  .equity-section{padding:5rem 4%;}
+
+  .stats-inner{grid-template-columns:repeat(2,1fr);gap:2rem;}
+
+  .cta-section{padding:5rem 4%;}
+
+  .footer-inner{flex-direction:column;align-items:flex-start;gap:1rem;}
+}
+
+/* ========================================
+   MOBILE — 480px
+   ======================================== */
+@media (max-width:480px){
+  nav{padding:0 4%;height:60px;}
+  .mobile-menu{top:60px;}
+  .logo{font-size:1rem;}
+  .logo-mark{width:26px;height:26px;}
+
+  .hero{padding:88px 4% 52px;}
+  .badge{font-size:0.7rem;padding:4px 10px 4px 8px;}
+  .hero-sub{font-size:0.9375rem;}
+  .hero-actions{flex-direction:column;align-items:stretch;gap:0.625rem;}
+  .btn-lg-green, .btn-lg{width:100%;justify-content:center;padding:0.9rem 1.5rem;}
+
+  .hero-visual{border-radius:10px;}
+  .app-bar{padding:10px 12px;}
+  .app-dot{width:8px;height:8px;}
+  .app-url{font-size:0.65rem;padding:3px 8px;}
+  .chat-msgs{padding:0.875rem 1rem;}
+  .bub{font-size:0.72rem;}
+  .chips{gap:4px;}
+  .chip{font-size:0.62rem;}
+  .chip strong{font-size:0.75rem;}
+
+  .logos-bar{padding:1.5rem 4%;}
+  .logo-pill{font-size:0.72rem;padding:0.3rem 0.75rem;}
+
+  .section{padding:3.5rem 4%;}
+  h2{font-size:1.625rem;}
+
+  .pain-item{gap:0.875rem;}
+  .pain-n{font-size:1rem;min-width:22px;}
+  .pain-item h3{font-size:0.875rem;}
+  .pain-item p{font-size:0.8125rem;}
+
+  .how-section{padding:3.5rem 4%;}
+  .how-header{margin-bottom:2.5rem;}
+  .formula-bar{border-radius:10px;}
+  .formula-piece{padding:1.25rem 1rem;}
+  .formula-icon{font-size:1.25rem;}
+  .formula-piece h4{font-size:0.8125rem;}
+  .formula-piece p{font-size:0.72rem;}
+
+  .step-card{flex-direction:column;gap:0.875rem;padding:1.25rem;}
+  .step-num-badge{width:32px;height:32px;font-size:0.75rem;}
+  .step-card h3{font-size:0.875rem;}
+  .step-card p{font-size:0.8rem;}
+  .step-example-pill{font-size:0.65rem;padding:2px 8px;}
+
+  .how-tagline{padding:1.25rem 1rem;}
+  .how-tagline-text{font-size:0.875rem;}
+  .how-tagline-sub{font-size:0.75rem;}
+
+  .feat{padding:1.5rem 1.25rem;}
+  .feat-icon{width:36px;height:36px;font-size:0.9rem;}
+  .feat h3{font-size:0.875rem;}
+  .feat p{font-size:0.8rem;}
+
+  .equity-section{padding:4rem 4%;}
+  .equity-eyebrow{font-size:0.65rem;}
+  .equity-kicker{font-size:0.75rem;}
+  .equity-body{font-size:0.9375rem;}
+  .equity-pill{font-size:0.72rem;padding:0.35rem 0.75rem;}
+
+  .stats-section{padding:3.5rem 4%;}
+  .stats-inner{grid-template-columns:repeat(2,1fr);gap:1.5rem;}
+  .stat-n{font-size:2.25rem;}
+  .stat-l{font-size:0.72rem;}
+
+  .cta-section{padding:4rem 4%;}
+  .cta-section h2{font-size:1.625rem;}
+  .cta-sub{font-size:0.9375rem;}
+  .btn-lg-green{width:100%;padding:0.9rem 1.5rem;}
+
+  footer{padding:1.75rem 4%;}
+  .footer-inner{gap:0.875rem;}
+  .footer-links{gap:1rem;}
+}
+
+/* ========================================
+   SMALL MOBILE — 360px
+   ======================================== */
+@media (max-width:360px){
+  .hero h1{font-size:1.875rem;}
+  .stats-inner{grid-template-columns:1fr 1fr;}
+  .equity-pills{gap:0.4rem;}
+  .equity-pill{font-size:0.68rem;padding:0.3rem 0.625rem;}
+}
+</style>
+</head>
+<body>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#how" onclick="closeMobileMenu()">How It Works</a>
+  <a href="#features" onclick="closeMobileMenu()">Features</a>
+  <button class="mobile-cta" onclick="closeMobileMenu();openCalendly();">Book a Discovery Call →</button>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="#">
+      <div class="logo-mark">
+        <svg viewBox="0 0 18 18"><circle cx="9" cy="9" r="6"/><path d="M9 3v12M3 9h12"/></svg>
+      </div>
+      Deepvine AI
+    </a>
+    <div class="nav-links-desktop">
+      <a class="nav-link" href="#how">How It Works</a>
+      <a class="nav-link" href="#features">Features</a>
+      <button class="btn-nav" onclick="openCalendly()">Book a Call →</button>
+    </div>
+    <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-glow"></div>
+  <div class="badge"><div class="badge-dot"></div>Now accepting early access clients</div>
+  <h1>The AI that knows your<br>business <span>better than anyone.</span></h1>
+  <p class="hero-sub">Connect your data. Build a private intelligence. Ask it anything — and watch it compound smarter every single day.</p>
+  <div class="hero-actions">
+    <button class="btn-lg-green" onclick="openCalendly()">Book a Discovery Call →</button>
+    <button class="btn-lg" onclick="document.getElementById('how').scrollIntoView({behavior:'smooth'})">See How It Works</button>
+  </div>
+  <div class="hero-visual">
+    <div class="app-bar">
+      <div class="app-dots">
+        <div class="app-dot" style="background:#ff5f57;"></div>
+        <div class="app-dot" style="background:#febc2e;"></div>
+        <div class="app-dot" style="background:#28c840;"></div>
+      </div>
+      <div class="app-url">app.deepvine.ai</div>
+    </div>
+    <div class="app-body">
+      <div class="app-sidebar">
+        <div class="sidebar-section-label">Navigation</div>
+        <div class="s-item active"><div class="s-dot"></div>Intelligence</div>
+        <div class="s-item"><div class="s-dot-gray"></div>Analytics</div>
+        <div class="s-item"><div class="s-dot-gray"></div>Data Sources</div>
+        <div class="s-item"><div class="s-dot-gray"></div>Settings</div>
+        <div style="margin-top:1rem;">
+          <div class="sidebar-section-label">Connected</div>
+          <div class="s-item" style="font-size:0.68rem;color:var(--accent);">✓ Salesforce</div>
+          <div class="s-item" style="font-size:0.68rem;color:var(--accent);">✓ QuickBooks</div>
+          <div class="s-item" style="font-size:0.68rem;color:var(--accent);">✓ Shopify</div>
+        </div>
+      </div>
+      <div class="app-chat">
+        <div class="chat-msgs">
+          <div class="msg-row user">
+            <div class="av user">JM</div>
+            <div class="bub user">Which product line had the biggest margin drop last quarter?</div>
+          </div>
+          <div class="msg-row">
+            <div class="av ai">DV</div>
+            <div class="bub ai">
+              Your Commercial HVAC line saw a 4.2% margin decline in Q3 — driven by a 12% supplier cost increase not passed through to 7 legacy contracts. Renewing recovers ~$340K annually.
+              <div class="chips">
+                <div class="chip"><strong style="color:#dc2626;">−4.2%</strong><span>Margin</span></div>
+                <div class="chip"><strong style="color:#16a34a;">$340K</strong><span>Recovery</span></div>
+                <div class="chip"><strong>7</strong><span>Contracts</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="chat-input-row">
+          <input class="chat-field" type="text" placeholder="Ask your business anything..." readonly>
+          <button class="send-btn">↑</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOGOS -->
+<div class="logos-bar">
+  <div class="logos-label">Connects with your existing tools</div>
+  <div class="logos-row">
+    <div class="logo-pill">Salesforce</div>
+    <div class="logo-pill">QuickBooks</div>
+    <div class="logo-pill">HubSpot</div>
+    <div class="logo-pill">Shopify</div>
+    <div class="logo-pill">NetSuite</div>
+    <div class="logo-pill">PostgreSQL</div>
+    <div class="logo-pill">+ 200 more</div>
+  </div>
+</div>
+
+<!-- PROBLEM -->
+<section class="section" id="problem">
+  <div class="section-inner">
+    <div class="problem-grid">
+      <div>
+        <div class="section-tag">The Problem</div>
+        <h2>Your data exists.<br>Your <span>clarity doesn't.</span></h2>
+        <p class="section-desc">Most businesses have more data than ever — and less insight. It's scattered, siloed, and impossible to act on before the moment passes.</p>
+      </div>
+      <div class="pain-list">
+        <div class="pain-item"><div class="pain-n">01</div><div><h3>Decisions made without full context</h3><p>Critical patterns hide across departments. By the time you see them, the moment has passed.</p></div></div>
+        <div class="pain-item"><div class="pain-n">02</div><div><h3>Data locked in disconnected systems</h3><p>Your CRM, ERP, and finance tools don't talk to each other. The gap is costing you every day.</p></div></div>
+        <div class="pain-item"><div class="pain-n">03</div><div><h3>Analysis that can't keep pace</h3><p>Human analysts are slow and expensive. You need intelligence that processes everything, instantly.</p></div></div>
+        <div class="pain-item"><div class="pain-n">04</div><div><h3>No institutional memory</h3><p>When key people leave, their knowledge leaves too. Deepvine captures and compounds it — forever.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how-section" id="how">
+  <div class="how-inner">
+    <div class="how-header">
+      <div class="section-tag">How It Works</div>
+      <h2>Start with one problem.<br><span>Build total intelligence.</span></h2>
+      <p class="section-desc">You don't need to overhaul your entire business. Pick one pain point — we automate it, connect it to your private LLM, and grow from there.</p>
+    </div>
+    <div class="formula-bar">
+      <div class="formula-piece"><span class="formula-icon">⚡</span><h4>Your Automation</h4><p>One specific business problem, solved and connected</p></div>
+      <div class="formula-op">+</div>
+      <div class="formula-piece"><span class="formula-icon">🧠</span><h4>Your Private LLM</h4><p>A living intelligence trained exclusively on your data</p></div>
+      <div class="formula-op">=</div>
+      <div class="formula-piece formula-result"><span class="formula-icon">📈</span><h4>Compounding ROI</h4><p>Intelligence that grows smarter and more valuable every day</p></div>
+    </div>
+    <div class="steps-grid">
+      <div class="step-card highlight">
+        <div class="step-left"><div class="step-num-badge">01</div></div>
+        <div class="step-content">
+          <div class="step-tag">Your Starting Point</div>
+          <h3>Pick Your First Automation</h3>
+          <p>Tell us your biggest operational pain point. Invoicing, sales reporting, inventory, cash flow — we build an automation that solves it and pipes that data into your private LLM.</p>
+          <div class="step-examples">
+            <div class="step-example-pill">Invoice automation</div>
+            <div class="step-example-pill">Sales pipeline</div>
+            <div class="step-example-pill">Inventory sync</div>
+            <div class="step-example-pill">Cash flow</div>
+          </div>
+        </div>
+      </div>
+      <div class="step-card">
+        <div class="step-left"><div class="step-num-badge">02</div></div>
+        <div class="step-content">
+          <div class="step-tag">The Foundation</div>
+          <h3>We Build Your LLM Foundation</h3>
+          <p>Your first automation becomes the seed of your private intelligence. We set up your secure cloud environment and train your LLM on your business — not anyone else's.</p>
+        </div>
+      </div>
+      <div class="step-card">
+        <div class="step-left"><div class="step-num-badge">03</div></div>
+        <div class="step-content">
+          <div class="step-tag">Instant Value</div>
+          <h3>Ask It Anything — From Day One</h3>
+          <p>Even with your first automation live, you can immediately query your intelligence. Ask about trends, anomalies, forecasts — in plain English, no dashboards, no waiting.</p>
+        </div>
+      </div>
+      <div class="step-card highlight">
+        <div class="step-left"><div class="step-num-badge">04</div></div>
+        <div class="step-content">
+          <div class="step-tag">Expand On Your Terms</div>
+          <h3>Add Automations. Deepen the Intelligence.</h3>
+          <p>Every additional automation feeds more data into your LLM — making it smarter and more valuable. Each layer compounds on the last. You control the pace.</p>
+          <div class="step-examples">
+            <div class="step-example-pill">+ HR & payroll</div>
+            <div class="step-example-pill">+ Customer analytics</div>
+            <div class="step-example-pill">+ Marketing ROI</div>
+            <div class="step-example-pill">+ Operations</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="how-tagline">
+      <div><div class="how-tagline-text">Start with one automation.</div><div class="how-tagline-sub">Build an intelligence that knows your entire business.</div></div>
+      <div class="tagline-divider"></div>
+      <div><div class="how-tagline-text">Every layer compounds.</div><div class="how-tagline-sub">The longer it runs, the smarter — and more valuable — it gets.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="section" id="features">
+  <div class="section-inner">
+    <div class="section-tag">Core Features</div>
+    <h2>Everything you need.<br><span>Nothing you don't.</span></h2>
+    <div class="features-grid">
+      <div class="feat"><div class="feat-icon">🧠</div><h3>Living Intelligence</h3><p>Your LLM compounds with every automation added — building a strategic asset no competitor can replicate.</p></div>
+      <div class="feat"><div class="feat-icon">☁️</div><h3>Private Cloud Infrastructure</h3><p>Enterprise-grade security. Your data trains your model only — never anyone else's, ever.</p></div>
+      <div class="feat"><div class="feat-icon">💬</div><h3>Conversational Interface</h3><p>Ask in plain English, get precise answers instantly. No training required for your team.</p></div>
+      <div class="feat"><div class="feat-icon">🔌</div><h3>Universal Connectors</h3><p>200+ integrations out of the box — Salesforce, QuickBooks, Shopify, HubSpot, and more.</p></div>
+      <div class="feat"><div class="feat-icon">📈</div><h3>Predictive Analytics</h3><p>Deepvine surfaces opportunities and trends before they're visible to any human analyst.</p></div>
+      <div class="feat"><div class="feat-icon">🔒</div><h3>Role-Based Access</h3><p>CEOs, department heads, and managers each get a tailored intelligence experience for their domain.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- THE BIGGER PICTURE -->
+<section class="equity-section" id="equity">
+  <div class="equity-glow"></div>
+  <div class="equity-inner">
+    <div class="equity-eyebrow"><div class="equity-eyebrow-dot"></div>The Bigger Picture</div>
+    <div class="equity-kicker">Most AI tools make you efficient. Deepvine makes you valuable.</div>
+    <h2 class="equity-headline">Your LLM isn't just intelligence.<br>It's <span>enterprise equity.</span></h2>
+    <div class="equity-rule"></div>
+    <p class="equity-body">A proprietary, trained intelligence is an asset that lives on your balance sheet. <strong>When it's time to scale and maximize what you've built</strong> — acquirers pay a premium for businesses with defensible data moats and institutional knowledge that can't walk out the door. Every day Deepvine runs, you're not just making better decisions. <strong>You're building leverage.</strong></p>
+    <div class="equity-pills">
+      <div class="equity-pill"><div class="pill-dot"></div>Higher exit multiple</div>
+      <div class="equity-pill"><div class="pill-dot"></div>Proprietary data moat</div>
+      <div class="equity-pill"><div class="pill-dot"></div>Institutional knowledge captured</div>
+      <div class="equity-pill"><div class="pill-dot"></div>Due diligence ready</div>
+      <div class="equity-pill"><div class="pill-dot"></div>Defensible competitive advantage</div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-section">
+  <div class="stats-inner">
+    <div><span class="stat-n">10×</span><span class="stat-l">Faster business insight</span></div>
+    <div><span class="stat-n">100%</span><span class="stat-l">Private to your business</span></div>
+    <div><span class="stat-n">200+</span><span class="stat-l">Native integrations</span></div>
+    <div><span class="stat-n">∞</span><span class="stat-l">Compounds over time</span></div>
+  </div>
+</div>
+
+<!-- CTA -->
+<section class="cta-section" id="contact">
+  <div class="cta-glow"></div>
+  <div class="section-tag">Get Started</div>
+  <h2>Ready to build intelligence that <span>never stops growing?</span></h2>
+  <p class="cta-sub">Book a 30-minute discovery call. We'll map your first automation and show you exactly what your LLM will surface in 90 days.</p>
+  <div class="cta-actions">
+    <button class="btn-lg-green" onclick="openCalendly()" style="padding:1rem 2.5rem;font-size:1rem;">Book Your Discovery Call →</button>
+  </div>
+  <p class="cta-note">No commitment. 30 minutes. We'll show you exactly what's possible.</p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">
+      <div class="logo-mark">
+        <svg viewBox="0 0 18 18" style="width:13px;height:13px;stroke:#fff;fill:none;stroke-width:2;stroke-linecap:round;"><circle cx="9" cy="9" r="6"/><path d="M9 3v12M3 9h12"/></svg>
+      </div>
+      Deepvine AI
+    </div>
+    <div class="footer-links">
+      <a href="#">Privacy</a>
+      <a href="#">Terms</a>
+      <a href="mailto:info@deepvine.ai">info@deepvine.ai</a>
+    </div>
+    <p>© 2026 Deepvine AI</p>
+  </div>
+</footer>
+
+<script>
+function openCalendly(){
+  window.open('https://calendly.com/deepvine_ai/30min','_blank');
+}
+
+function toggleMenu(){
+  const menu = document.getElementById('mobileMenu');
+  const ham = document.getElementById('hamburger');
+  menu.classList.toggle('open');
+  const spans = ham.querySelectorAll('span');
+  if(menu.classList.contains('open')){
+    spans[0].style.transform='rotate(45deg) translate(5px,5px)';
+    spans[1].style.opacity='0';
+    spans[2].style.transform='rotate(-45deg) translate(5px,-5px)';
+  } else {
+    spans[0].style.transform='';
+    spans[1].style.opacity='';
+    spans[2].style.transform='';
+  }
+}
+
+function closeMobileMenu(){
+  const menu = document.getElementById('mobileMenu');
+  menu.classList.remove('open');
+  const spans = document.querySelectorAll('.hamburger span');
+  spans[0].style.transform='';
+  spans[1].style.opacity='';
+  spans[2].style.transform='';
+}
+
+document.addEventListener('click', function(e){
+  const menu = document.getElementById('mobileMenu');
+  const ham = document.getElementById('hamburger');
+  if(menu.classList.contains('open') && !menu.contains(e.target) && !ham.contains(e.target)){
+    closeMobileMenu();
+  }
+});
+</script>
+</body>
+</html>
