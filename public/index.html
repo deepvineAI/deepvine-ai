@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Deepvine AI — Business Intelligence That Compounds</title>
+<title>Deepvine AI — The AI That Actually Knows Your Business</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Syne:wght@700&display=swap" rel="stylesheet">
@@ -24,9 +24,7 @@ h1,h2,h3,.sh2,.cta-h2,.network-h2,.eq-headline{font-family:var(--font-head);font
 /* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,0.97);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);height:78px;display:flex;align-items:center;padding:0 5%;}
 .nav-inner{width:100%;max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;}
-.logo{display:flex;align-items:center;gap:10px;font-family:var(--font-head);font-size:1.2rem;font-weight:700;color:var(--text);letter-spacing:-0.01em;text-decoration:none;}
-.logo-mark{width:34px;height:34px;background:var(--text);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
-.logo-mark svg{width:18px;height:18px;stroke:#fff;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+.logo{display:flex;align-items:center;gap:14px;text-decoration:none;}
 .nav-links-desktop{display:flex;align-items:center;gap:2rem;}
 .nav-link{color:var(--text3);text-decoration:none;font-size:1rem;font-weight:400;transition:color 0.2s;}
 .nav-link:hover{color:var(--text);}
@@ -45,9 +43,12 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,
 .badge{display:inline-flex;align-items:center;gap:8px;background:var(--accent-light);color:var(--accent-dark);padding:6px 18px 6px 12px;border-radius:100px;font-size:0.875rem;font-weight:500;margin-bottom:2rem;border:1px solid rgba(22,163,74,0.2);position:relative;z-index:1;}
 .badge-dot{width:7px;height:7px;border-radius:50%;background:var(--accent);animation:blink 2s ease-in-out infinite;}
 @keyframes blink{0%,100%{opacity:1;}50%{opacity:0.3;}}
-.hero h1{font-family:var(--font-head);font-weight:700;font-size:3.25rem;line-height:1.1;letter-spacing:-0.025em;color:var(--text);margin:0 auto 1.5rem;max-width:720px;position:relative;z-index:1;}
+.hero h1{font-family:var(--font-head);font-weight:700;font-size:3.25rem;line-height:1.1;letter-spacing:-0.025em;color:var(--text);margin:0 auto 1.5rem;max-width:740px;position:relative;z-index:1;}
 .hero h1 span{color:var(--accent);font-family:var(--font-head);font-weight:700;}
-.hero-sub{font-size:1.125rem;color:var(--text3);max-width:500px;margin:0 auto 2.75rem;line-height:1.8;position:relative;z-index:1;}
+.hero-sub{font-size:1.125rem;color:var(--text3);max-width:620px;margin:0 auto 1.75rem;line-height:1.8;position:relative;z-index:1;}
+.trust-strip{display:flex;align-items:center;justify-content:center;gap:0;flex-wrap:wrap;margin-bottom:2.5rem;position:relative;z-index:1;}
+.trust-item{font-size:0.8125rem;font-weight:500;color:var(--text3);padding:0 1.125rem;border-right:1px solid var(--border);}
+.trust-item:last-child{border-right:none;}
 .hero-actions{display:flex;align-items:center;justify-content:center;gap:1rem;margin-bottom:4.5rem;position:relative;z-index:1;flex-wrap:wrap;}
 .btn-p{padding:0.9375rem 2rem;background:var(--accent);border:none;border-radius:10px;font-family:var(--font-body);font-size:1.0625rem;font-weight:500;color:#fff;cursor:pointer;transition:all 0.2s;}
 .btn-p:hover{background:#15803d;transform:translateY(-1px);}
@@ -74,13 +75,10 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,
 .av{width:26px;height:26px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:0.575rem;font-weight:600;}
 .av.ai{background:var(--accent-light);color:var(--accent-dark);}
 .av.u{background:#f3f4f6;color:var(--text2);}
-.bubble{max-width:80%;padding:0.625rem 0.9375rem;font-size:0.825rem;line-height:1.55;border-radius:10px;}
+.bubble{max-width:82%;padding:0.625rem 0.9375rem;font-size:0.825rem;line-height:1.55;border-radius:10px;}
 .bubble.ai{background:var(--bg);border:1px solid var(--border);color:var(--text2);border-radius:3px 10px 10px 10px;}
 .bubble.u{background:var(--text);color:#fff;border-radius:10px 3px 10px 10px;}
-.metrics{display:flex;gap:6px;margin-top:8px;flex-wrap:wrap;}
-.metric{background:var(--white);border:1px solid var(--border);border-radius:6px;padding:4px 10px;font-size:0.725rem;}
-.metric strong{display:block;font-size:0.875rem;font-weight:600;line-height:1.2;}
-.metric span{color:var(--text4);}
+.source-tag{display:inline-flex;align-items:center;gap:4px;background:var(--accent-light);border:1px solid rgba(22,163,74,0.2);border-radius:4px;padding:2px 7px;font-size:0.675rem;color:var(--accent-dark);margin-top:6px;margin-right:4px;}
 .chat-input{border-top:1px solid var(--border);padding:0.6875rem 1.0625rem;display:flex;align-items:center;gap:0.5rem;}
 .chat-field{flex:1;background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:0.4375rem 0.9375rem;font-size:0.825rem;color:var(--text4);font-family:var(--font-body);}
 .send-btn{width:32px;height:32px;background:var(--text);border:none;border-radius:8px;color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:0.9rem;}
@@ -91,9 +89,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,
 .logos-row{display:flex;align-items:center;justify-content:center;gap:0.625rem;flex-wrap:wrap;}
 .logo-pill{background:var(--white);border:1px solid var(--border);border-radius:6px;padding:0.4rem 1.0625rem;font-size:0.9375rem;font-weight:500;color:var(--text3);}
 
-/* =============================================
-   NETWORK SECTION
-   ============================================= */
+/* NETWORK SECTION */
 .network-section{background:#0d1117;padding:6rem 5%;position:relative;overflow:hidden;}
 .network-section::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(34,197,94,0.04) 1px, transparent 1px);background-size:32px 32px;pointer-events:none;}
 .network-glow{position:absolute;top:50%;left:42%;transform:translate(-50%,-50%);width:700px;height:700px;background:radial-gradient(circle, rgba(22,163,74,0.1) 0%, transparent 65%);pointer-events:none;}
@@ -103,73 +99,34 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,
 .network-h2{font-family:var(--font-head);font-weight:700;font-size:2.5rem;letter-spacing:-0.025em;line-height:1.1;color:#fff;margin-bottom:1rem;}
 .network-h2 span{color:var(--accent-mid);font-family:var(--font-head);font-weight:700;}
 .network-desc{font-size:1.0625rem;color:rgba(255,255,255,0.45);max-width:520px;margin:0 auto;line-height:1.75;}
-
-/* DESKTOP diagram — shown on large screens only */
 .diagram-desktop{display:block;}
 .diagram-desktop svg{width:100%;height:auto;display:block;}
-
-/* MOBILE diagram — shown on small screens only */
 .diagram-mobile{display:none;}
-
-/* Mobile connection cards */
 .mobile-network{display:flex;flex-direction:column;gap:1rem;}
-.mobile-llm-center{
-  background:linear-gradient(135deg,#0a1f12,#111827);
-  border:2px solid #22c55e;
-  border-radius:16px;
-  padding:2rem;
-  text-align:center;
-  position:relative;
-}
-.mobile-llm-center::before{
-  content:'';
-  position:absolute;inset:-1px;
-  border-radius:16px;
-  background:linear-gradient(135deg,rgba(34,197,94,0.15),transparent);
-  pointer-events:none;
-}
+.mobile-llm-center{background:linear-gradient(135deg,#0a1f12,#111827);border:2px solid #22c55e;border-radius:16px;padding:2rem;text-align:center;position:relative;}
 .mobile-llm-icon{font-size:3rem;display:block;margin-bottom:0.75rem;}
-.mobile-llm-title{font-family:var(--font-head);font-size:1.375rem;font-weight:700;color:#22c55e;margin-bottom:0.25rem;letter-spacing:0.02em;}
+.mobile-llm-title{font-family:var(--font-head);font-size:1.375rem;font-weight:700;color:#22c55e;margin-bottom:0.25rem;}
 .mobile-llm-sub{font-size:0.875rem;color:rgba(255,255,255,0.4);letter-spacing:0.05em;text-transform:uppercase;}
-
 .mobile-sources-label{font-size:0.75rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.3);text-align:center;margin:0.5rem 0;}
-
 .mobile-sources{display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;}
-.mobile-source{
-  background:#111827;
-  border:1px solid #1e293b;
-  border-radius:12px;
-  padding:1rem;
-  display:flex;align-items:center;gap:0.75rem;
-}
+.mobile-source{background:#111827;border:1px solid #1e293b;border-radius:12px;padding:1rem;display:flex;align-items:center;gap:0.75rem;}
 .ms-icon{font-size:1.5rem;flex-shrink:0;}
 .ms-name{font-family:var(--font-head);font-size:0.875rem;font-weight:700;color:#f1f5f9;line-height:1.2;}
 .ms-desc{font-size:0.75rem;color:rgba(255,255,255,0.35);margin-top:0.125rem;}
-
 .mobile-arrow{text-align:center;color:#22c55e;font-size:1.25rem;opacity:0.6;margin:0.25rem 0;}
-
-.mobile-chat-panel{
-  background:#111827;
-  border:1.5px solid #22c55e;
-  border-radius:16px;
-  overflow:hidden;
-}
-.mcp-header{
-  background:#0a1f12;
-  padding:0.875rem 1.125rem;
-  display:flex;align-items:center;gap:0.5rem;
-}
+.mobile-chat-panel{background:#111827;border:1.5px solid #22c55e;border-radius:16px;overflow:hidden;}
+.mcp-header{background:#0a1f12;padding:0.875rem 1.125rem;display:flex;align-items:center;gap:0.5rem;}
 .mcp-dot{width:8px;height:8px;border-radius:50%;background:#22c55e;}
 .mcp-title{font-family:var(--font-head);font-size:0.875rem;font-weight:700;color:#22c55e;}
 .mcp-live{margin-left:auto;font-size:0.75rem;color:rgba(255,255,255,0.35);}
 .mcp-body{padding:1rem 1.125rem;display:flex;flex-direction:column;gap:0.75rem;}
 .mcp-msg-user{align-self:flex-end;background:#1a3a2a;border-radius:10px 2px 10px 10px;padding:0.625rem 0.875rem;font-size:0.875rem;color:rgba(255,255,255,0.9);font-style:italic;max-width:85%;}
-.mcp-msg-ai{background:#1c2432;border:1px solid #2d3a4a;border-radius:2px 10px 10px 10px;padding:0.625rem 0.875rem;font-size:0.875rem;color:rgba(255,255,255,0.75);max-width:100%;}
+.mcp-msg-ai{background:#1c2432;border:1px solid #2d3a4a;border-radius:2px 10px 10px 10px;padding:0.625rem 0.875rem;font-size:0.875rem;color:rgba(255,255,255,0.75);}
 .mcp-chips{display:flex;gap:0.5rem;flex-wrap:wrap;margin-top:0.5rem;}
 .mcp-chip{background:#0a1f12;border:1px solid #22c55e;border-radius:6px;padding:0.3rem 0.625rem;font-size:0.75rem;color:#22c55e;font-weight:600;}
 .mcp-input{border-top:1px solid #1e293b;padding:0.75rem 1.125rem;display:flex;align-items:center;gap:0.5rem;}
 .mcp-field{flex:1;background:#0f1117;border:1px solid #2d3a4a;border-radius:7px;padding:0.5rem 0.875rem;font-size:0.8125rem;color:rgba(255,255,255,0.25);font-family:var(--font-body);}
-.mcp-send{width:30px;height:30px;background:#22c55e;border:none;border-radius:7px;color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:0.875rem;font-weight:700;}
+.mcp-send{width:30px;height:30px;background:#22c55e;border:none;border-radius:7px;color:#fff;cursor:pointer;font-size:0.875rem;font-weight:700;}
 
 /* SECTIONS */
 .section{padding:6rem 5%;}
@@ -179,81 +136,79 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,
 .sh2 span{color:var(--accent);font-family:var(--font-head);font-weight:700;}
 .sdesc{font-size:1.0625rem;color:var(--text3);line-height:1.78;}
 
-/* PROBLEM */
-.prob-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:5rem;align-items:center;}
-.pain-list{display:flex;flex-direction:column;}
-.pain{display:flex;align-items:flex-start;gap:1.25rem;padding:1.375rem 0;border-bottom:1px solid var(--border);}
-.pain:first-child{border-top:1px solid var(--border);}
-.pnum{font-family:var(--font-head);font-size:1.125rem;font-weight:700;color:var(--border2);line-height:1;min-width:26px;padding-top:3px;}
-.pain h3{font-family:var(--font-head);font-size:1.0625rem;font-weight:700;margin-bottom:0.3rem;color:var(--text);}
-.pain p{font-size:1rem;color:var(--text3);line-height:1.65;}
-
-/* HOW IT WORKS */
+/* HOW IT WORKS — 4 card grid */
 .how-wrap{background:var(--bg);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:6rem 5%;}
 .how-inner{max-width:1200px;margin:0 auto;}
-.how-head{text-align:center;margin-bottom:4.5rem;}
-.how-head .sdesc{margin:0 auto;max-width:480px;}
+.how-head{text-align:center;margin-bottom:4rem;}
+.how-head .sdesc{margin:0 auto;max-width:540px;}
+.how-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem;margin-bottom:2.5rem;}
+.how-card{background:var(--white);border:1px solid var(--border);border-radius:14px;padding:2rem 1.625rem;}
+.how-card.hi{border-color:rgba(22,163,74,0.2);background:linear-gradient(135deg,#fafffe,#f0fdf4);}
+.how-icon{width:48px;height:48px;border-radius:12px;background:var(--accent-light);border:1px solid rgba(22,163,74,0.15);display:flex;align-items:center;justify-content:center;font-size:1.25rem;margin-bottom:1.25rem;}
+.how-card h3{font-family:var(--font-head);font-size:1.0625rem;font-weight:700;color:var(--text);margin-bottom:0.5rem;}
+.how-card p{font-size:0.9375rem;color:var(--text3);line-height:1.65;}
 
-/* FORMULA */
-.formula-section{margin:0 auto 5.5rem;max-width:980px;}
-.formula-label{text-align:center;font-size:0.8rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--text4);margin-bottom:2rem;}
-.formula-row{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;align-items:stretch;background:var(--white);border:1px solid var(--border);border-radius:18px;overflow:hidden;box-shadow:0 4px 28px rgba(0,0,0,0.07),0 1px 3px rgba(0,0,0,0.04);}
-.formula-card{padding:2.75rem 2rem;text-align:center;display:flex;flex-direction:column;align-items:center;}
-.formula-card:not(:last-child){border-right:1px solid var(--border);}
-.f-icon-wrap{width:80px;height:80px;border-radius:20px;display:flex;align-items:center;justify-content:center;font-size:2.25rem;margin:0 auto 1.625rem;}
-.f-icon-wrap.green{background:var(--accent-light);border:1.5px solid rgba(22,163,74,0.2);}
-.f-icon-wrap.dark{background:rgba(255,255,255,0.1);border:1.5px solid rgba(255,255,255,0.12);}
-.formula-card h3{font-family:var(--font-head);font-size:1.25rem;font-weight:700;color:var(--text);margin-bottom:0.75rem;letter-spacing:-0.015em;line-height:1.2;}
-.formula-card p{font-size:1rem;color:var(--text3);line-height:1.6;max-width:200px;}
-.formula-card.result{background:var(--text);}
-.formula-card.result h3{color:#fff;font-family:var(--font-head);font-weight:700;}
-.formula-card.result p{color:rgba(255,255,255,0.5);}
-.formula-op-col{display:flex;align-items:center;justify-content:center;padding:0 1.5rem;background:var(--bg);border-right:1px solid var(--border);}
-.formula-op-symbol{font-family:var(--font-head);font-size:2rem;font-weight:700;color:var(--border2);}
+/* WHY DIFFERENT */
+.diff-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:5rem;align-items:start;}
+.diff-points{display:flex;flex-direction:column;gap:0;}
+.diff-point{display:flex;align-items:flex-start;gap:1.25rem;padding:1.375rem 0;border-bottom:1px solid var(--border);}
+.diff-point:first-child{border-top:1px solid var(--border);}
+.diff-num{font-family:var(--font-head);font-size:1.125rem;font-weight:700;color:var(--border2);line-height:1;min-width:26px;padding-top:3px;}
+.diff-point h3{font-family:var(--font-head);font-size:1.0625rem;font-weight:700;margin-bottom:0.3rem;color:var(--text);}
+.diff-point p{font-size:1rem;color:var(--text3);line-height:1.65;}
 
-/* STEPS */
-.steps{display:grid;grid-template-columns:repeat(2,1fr);gap:1.375rem;margin-bottom:2.25rem;}
-.step{background:var(--white);border:1px solid var(--border);border-radius:14px;padding:2rem;display:flex;gap:1.25rem;align-items:flex-start;transition:box-shadow 0.2s,transform 0.2s;}
-.step:hover{box-shadow:0 4px 24px rgba(0,0,0,0.07);transform:translateY(-2px);}
-.step.hi{border-color:rgba(22,163,74,0.2);background:linear-gradient(135deg,#fafffe 0%,#f0fdf4 100%);}
-.snbadge{width:42px;height:42px;border-radius:10px;background:var(--bg2);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-family:var(--font-head);font-size:0.875rem;font-weight:700;color:var(--text3);flex-shrink:0;}
-.step.hi .snbadge{background:var(--accent-light);border-color:rgba(22,163,74,0.15);color:var(--accent-dark);}
-.step-tag{font-size:0.7rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--text4);margin-bottom:0.375rem;}
-.step.hi .step-tag{color:var(--accent);}
-.step h3{font-family:var(--font-head);font-size:1.0625rem;font-weight:700;margin-bottom:0.4rem;color:var(--text);}
-.step p{font-size:1rem;color:var(--text3);line-height:1.65;}
-.spills{display:flex;gap:5px;flex-wrap:wrap;margin-top:0.875rem;}
-.spill{background:var(--bg);border:1px solid var(--border);border-radius:100px;padding:4px 11px;font-size:0.8125rem;color:var(--text3);}
-.step.hi .spill{background:rgba(22,163,74,0.05);border-color:rgba(22,163,74,0.12);color:var(--accent-dark);}
-.tagline-bar{padding:1.75rem 2rem;background:var(--white);border:1px solid var(--border);border-radius:14px;display:flex;align-items:center;justify-content:center;gap:1.5rem;flex-wrap:wrap;text-align:center;}
-.tl-text{font-family:var(--font-head);font-size:1.0625rem;font-weight:700;color:var(--text);}
-.tl-sub{font-size:0.9375rem;color:var(--text3);}
-.tdiv{width:1px;height:30px;background:var(--border);flex-shrink:0;}
+/* VALUE TILES */
+.value-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:3rem;}
+.value-tile{background:var(--bg);border:1px solid var(--border);border-radius:14px;padding:1.875rem;}
+.value-tile h3{font-family:var(--font-head);font-size:1.0625rem;font-weight:700;color:var(--text);margin-bottom:0.5rem;}
+.value-tile p{font-size:0.9375rem;color:var(--text3);line-height:1.65;}
 
-/* FEATURES */
-.feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:16px;overflow:hidden;margin-top:3.5rem;}
-.feat{background:var(--white);padding:2.25rem 2rem;transition:background 0.2s;}
-.feat:hover{background:var(--bg);}
-.ficon2{width:48px;height:48px;border-radius:12px;border:1px solid var(--border);background:var(--bg);display:flex;align-items:center;justify-content:center;font-size:1.25rem;margin-bottom:1.125rem;}
-.feat h3{font-family:var(--font-head);font-size:1.0625rem;font-weight:700;margin-bottom:0.5rem;color:var(--text);}
-.feat p{font-size:1rem;color:var(--text3);line-height:1.7;}
+/* USE CASES */
+.use-wrap{background:var(--bg);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:6rem 5%;}
+.use-inner{max-width:1200px;margin:0 auto;}
+.use-head{text-align:center;margin-bottom:4rem;}
+.use-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem;}
+.use-card{background:var(--white);border:1px solid var(--border);border-radius:14px;padding:2rem;}
+.use-role{font-size:0.7rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);margin-bottom:0.75rem;}
+.use-q{font-family:var(--font-head);font-size:1rem;font-weight:700;color:var(--text);margin-bottom:0.75rem;font-style:italic;}
+.use-a{font-size:0.9375rem;color:var(--text3);line-height:1.65;}
 
-/* EQUITY */
+/* DEPLOYMENT */
+.deploy-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;}
+.deploy-points{display:flex;flex-direction:column;gap:1.25rem;margin-top:1rem;}
+.deploy-point{display:flex;align-items:flex-start;gap:1rem;}
+.dp-icon{width:36px;height:36px;border-radius:8px;background:var(--accent-light);border:1px solid rgba(22,163,74,0.15);display:flex;align-items:center;justify-content:center;font-size:0.875rem;flex-shrink:0;}
+.dp-title{font-family:var(--font-head);font-size:0.9375rem;font-weight:700;color:var(--text);margin-bottom:0.2rem;}
+.dp-desc{font-size:0.9375rem;color:var(--text3);line-height:1.6;}
+
+/* SECURITY */
+.sec-wrap{background:var(--bg);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:6rem 5%;}
+.sec-inner{max-width:1200px;margin:0 auto;}
+.sec-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem;margin-top:3rem;}
+.sec-card{background:var(--white);border:1px solid var(--border);border-radius:14px;padding:2rem;}
+.sec-card h3{font-family:var(--font-head);font-size:1.0625rem;font-weight:700;color:var(--text);margin-bottom:0.5rem;}
+.sec-card p{font-size:0.9375rem;color:var(--text3);line-height:1.65;}
+
+/* COMPOUNDS */
+.compound-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:3rem;}
+.compound-card{border:1px solid var(--border);border-radius:14px;padding:2rem;text-align:center;}
+.compound-card h3{font-family:var(--font-head);font-size:1.0625rem;font-weight:700;color:var(--text);margin-bottom:0.625rem;}
+.compound-card p{font-size:0.9375rem;color:var(--text3);line-height:1.65;}
+
+/* EQUITY / DARK SECTION */
 .equity{background:var(--text);padding:7rem 5%;position:relative;overflow:hidden;text-align:center;}
 .equity::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.035) 1px, transparent 1px);background-size:28px 28px;pointer-events:none;}
 .eq-glow{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:700px;height:400px;background:radial-gradient(ellipse, rgba(22,163,74,0.14) 0%, transparent 70%);pointer-events:none;}
 .eq-inner{max-width:780px;margin:0 auto;position:relative;z-index:1;}
 .eq-badge{display:inline-flex;align-items:center;gap:8px;font-size:0.8rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent-mid);margin-bottom:2rem;border:1px solid rgba(34,197,94,0.18);padding:5px 16px;border-radius:100px;background:rgba(34,197,94,0.05);}
 .eq-badge-dot{width:6px;height:6px;border-radius:50%;background:var(--accent-mid);}
-.eq-kicker{font-family:var(--font-head);font-size:0.9375rem;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:1.125rem;}
 .eq-headline{font-family:var(--font-head);font-weight:700;font-size:3rem;line-height:1.08;letter-spacing:-0.025em;color:#fff;margin-bottom:1.75rem;}
 .eq-headline span{color:var(--accent-mid);font-family:var(--font-head);font-weight:700;}
 .eq-rule{width:44px;height:1px;background:rgba(34,197,94,0.35);margin:2rem auto;}
 .eq-body{font-size:1.125rem;color:rgba(255,255,255,0.5);line-height:1.82;max-width:600px;margin:0 auto 2.75rem;}
 .eq-body strong{color:rgba(255,255,255,0.82);font-weight:500;}
 .eq-pills{display:flex;gap:0.625rem;justify-content:center;flex-wrap:wrap;}
-.eq-pill{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:100px;padding:0.5rem 1.125rem;font-size:0.9375rem;color:rgba(255,255,255,0.55);transition:border-color 0.2s,color 0.2s;}
-.eq-pill:hover{border-color:rgba(34,197,94,0.3);color:rgba(255,255,255,0.8);}
+.eq-pill{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:100px;padding:0.5rem 1.125rem;font-size:0.9375rem;color:rgba(255,255,255,0.55);}
 .pill-dot{width:5px;height:5px;border-radius:50%;background:var(--accent-mid);flex-shrink:0;}
 
 /* STATS */
@@ -269,66 +224,55 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,
 .cta .stag{display:block;margin-bottom:0.875rem;}
 .cta-h2{font-family:var(--font-head);font-weight:700;font-size:2.5rem;letter-spacing:-0.025em;line-height:1.1;color:var(--text);margin:0 auto 1.25rem;max-width:600px;}
 .cta-h2 span{color:var(--accent);font-family:var(--font-head);font-weight:700;}
-.cta-sub{font-size:1.125rem;color:var(--text3);max-width:460px;margin:0 auto 2.5rem;line-height:1.78;}
-.cta-btn{padding:1.0625rem 2.5rem;background:var(--accent);border:none;border-radius:10px;font-family:var(--font-body);font-size:1.0625rem;font-weight:500;color:#fff;cursor:pointer;transition:all 0.2s;}
+.cta-sub{font-size:1.125rem;color:var(--text3);max-width:520px;margin:0 auto 2.5rem;line-height:1.78;}
+.cta-btn{padding:1.0625rem 2.5rem;background:var(--accent);border:none;border-radius:10px;font-family:var(--font-body);font-size:1.0625rem;font-weight:500;color:#fff;cursor:pointer;transition:all 0.2s;margin-right:0.875rem;}
 .cta-btn:hover{background:#15803d;transform:translateY(-1px);}
-.cta-note{margin-top:1.125rem;font-size:0.9375rem;color:var(--text4);}
+.cta-btn-s{padding:1.0625rem 2.5rem;background:transparent;border:1.5px solid var(--border2);border-radius:10px;font-family:var(--font-body);font-size:1.0625rem;font-weight:500;color:var(--text2);cursor:pointer;transition:all 0.2s;}
+.cta-btn-s:hover{border-color:var(--text);color:var(--text);}
+.cta-micro{margin-top:1.25rem;font-size:0.9375rem;color:var(--text4);}
 
 /* FOOTER */
 footer{background:var(--bg);border-top:1px solid var(--border);padding:2.25rem 5%;}
 .foot-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap;}
-.foot-logo{display:flex;align-items:center;gap:10px;font-family:var(--font-head);font-size:1.0625rem;font-weight:700;color:var(--text);}
-.foot-logo .logo-mark{width:26px;height:26px;border-radius:6px;}
+.foot-logo{display:flex;align-items:center;gap:10px;}
+.foot-tagline{font-size:0.875rem;color:var(--text4);margin-top:0.25rem;}
 .foot-links{display:flex;gap:1.5rem;}
 .foot-links a{font-size:0.9375rem;color:var(--text4);text-decoration:none;transition:color 0.2s;}
 .foot-links a:hover{color:var(--text2);}
 footer p{font-size:0.9375rem;color:var(--text4);}
 
-/* =============================================
-   RESPONSIVE BREAKPOINTS
-   ============================================= */
-
-/* Tablet — hide SVG diagram, show mobile version */
+/* RESPONSIVE */
 @media(max-width:900px){
   .diagram-desktop{display:none;}
   .diagram-mobile{display:block;}
 }
-
 @media(max-width:1024px){
   .hero h1{font-size:2.75rem;}
   .sh2,.cta-h2,.network-h2{font-size:2.125rem;}
   .eq-headline{font-size:2.5rem;}
-  .formula-card{padding:2.25rem 1.5rem;}
-  .f-icon-wrap{width:68px;height:68px;font-size:1.875rem;}
+  .how-grid{grid-template-columns:repeat(2,1fr);}
+  .deploy-grid,.diff-grid{grid-template-columns:1fr;gap:3rem;}
 }
-
 @media(max-width:768px){
   nav{padding:0 4%;}
   .nav-links-desktop{display:none;}
   .hamburger{display:flex;}
   .hero{padding:104px 4% 64px;}
-  .hero h1{font-size:2.125rem;max-width:100%;}
+  .hero h1{font-size:2.125rem;}
   .app-body{grid-template-columns:1fr;height:auto;}
   .app-sidebar{display:none;}
-  .logos-bar,.section,.cta{padding-left:4%;padding-right:4%;}
-  .how-wrap,.network-section{padding-left:4%;padding-right:4%;}
-  .prob-grid{grid-template-columns:1fr;gap:3rem;}
-  .formula-row{grid-template-columns:1fr;}
-  .formula-card{border-right:none !important;border-bottom:1px solid var(--border);}
-  .formula-card.result{border-bottom:none;}
-  .formula-op-col{padding:1rem;border-right:none;border-bottom:1px solid var(--border);}
-  .steps{grid-template-columns:1fr;gap:1rem;}
-  .feat-grid{grid-template-columns:1fr;}
+  .logos-bar,.section,.cta,.sec-wrap,.use-wrap,.how-wrap,.network-section{padding-left:4%;padding-right:4%;}
+  .how-grid{grid-template-columns:1fr;}
+  .value-grid,.compound-grid,.sec-grid,.use-grid{grid-template-columns:1fr;}
   .equity{padding-left:4%;padding-right:4%;}
   .eq-headline{font-size:2.25rem;}
   .stats-inner{grid-template-columns:repeat(2,1fr);}
-  .tagline-bar{flex-direction:column;gap:1rem;}
-  .tdiv{width:48px;height:1px;}
   footer{padding-left:4%;padding-right:4%;}
   .foot-inner{flex-direction:column;align-items:flex-start;gap:1rem;}
   .mobile-sources{grid-template-columns:1fr 1fr;}
+  .trust-strip{gap:0.25rem;}
+  .trust-item{padding:0.25rem 0.625rem;font-size:0.75rem;}
 }
-
 @media(max-width:480px){
   nav{height:64px;padding:0 4%;}
   .mobile-menu{top:64px;}
@@ -339,27 +283,26 @@ footer p{font-size:0.9375rem;color:var(--text4);}
   .sh2,.cta-h2,.network-h2{font-size:1.75rem;}
   .eq-headline{font-size:1.875rem;}
   .stat-n{font-size:2.625rem;}
-  .step{flex-direction:column;gap:0.875rem;padding:1.5rem;}
-  .f-icon-wrap{width:60px;height:60px;font-size:1.625rem;}
-  footer{padding:1.75rem 4%;}
   .mobile-sources{grid-template-columns:1fr;}
+  footer{padding:1.75rem 4%;}
+  .cta-btn,.cta-btn-s{display:block;width:100%;margin-right:0;margin-bottom:0.75rem;}
 }
 </style>
 </head>
 <body>
+
 <div class="mobile-menu" id="mobileMenu">
   <a href="#how" onclick="closeMobileMenu()">How It Works</a>
-  <a href="#features" onclick="closeMobileMenu()">Features</a>
-  <button class="mobile-cta" onclick="closeMobileMenu();openCalendly()">Book a Discovery Call</button>
+  <a href="#usecases" onclick="closeMobileMenu()">Use Cases</a>
+  <a href="#security" onclick="closeMobileMenu()">Security</a>
+  <button class="mobile-cta" onclick="closeMobileMenu();openCalendly()">Book a Live Demo</button>
 </div>
 
 <nav>
   <div class="nav-inner">
-    <a class="logo" href="#" style="gap:14px;">
+    <a class="logo" href="#">
       <svg width="52" height="52" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-        <!-- Black circle background -->
         <circle cx="50" cy="50" r="50" fill="#0d1a0f"/>
-        <!-- Dot cloud centered inside circle -->
         <circle cx="38" cy="72" r="8" fill="#16a34a"/>
         <circle cx="56" cy="75" r="6.5" fill="#22c55e"/>
         <circle cx="72" cy="69" r="5" fill="#16a34a"/>
@@ -383,76 +326,93 @@ footer p{font-size:0.9375rem;color:var(--text4);}
     </a>
     <div class="nav-links-desktop">
       <a class="nav-link" href="#how">How It Works</a>
-      <a class="nav-link" href="#features">Features</a>
-      <button class="btn-nav" onclick="openCalendly()">Book a Call</button>
+      <a class="nav-link" href="#usecases">Use Cases</a>
+      <a class="nav-link" href="#security">Security</a>
+      <button class="btn-nav" onclick="openCalendly()">Book a Demo</button>
     </div>
     <button class="hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
   </div>
 </nav>
 
+<!-- HERO -->
 <section class="hero">
   <div class="hero-glow"></div>
-  <div class="badge"><div class="badge-dot"></div>Now accepting early access clients</div>
-  <h1>The AI that knows your business <span>better than anyone.</span></h1>
-  <p class="hero-sub">Connect your data. Build a private intelligence. Ask it anything — and watch it compound smarter every single day.</p>
+  <div class="badge"><div class="badge-dot"></div>Private AI Brain for Your Business</div>
+  <h1>The AI that <span>actually knows</span> your business.</h1>
+  <p class="hero-sub">Deepvine connects Slack, docs, CRM, tickets, finance tools, databases, and internal systems to build a private AI brain your team can question in Slack. It backfills years of context, updates daily, and gives source-backed answers from your company knowledge.</p>
+  <div class="trust-strip">
+    <span class="trust-item">Private deployment</span>
+    <span class="trust-item">Full historical backfill</span>
+    <span class="trust-item">Daily diffs</span>
+    <span class="trust-item">Ask in Slack</span>
+    <span class="trust-item">You own the data</span>
+  </div>
   <div class="hero-actions">
-    <button class="btn-p" onclick="openCalendly()">Book a Discovery Call →</button>
-    <button class="btn-s" onclick="document.getElementById('how').scrollIntoView({behavior:'smooth'})">See How It Works</button>
+    <button class="btn-p" onclick="openCalendly()">See a live demo →</button>
+    <button class="btn-s" onclick="openCalendly()">Bring us one real question</button>
   </div>
   <div class="hero-visual">
     <div class="app-bar">
       <div class="app-dots"><div class="app-dot" style="background:#ff5f57"></div><div class="app-dot" style="background:#febc2e"></div><div class="app-dot" style="background:#28c840"></div></div>
-      <div class="app-url">app.deepvine.ai — Business Intelligence</div>
+      <div class="app-url">app.deepvine.ai — Company Knowledge</div>
     </div>
     <div class="app-body">
       <div class="app-sidebar">
         <div class="slabel">Navigation</div>
-        <div class="sitem active"><div class="sdot"></div>Intelligence</div>
-        <div class="sitem"><div class="sdotg"></div>Analytics</div>
-        <div class="sitem"><div class="sdotg"></div>Data Sources</div>
-        <div class="sitem"><div class="sdotg"></div>Settings</div>
+        <div class="sitem active"><div class="sdot"></div>Ask Deepvine</div>
+        <div class="sitem"><div class="sdotg"></div>Knowledge Base</div>
+        <div class="sitem"><div class="sdotg"></div>Daily Diffs</div>
+        <div class="sitem"><div class="sdotg"></div>Sources</div>
         <div style="margin-top:1rem"><div class="slabel">Connected</div>
+          <div class="sitem" style="color:var(--accent);font-size:0.75rem">✓ Slack</div>
           <div class="sitem" style="color:var(--accent);font-size:0.75rem">✓ Salesforce</div>
-          <div class="sitem" style="color:var(--accent);font-size:0.75rem">✓ QuickBooks</div>
-          <div class="sitem" style="color:var(--accent);font-size:0.75rem">✓ Shopify</div>
+          <div class="sitem" style="color:var(--accent);font-size:0.75rem">✓ Google Drive</div>
         </div>
       </div>
       <div class="app-main">
         <div class="chat-area">
-          <div class="mrow u"><div class="av u">JM</div><div class="bubble u">Which product line had the biggest margin drop last quarter?</div></div>
-          <div class="mrow"><div class="av ai">DV</div><div class="bubble ai">Your Commercial HVAC line saw a 4.2% margin decline in Q3 — driven by a 12% supplier cost increase not passed through to 7 legacy contracts. Renewing recovers ~$340K annually.<div class="metrics"><div class="metric"><strong style="color:#dc2626">-4.2%</strong><span>Margin</span></div><div class="metric"><strong style="color:#16a34a">$340K</strong><span>Recovery</span></div><div class="metric"><strong>7</strong><span>Contracts</span></div></div></div></div>
+          <div class="mrow u"><div class="av u">JM</div><div class="bubble u">Why did we change our pricing last year?</div></div>
+          <div class="mrow"><div class="av ai">DV</div><div class="bubble ai">In Q2 last year, pricing was revised after the enterprise tier was underperforming against churn benchmarks. The decision was made in a leadership sync on April 14th and documented across three Slack threads and a board memo.
+            <div style="margin-top:8px;">
+              <span class="source-tag">📄 Board memo · Apr 14</span>
+              <span class="source-tag">💬 Slack · #leadership</span>
+              <span class="source-tag">📊 Q2 Review deck</span>
+            </div>
+          </div></div>
         </div>
-        <div class="chat-input"><input class="chat-field" type="text" placeholder="Ask your business anything..." readonly><button class="send-btn">↑</button></div>
+        <div class="chat-input"><input class="chat-field" type="text" placeholder="Ask anything about your company..." readonly><button class="send-btn">↑</button></div>
       </div>
     </div>
   </div>
 </section>
 
+<!-- LOGOS -->
 <div class="logos-bar">
   <div class="logos-label">Connects with your existing tools</div>
   <div class="logos-row">
-    <div class="logo-pill">Salesforce</div><div class="logo-pill">QuickBooks</div><div class="logo-pill">HubSpot</div><div class="logo-pill">Shopify</div><div class="logo-pill">NetSuite</div><div class="logo-pill">PostgreSQL</div><div class="logo-pill">+ 200 more</div>
+    <div class="logo-pill">Slack</div>
+    <div class="logo-pill">Salesforce</div>
+    <div class="logo-pill">Google Drive</div>
+    <div class="logo-pill">HubSpot</div>
+    <div class="logo-pill">QuickBooks</div>
+    <div class="logo-pill">Jira</div>
+    <div class="logo-pill">Notion</div>
+    <div class="logo-pill">+ more</div>
   </div>
 </div>
 
-<!-- NETWORK DIAGRAM SECTION -->
+<!-- NETWORK DIAGRAM -->
 <section class="network-section" id="network">
   <div class="network-glow"></div>
   <div class="network-inner">
     <div class="network-header">
       <div class="network-tag">The Intelligence Layer</div>
-      <h2 class="network-h2">Your business data.<br><span>One connected brain.</span></h2>
-      <p class="network-desc">Every tool, every system, every data source flows into your private LLM — and your team talks to it directly in plain English.</p>
+      <h2 class="network-h2">Your company knowledge.<br><span>One connected brain.</span></h2>
+      <p class="network-desc">Every tool, every thread, every document flows into your private Deepvine brain — and your team questions it directly in plain English.</p>
     </div>
-
-    <!-- DESKTOP: Full SVG diagram -->
     <div class="diagram-desktop">
       <svg viewBox="0 0 1100 640" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
-            <path d="M2 1L8 5L2 9" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </marker>
-        </defs>
+        <defs><marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
         <line x1="178" y1="118" x2="398" y2="268" stroke="#22c55e" stroke-width="1.5" stroke-dasharray="7,5" opacity="0.45" marker-end="url(#arr)"/>
         <line x1="338" y1="72" x2="420" y2="242" stroke="#22c55e" stroke-width="1.5" stroke-dasharray="7,5" opacity="0.45" marker-end="url(#arr)"/>
         <line x1="528" y1="54" x2="468" y2="232" stroke="#22c55e" stroke-width="1.5" stroke-dasharray="7,5" opacity="0.45" marker-end="url(#arr)"/>
@@ -463,7 +423,6 @@ footer p{font-size:0.9375rem;color:var(--text4);}
         <line x1="638" y1="480" x2="540" y2="366" stroke="#22c55e" stroke-width="1.5" stroke-dasharray="7,5" opacity="0.45" marker-end="url(#arr)"/>
         <line x1="608" y1="312" x2="800" y2="312" stroke="#22c55e" stroke-width="2" stroke-dasharray="9,6" opacity="0.75" marker-end="url(#arr)"/>
         <text x="704" y="300" font-family="Inter,sans-serif" font-size="12" fill="#22c55e" opacity="0.75" text-anchor="middle" font-weight="500">intelligence</text>
-        <!-- LLM center -->
         <circle cx="490" cy="312" r="110" fill="none" stroke="#22c55e" stroke-width="1" opacity="0.08"/>
         <circle cx="490" cy="312" r="90" fill="none" stroke="#22c55e" stroke-width="1" opacity="0.14"/>
         <circle cx="490" cy="312" r="72" fill="none" stroke="#22c55e" stroke-width="1.5" opacity="0.22"/>
@@ -471,253 +430,288 @@ footer p{font-size:0.9375rem;color:var(--text4);}
         <text x="490" y="302" font-size="30" text-anchor="middle" fill="#22c55e">🧠</text>
         <text x="490" y="324" font-family="Syne,Inter,sans-serif" font-size="12" font-weight="700" text-anchor="middle" fill="#22c55e" letter-spacing="1">YOUR LLM</text>
         <text x="490" y="342" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" fill="rgba(255,255,255,0.35)" letter-spacing="0.5">DEEPVINE AI</text>
-        <!-- Source nodes -->
         <rect x="52" y="84" width="196" height="68" rx="13" fill="#111827" stroke="#1e293b" stroke-width="1.5"/>
-        <text x="76" y="114" font-size="22">☁️</text>
-        <text x="106" y="112" font-family="Syne,Inter,sans-serif" font-size="13" font-weight="700" fill="#f1f5f9">Google Cloud</text>
-        <text x="106" y="130" font-family="Inter,sans-serif" font-size="11" fill="rgba(255,255,255,0.4)">Cloud storage &amp; compute</text>
+        <text x="76" y="114" font-size="22">💬</text><text x="106" y="112" font-family="Syne,Inter,sans-serif" font-size="13" font-weight="700" fill="#f1f5f9">Slack</text><text x="106" y="130" font-family="Inter,sans-serif" font-size="11" fill="rgba(255,255,255,0.4)">Threads &amp; channels</text>
         <rect x="246" y="38" width="188" height="68" rx="13" fill="#111827" stroke="#1e293b" stroke-width="1.5"/>
-        <text x="268" y="68" font-size="22">📁</text>
-        <text x="298" y="66" font-family="Syne,Inter,sans-serif" font-size="13" font-weight="700" fill="#f1f5f9">Google Drive</text>
-        <text x="298" y="84" font-family="Inter,sans-serif" font-size="11" fill="rgba(255,255,255,0.4)">Documents &amp; files</text>
+        <text x="268" y="68" font-size="22">📁</text><text x="298" y="66" font-family="Syne,Inter,sans-serif" font-size="13" font-weight="700" fill="#f1f5f9">Google Drive</text><text x="298" y="84" font-family="Inter,sans-serif" font-size="11" fill="rgba(255,255,255,0.4)">Docs &amp; files</text>
         <rect x="446" y="20" width="188" height="68" rx="13" fill="#111827" stroke="#1e293b" stroke-width="1.5"/>
-        <text x="468" y="50" font-size="22">💼</text>
-        <text x="498" y="48" font-family="Syne,Inter,sans-serif" font-size="13" font-weight="700" fill="#f1f5f9">Microsoft 365</text>
-        <text x="498" y="66" font-family="Inter,sans-serif" font-size="11" fill="rgba(255,255,255,0.4)">Teams, Excel, Outlook</text>
+        <text x="468" y="50" font-size="22">☁️</text><text x="498" y="48" font-family="Syne,Inter,sans-serif" font-size="13" font-weight="700" fill="#f1f5f9">Salesforce</text><text x="498" y="66" font-family="Inter,sans-serif" font-size="11" fill="rgba(255,255,255,0.4)">CRM &amp; pipeline</text>
         <rect x="646" y="56" width="176" height="68" rx="13" fill="#111827" stroke="#1e293b" stroke-width="1.5"/>
-        <text x="668" y="86" font-size="22">📹</text>
-        <text x="698" y="84" font-family="Syne,Inter,sans-serif" font-size="13" font-weight="700" fill="#f1f5f9">Zoom</text>
-        <text x="698" y="102" font-family="Inter,sans-serif" font-size="11" fill="rgba(255,255,255,0.4)">Voice &amp; meeting notes</text>
+        <text x="668" y="86" font-size="22">🎫</text><text x="698" y="84" font-family="Syne,Inter,sans-serif" font-size="13" font-weight="700" fill="#f1f5f9">Jira / Tickets</text><text x="698" y="102" font-family="Inter,sans-serif" font-size="11" fill="rgba(255,255,255,0.4)">Issues &amp; projects</text>
         <rect x="38" y="284" width="196" height="68" rx="13" fill="#111827" stroke="#1e293b" stroke-width="1.5"/>
-        <text x="62" y="314" font-size="22">🔗</text>
-        <text x="92" y="312" font-family="Syne,Inter,sans-serif" font-size="13" font-weight="700" fill="#f1f5f9">HubSpot CRM</text>
-        <text x="92" y="330" font-family="Inter,sans-serif" font-size="11" fill="rgba(255,255,255,0.4)">Marketing &amp; pipeline</text>
+        <text x="62" y="314" font-size="22">📊</text><text x="92" y="312" font-family="Syne,Inter,sans-serif" font-size="13" font-weight="700" fill="#f1f5f9">Finance Tools</text><text x="92" y="330" font-family="Inter,sans-serif" font-size="11" fill="rgba(255,255,255,0.4)">QuickBooks, NetSuite</text>
         <rect x="70" y="428" width="196" height="68" rx="13" fill="#111827" stroke="#1e293b" stroke-width="1.5"/>
-        <text x="92" y="458" font-size="22">🗄️</text>
-        <text x="122" y="456" font-family="Syne,Inter,sans-serif" font-size="13" font-weight="700" fill="#f1f5f9">Databases</text>
-        <text x="122" y="474" font-family="Inter,sans-serif" font-size="11" fill="rgba(255,255,255,0.4)">SQL, Postgres, custom</text>
+        <text x="92" y="458" font-size="22">🗄️</text><text x="122" y="456" font-family="Syne,Inter,sans-serif" font-size="13" font-weight="700" fill="#f1f5f9">Databases</text><text x="122" y="474" font-family="Inter,sans-serif" font-size="11" fill="rgba(255,255,255,0.4)">SQL, Postgres, custom</text>
         <rect x="348" y="490" width="208" height="68" rx="13" fill="#111827" stroke="#1e293b" stroke-width="1.5"/>
-        <text x="370" y="520" font-size="22">☁️</text>
-        <text x="400" y="518" font-family="Syne,Inter,sans-serif" font-size="13" font-weight="700" fill="#f1f5f9">Salesforce CRM</text>
-        <text x="400" y="536" font-family="Inter,sans-serif" font-size="11" fill="rgba(255,255,255,0.4)">Sales &amp; customer data</text>
+        <text x="370" y="520" font-size="22">📝</text><text x="400" y="518" font-family="Syne,Inter,sans-serif" font-size="13" font-weight="700" fill="#f1f5f9">Notion / Docs</text><text x="400" y="536" font-family="Inter,sans-serif" font-size="11" fill="rgba(255,255,255,0.4)">Internal knowledge</text>
         <rect x="570" y="444" width="176" height="68" rx="13" fill="#111827" stroke="#1e293b" stroke-width="1.5"/>
-        <text x="592" y="474" font-size="22">⚙️</text>
-        <text x="622" y="472" font-family="Syne,Inter,sans-serif" font-size="13" font-weight="700" fill="#f1f5f9">ERP System</text>
-        <text x="622" y="490" font-family="Inter,sans-serif" font-size="11" fill="rgba(255,255,255,0.4)">Operations &amp; inventory</text>
-        <!-- Chat panel -->
+        <text x="592" y="474" font-size="22">⚙️</text><text x="622" y="472" font-family="Syne,Inter,sans-serif" font-size="13" font-weight="700" fill="#f1f5f9">Internal Systems</text><text x="622" y="490" font-family="Inter,sans-serif" font-size="11" fill="rgba(255,255,255,0.4)">Custom tools &amp; APIs</text>
         <rect x="806" y="138" width="266" height="348" rx="16" fill="#111827" stroke="#22c55e" stroke-width="1.5" opacity="0.95"/>
         <rect x="806" y="138" width="266" height="52" rx="16" fill="#0a1f12"/>
         <rect x="806" y="172" width="266" height="18" fill="#0a1f12"/>
         <circle cx="832" cy="165" r="9" fill="#22c55e" opacity="0.9"/>
-        <text x="848" y="170" font-family="Syne,Inter,sans-serif" font-size="12" font-weight="700" fill="#22c55e">Deepvine Chat</text>
+        <text x="848" y="170" font-family="Syne,Inter,sans-serif" font-size="12" font-weight="700" fill="#22c55e">Deepvine in Slack</text>
         <rect x="1040" y="156" width="8" height="8" rx="4" fill="#22c55e" opacity="0.6"/>
         <text x="1056" y="164" font-family="Inter,sans-serif" font-size="10" fill="rgba(255,255,255,0.4)">Live</text>
         <rect x="866" y="204" width="186" height="50" rx="12" fill="#1a3a2a"/>
-        <text x="878" y="222" font-family="Inter,sans-serif" font-size="10.5" fill="rgba(255,255,255,0.9)" font-style="italic">"What's our best</text>
-        <text x="878" y="238" font-family="Inter,sans-serif" font-size="10.5" fill="rgba(255,255,255,0.9)" font-style="italic">performing region?"</text>
-        <rect x="818" y="268" width="230" height="66" rx="12" fill="#1c2432" stroke="#2d3a4a" stroke-width="1"/>
-        <text x="830" y="286" font-family="Inter,sans-serif" font-size="10.5" fill="rgba(255,255,255,0.75)">Southeast — up 23% YoY.</text>
-        <text x="830" y="302" font-family="Inter,sans-serif" font-size="10.5" fill="rgba(255,255,255,0.75)">3 reps driving 68% of</text>
-        <text x="830" y="318" font-family="Inter,sans-serif" font-size="10.5" fill="rgba(255,255,255,0.75)">revenue. Want details?</text>
-        <rect x="818" y="348" width="68" height="32" rx="8" fill="#0a1f12" stroke="#22c55e" stroke-width="1.2"/>
-        <text x="852" y="362" font-family="Inter,sans-serif" font-size="10" font-weight="600" fill="#22c55e" text-anchor="middle">+23%</text>
-        <text x="852" y="374" font-family="Inter,sans-serif" font-size="8.5" fill="rgba(255,255,255,0.4)" text-anchor="middle">YoY</text>
-        <rect x="894" y="348" width="62" height="32" rx="8" fill="#1c2432" stroke="#2d3a4a" stroke-width="1"/>
-        <text x="925" y="362" font-family="Inter,sans-serif" font-size="10" font-weight="600" fill="rgba(255,255,255,0.85)" text-anchor="middle">SE</text>
-        <text x="925" y="374" font-family="Inter,sans-serif" font-size="8.5" fill="rgba(255,255,255,0.4)" text-anchor="middle">Region</text>
-        <rect x="964" y="348" width="62" height="32" rx="8" fill="#1c2432" stroke="#2d3a4a" stroke-width="1"/>
-        <text x="995" y="362" font-family="Inter,sans-serif" font-size="10" font-weight="600" fill="rgba(255,255,255,0.85)" text-anchor="middle">3</text>
-        <text x="995" y="374" font-family="Inter,sans-serif" font-size="8.5" fill="rgba(255,255,255,0.4)" text-anchor="middle">Top Reps</text>
-        <rect x="866" y="394" width="186" height="36" rx="10" fill="#1a3a2a"/>
-        <text x="878" y="415" font-family="Inter,sans-serif" font-size="10.5" fill="rgba(255,255,255,0.9)" font-style="italic">"Show me their accounts"</text>
-        <rect x="818" y="444" width="230" height="32" rx="9" fill="#0f1117" stroke="#2d3a4a" stroke-width="1"/>
-        <text x="832" y="465" font-family="Inter,sans-serif" font-size="10" fill="rgba(255,255,255,0.25)">Ask anything about your business...</text>
-        <rect x="1030" y="448" width="10" height="24" rx="4" fill="#22c55e" opacity="0.6"/>
-        <text x="939" y="504" font-family="Inter,sans-serif" font-size="11" fill="rgba(255,255,255,0.35)" text-anchor="middle">Your team's intelligent interface</text>
+        <text x="878" y="222" font-family="Inter,sans-serif" font-size="10.5" fill="rgba(255,255,255,0.9)" font-style="italic">"Why did we change</text>
+        <text x="878" y="238" font-family="Inter,sans-serif" font-size="10.5" fill="rgba(255,255,255,0.9)" font-style="italic">pricing last year?"</text>
+        <rect x="818" y="268" width="230" height="78" rx="12" fill="#1c2432" stroke="#2d3a4a" stroke-width="1"/>
+        <text x="830" y="286" font-family="Inter,sans-serif" font-size="10" fill="rgba(255,255,255,0.75)">Pricing changed in Q2 after</text>
+        <text x="830" y="300" font-family="Inter,sans-serif" font-size="10" fill="rgba(255,255,255,0.75)">enterprise churn review.</text>
+        <text x="830" y="316" font-family="Inter,sans-serif" font-size="10" fill="rgba(255,255,255,0.75)">Decision documented Apr 14.</text>
+        <rect x="830" y="328" width="80" height="14" rx="4" fill="#0a1f12" stroke="#22c55e" stroke-width="0.8"/>
+        <text x="870" y="339" font-family="Inter,sans-serif" font-size="8.5" fill="#22c55e" text-anchor="middle">📄 Board memo</text>
+        <rect x="918" y="328" width="72" height="14" rx="4" fill="#0a1f12" stroke="#22c55e" stroke-width="0.8"/>
+        <text x="954" y="339" font-family="Inter,sans-serif" font-size="8.5" fill="#22c55e" text-anchor="middle">💬 Slack thread</text>
+        <rect x="866" y="360" width="186" height="36" rx="10" fill="#1a3a2a"/>
+        <text x="878" y="381" font-family="Inter,sans-serif" font-size="10.5" fill="rgba(255,255,255,0.9)" font-style="italic">"What changed this week?"</text>
+        <rect x="818" y="410" width="230" height="32" rx="9" fill="#0f1117" stroke="#2d3a4a" stroke-width="1"/>
+        <text x="832" y="431" font-family="Inter,sans-serif" font-size="10" fill="rgba(255,255,255,0.25)">Ask your company anything...</text>
+        <rect x="1030" y="414" width="10" height="24" rx="4" fill="#22c55e" opacity="0.6"/>
+        <text x="939" y="470" font-family="Inter,sans-serif" font-size="11" fill="rgba(255,255,255,0.35)" text-anchor="middle">Source-backed answers in Slack</text>
       </svg>
     </div>
-
-    <!-- MOBILE: Clean card version -->
     <div class="diagram-mobile">
       <div class="mobile-network">
-        <!-- Data sources grid -->
         <div class="mobile-sources">
-          <div class="mobile-source"><span class="ms-icon">☁️</span><div><div class="ms-name">Google Cloud</div><div class="ms-desc">Cloud storage</div></div></div>
+          <div class="mobile-source"><span class="ms-icon">💬</span><div><div class="ms-name">Slack</div><div class="ms-desc">Threads &amp; channels</div></div></div>
           <div class="mobile-source"><span class="ms-icon">📁</span><div><div class="ms-name">Google Drive</div><div class="ms-desc">Docs &amp; files</div></div></div>
-          <div class="mobile-source"><span class="ms-icon">💼</span><div><div class="ms-name">Microsoft 365</div><div class="ms-desc">Teams, Excel</div></div></div>
-          <div class="mobile-source"><span class="ms-icon">📹</span><div><div class="ms-name">Zoom</div><div class="ms-desc">Meeting notes</div></div></div>
-          <div class="mobile-source"><span class="ms-icon">🔗</span><div><div class="ms-name">HubSpot CRM</div><div class="ms-desc">Marketing</div></div></div>
-          <div class="mobile-source"><span class="ms-icon">📊</span><div><div class="ms-name">QuickBooks</div><div class="ms-desc">Finance</div></div></div>
-          <div class="mobile-source"><span class="ms-icon">⚙️</span><div><div class="ms-name">ERP System</div><div class="ms-desc">Operations</div></div></div>
+          <div class="mobile-source"><span class="ms-icon">☁️</span><div><div class="ms-name">Salesforce</div><div class="ms-desc">CRM &amp; pipeline</div></div></div>
+          <div class="mobile-source"><span class="ms-icon">🎫</span><div><div class="ms-name">Jira / Tickets</div><div class="ms-desc">Issues &amp; projects</div></div></div>
+          <div class="mobile-source"><span class="ms-icon">📊</span><div><div class="ms-name">Finance Tools</div><div class="ms-desc">QuickBooks, NetSuite</div></div></div>
           <div class="mobile-source"><span class="ms-icon">🗄️</span><div><div class="ms-name">Databases</div><div class="ms-desc">SQL &amp; custom</div></div></div>
+          <div class="mobile-source"><span class="ms-icon">📝</span><div><div class="ms-name">Notion / Docs</div><div class="ms-desc">Internal knowledge</div></div></div>
+          <div class="mobile-source"><span class="ms-icon">⚙️</span><div><div class="ms-name">Internal Systems</div><div class="ms-desc">Custom tools</div></div></div>
         </div>
-
-        <!-- Arrow down -->
-        <div class="mobile-arrow">↓ all data flows in ↓</div>
-
-        <!-- LLM center -->
+        <div class="mobile-arrow">↓ all company knowledge flows in ↓</div>
         <div class="mobile-llm-center">
           <span class="mobile-llm-icon">🧠</span>
-          <div class="mobile-llm-title">Your Private LLM</div>
-          <div class="mobile-llm-sub">Deepvine AI — Your Business Brain</div>
+          <div class="mobile-llm-title">Your Private Brain</div>
+          <div class="mobile-llm-sub">Deepvine AI — Always Learning</div>
         </div>
-
-        <!-- Arrow down to chat -->
-        <div class="mobile-arrow">↓ intelligence flows out ↓</div>
-
-        <!-- Chat panel -->
+        <div class="mobile-arrow">↓ source-backed answers flow out ↓</div>
         <div class="mobile-chat-panel">
-          <div class="mcp-header">
-            <div class="mcp-dot"></div>
-            <div class="mcp-title">Deepvine Chat</div>
-            <div class="mcp-live">● Live</div>
-          </div>
+          <div class="mcp-header"><div class="mcp-dot"></div><div class="mcp-title">Deepvine in Slack</div><div class="mcp-live">● Live</div></div>
           <div class="mcp-body">
-            <div class="mcp-msg-user">"What's our best performing region?"</div>
-            <div class="mcp-msg-ai">
-              Southeast — up 23% YoY. 3 reps driving 68% of revenue. Want details?
-              <div class="mcp-chips">
-                <div class="mcp-chip">+23% YoY</div>
-                <div class="mcp-chip">SE Region</div>
-                <div class="mcp-chip">3 Top Reps</div>
-              </div>
+            <div class="mcp-msg-user">"Why did we change pricing last year?"</div>
+            <div class="mcp-msg-ai">Pricing changed in Q2 after enterprise churn review. Decision documented April 14th across board memo and Slack thread.
+              <div class="mcp-chips"><div class="mcp-chip">📄 Board memo</div><div class="mcp-chip">💬 Slack thread</div></div>
             </div>
           </div>
-          <div class="mcp-input">
-            <input class="mcp-field" type="text" placeholder="Ask anything about your business..." readonly>
-            <button class="mcp-send">↑</button>
-          </div>
+          <div class="mcp-input"><input class="mcp-field" type="text" placeholder="Ask your company anything..." readonly><button class="mcp-send">↑</button></div>
         </div>
       </div>
     </div>
-
   </div>
 </section>
 
-<section class="section" id="problem">
-  <div class="inner">
-    <div class="prob-grid">
-      <div>
-        <div class="stag">The Problem</div>
-        <h2 class="sh2">Your data exists.<br>Your <span>clarity doesn't.</span></h2>
-        <p class="sdesc" style="max-width:400px">Most businesses have more data than ever — and less insight. It's scattered, siloed, and impossible to act on before the moment passes.</p>
-      </div>
-      <div class="pain-list">
-        <div class="pain"><div class="pnum">01</div><div><h3>Decisions made without full context</h3><p>Critical patterns hide across departments. By the time you see them, the moment has passed.</p></div></div>
-        <div class="pain"><div class="pnum">02</div><div><h3>Data locked in disconnected systems</h3><p>Your CRM, ERP, and finance tools don't talk to each other. The gap is costing you every day.</p></div></div>
-        <div class="pain"><div class="pnum">03</div><div><h3>Analysis that can't keep pace</h3><p>Human analysts are slow and expensive. You need intelligence that processes everything, instantly.</p></div></div>
-        <div class="pain"><div class="pnum">04</div><div><h3>No institutional memory</h3><p>When key people leave, their knowledge leaves too. Deepvine captures and compounds it — forever.</p></div></div>
-      </div>
-    </div>
-  </div>
-</section>
-
+<!-- HOW IT WORKS -->
 <section class="how-wrap" id="how">
   <div class="how-inner">
     <div class="how-head">
       <div class="stag">How It Works</div>
-      <h2 class="sh2">Start with one problem.<br><span>Build total intelligence.</span></h2>
-      <p class="sdesc">Pick one pain point — we automate it, connect it to your private LLM, and grow from there.</p>
+      <h2 class="sh2">Connect your systems.<br><span>Backfill your history. Ask anything.</span></h2>
+      <p class="sdesc">Most AI tools sit on top of fragmented data. Deepvine turns company information into a living system that learns, stays current, and can be questioned in plain English.</p>
     </div>
-    <div class="formula-section">
-      <div class="formula-label">The Deepvine Formula</div>
-      <div class="formula-row">
-        <div class="formula-card"><div class="f-icon-wrap green">⚡</div><h3>Your Automation</h3><p>One specific business problem, solved and connected</p></div>
-        <div class="formula-op-col"><div class="formula-op-symbol">+</div></div>
-        <div class="formula-card"><div class="f-icon-wrap green">🧠</div><h3>Your Private LLM</h3><p>A living intelligence trained exclusively on your data</p></div>
-        <div class="formula-op-col"><div class="formula-op-symbol">=</div></div>
-        <div class="formula-card result"><div class="f-icon-wrap dark">📈</div><h3>Compounding ROI</h3><p>Intelligence that grows smarter every single day</p></div>
+    <div class="how-grid">
+      <div class="how-card hi">
+        <div class="how-icon">🔗</div>
+        <h3>Connect everything</h3>
+        <p>Pull from Slack, docs, CRM, tickets, databases, finance tools, and custom systems — wherever your company knowledge lives.</p>
+      </div>
+      <div class="how-card hi">
+        <div class="how-icon">📅</div>
+        <h3>Backfill the past</h3>
+        <p>Go beyond the last few months and ingest years of history so every answer has real context, not just recent data.</p>
+      </div>
+      <div class="how-card hi">
+        <div class="how-icon">🔄</div>
+        <h3>Stay current automatically</h3>
+        <p>Daily diffs keep the knowledge base updated without manual maintenance. Your brain never goes stale.</p>
+      </div>
+      <div class="how-card hi">
+        <div class="how-icon">💬</div>
+        <h3>Ask in Slack</h3>
+        <p>Your team gets researched, source-backed answers where work already happens — no new tool to learn.</p>
       </div>
     </div>
-    <div class="steps">
-      <div class="step hi"><div class="snbadge">01</div><div><div class="step-tag">Your Starting Point</div><h3>Pick Your First Automation</h3><p>Tell us your biggest pain point. We build an automation that solves it and pipes data directly into your private LLM.</p><div class="spills"><div class="spill">Invoice automation</div><div class="spill">Sales pipeline</div><div class="spill">Inventory sync</div><div class="spill">Cash flow</div></div></div></div>
-      <div class="step"><div class="snbadge">02</div><div><div class="step-tag">The Foundation</div><h3>We Build Your LLM Foundation</h3><p>Your first automation becomes the seed of your private intelligence — trained on your business, not anyone else's.</p></div></div>
-      <div class="step"><div class="snbadge">03</div><div><div class="step-tag">Instant Value</div><h3>Ask It Anything From Day One</h3><p>Immediately query your intelligence about trends, anomalies, and forecasts in plain English. No dashboards needed.</p></div></div>
-      <div class="step hi"><div class="snbadge">04</div><div><div class="step-tag">Expand On Your Terms</div><h3>Add Automations. Deepen the Intelligence.</h3><p>Every additional automation feeds more data into your LLM. Each layer compounds on the last. You control the pace.</p><div class="spills"><div class="spill">+ HR &amp; payroll</div><div class="spill">+ Customer analytics</div><div class="spill">+ Marketing ROI</div><div class="spill">+ Operations</div></div></div></div>
-    </div>
-    <div class="tagline-bar">
-      <div><div class="tl-text">Start with one automation.</div><div class="tl-sub">Build an intelligence that knows your entire business.</div></div>
-      <div class="tdiv"></div>
-      <div><div class="tl-text">Every layer compounds.</div><div class="tl-sub">The longer it runs, the smarter and more valuable it gets.</div></div>
-    </div>
   </div>
 </section>
 
-<section class="section" id="features">
+<!-- WHY DIFFERENT -->
+<section class="section" id="different">
   <div class="inner">
-    <div class="stag">Core Features</div>
-    <h2 class="sh2">Everything you need.<br><span>Nothing you don't.</span></h2>
-    <div class="feat-grid">
-      <div class="feat"><div class="ficon2">🧠</div><h3>Living Intelligence</h3><p>Your LLM compounds with every automation — building a strategic asset no competitor can replicate.</p></div>
-      <div class="feat"><div class="ficon2">☁️</div><h3>Private Cloud Infrastructure</h3><p>Enterprise-grade security. Your data trains your model only — never anyone else's, ever.</p></div>
-      <div class="feat"><div class="ficon2">💬</div><h3>Conversational Interface</h3><p>Ask in plain English, get precise answers instantly. No training required for your team.</p></div>
-      <div class="feat"><div class="ficon2">🔌</div><h3>Universal Connectors</h3><p>200+ integrations out of the box — Salesforce, QuickBooks, Shopify, HubSpot, and more.</p></div>
-      <div class="feat"><div class="ficon2">📈</div><h3>Predictive Analytics</h3><p>Deepvine surfaces opportunities and trends before they're visible to any human analyst.</p></div>
-      <div class="feat"><div class="ficon2">🔒</div><h3>Role-Based Access</h3><p>CEOs, department heads, and managers each get a tailored intelligence experience for their domain.</p></div>
+    <div class="diff-grid">
+      <div>
+        <div class="stag">Why Deepvine Is Different</div>
+        <h2 class="sh2">Not another chatbot.<br><span>Not another search layer.</span></h2>
+        <p class="sdesc" style="max-width:400px">Deepvine is built to preserve company context and make it usable. It does not start from zero every session, and it does not stop at retrieval.</p>
+      </div>
+      <div class="diff-points">
+        <div class="diff-point"><div class="diff-num">01</div><div><h3>A system with memory</h3><p>Deepvine compounds knowledge over time instead of forgetting everything between prompts. Your company brain remembers what matters.</p></div></div>
+        <div class="diff-point"><div class="diff-num">02</div><div><h3>Research, not just retrieval</h3><p>It reads across multiple sources, compares evidence, and returns a synthesized answer — not a list of links.</p></div></div>
+        <div class="diff-point"><div class="diff-num">03</div><div><h3>Private and owned</h3><p>It runs in your environment or private infrastructure, and your company keeps full control of the data and the knowledge it produces.</p></div></div>
+        <div class="diff-point"><div class="diff-num">04</div><div><h3>Built for real work</h3><p>Answers are linked back to sources, accessible in Slack, and useful in the flow of daily decisions — not buried in a dashboard.</p></div></div>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="equity" id="equity">
+<!-- VALUE IN PLAIN ENGLISH -->
+<section class="section" id="value" style="background:var(--bg);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+  <div class="inner">
+    <div style="text-align:center;margin-bottom:3.5rem;">
+      <div class="stag">Value in Plain English</div>
+      <h2 class="sh2">What your team <span>can do with it</span></h2>
+      <p class="sdesc" style="max-width:480px;margin:0 auto;">Concrete outcomes, not technical features.</p>
+    </div>
+    <div class="value-grid">
+      <div class="value-tile"><h3>Ask what happened two years ago</h3><p>Recover decisions, projects, and context from long before most AI tools can see. History is not lost.</p></div>
+      <div class="value-tile"><h3>Prepare for meetings in minutes</h3><p>Pull account, customer, or project context from across systems before a call — without chasing five people.</p></div>
+      <div class="value-tile"><h3>Find recurring customer pain points</h3><p>Synthesize themes across support tickets, Slack, CRM notes, and call summaries in seconds.</p></div>
+      <div class="value-tile"><h3>See what changed yesterday</h3><p>Use daily diffs to stay current on the updates that matter without reading everything yourself.</p></div>
+      <div class="value-tile"><h3>Reduce interruptions</h3><p>Answer common operational questions without depending on the one person who remembers how things work.</p></div>
+      <div class="value-tile"><h3>Preserve institutional memory</h3><p>Keep knowledge from disappearing when priorities shift or people leave. Your company keeps what it knows.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- USE CASES -->
+<section class="use-wrap" id="usecases">
+  <div class="use-inner">
+    <div class="use-head">
+      <div class="stag">Use Cases</div>
+      <h2 class="sh2">Useful on day one.<br><span>More valuable every day.</span></h2>
+      <p class="sdesc" style="max-width:480px;margin:0 auto;">Real questions. The kind of answers Deepvine returns.</p>
+    </div>
+    <div class="use-grid">
+      <div class="use-card">
+        <div class="use-role">Leadership</div>
+        <div class="use-q">"What changed this week that matters?"</div>
+        <div class="use-a">A short synthesis across sales, support, finance, and internal discussions — with sources linked back to the original records.</div>
+      </div>
+      <div class="use-card">
+        <div class="use-role">Sales</div>
+        <div class="use-q">"What do we know about this account before tomorrow's call?"</div>
+        <div class="use-a">Account history, key stakeholders, open issues, and recent context — pulled from CRM, email, and Slack in seconds.</div>
+      </div>
+      <div class="use-card">
+        <div class="use-role">Support</div>
+        <div class="use-q">"What problems keep surfacing for customers?"</div>
+        <div class="use-a">Recurring themes, severity, and examples across recent and historical tickets — synthesized, not just listed.</div>
+      </div>
+      <div class="use-card">
+        <div class="use-role">Operations</div>
+        <div class="use-q">"Why did this process change last quarter?"</div>
+        <div class="use-a">The decision trail, source references, and operational impact — recovered from Slack threads, docs, and meeting notes.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DEPLOYMENT -->
+<section class="section" id="deployment">
+  <div class="inner">
+    <div class="deploy-grid">
+      <div>
+        <div class="stag">Deployment &amp; Ownership</div>
+        <h2 class="sh2">We deploy and manage it.<br><span>You keep control.</span></h2>
+        <p class="sdesc" style="max-width:420px">Deepvine is installed for you, integrated into your stack, and maintained by our team. The system runs in your environment or private infrastructure, and your company retains ownership of the data and knowledge it produces.</p>
+        <p class="sdesc" style="max-width:420px;margin-top:1rem;">Start with one team, one workflow, or one knowledge problem. Expand as the system compounds.</p>
+      </div>
+      <div class="deploy-points">
+        <div class="deploy-point"><div class="dp-icon">🏢</div><div><div class="dp-title">Private deployment</div><div class="dp-desc">Run in your environment or approved private infrastructure — not a shared cloud.</div></div></div>
+        <div class="deploy-point"><div class="dp-icon">🔗</div><div><div class="dp-title">Custom integrations</div><div class="dp-desc">Connect the systems your business already relies on, including internal and custom-built tools.</div></div></div>
+        <div class="deploy-point"><div class="dp-icon">🔧</div><div><div class="dp-title">Operational management</div><div class="dp-desc">Deepvine handles deployment, updates, and ongoing maintenance. You focus on using it.</div></div></div>
+        <div class="deploy-point"><div class="dp-icon">🔓</div><div><div class="dp-title">No vendor lock-in</div><div class="dp-desc">Your company owns the data, the outputs, and the knowledge base it creates. Always.</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECURITY -->
+<section class="sec-wrap" id="security">
+  <div class="sec-inner">
+    <div style="text-align:center;margin-bottom:3.5rem;">
+      <div class="stag">Security &amp; Trust</div>
+      <h2 class="sh2">Private <span>by design.</span></h2>
+      <p class="sdesc" style="max-width:520px;margin:0 auto;">Your company knowledge stays under your control. Deepvine is built for teams that want the leverage of AI without giving away their institutional memory.</p>
+    </div>
+    <div class="sec-grid">
+      <div class="sec-card"><h3>Role-based access</h3><p>Make information available to the right teams without exposing everything to everyone. Access is controlled at the team level.</p></div>
+      <div class="sec-card"><h3>Source-backed answers</h3><p>Every answer can point back to the systems and records it came from. No black box — full transparency on where knowledge came from.</p></div>
+      <div class="sec-card"><h3>Controlled deployment</h3><p>Choose the environment and access model that fits your security requirements. We adapt to your infrastructure, not the other way around.</p></div>
+      <div class="sec-card"><h3>Data ownership</h3><p>Your knowledge remains your asset. Deepvine does not turn it into platform lock-in. You own everything the system learns and produces.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPOUNDS -->
+<section class="equity" id="compounds">
   <div class="eq-glow"></div>
   <div class="eq-inner">
-    <div class="eq-badge"><div class="eq-badge-dot"></div>The Bigger Picture</div>
-    <div class="eq-kicker">Most AI tools make you efficient. Deepvine makes you valuable.</div>
-    <h2 class="eq-headline">Your LLM isn't just intelligence.<br>It's <span>enterprise equity.</span></h2>
+    <div class="eq-badge"><div class="eq-badge-dot"></div>Why It Compounds</div>
+    <h2 class="eq-headline">Your company gets <span>smarter every day</span> it runs.</h2>
     <div class="eq-rule"></div>
-    <p class="eq-body">A proprietary, trained intelligence is an asset that lives on your balance sheet. <strong>When it's time to scale and maximize what you've built</strong> — acquirers pay a premium for businesses with defensible data moats and institutional knowledge that can't walk out the door. Every day Deepvine runs, you're not just making better decisions. <strong>You're building leverage.</strong></p>
+    <p class="eq-body">Every sync, daily diff, and answered question adds to a system that becomes more useful over time. Deepvine captures context that would otherwise stay buried in tools, threads, and people's heads. <strong>The longer it runs, the more valuable it becomes.</strong></p>
     <div class="eq-pills">
-      <div class="eq-pill"><div class="pill-dot"></div>Higher exit multiple</div>
-      <div class="eq-pill"><div class="pill-dot"></div>Proprietary data moat</div>
-      <div class="eq-pill"><div class="pill-dot"></div>Institutional knowledge captured</div>
-      <div class="eq-pill"><div class="pill-dot"></div>Due diligence ready</div>
-      <div class="eq-pill"><div class="pill-dot"></div>Defensible competitive advantage</div>
+      <div class="eq-pill"><div class="pill-dot"></div>Preserve context across teams</div>
+      <div class="eq-pill"><div class="pill-dot"></div>Reduce knowledge loss</div>
+      <div class="eq-pill"><div class="pill-dot"></div>Improve speed of execution</div>
+      <div class="eq-pill"><div class="pill-dot"></div>Proprietary institutional memory</div>
     </div>
   </div>
 </section>
 
+<!-- STATS -->
 <div class="stats">
   <div class="stats-inner">
-    <div class="stat-item"><span class="stat-n">10x</span><span class="stat-l">Faster business insight</span></div>
     <div class="stat-item"><span class="stat-n">100%</span><span class="stat-l">Private to your business</span></div>
-    <div class="stat-item"><span class="stat-n">200+</span><span class="stat-l">Native integrations</span></div>
-    <div class="stat-item"><span class="stat-n">∞</span><span class="stat-l">Compounds over time</span></div>
+    <div class="stat-item"><span class="stat-n">∞</span><span class="stat-l">Historical backfill depth</span></div>
+    <div class="stat-item"><span class="stat-n">Daily</span><span class="stat-l">Automatic knowledge updates</span></div>
+    <div class="stat-item"><span class="stat-n">0</span><span class="stat-l">New tools your team needs to learn</span></div>
   </div>
 </div>
 
+<!-- CTA -->
 <section class="cta" id="contact">
   <div class="cta-glow"></div>
   <div class="stag">Get Started</div>
-  <h2 class="cta-h2">Ready to build intelligence that <span>never stops growing?</span></h2>
-  <p class="cta-sub">Book a 30-minute discovery call. We'll map your first automation and show you exactly what your LLM will surface in 90 days.</p>
-  <button class="cta-btn" onclick="openCalendly()">Book Your Discovery Call →</button>
-  <p class="cta-note">No commitment. 30 minutes. We'll show you exactly what's possible.</p>
+  <h2 class="cta-h2">Bring us one <span>real business question.</span></h2>
+  <p class="cta-sub">We'll show you how Deepvine researches your company knowledge, where the answer came from, and what becomes possible once that system is always on.</p>
+  <div>
+    <button class="cta-btn" onclick="openCalendly()">Book a live demo →</button>
+    <button class="cta-btn-s" onclick="openCalendly()">See Deepvine on your data</button>
+  </div>
+  <p class="cta-micro">Start with one workflow, one department, or one high-value problem.</p>
 </section>
 
 <footer>
   <div class="foot-inner">
-    <div class="foot-logo" style="display:flex;align-items:center;gap:10px;">
-      <svg width="30" height="30" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="50" cy="50" r="50" fill="#0d1a0f"/>
-        <circle cx="38" cy="72" r="8" fill="#16a34a"/>
-        <circle cx="56" cy="75" r="6.5" fill="#22c55e"/>
-        <circle cx="72" cy="69" r="5" fill="#16a34a"/>
-        <circle cx="28" cy="56" r="6.5" fill="#22c55e"/>
-        <circle cx="48" cy="52" r="10" fill="#22c55e"/>
-        <circle cx="68" cy="50" r="7" fill="#16a34a"/>
-        <circle cx="80" cy="58" r="4.5" fill="#22c55e"/>
-        <circle cx="34" cy="39" r="5.5" fill="#4ade80"/>
-        <circle cx="52" cy="34" r="8.5" fill="#22c55e"/>
-        <circle cx="70" cy="33" r="6" fill="#4ade80"/>
-        <circle cx="40" cy="22" r="4" fill="#4ade80"/>
-        <circle cx="56" cy="17" r="6" fill="#22c55e"/>
-        <circle cx="72" cy="20" r="3.5" fill="#4ade80"/>
-        <circle cx="60" cy="5" r="4" fill="#22c55e"/>
-      </svg>
-      <span style="font-family:'Syne',system-ui,sans-serif;font-weight:700;font-size:1rem;"><span style="color:#0a0a0a;">Deepvine</span><span style="color:#16a34a;">.AI</span></span>
+    <div>
+      <div class="foot-logo">
+        <svg width="30" height="30" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="50" cy="50" r="50" fill="#0d1a0f"/>
+          <circle cx="38" cy="72" r="8" fill="#16a34a"/><circle cx="56" cy="75" r="6.5" fill="#22c55e"/><circle cx="72" cy="69" r="5" fill="#16a34a"/>
+          <circle cx="28" cy="56" r="6.5" fill="#22c55e"/><circle cx="48" cy="52" r="10" fill="#22c55e"/><circle cx="68" cy="50" r="7" fill="#16a34a"/>
+          <circle cx="34" cy="39" r="5.5" fill="#4ade80"/><circle cx="52" cy="34" r="8.5" fill="#22c55e"/><circle cx="70" cy="33" r="6" fill="#4ade80"/>
+          <circle cx="56" cy="17" r="6" fill="#22c55e"/><circle cx="60" cy="5" r="4" fill="#22c55e"/>
+        </svg>
+        <span style="font-family:'Syne',system-ui,sans-serif;font-weight:700;font-size:1rem;"><span style="color:#0a0a0a;">Deepvine</span><span style="color:#16a34a;">.AI</span></span>
+      </div>
+      <div class="foot-tagline">Private AI brain for modern operators.</div>
     </div>
-    <div class="foot-links"><a href="#">Privacy</a><a href="#">Terms</a><a href="mailto:info@deepvine.ai">info@deepvine.ai</a></div>
-    <p>© 2026 Deepvine AI</p>
+    <div class="foot-links">
+      <a href="#how">How it works</a>
+      <a href="#usecases">Use cases</a>
+      <a href="#security">Security</a>
+      <a href="mailto:info@deepvine.ai">info@deepvine.ai</a>
+    </div>
+    <div>
+      <p>© 2026 Deepvine AI</p>
+      <p style="margin-top:0.25rem;">Deployed and managed by Deepvine. Your data stays yours.</p>
+    </div>
   </div>
 </footer>
 
