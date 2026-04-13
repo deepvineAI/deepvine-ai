@@ -35,6 +35,8 @@ body{
   line-height:1.7;
   -webkit-font-smoothing:antialiased;
   overflow-x:hidden;
+  width:100%;
+  max-width:100vw;
 }
 
 /* ── NOISE TEXTURE OVERLAY ── */
@@ -78,7 +80,7 @@ nav{
 .nav-cta:hover{background:var(--ink2);}
 .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none;}
 .hamburger span{display:block;width:20px;height:1.5px;background:var(--ink);transition:all 0.3s;}
-.mobile-menu{display:none;position:fixed;top:72px;left:0;right:0;background:var(--cream);border-bottom:1px solid var(--border);padding:1.5rem 5%;z-index:99;flex-direction:column;gap:0;}
+.mobile-menu{display:none;position:fixed;top:72px;left:0;right:0;background:rgba(250,249,246,0.98);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:1.5rem 5%;z-index:99;flex-direction:column;gap:0;}
 .mobile-menu.open{display:flex;}
 .mobile-menu a{display:block;padding:1rem 0;border-bottom:1px solid var(--border);color:var(--ink);text-decoration:none;font-size:1.0625rem;}
 .mobile-cta-btn{margin-top:1rem;background:var(--ink);color:var(--cream);padding:1rem;border-radius:100px;border:none;font-weight:500;font-family:var(--font-body);font-size:1rem;cursor:pointer;width:100%;}
@@ -91,6 +93,7 @@ nav{
   text-align:center;
   position:relative;
   overflow:hidden;
+  width:100%;
 }
 
 /* Subtle radial gradient behind hero */
@@ -110,6 +113,7 @@ nav{
   border-radius:50%;
   border:1px solid rgba(22,163,74,0.08);
   pointer-events:none;
+  overflow:hidden;
 }
 .hero-circle-2{
   position:absolute;
@@ -118,9 +122,10 @@ nav{
   border-radius:50%;
   border:1px solid rgba(14,14,14,0.05);
   pointer-events:none;
+  overflow:hidden;
 }
 
-.hero-inner{max-width:900px;margin:0 auto;position:relative;z-index:1;}
+.hero-inner{max-width:900px;width:100%;margin:0 auto;position:relative;z-index:1;}
 
 .eyebrow{
   display:inline-flex;align-items:center;gap:8px;
@@ -280,7 +285,7 @@ nav{
   border-bottom:1px solid var(--border);
   background:var(--white);
 }
-.logos-inner{max-width:1240px;margin:0 auto;text-align:center;}
+.logos-inner{max-width:1240px;width:100%;margin:0 auto;text-align:center;overflow:hidden;}
 .logos-label{font-size:0.75rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--subtle);font-weight:500;margin-bottom:1.5rem;}
 .logos-row{display:flex;align-items:center;justify-content:center;gap:0.5rem;flex-wrap:wrap;}
 .logo-tag{
@@ -292,7 +297,7 @@ nav{
 
 /* ── SECTIONS ── */
 .section{padding:7rem 5%;}
-.s-inner{max-width:1240px;margin:0 auto;}
+.s-inner{max-width:1240px;width:100%;margin:0 auto;}
 
 /* Section tag */
 .stag{
@@ -337,7 +342,7 @@ nav{
   background:radial-gradient(circle,rgba(22,163,74,0.09) 0%,transparent 65%);
   pointer-events:none;
 }
-.net-inner{max-width:1240px;margin:0 auto;position:relative;z-index:1;}
+.net-inner{max-width:1240px;width:100%;margin:0 auto;position:relative;z-index:1;}
 .net-head{text-align:center;margin-bottom:4rem;}
 .net-tag{display:inline-block;font-size:0.75rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--green-mid);margin-bottom:1.25rem;}
 .net-h{
@@ -358,7 +363,7 @@ nav{
 /* Mobile network */
 .mob-net{display:flex;flex-direction:column;gap:1rem;}
 .mob-sources{display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;}
-.mob-src{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:1rem;display:flex;align-items:center;gap:0.75rem;}
+.mob-src{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:10px;padding:0.875rem;display:flex;align-items:center;gap:0.625rem;}
 .mob-src-name{font-family:var(--font-body);font-size:0.875rem;font-weight:500;color:rgba(255,255,255,0.85);}
 .mob-src-desc{font-size:0.75rem;color:rgba(255,255,255,0.35);}
 .mob-arrow{text-align:center;color:var(--green-mid);font-size:1.125rem;opacity:0.6;}
@@ -386,7 +391,7 @@ nav{
 .split-lg{display:grid;grid-template-columns:1fr 1.2fr;gap:6rem;align-items:start;}
 
 /* ── CARDS ── */
-.card-grid-2{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin-top:3rem;}
+.card-grid-2{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin-top:2.5rem;}
 .card-grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:3rem;}
 .card-grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:3rem;}
 
@@ -471,7 +476,7 @@ nav{
   background:radial-gradient(ellipse,rgba(22,163,74,0.12) 0%,transparent 70%);
   pointer-events:none;
 }
-.c-inner{max-width:1000px;margin:0 auto;position:relative;z-index:1;}
+.c-inner{max-width:1000px;width:100%;margin:0 auto;position:relative;z-index:1;}
 .c-h{
   font-family:var(--font-display);
   font-weight:700;
@@ -497,10 +502,11 @@ nav{
 .stats{background:#0c0c0c;padding:6rem 5%;border-top:1px solid rgba(255,255,255,0.06);}
 .stats-inner{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem;text-align:center;}
 .stat-card{
-  padding:2.5rem 1.5rem;
+  padding:2.5rem 1rem;
   background:rgba(255,255,255,0.03);
   border:1px solid rgba(255,255,255,0.06);
   border-radius:16px;
+  min-width:0;
 }
 .stat-n{
   font-family:var(--font-display);
@@ -524,7 +530,7 @@ nav{
   background:radial-gradient(ellipse at 50% 100%,rgba(22,163,74,0.07) 0%,transparent 70%);
   pointer-events:none;
 }
-.cta-inner{max-width:680px;margin:0 auto;position:relative;z-index:1;}
+.cta-inner{max-width:680px;width:100%;margin:0 auto;position:relative;z-index:1;}
 .cta-h{
   font-family:var(--font-display);
   font-weight:700;
@@ -557,41 +563,181 @@ footer{
 .foot-links a:hover{color:var(--ink);}
 .foot-copy{font-size:0.875rem;color:var(--subtle);}
 
-/* ── RESPONSIVE ── */
-@media(max-width:900px){
+/* ══════════════════════════════════════════
+   RESPONSIVE — Tablet (1024px) + Mobile (768px) + Small (480px)
+   ══════════════════════════════════════════ */
+
+/* ── TABLET ── */
+@media(max-width:1024px){
+  /* Network diagram: hide SVG, show mobile version */
   .diagram-desktop{display:none;}
   .diagram-mobile{display:block;}
-}
-@media(max-width:1024px){
-  .split,.split-lg{grid-template-columns:1fr;gap:3rem;}
+
+  /* Grids collapse to 2-col */
   .card-grid-4{grid-template-columns:repeat(2,1fr);}
   .c-cards{grid-template-columns:1fr 1fr;}
+
+  /* Split layouts stack */
+  .split,.split-lg{grid-template-columns:1fr;gap:3rem;}
   .deploy-box{position:static;}
+
+  /* Section padding reduced */
+  .section{padding:5rem 5%;}
+  .how-wrap,.compound-section{padding:5rem 5%;}
+
+  /* Hero h1 smaller */
+  .hero h1{font-size:2.75rem;}
+
+  /* Display headings */
+  .display-h{font-size:2.25rem;}
+  .net-h{font-size:2.25rem;}
+  .c-h{font-size:2.75rem;}
+  .cta-h{font-size:2.5rem;}
+
+  /* Stats 2x2 */
+  .stats-inner{grid-template-columns:repeat(2,1fr);}
 }
+
+/* ── MOBILE (768px) ── */
 @media(max-width:768px){
-  nav{padding:0 4%;}
+  /* Nav */
+  nav{padding:0 4%;height:64px;}
   .nav-links{display:none;}
   .hamburger{display:flex;}
-  .hero{padding:100px 4% 64px;min-height:auto;}
-  .mockup-body{grid-template-columns:1fr;height:auto;}
-  .m-sidebar{display:none;}
-  .logos-section,.section,.cta-section{padding-left:4%;padding-right:4%;}
-  .network-section,.compound-section,.stats{padding-left:4%;padding-right:4%;}
-  .card-grid-2,.card-grid-3,.card-grid-4{grid-template-columns:1fr;}
-  .c-cards{grid-template-columns:1fr;}
-  .stats-inner{grid-template-columns:repeat(2,1fr);}
-  .mob-sources{grid-template-columns:1fr 1fr;}
-  footer{padding-left:4%;padding-right:4%;}
-  .foot-inner{flex-direction:column;align-items:flex-start;gap:1.25rem;}
-}
-@media(max-width:480px){
-  nav{height:64px;padding:0 4%;}
   .mobile-menu{top:64px;}
-  .hero-actions,.cta-actions{flex-direction:column;align-items:stretch;}
-  .btn-primary,.btn-ghost,.cta-btn,.cta-btn-sec{width:100%;text-align:center;}
-  .stats-inner{grid-template-columns:1fr 1fr;}
-  .mob-sources{grid-template-columns:1fr;}
-  footer{padding:1.75rem 4%;}
+
+  /* All section padding */
+  .hero{padding:96px 4% 56px;min-height:auto;}
+  .logos-section{padding:2rem 4%;}
+  .section{padding:4rem 4%;}
+  .network-section{padding:4rem 4%;}
+  .compound-section{padding:4.5rem 4%;}
+  .stats{padding:3.5rem 4%;}
+  .cta-section{padding:4.5rem 4%;}
+  footer{padding:2rem 4%;}
+
+  /* Slack mockup mobile */
+  .slack-layout{grid-template-columns:1fr !important;height:auto !important;}
+  .slack-sidebar{display:none !important;}
+
+  /* Hero headline */
+  .hero h1{font-size:2.125rem;letter-spacing:-0.03em;}
+  .hero-sub{font-size:1rem;max-width:100%;}
+
+  /* Hero mockup — Slack UI on mobile */
+  .hero-mockup{border-radius:10px;}
+
+  /* Hide Slack sidebar on mobile mockup */
+  .hero-mockup [style*="grid-template-columns:220px"]{
+    grid-template-columns:1fr !important;
+  }
+
+  /* Trust strip stacks */
+  .trust{flex-direction:column;gap:0.375rem;align-items:center;}
+  .trust-sep{display:none;}
+
+  /* Hero actions */
+  .hero-actions{flex-direction:column;align-items:stretch;gap:0.75rem;}
+  .btn-primary,.btn-ghost{width:100%;text-align:center;justify-content:center;}
+
+  /* Logos row wraps nicely */
+  .logos-row{gap:0.375rem;justify-content:center;}
+  .logo-tag{font-size:0.75rem !important;padding:0.3rem 0.75rem !important;}
+  .logos-label{font-size:0.7rem;letter-spacing:0.08em;}
+
+  /* All card grids → single column */
+  .card-grid-2,.card-grid-3,.card-grid-4{grid-template-columns:1fr;gap:1rem;}
+
+  /* Compound cards */
+  .c-cards{grid-template-columns:1fr;gap:1rem;}
+
+  /* Stats 2x2 */
+  .stats-inner{grid-template-columns:repeat(2,1fr);gap:1rem;}
+  .stat-card{padding:1.75rem 1rem;}
+  .stat-n{font-size:2.5rem;}
+
+  /* Headings */
+  .display-h{font-size:1.875rem;}
+  .net-h{font-size:2rem;}
+  .c-h{font-size:2.25rem;}
+  .cta-h{font-size:2rem;}
+
+  /* CTA actions */
+  .cta-actions{flex-direction:column;align-items:stretch;gap:0.75rem;}
+  .cta-btn,.cta-btn-sec,.cta-btn-ghost{width:100%;text-align:center;}
+
+  /* Footer stacks */
+  .foot-inner{flex-direction:column;align-items:flex-start;gap:1.25rem;}
+
+  /* Mobile network diagram */
+  .mob-sources{grid-template-columns:1fr 1fr;gap:0.625rem;}
+  .mob-src{padding:0.75rem;}
+  .mob-src-name{font-size:0.8125rem;}
+
+  /* Deploy features */
+  .deploy-feats{gap:0.875rem;}
+  .deploy-feat{padding:1rem 1.125rem;}
+
+  /* Pain list */
+  .pain{padding:1.125rem 0;gap:1rem;}
+
+  /* Use case cards */
+  .uc-q{font-size:0.875rem;}
+
+  /* Security grid → 1 col */
+  .security-grid,.card-grid-2{grid-template-columns:1fr;}
+}
+
+/* ── SMALL MOBILE (480px) ── */
+@media(max-width:480px){
+  nav{height:60px;padding:0 4%;}
+  .mobile-menu{top:60px;}
+
+  /* Hero */
+  .hero{padding:84px 4% 48px;}
+  .hero h1{font-size:1.75rem;letter-spacing:-0.025em;}
+  .hero-sub{font-size:0.9375rem;}
+
+  /* Eyebrow badge */
+  .eyebrow{font-size:0.7rem;padding:4px 12px 4px 9px;}
+
+  /* Headings */
+  .display-h{font-size:1.625rem;}
+  .net-h{font-size:1.75rem;}
+  .c-h{font-size:1.875rem;}
+  .cta-h{font-size:1.75rem;}
+  .body-lg{font-size:1rem;}
+
+  /* Stats → 2 cols */
+  .stats-inner{grid-template-columns:repeat(2,1fr);gap:0.75rem;}
+  .stat-n{font-size:2.25rem;}
+  .stat-l{font-size:0.8125rem;}
+
+  /* Mobile network */
+  .mob-sources{grid-template-columns:1fr 1fr;}
+
+  /* Compound cards */
+  .c-card{padding:1.5rem;}
+
+  /* Cards */
+  .card{padding:1.5rem;}
+
+  /* Logo pills on logos bar */
+  .logos-label{font-size:0.7rem;}
+
+  /* Footer */
+  footer{padding:1.5rem 4%;}
+  .foot-links{gap:1.125rem;}
+  .foot-links a,.foot-copy{font-size:0.8125rem;}
+
+  /* Pain numbers */
+  .pain-num{font-size:0.875rem;min-width:22px;}
+
+  /* Section spacing */
+  .section{padding:3.5rem 4%;}
+  .network-section,.compound-section{padding:3.5rem 4%;}
+  .cta-section{padding:4rem 4%;}
+  .stats{padding:3rem 4%;}
 }
 </style>
 </head>
@@ -657,7 +803,7 @@ footer{
     </div>
 
     <!-- SLACK MOCKUP -->
-    <div class="hero-mockup" style="border-radius:12px;overflow:hidden;box-shadow:0 2px 4px rgba(0,0,0,0.06),0 32px 80px rgba(0,0,0,0.14);">
+    <div class="hero-mockup" style="border-radius:12px;overflow:hidden;box-shadow:0 2px 4px rgba(0,0,0,0.06),0 32px 80px rgba(0,0,0,0.14);max-width:100%;">
       <!-- Mac window bar -->
       <div style="background:#1a1d21;padding:12px 16px;display:flex;align-items:center;gap:8px;border-bottom:1px solid rgba(255,255,255,0.06);">
         <div style="display:flex;gap:6px;"><div style="width:11px;height:11px;border-radius:50%;background:#ff5f57;"></div><div style="width:11px;height:11px;border-radius:50%;background:#febc2e;"></div><div style="width:11px;height:11px;border-radius:50%;background:#28c840;"></div></div>
@@ -669,9 +815,9 @@ footer{
         </div>
       </div>
       <!-- Slack layout -->
-      <div style="display:grid;grid-template-columns:220px 1fr;height:360px;background:#1a1d21;">
+      <div class="slack-layout" style="display:grid;grid-template-columns:220px 1fr;height:360px;background:#1a1d21;">
         <!-- Sidebar -->
-        <div style="background:#1a1d21;border-right:1px solid rgba(255,255,255,0.06);padding:0;display:flex;flex-direction:column;overflow:hidden;">
+        <div class="slack-sidebar" style="background:#1a1d21;border-right:1px solid rgba(255,255,255,0.06);padding:0;display:flex;flex-direction:column;overflow:hidden;">
           <!-- Workspace name -->
           <div style="padding:12px 16px 8px;border-bottom:1px solid rgba(255,255,255,0.06);">
             <div style="display:flex;align-items:center;justify-content:space-between;">
