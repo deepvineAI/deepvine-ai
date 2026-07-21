@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LQMY9C69YW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-LQMY9C69YW');
+</script>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Deepvine.AI — Private AI Brain for Your Business</title>
@@ -1026,6 +1035,153 @@ footer{
     </div>
   </div>
 </div>
+
+<style>
+/* ===== Explainer video ===== */
+.video-section{
+  background:var(--cream);
+  padding:6.5rem 5% 7.5rem;
+  position:relative;
+}
+.video-inner{max-width:1240px;margin:0 auto;text-align:center;}
+.video-head{margin-bottom:3.25rem;}
+.video-head .body-lg{max-width:520px;margin:0 auto;}
+
+.video-frame{
+  position:relative;
+  max-width:980px;
+  margin:0 auto;
+  aspect-ratio:16/9;
+  border-radius:20px;
+  background:var(--ink);
+  overflow:hidden;
+  cursor:pointer;
+  isolation:isolate;
+  box-shadow:
+    0 1px 2px rgba(14,14,14,0.06),
+    0 12px 32px rgba(14,14,14,0.14),
+    0 32px 80px rgba(14,14,14,0.16),
+    0 0 0 1px rgba(14,14,14,0.06);
+  transition:transform .45s cubic-bezier(.2,.8,.2,1), box-shadow .45s cubic-bezier(.2,.8,.2,1);
+}
+.video-frame:hover{
+  transform:translateY(-4px);
+  box-shadow:
+    0 2px 4px rgba(14,14,14,0.06),
+    0 20px 44px rgba(14,14,14,0.16),
+    0 48px 110px rgba(22,163,74,0.14),
+    0 0 0 1px rgba(14,14,14,0.06);
+}
+/* ambient green glow behind the frame — bridges into the dark section below */
+.video-frame::after{
+  content:'';
+  position:absolute;
+  inset:-12%;
+  z-index:-1;
+  background:radial-gradient(ellipse at 50% 100%, rgba(22,163,74,0.18) 0%, transparent 60%);
+  pointer-events:none;
+}
+.video-thumb{
+  position:absolute;inset:0;width:100%;height:100%;
+  object-fit:cover;display:block;
+  transition:transform 6s cubic-bezier(.2,.6,.2,1), opacity .3s;
+}
+.video-frame:hover .video-thumb{transform:scale(1.035);}
+/* cinematic overlay: darken + brand tint so the play button owns the frame */
+.video-scrim{
+  position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse at center, rgba(14,14,14,0.12) 0%, rgba(14,14,14,0.5) 100%),
+    linear-gradient(to top, rgba(14,14,14,0.55) 0%, transparent 34%);
+  transition:opacity .3s;
+}
+.video-play{
+  position:absolute;top:50%;left:50%;
+  transform:translate(-50%,-50%);
+  width:82px;height:82px;border-radius:50%;
+  background:var(--green);
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 8px 28px rgba(22,163,74,0.45), 0 0 0 0 rgba(34,197,94,0.35);
+  transition:transform .3s cubic-bezier(.2,.8,.2,1), background .2s;
+  animation:playPulse 2.6s ease-out infinite;
+}
+@keyframes playPulse{
+  0%{box-shadow:0 8px 28px rgba(22,163,74,0.45), 0 0 0 0 rgba(34,197,94,0.35);}
+  70%{box-shadow:0 8px 28px rgba(22,163,74,0.45), 0 0 0 22px rgba(34,197,94,0);}
+  100%{box-shadow:0 8px 28px rgba(22,163,74,0.45), 0 0 0 0 rgba(34,197,94,0);}
+}
+.video-frame:hover .video-play{transform:translate(-50%,-50%) scale(1.08);background:var(--green-mid);}
+.video-play svg{width:26px;height:26px;fill:#fff;margin-left:5px;}
+.video-caption{
+  position:absolute;left:0;right:0;bottom:1.5rem;
+  display:flex;align-items:center;justify-content:center;gap:0.6rem;
+  color:rgba(255,255,255,0.92);
+  font-size:0.9375rem;font-weight:500;letter-spacing:-0.01em;
+  pointer-events:none;
+}
+.video-caption .dot{width:6px;height:6px;border-radius:50%;background:var(--green-mid);}
+.video-frame iframe{
+  position:absolute;inset:0;width:100%;height:100%;border:0;display:block;
+}
+@media (max-width:768px){
+  .video-section{padding:4rem 4% 5rem;}
+  .video-head{margin-bottom:2.25rem;}
+  .video-frame{border-radius:14px;}
+  .video-play{width:64px;height:64px;}
+  .video-play svg{width:20px;height:20px;margin-left:4px;}
+  .video-caption{font-size:0.8125rem;bottom:1rem;}
+}
+</style>
+
+<!-- EXPLAINER VIDEO -->
+<section class="video-section" id="video">
+  <div class="video-inner">
+    <div class="video-head">
+      <div class="stag">See It In Action</div>
+      <h2 class="display-h" style="margin-left:auto;margin-right:auto;">Two minutes.<br><span>Everything we do.</span></h2>
+      <p class="body-lg">Watch how Deepvine turns your company's scattered knowledge into one private AI brain your team can question in Slack.</p>
+    </div>
+
+    <div class="video-frame" id="videoFrame" role="button" tabindex="0" aria-label="Play the Deepvine explainer video">
+      <img class="video-thumb"
+           src="https://i.ytimg.com/vi/yxoZuAn6HUE/maxresdefault.jpg"
+           onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/yxoZuAn6HUE/hqdefault.jpg';"
+           alt="Deepvine AI explainer video preview" loading="lazy">
+      <div class="video-scrim"></div>
+      <div class="video-play" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+      </div>
+      <div class="video-caption"><span class="dot"></span>Watch the overview</div>
+    </div>
+  </div>
+</section>
+
+<script>
+(function(){
+  var frame = document.getElementById('videoFrame');
+  if(!frame) return;
+  function playVideo(){
+    if(frame.dataset.playing) return;
+    frame.dataset.playing = '1';
+    frame.style.cursor = 'default';
+    var iframe = document.createElement('iframe');
+    iframe.src = 'https://www.youtube-nocookie.com/embed/yxoZuAn6HUE?autoplay=1&rel=0&modestbranding=1&playsinline=1';
+    iframe.title = 'Deepvine AI — Explainer Video';
+    iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+    iframe.allowFullscreen = true;
+    frame.innerHTML = '';
+    frame.appendChild(iframe);
+    if(typeof gtag === 'function'){
+      gtag('event', 'video_play', {event_category:'engagement', event_label:'explainer_video'});
+    }
+  }
+  frame.addEventListener('click', playVideo);
+  frame.addEventListener('keydown', function(e){
+    if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); playVideo(); }
+  });
+})();
+</script>
+
 
 <!-- NETWORK DIAGRAM -->
 <section class="network-section" id="network">
