@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LQMY9C69YW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-LQMY9C69YW');
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Compound Intelligence — The Deepvine.AI Blog | Private AI for Professional Firms</title>
+<meta name="description" content="Analysis on private AI deployment, data ownership, and compliance for law firms, RIAs, CPA firms, and knowledge-driven businesses. From the team at Deepvine.AI.">
+<link rel="canonical" href="https://www.deepvine.ai/blog/">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Deepvine.AI">
+<meta property="og:title" content="Compound Intelligence — The Deepvine.AI Blog">
+<meta property="og:description" content="Analysis on private AI deployment, data ownership, and compliance for law firms, RIAs, CPA firms, and knowledge-driven businesses.">
+<meta property="og:url" content="https://www.deepvine.ai/blog/">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.deepvine.ai/#organization",
+      "name": "Deepvine AI",
+      "url": "https://www.deepvine.ai/",
+      "email": "info@deepvine.ai",
+      "description": "Deepvine installs private AI knowledge systems for knowledge-driven businesses — connecting company systems, backfilling years of history, and delivering source-backed answers in Slack. Private deployment, full data ownership.",
+      "foundingLocation": { "@type": "Place", "name": "Charlotte, North Carolina" },
+      "areaServed": "United States",
+      "founder": [
+        { "@id": "https://www.deepvine.ai/#mitch-boraski" }
+      ],
+      "knowsAbout": ["Private AI deployment", "On-premises large language models", "AI compliance for law firms", "AI for registered investment advisors", "AI for accounting firms", "Retrieval-augmented generation", "Company knowledge systems", "Institutional memory"]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://www.deepvine.ai/#mitch-boraski",
+      "name": "Mitch Boraski",
+      "jobTitle": "Co-Founder",
+      "worksFor": { "@id": "https://www.deepvine.ai/#organization" },
+      "alumniOf": { "@type": "CollegeOrUniversity", "name": "Norwich University" },
+      "hasCredential": { "@type": "EducationalOccupationalCredential", "credentialCategory": "degree", "name": "MBA" }
+    },
+    {
+      "@type": "Blog",
+      "@id": "https://www.deepvine.ai/blog/#blog",
+      "name": "Compound Intelligence",
+      "alternateName": "The Deepvine.AI Blog",
+      "url": "https://www.deepvine.ai/blog/",
+      "description": "Analysis on private AI deployment, data ownership, institutional memory, and compliance for law firms, RIAs, CPA firms, and other knowledge-driven businesses.",
+      "publisher": { "@id": "https://www.deepvine.ai/#organization" },
+      "inLanguage": "en-US"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.deepvine.ai/blog/#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.deepvine.ai/" },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.deepvine.ai/blog/" }
+      ]
+    }
+  ]
+}
+</script>
+
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --cream:#faf9f6;
+  --white:#ffffff;
+  --ink:#0e0e0e;
+  --ink2:#1a1a1a;
+  --muted:#6b6b6b;
+  --subtle:#a8a8a8;
+  --border:#e8e6e1;
+  --border2:#d4d2cd;
+  --green:#16a34a;
+  --green-mid:#22c55e;
+  --green-light:#f0fdf4;
+  --green-dark:#14532d;
+  --green-dim:#dcfce7;
+  --font-body:'Inter',system-ui,sans-serif;
+}
+html{scroll-behavior:smooth;}
+body{
+  background:var(--cream);
+  color:var(--ink);
+  font-family:var(--font-body);
+  font-size:17px;
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+
+/* ── NOISE TEXTURE OVERLAY ── */
+body::before{
+  content:'';
+  position:fixed;
+  inset:0;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events:none;
+  z-index:1000;
+  opacity:0.35;
+}
+
+/* ── NAV ── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  padding:0 5%;height:72px;
+  display:flex;align-items:center;
+  background:rgba(250,249,246,0.9);
+  backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--border);
+}
+.nav-inner{width:100%;max-width:1240px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none;}
+.logo-type{font-weight:600;font-size:1.375rem;letter-spacing:-0.02em;}
+.logo-type .dark{color:var(--ink);}
+.logo-type .green{color:var(--green);}
+.nav-links{display:flex;align-items:center;gap:2.5rem;}
+.nav-link{color:var(--muted);text-decoration:none;font-size:0.9375rem;font-weight:400;letter-spacing:-0.01em;transition:color 0.15s;}
+.nav-link:hover{color:var(--ink);}
+.nav-link.active{color:var(--ink);font-weight:500;}
+.nav-cta{
+  padding:0.5rem 1.25rem;background:var(--ink);color:var(--cream);
+  border:none;border-radius:100px;
+  font-family:var(--font-body);font-size:0.9375rem;font-weight:500;
+  cursor:pointer;transition:background 0.15s;letter-spacing:-0.01em;
+}
+.nav-cta:hover{background:var(--ink2);}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none;}
+.hamburger span{display:block;width:20px;height:1.5px;background:var(--ink);transition:all 0.3s;}
+.mobile-menu{display:none;position:fixed;top:72px;left:0;right:0;background:rgba(250,249,246,0.98);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:1.5rem 5%;z-index:99;flex-direction:column;}
+.mobile-menu.open{display:flex;}
+.mobile-menu a{display:block;padding:1rem 0;border-bottom:1px solid var(--border);color:var(--ink);text-decoration:none;font-size:1.0625rem;}
+.mobile-cta-btn{margin-top:1rem;background:var(--ink);color:var(--cream);padding:1rem;border-radius:100px;border:none;font-weight:500;font-family:var(--font-body);font-size:1rem;cursor:pointer;width:100%;}
+
+/* ── MASTHEAD ── */
+.masthead{
+  padding:164px 5% 4rem;
+  position:relative;overflow:hidden;
+}
+.masthead::before{
+  content:'';position:absolute;
+  top:-30%;left:50%;transform:translateX(-50%);
+  width:900px;height:600px;
+  background:radial-gradient(ellipse at 50% 40%, rgba(22,163,74,0.06) 0%, transparent 68%);
+  pointer-events:none;
+}
+.mast-inner{max-width:1240px;margin:0 auto;position:relative;z-index:1;}
+.stag{
+  display:inline-block;
+  font-size:0.75rem;font-weight:500;
+  letter-spacing:0.1em;text-transform:uppercase;
+  color:var(--green);margin-bottom:1.25rem;
+}
+.mast-h{
+  font-weight:700;
+  font-size:clamp(2.5rem,4.5vw,3.75rem);
+  line-height:1.05;letter-spacing:-0.04em;
+  color:var(--ink);margin-bottom:1.25rem;
+}
+.mast-h span{color:var(--green);}
+.mast-sub{
+  font-size:1.125rem;color:var(--muted);
+  max-width:620px;line-height:1.8;font-weight:300;
+}
+
+/* ── FILTER ROW ── */
+.filter-row{
+  max-width:1240px;margin:0 auto;
+  padding:2.25rem 0 0;
+  display:flex;align-items:center;gap:0.5rem;flex-wrap:wrap;
+  position:relative;z-index:1;
+}
+.filter-label{font-size:0.75rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--subtle);font-weight:500;margin-right:0.5rem;}
+.chip{
+  padding:0.4rem 1.05rem;
+  background:var(--white);
+  border:1px solid var(--border);
+  border-radius:100px;
+  font-family:var(--font-body);font-size:0.875rem;font-weight:400;
+  color:var(--muted);cursor:pointer;
+  transition:all 0.15s;letter-spacing:-0.01em;
+}
+.chip:hover{border-color:var(--border2);color:var(--ink);}
+.chip.active{background:var(--ink);border-color:var(--ink);color:var(--cream);font-weight:500;}
+
+/* ── FEATURED — dark editorial card ── */
+.featured-wrap{padding:2.5rem 5% 0;}
+.featured{
+  max-width:1240px;margin:0 auto;
+  background:var(--ink);
+  border-radius:20px;
+  position:relative;overflow:hidden;
+  display:grid;grid-template-columns:1.25fr 1fr;
+  text-decoration:none;
+  box-shadow:0 2px 4px rgba(0,0,0,0.05), 0 24px 64px rgba(0,0,0,0.12);
+  transition:transform .4s cubic-bezier(.2,.8,.2,1), box-shadow .4s cubic-bezier(.2,.8,.2,1);
+}
+.featured:hover{
+  transform:translateY(-4px);
+  box-shadow:0 2px 4px rgba(0,0,0,0.05), 0 32px 80px rgba(22,163,74,0.14);
+}
+.featured::before{
+  content:'';position:absolute;inset:0;
+  background-image:radial-gradient(rgba(34,197,94,0.035) 1px,transparent 1px);
+  background-size:36px 36px;pointer-events:none;
+}
+.featured-glow{
+  position:absolute;top:50%;right:-10%;
+  transform:translateY(-50%);
+  width:600px;height:600px;
+  background:radial-gradient(circle,rgba(22,163,74,0.1) 0%,transparent 65%);
+  pointer-events:none;
+}
+.featured-body{padding:3.5rem 3rem 3.5rem 3.5rem;position:relative;z-index:1;display:flex;flex-direction:column;justify-content:center;}
+.featured-eyebrow{
+  display:flex;align-items:center;gap:0.75rem;margin-bottom:1.5rem;
+}
+.f-badge{
+  font-size:0.6875rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;
+  color:var(--green-mid);
+  background:rgba(34,197,94,0.1);
+  border:1px solid rgba(34,197,94,0.25);
+  border-radius:100px;padding:0.25rem 0.8rem;
+}
+.f-cat{font-size:0.75rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.4);}
+.featured-h{
+  font-weight:700;
+  font-size:clamp(1.5rem,2.4vw,2.125rem);
+  line-height:1.15;letter-spacing:-0.03em;
+  color:var(--white);margin-bottom:1.125rem;
+}
+.featured-h em{font-style:normal;color:var(--green-mid);}
+.featured-dek{
+  font-size:1rem;color:rgba(255,255,255,0.45);
+  line-height:1.75;font-weight:300;margin-bottom:1.75rem;max-width:480px;
+}
+.featured-meta{
+  display:flex;align-items:center;gap:0.75rem;
+  font-size:0.8125rem;color:rgba(255,255,255,0.35);margin-bottom:2rem;
+}
+.featured-meta .sep{color:rgba(255,255,255,0.15);}
+.featured-link{
+  display:inline-flex;align-items:center;gap:0.5rem;
+  color:var(--green-mid);font-size:0.9375rem;font-weight:500;letter-spacing:-0.01em;
+}
+.featured-link .arrow{transition:transform 0.2s;}
+.featured:hover .featured-link .arrow{transform:translateX(4px);}
+
+/* Featured visual panel */
+.featured-visual{
+  position:relative;z-index:1;
+  display:flex;align-items:center;justify-content:center;
+  padding:3rem 3rem 3rem 0;
+}
+.featured-visual svg{width:100%;max-width:380px;height:auto;display:block;}
+
+/* ── GRID SECTION ── */
+.grid-section{padding:4.5rem 5% 2rem;}
+.grid-inner{max-width:1240px;margin:0 auto;}
+.grid-head{
+  display:flex;align-items:baseline;justify-content:space-between;
+  gap:1rem;flex-wrap:wrap;margin-bottom:2rem;
+  padding-bottom:1.25rem;border-bottom:1px solid var(--border);
+}
+.grid-title{font-size:1.0625rem;font-weight:600;letter-spacing:-0.02em;color:var(--ink);}
+.grid-note{font-size:0.875rem;color:var(--subtle);font-weight:300;}
+.post-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;
+}
+.post-card{
+  background:var(--white);
+  border:1px solid var(--border);
+  border-top:3px solid var(--green);
+  border-radius:0 0 16px 16px;
+  padding:2rem;
+  text-decoration:none;display:flex;flex-direction:column;
+  transition:box-shadow 0.2s,transform 0.2s;
+}
+.post-card:hover{box-shadow:0 4px 24px rgba(0,0,0,0.06);transform:translateY(-2px);}
+.post-card.soon{border-top-color:var(--border2);cursor:default;}
+.post-card.soon:hover{box-shadow:none;transform:none;}
+.pc-top{display:flex;align-items:center;justify-content:space-between;gap:0.5rem;margin-bottom:0.875rem;}
+.pc-cat{font-size:0.7rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--green);}
+.post-card.soon .pc-cat{color:var(--subtle);}
+.pc-soon{
+  font-size:0.6875rem;font-weight:500;color:var(--muted);
+  background:var(--cream);border:1px solid var(--border);
+  border-radius:100px;padding:0.15rem 0.7rem;white-space:nowrap;
+}
+.pc-h{
+  font-size:1.125rem;font-weight:600;letter-spacing:-0.02em;
+  line-height:1.35;color:var(--ink);margin-bottom:0.625rem;
+}
+.pc-p{font-size:0.9375rem;color:var(--muted);line-height:1.65;font-weight:300;flex:1;}
+.pc-meta{
+  display:flex;align-items:center;gap:0.6rem;
+  font-size:0.8125rem;color:var(--subtle);margin-top:1.375rem;
+  padding-top:1.125rem;border-top:1px solid var(--border);
+}
+.pc-meta .sep{color:var(--border2);}
+
+/* ── NEWSLETTER — The Weekly Diff ── */
+.news-section{padding:4.5rem 5% 6rem;}
+.news{
+  max-width:1240px;margin:0 auto;
+  background:var(--ink2);
+  border-radius:20px;
+  padding:4rem 3.5rem;
+  position:relative;overflow:hidden;
+  display:grid;grid-template-columns:1.2fr 1fr;gap:3rem;align-items:center;
+}
+.news::before{
+  content:'';position:absolute;inset:0;
+  background-image:radial-gradient(rgba(255,255,255,0.025) 1px,transparent 1px);
+  background-size:30px 30px;pointer-events:none;
+}
+.news-glow{
+  position:absolute;bottom:-40%;left:20%;
+  width:600px;height:400px;
+  background:radial-gradient(ellipse,rgba(22,163,74,0.12) 0%,transparent 70%);
+  pointer-events:none;
+}
+.news-body{position:relative;z-index:1;}
+.news-tag{display:inline-block;font-size:0.75rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--green-mid);margin-bottom:1rem;}
+.news-h{
+  font-weight:700;font-size:clamp(1.5rem,2.5vw,2rem);
+  line-height:1.12;letter-spacing:-0.03em;
+  color:var(--white);margin-bottom:0.875rem;
+}
+.news-h span{color:var(--green-mid);}
+.news-p{font-size:1rem;color:rgba(255,255,255,0.45);line-height:1.75;font-weight:300;max-width:440px;}
+.news-form{position:relative;z-index:1;display:flex;gap:0.625rem;}
+.news-input{
+  flex:1;min-width:0;
+  background:rgba(255,255,255,0.06);
+  border:1px solid rgba(255,255,255,0.12);
+  border-radius:100px;
+  padding:0.875rem 1.375rem;
+  font-family:var(--font-body);font-size:0.9375rem;color:var(--white);
+  outline:none;transition:border-color 0.15s;
+}
+.news-input::placeholder{color:rgba(255,255,255,0.3);}
+.news-input:focus{border-color:rgba(34,197,94,0.5);}
+.news-btn{
+  padding:0.875rem 1.75rem;
+  background:var(--green);color:#fff;
+  border:none;border-radius:100px;
+  font-family:var(--font-body);font-size:0.9375rem;font-weight:500;
+  cursor:pointer;transition:background 0.15s;white-space:nowrap;letter-spacing:-0.01em;
+}
+.news-btn:hover{background:#15803d;}
+.news-micro{grid-column:1/-1;position:relative;z-index:1;font-size:0.8125rem;color:rgba(255,255,255,0.25);margin-top:-1rem;}
+
+/* ── FOOTER ── */
+footer{background:var(--white);border-top:1px solid var(--border);padding:2.5rem 5%;}
+.foot-inner{
+  max-width:1240px;margin:0 auto;
+  display:flex;align-items:center;justify-content:space-between;
+  gap:1.5rem;flex-wrap:wrap;
+}
+.foot-left{display:flex;flex-direction:column;gap:0.375rem;}
+.foot-logo{display:flex;align-items:center;gap:10px;}
+.foot-tagline{font-size:0.8125rem;color:var(--subtle);font-weight:300;}
+.foot-links{display:flex;gap:1.5rem;}
+.foot-links a{font-size:0.875rem;color:var(--subtle);text-decoration:none;transition:color 0.15s;}
+.foot-links a:hover{color:var(--ink);}
+.foot-copy{font-size:0.875rem;color:var(--subtle);}
+
+/* ── FOCUS + MOTION ── */
+a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(--green);outline-offset:3px;border-radius:4px;}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none !important;transition:none !important;}
+  html{scroll-behavior:auto;}
+}
+
+/* ── RESPONSIVE ── */
+@media(max-width:1024px){
+  .featured{grid-template-columns:1fr;}
+  .featured-visual{padding:0 3rem 3rem;justify-content:flex-start;}
+  .featured-visual svg{max-width:320px;}
+  .post-grid{grid-template-columns:1fr 1fr;}
+  .news{grid-template-columns:1fr;gap:2rem;padding:3rem 2.5rem;}
+}
+@media(max-width:768px){
+  nav{padding:0 4%;height:64px;}
+  .nav-links{display:none;}
+  .hamburger{display:flex;}
+  .mobile-menu{top:64px;}
+  .masthead{padding:120px 4% 2.5rem;}
+  .featured-wrap{padding:1.5rem 4% 0;}
+  .featured-body{padding:2.25rem 1.75rem;}
+  .featured-visual{padding:0 1.75rem 2.25rem;}
+  .grid-section{padding:3.5rem 4% 1.5rem;}
+  .post-grid{grid-template-columns:1fr;gap:1rem;}
+  .news-section{padding:3rem 4% 4rem;}
+  .news{padding:2.5rem 1.75rem;}
+  .news-form{flex-direction:column;}
+  .news-btn{width:100%;}
+  .foot-inner{flex-direction:column;align-items:flex-start;gap:1.25rem;}
+  .mast-h{font-size:2.125rem;}
+}
+@media(max-width:480px){
+  nav{height:60px;}
+  .mobile-menu{top:60px;}
+  .masthead{padding:104px 4% 2rem;}
+  .mast-h{font-size:1.875rem;}
+  .mast-sub{font-size:1rem;}
+  .featured-h{font-size:1.375rem;}
+  .featured-body{padding:1.875rem 1.375rem;}
+  .featured-visual{padding:0 1.375rem 1.875rem;}
+  .post-card{padding:1.5rem;}
+  .news-h{font-size:1.375rem;}
+}
+</style>
+</head>
+<body>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="/#how" onclick="closeMobileMenu()">How It Works</a>
+  <a href="/#usecases" onclick="closeMobileMenu()">Use Cases</a>
+  <a href="/#security" onclick="closeMobileMenu()">Security</a>
+  <a href="/blog/" onclick="closeMobileMenu()">Blog</a>
+  <button class="mobile-cta-btn" onclick="closeMobileMenu();openCalendly()">Book a Live Demo</button>
+</div>
+
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="/">
+      <svg width="46" height="46" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="50" cy="50" r="50" fill="#0d1a0f"/>
+        <circle cx="38" cy="72" r="8" fill="#16a34a"/>
+        <circle cx="56" cy="75" r="6.5" fill="#22c55e"/>
+        <circle cx="72" cy="69" r="5" fill="#16a34a"/>
+        <circle cx="28" cy="56" r="6.5" fill="#22c55e"/>
+        <circle cx="48" cy="52" r="10" fill="#22c55e"/>
+        <circle cx="68" cy="50" r="7" fill="#16a34a"/>
+        <circle cx="80" cy="58" r="4.5" fill="#22c55e"/>
+        <circle cx="34" cy="39" r="5.5" fill="#4ade80"/>
+        <circle cx="52" cy="34" r="8.5" fill="#22c55e"/>
+        <circle cx="70" cy="33" r="6" fill="#4ade80"/>
+        <circle cx="40" cy="22" r="4" fill="#4ade80"/>
+        <circle cx="56" cy="17" r="6" fill="#22c55e"/>
+        <circle cx="72" cy="20" r="3.5" fill="#4ade80"/>
+        <circle cx="46" cy="8" r="3" fill="#4ade80"/>
+        <circle cx="60" cy="5" r="4" fill="#22c55e"/>
+      </svg>
+      <span class="logo-type"><span class="dark">Deepvine</span><span class="green">.AI</span></span>
+    </a>
+    <div class="nav-links">
+      <a class="nav-link" href="/#how">How It Works</a>
+      <a class="nav-link" href="/#usecases">Use Cases</a>
+      <a class="nav-link" href="/#security">Security</a>
+      <a class="nav-link active" href="/blog/">Blog</a>
+      <button class="nav-cta" onclick="openCalendly()">Book a Demo</button>
+    </div>
+    <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- MASTHEAD -->
+<header class="masthead">
+  <div class="mast-inner">
+    <div class="stag">The Deepvine.AI Blog</div>
+    <h1 class="mast-h">Compound<br><span>Intelligence.</span></h1>
+    <p class="mast-sub">Analysis on private AI, data ownership, and institutional memory — written for the law firms, RIAs, CPA firms, and operators who treat their company knowledge as an asset.</p>
+  </div>
+  <div class="filter-row" role="group" aria-label="Filter posts by topic">
+    <span class="filter-label">Topics</span>
+    <button class="chip active" data-filter="all">All</button>
+    <button class="chip" data-filter="legal">Legal</button>
+    <button class="chip" data-filter="wealth">Wealth Management</button>
+    <button class="chip" data-filter="accounting">Accounting</button>
+    <button class="chip" data-filter="deployment">Deployment &amp; Security</button>
+  </div>
+</header>
+
+<!-- FEATURED POST -->
+<div class="featured-wrap">
+  <a class="featured" href="/blog/law-firm-ai-confidentiality-rule-1-6/" data-cat="legal">
+    <div class="featured-glow"></div>
+    <div class="featured-body">
+      <div class="featured-eyebrow">
+        <span class="f-badge">Featured</span>
+        <span class="f-cat">Legal</span>
+      </div>
+      <h2 class="featured-h">Can law firms use AI without breaking confidentiality? What Rule 1.6(c) <em>actually</em> requires.</h2>
+      <p class="featured-dek">Most coverage gets the ethics rules wrong. There is no prohibition on AI in legal practice — there is a duty of reasonable efforts. Here's what the ABA, state bar opinions, and NC's 2024 guidance actually say, and what it means for how your firm deploys AI.</p>
+      <div class="featured-meta">
+        <span>July 21, 2026</span>
+        <span class="sep">·</span>
+        <span>9 min read</span>
+        <span class="sep">·</span>
+        <span>Deepvine Team</span>
+      </div>
+      <span class="featured-link">Read the analysis <span class="arrow">→</span></span>
+    </div>
+    <div class="featured-visual" aria-hidden="true">
+      <svg viewBox="0 0 400 340" xmlns="http://www.w3.org/2000/svg">
+        <!-- concentric rings -->
+        <circle cx="200" cy="150" r="118" fill="none" stroke="rgba(34,197,94,0.08)" stroke-width="1"/>
+        <circle cx="200" cy="150" r="92" fill="none" stroke="rgba(34,197,94,0.12)" stroke-width="1"/>
+        <circle cx="200" cy="150" r="68" fill="none" stroke="rgba(34,197,94,0.2)" stroke-width="1" stroke-dasharray="4,6"/>
+        <!-- vine mark -->
+        <circle cx="188" cy="168" r="9" fill="#16a34a" opacity="0.9"/>
+        <circle cx="206" cy="172" r="7" fill="#22c55e" opacity="0.8"/>
+        <circle cx="221" cy="164" r="5" fill="#16a34a" opacity="0.7"/>
+        <circle cx="181" cy="150" r="6.5" fill="#22c55e" opacity="0.8"/>
+        <circle cx="199" cy="144" r="10" fill="#22c55e"/>
+        <circle cx="217" cy="142" r="7" fill="#16a34a" opacity="0.8"/>
+        <circle cx="186" cy="128" r="5" fill="#4ade80" opacity="0.7"/>
+        <circle cx="202" cy="122" r="7.5" fill="#22c55e" opacity="0.9"/>
+        <circle cx="218" cy="126" r="5" fill="#4ade80" opacity="0.6"/>
+        <!-- authority chips -->
+        <rect x="52" y="252" width="132" height="30" rx="6" fill="rgba(34,197,94,0.08)" stroke="rgba(34,197,94,0.22)" stroke-width="1"/>
+        <text x="118" y="271" font-family="Inter,sans-serif" font-size="12" fill="#22c55e" text-anchor="middle" font-weight="500">↗ ABA Rule 1.6(c)</text>
+        <rect x="194" y="252" width="152" height="30" rx="6" fill="rgba(34,197,94,0.08)" stroke="rgba(34,197,94,0.22)" stroke-width="1"/>
+        <text x="270" y="271" font-family="Inter,sans-serif" font-size="12" fill="#22c55e" text-anchor="middle" font-weight="500">↗ NC FEO 1 (2024)</text>
+        <rect x="106" y="292" width="188" height="30" rx="6" fill="rgba(34,197,94,0.08)" stroke="rgba(34,197,94,0.22)" stroke-width="1"/>
+        <text x="200" y="311" font-family="Inter,sans-serif" font-size="12" fill="#22c55e" text-anchor="middle" font-weight="500">↗ ABA Formal Op. 512 (2024)</text>
+        <!-- connector lines from rings to chips -->
+        <line x1="160" y1="238" x2="130" y2="252" stroke="#22c55e" stroke-width="1" stroke-dasharray="4,6" opacity="0.3"/>
+        <line x1="240" y1="238" x2="266" y2="252" stroke="#22c55e" stroke-width="1" stroke-dasharray="4,6" opacity="0.3"/>
+      </svg>
+    </div>
+  </a>
+</div>
+
+<!-- POST GRID -->
+<section class="grid-section">
+  <div class="grid-inner">
+    <div class="grid-head">
+      <span class="grid-title">Latest analysis</span>
+      <span class="grid-note">New posts weekly — one topic, researched properly.</span>
+    </div>
+    <div class="post-grid" id="postGrid">
+
+      <a class="post-card" href="/blog/law-firm-ai-confidentiality-rule-1-6/" data-cat="legal">
+        <div class="pc-top"><span class="pc-cat">Legal</span></div>
+        <h3 class="pc-h">Can law firms use AI without breaking confidentiality? What Rule 1.6(c) actually requires.</h3>
+        <p class="pc-p">There is no ethics prohibition on AI in legal practice — there is a duty of reasonable efforts. What the ABA and state bars actually say.</p>
+        <div class="pc-meta"><span>Jul 21, 2026</span><span class="sep">·</span><span>9 min read</span></div>
+      </a>
+
+      <div class="post-card soon" data-cat="wealth">
+        <div class="pc-top"><span class="pc-cat">Wealth Management</span><span class="pc-soon">Coming soon</span></div>
+        <h3 class="pc-h">AI at your RIA: what the books-and-records rule means for client data in third-party tools.</h3>
+        <p class="pc-p">Before your advisors paste client information into a chatbot, here's what SEC recordkeeping and privacy obligations actually require.</p>
+        <div class="pc-meta"><span>This week</span></div>
+      </div>
+
+      <div class="post-card soon" data-cat="accounting">
+        <div class="pc-top"><span class="pc-cat">Accounting</span><span class="pc-soon">Coming soon</span></div>
+        <h3 class="pc-h">IRC §7216 and AI tools: the consent rule CPA firms are quietly violating.</h3>
+        <p class="pc-p">Tax return information has some of the strictest disclosure rules in federal law — and most cloud AI usage policies never account for it.</p>
+        <div class="pc-meta"><span>This week</span></div>
+      </div>
+
+      <div class="post-card soon" data-cat="deployment">
+        <div class="pc-top"><span class="pc-cat">Deployment &amp; Security</span><span class="pc-soon">Coming soon</span></div>
+        <h3 class="pc-h">Private AI vs. ChatGPT Enterprise: what "your data is safe" actually means in each model.</h3>
+        <p class="pc-p">A plain-English comparison of deployment models, data flows, and ownership — without the vendor spin from either side.</p>
+        <div class="pc-meta"><span>Next week</span></div>
+      </div>
+
+      <div class="post-card soon" data-cat="deployment">
+        <div class="pc-top"><span class="pc-cat">Deployment &amp; Security</span><span class="pc-soon">Coming soon</span></div>
+        <h3 class="pc-h">Where does your data actually go? Anatomy of a cloud AI request.</h3>
+        <p class="pc-p">From your keyboard to a vendor's infrastructure and back: every hop your firm's information takes, and where control is lost or kept.</p>
+        <div class="pc-meta"><span>Next week</span></div>
+      </div>
+
+      <div class="post-card soon" data-cat="legal">
+        <div class="pc-top"><span class="pc-cat">Legal</span><span class="pc-soon">Coming soon</span></div>
+        <h3 class="pc-h">The institutional memory problem: what leaves your firm when a senior partner does.</h3>
+        <p class="pc-p">Decades of matter history, client context, and judgment walk out the door every year. What preserving it actually looks like.</p>
+        <div class="pc-meta"><span>This month</span></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="news-section">
+  <div class="news">
+    <div class="news-glow"></div>
+    <div class="news-body">
+      <div class="news-tag">The Weekly Diff</div>
+      <h2 class="news-h">One email a week.<br><span>What changed, and why it matters.</span></h2>
+      <p class="news-p">Private AI, compliance, and data ownership for professional firms — synthesized, source-backed, no filler. The same way Deepvine answers questions.</p>
+    </div>
+    <form class="news-form" onsubmit="subscribeDiff(event)">
+      <input class="news-input" type="email" id="diffEmail" placeholder="you@yourfirm.com" required aria-label="Email address">
+      <button class="news-btn" type="submit">Subscribe</button>
+    </form>
+    <p class="news-micro">No spam, no selling your address. Unsubscribe anytime.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-inner">
+    <div class="foot-left">
+      <div class="foot-logo">
+        <svg width="40" height="40" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="50" cy="50" r="50" fill="#0d1a0f"/>
+          <circle cx="38" cy="72" r="8" fill="#16a34a"/><circle cx="56" cy="75" r="6.5" fill="#22c55e"/>
+          <circle cx="48" cy="52" r="10" fill="#22c55e"/><circle cx="68" cy="50" r="7" fill="#16a34a"/>
+          <circle cx="52" cy="34" r="8.5" fill="#22c55e"/><circle cx="56" cy="17" r="6" fill="#22c55e"/>
+        </svg>
+        <span style="font-weight:600;font-size:1.25rem;letter-spacing:-0.02em;"><span style="color:var(--ink);">Deepvine</span><span style="color:var(--green);">.AI</span></span>
+      </div>
+      <div class="foot-tagline">Private AI brain for modern operators.</div>
+    </div>
+    <div class="foot-links">
+      <a href="/">Home</a>
+      <a href="/blog/">Blog</a>
+      <a href="mailto:info@deepvine.ai">info@deepvine.ai</a>
+    </div>
+    <p class="foot-copy">© 2026 Deepvine AI</p>
+  </div>
+</footer>
+
+<script>
+function openCalendly(){window.open('https://calendly.com/deepvine_ai/30min','_blank');}
+function toggleMenu(){
+  const m=document.getElementById('mobileMenu'),h=document.getElementById('hamburger');
+  m.classList.toggle('open');
+  const s=h.querySelectorAll('span');
+  if(m.classList.contains('open')){s[0].style.transform='rotate(45deg) translate(4px,4px)';s[1].style.opacity='0';s[2].style.transform='rotate(-45deg) translate(4px,-4px)';}
+  else{s[0].style.transform='';s[1].style.opacity='';s[2].style.transform='';}
+}
+function closeMobileMenu(){
+  document.getElementById('mobileMenu').classList.remove('open');
+  const s=document.querySelectorAll('.hamburger span');
+  s[0].style.transform='';s[1].style.opacity='';s[2].style.transform='';
+}
+document.addEventListener('click',function(e){
+  const m=document.getElementById('mobileMenu'),h=document.getElementById('hamburger');
+  if(m&&m.classList.contains('open')&&!m.contains(e.target)&&!h.contains(e.target))closeMobileMenu();
+});
+
+/* Topic filter */
+document.querySelectorAll('.chip').forEach(function(chip){
+  chip.addEventListener('click',function(){
+    document.querySelectorAll('.chip').forEach(function(c){c.classList.remove('active');});
+    chip.classList.add('active');
+    var f=chip.dataset.filter;
+    document.querySelectorAll('#postGrid .post-card').forEach(function(card){
+      card.style.display=(f==='all'||card.dataset.cat===f)?'':'none';
+    });
+    var feat=document.querySelector('.featured-wrap');
+    if(feat) feat.style.display=(f==='all'||document.querySelector('.featured').dataset.cat===f)?'':'none';
+    if(typeof gtag==='function'){gtag('event','blog_filter',{event_category:'engagement',event_label:f});}
+  });
+});
+
+/* Newsletter — mailto capture until an email platform is connected.
+   To upgrade later: replace subscribeDiff() with a POST to your ESP
+   (GoHighLevel / ConvertKit / Mailchimp form endpoint). */
+function subscribeDiff(e){
+  e.preventDefault();
+  var email=document.getElementById('diffEmail').value;
+  if(typeof gtag==='function'){gtag('event','newsletter_subscribe',{event_category:'engagement',event_label:'weekly_diff'});}
+  window.location.href='mailto:info@deepvine.ai?subject=Subscribe%20me%20to%20The%20Weekly%20Diff&body='+encodeURIComponent('Please add '+email+' to The Weekly Diff.');
+}
+</script>
+</body>
+</html>
