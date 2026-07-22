@@ -702,7 +702,7 @@ footer a:hover{color:var(--green);}
 <script>
 /* Demo CTA: set CALENDLY_URL when scheduling link is ready.
    Until then, falls back to a pre-filled email to info@deepvine.ai. */
-var CALENDLY_URL = "";
+var CALENDLY_URL = "https://calendly.com/deepvine_ai/30min";
 function openCalendly(){
   if(typeof gtag==='function'){gtag('event','demo_cta_click',{event_category:'conversion',event_label:'blog_post_rule_1_6'});}
   if(CALENDLY_URL){window.open(CALENDLY_URL,'_blank');}
