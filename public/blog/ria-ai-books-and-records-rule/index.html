@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LQMY9C69YW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-LQMY9C69YW');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI at Your RIA: What the Books-and-Records Rule Means for Client Data in Third-Party Tools | Deepvine.AI</title>
+<meta name="description" content="No SEC rule prohibits RIAs from using AI. But Rule 204-2 and the amended Regulation S-P make the deployment model the whole compliance question. What advisers must know now that both Reg S-P compliance dates have passed.">
+<link rel="canonical" href="https://www.deepvine.ai/blog/ria-ai-books-and-records-rule/">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Deepvine.AI">
+<meta property="og:title" content="AI at Your RIA: What the Books-and-Records Rule Means for Client Data in Third-Party Tools">
+<meta property="og:description" content="The SEC withdrew its AI-specific rule. Existing rules govern instead, and Rule 204-2 plus amended Reg S-P make one question decisive: where does client data go when your advisers use AI?">
+<meta property="og:url" content="https://www.deepvine.ai/blog/ria-ai-books-and-records-rule/">
+<meta property="article:published_time" content="2026-07-21T09:00:00-04:00">
+<meta property="article:author" content="Mitch Boraski">
+<meta property="article:section" content="Wealth Management">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.deepvine.ai/#organization",
+      "name": "Deepvine AI",
+      "url": "https://www.deepvine.ai/",
+      "description": "Deepvine installs private AI knowledge systems for knowledge-driven businesses, connecting company systems, backfilling years of history, and delivering source-backed answers in Slack. Private deployment, full data ownership.",
+      "email": "info@deepvine.ai",
+      "foundingLocation": { "@type": "Place", "name": "Charlotte, North Carolina" }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://www.deepvine.ai/#mitch-boraski",
+      "name": "Mitch Boraski",
+      "jobTitle": "Co-Founder",
+      "worksFor": { "@id": "https://www.deepvine.ai/#organization" },
+      "alumniOf": { "@type": "CollegeOrUniversity", "name": "Norwich University" },
+      "description": "Co-founder of Deepvine AI. Writes on private AI deployment, data ownership, and compliance for professional services firms."
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.deepvine.ai/blog/ria-ai-books-and-records-rule/#webpage",
+      "url": "https://www.deepvine.ai/blog/ria-ai-books-and-records-rule/",
+      "name": "AI at Your RIA: What the Books-and-Records Rule Means for Client Data in Third-Party Tools",
+      "isPartOf": { "@id": "https://www.deepvine.ai/blog/#blog" },
+      "breadcrumb": { "@id": "https://www.deepvine.ai/blog/ria-ai-books-and-records-rule/#breadcrumb" },
+      "inLanguage": "en-US"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.deepvine.ai/blog/ria-ai-books-and-records-rule/#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.deepvine.ai/" },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.deepvine.ai/blog/" },
+        { "@type": "ListItem", "position": 3, "name": "AI and the RIA Books-and-Records Rule", "item": "https://www.deepvine.ai/blog/ria-ai-books-and-records-rule/" }
+      ]
+    },
+    {
+      "@type": "BlogPosting",
+      "@id": "https://www.deepvine.ai/blog/ria-ai-books-and-records-rule/#article",
+      "mainEntityOfPage": { "@id": "https://www.deepvine.ai/blog/ria-ai-books-and-records-rule/#webpage" },
+      "headline": "AI at Your RIA: What the Books-and-Records Rule Means for Client Data in Third-Party Tools",
+      "alternativeHeadline": "The SEC withdrew its AI rule. Your existing rules already answer the question.",
+      "description": "No SEC rule prohibits RIAs from using AI. But Rule 204-2 and the amended Regulation S-P make the deployment model the whole compliance question. What advisers must know now that both Reg S-P compliance dates have passed.",
+      "author": { "@id": "https://www.deepvine.ai/#mitch-boraski" },
+      "publisher": { "@id": "https://www.deepvine.ai/#organization" },
+      "datePublished": "2026-07-21T09:00:00-04:00",
+      "dateModified": "2026-07-21T09:00:00-04:00",
+      "url": "https://www.deepvine.ai/blog/ria-ai-books-and-records-rule/",
+      "articleSection": "Wealth Management",
+      "wordCount": 2100,
+      "inLanguage": "en-US",
+      "keywords": ["SEC Rule 204-2", "RIA books and records rule", "Regulation S-P amendments", "RIA AI compliance", "investment adviser AI tools", "private AI deployment"],
+      "about": [
+        { "@type": "Thing", "name": "Investment adviser compliance" },
+        { "@type": "Thing", "name": "SEC recordkeeping requirements" },
+        { "@type": "Thing", "name": "Artificial intelligence in wealth management" }
+      ],
+      "mentions": [
+        {
+          "@type": "CreativeWork",
+          "name": "SEC Rule 204-2 under the Investment Advisers Act of 1940 (Books and Records Rule)",
+          "author": { "@type": "Organization", "name": "U.S. Securities and Exchange Commission" }
+        },
+        {
+          "@type": "CreativeWork",
+          "name": "Amendments to Regulation S-P",
+          "author": { "@type": "Organization", "name": "U.S. Securities and Exchange Commission" },
+          "datePublished": "2024-05-16"
+        },
+        {
+          "@type": "CreativeWork",
+          "name": "Withdrawal of Proposed Rule: Conflicts of Interest Associated with the Use of Predictive Data Analytics by Broker-Dealers and Investment Advisers",
+          "author": { "@type": "Organization", "name": "U.S. Securities and Exchange Commission" },
+          "datePublished": "2025-06-12"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.deepvine.ai/blog/ria-ai-books-and-records-rule/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is there an SEC rule that prohibits RIAs from using AI?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. The SEC's only AI-specific rulemaking for advisers, the 2023 predictive data analytics proposal, was formally withdrawn on June 12, 2025 and never took effect. RIAs may use AI, but existing rules govern how: Rule 204-2 controls what must be kept as records, Regulation S-P controls how client information must be safeguarded, and the adviser's fiduciary duty applies to any advice AI helps produce."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are AI prompts and outputs considered books and records under Rule 204-2?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "They can be. Rule 204-2 requires advisers to retain communications and records relating to recommendations and advice given or proposed to be given, regardless of the medium. If an adviser uses an AI tool to research a client question, draft a client communication, or support a recommendation, those interactions can fall within the rule. The practical question is whether the firm can retain, safeguard, and promptly produce them, which depends entirely on where the tool runs and who controls the data."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do the 2024 Regulation S-P amendments affect AI tools?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The amendments, adopted May 2024 with compliance required by December 3, 2025 for advisers with $1.5 billion or more in assets under management and June 3, 2026 for all others, require a written incident response program, notification to affected clients within 30 days of determining a breach of sensitive customer information occurred or likely occurred, and oversight of service providers through due diligence and monitoring. A third-party AI tool that receives client information is a service provider under this framework, which makes every such tool part of the adviser's compliance perimeter."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does an RIA have to notify clients if an AI vendor is breached?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "If sensitive customer information held by the vendor was accessed or used without authorization, or is reasonably likely to have been, amended Regulation S-P puts the notification obligation on the adviser. The firm must notify affected individuals within 30 days of making that determination. The vendor's breach becomes the adviser's client conversation, which is why service provider selection and the decision to keep client data out of third-party systems entirely are now core compliance decisions."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does private AI deployment change the compliance analysis for an RIA?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Private deployment keeps both obligations inside systems the firm already controls. Records created with AI assistance stay in the firm's environment where they can be retained under the firm's existing Rule 204-2 procedures and produced on demand. Client information never reaches a third-party service provider, so the Regulation S-P analysis stays within the firm's own safeguards program instead of extending to a vendor's security posture, retention practices, and breach history. The obligations do not disappear, but they attach to infrastructure the firm already governs."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+<style>
+:root{
+  --ink:#07120b;
+  --ink-2:#0d1f13;
+  --green:#16a34a;
+  --green-bright:#22c55e;
+  --green-soft:#4ade80;
+  --green-tint:#f0fdf4;
+  --green-line:#bbf7d0;
+  --bg:#fafaf8;
+  --white:#ffffff;
+  --text:#111827;
+  --text-2:#374151;
+  --text-3:#6b7280;
+  --border:#e5e7eb;
+  --radius:16px;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:var(--green);text-decoration:none;}
+a:focus-visible,button:focus-visible{outline:2px solid var(--green);outline-offset:2px;}
+/* NAV */
+.nav{
+  position:sticky;top:0;z-index:100;
+  background:rgba(250,250,248,0.92);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--border);
+}
+.nav-inner{
+  max-width:1200px;margin:0 auto;
+  padding:0.9rem 1.5rem;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.logo{display:flex;align-items:center;gap:0.5rem;}
+.logo svg{width:30px;height:30px;}
+.logo-type{font-weight:700;font-size:1.1rem;letter-spacing:-0.02em;}
+.logo-type .dark{color:var(--ink);}
+.logo-type .green{color:var(--green);}
+.nav-links{display:flex;align-items:center;gap:1.75rem;}
+.nav-link{font-size:0.9rem;font-weight:500;color:var(--text-2);transition:color .2s;}
+.nav-link:hover,.nav-link.active{color:var(--green);}
+.nav-cta{
+  background:var(--green);color:#fff;border:none;cursor:pointer;
+  font-family:inherit;font-size:0.875rem;font-weight:600;
+  padding:0.55rem 1.2rem;border-radius:8px;transition:background .2s;
+}
+.nav-cta:hover{background:#15803d;}
+.hamburger{display:none;background:none;border:none;cursor:pointer;flex-direction:column;gap:5px;padding:6px;}
+.hamburger span{display:block;width:22px;height:2px;background:var(--ink);border-radius:2px;}
+@media(max-width:820px){
+  .nav-links{
+    display:none;position:absolute;top:100%;left:0;right:0;
+    background:var(--white);border-bottom:1px solid var(--border);
+    flex-direction:column;align-items:flex-start;gap:0;padding:0.5rem 0;
+  }
+  .nav-links.open{display:flex;}
+  .nav-links .nav-link{padding:0.8rem 1.5rem;width:100%;}
+  .nav-links .nav-cta{margin:0.6rem 1.5rem;}
+  .hamburger{display:flex;}
+}
+/* ARTICLE HEADER */
+.post-head{
+  max-width:820px;margin:0 auto;
+  padding:3.5rem 1.5rem 2rem;
+}
+.crumbs{font-size:0.8rem;color:var(--text-3);margin-bottom:1.5rem;}
+.crumbs a{color:var(--text-3);}
+.crumbs a:hover{color:var(--green);}
+.crumbs span{margin:0 0.4rem;color:var(--border);}
+.post-eyebrow{display:flex;align-items:center;gap:0.6rem;margin-bottom:1.2rem;}
+.cat-badge{
+  font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;
+  color:var(--green);background:var(--green-tint);
+  border:1px solid var(--green-line);border-radius:999px;
+  padding:0.3rem 0.85rem;
+}
+.read-time{font-size:0.8rem;color:var(--text-3);}
+.post-h1{
+  font-size:clamp(1.9rem,4.5vw,3rem);
+  font-weight:800;letter-spacing:-0.03em;line-height:1.12;
+  color:var(--ink);margin-bottom:1.1rem;
+}
+.post-h1 em{font-style:italic;color:var(--green);}
+.post-dek{
+  font-size:1.15rem;color:var(--text-2);line-height:1.65;
+  max-width:680px;margin-bottom:1.75rem;font-weight:300;
+}
+.byline{
+  display:flex;align-items:center;gap:0.8rem;
+  padding-top:1.5rem;border-top:1px solid var(--border);
+}
+.avatar{
+  width:44px;height:44px;border-radius:50%;
+  background:var(--ink);color:var(--green-soft);
+  display:flex;align-items:center;justify-content:center;
+  font-weight:700;font-size:0.9rem;flex-shrink:0;
+}
+.byline-name{font-weight:600;font-size:0.9rem;color:var(--ink);}
+.byline-meta{font-size:0.8rem;color:var(--text-3);}
+/* ANSWER BOX (AEO extraction target) */
+.answer-box{
+  max-width:820px;margin:0 auto 1rem;padding:0 1.5rem;
+}
+.answer-inner{
+  background:var(--green-tint);
+  border:1px solid var(--green-line);
+  border-left:4px solid var(--green);
+  border-radius:12px;
+  padding:1.5rem 1.75rem;
+}
+.answer-label{
+  font-size:0.7rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;
+  color:var(--green);margin-bottom:0.6rem;
+}
+.answer-inner p{font-size:1rem;color:var(--text);line-height:1.7;}
+.answer-inner strong{font-weight:600;}
+/* ARTICLE BODY */
+.post-body{
+  max-width:720px;margin:0 auto;
+  padding:2rem 1.5rem 3rem;
+}
+.post-body h2{
+  font-size:clamp(1.35rem,2.6vw,1.7rem);
+  font-weight:700;letter-spacing:-0.02em;line-height:1.25;
+  color:var(--ink);
+  margin:2.75rem 0 1rem;
+  scroll-margin-top:90px;
+}
+.post-body h3{
+  font-size:1.1rem;font-weight:600;color:var(--ink);
+  margin:2rem 0 0.75rem;
+}
+.post-body p{margin-bottom:1.2rem;color:var(--text-2);font-size:1.02rem;}
+.post-body ul,.post-body ol{margin:0 0 1.2rem 1.4rem;color:var(--text-2);font-size:1.02rem;}
+.post-body li{margin-bottom:0.55rem;}
+.post-body strong{color:var(--text);font-weight:600;}
+/* RULE QUOTE */
+.rule-quote{
+  background:var(--white);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:1.6rem 1.75rem;
+  margin:1.75rem 0;
+  position:relative;
+  border-top:3px solid var(--green);
+}
+.rule-quote .rq-label{
+  font-size:0.7rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;
+  color:var(--green);margin-bottom:0.7rem;
+}
+.rule-quote blockquote{
+  font-size:1.08rem;line-height:1.65;color:var(--ink);
+  font-weight:400;font-style:italic;
+}
+.rule-quote cite{
+  display:block;margin-top:0.8rem;
+  font-size:0.82rem;font-style:normal;color:var(--text-3);
+}
+/* KEY TAKEAWAY */
+.takeaway{
+  border-left:3px solid var(--green);
+  padding:0.2rem 0 0.2rem 1.25rem;
+  margin:1.75rem 0;
+}
+.takeaway p{font-size:1.05rem;font-weight:500;color:var(--ink);margin-bottom:0;}
+/* COMPARISON TABLE */
+.tbl-wrap{overflow-x:auto;margin:1.75rem 0;}
+table.compare{
+  width:100%;border-collapse:collapse;
+  background:var(--white);
+  border:1px solid var(--border);
+  border-radius:12px;overflow:hidden;
+  font-size:0.92rem;
+}
+table.compare th{
+  background:var(--ink);color:#fff;
+  font-weight:600;text-align:left;
+  padding:0.85rem 1rem;font-size:0.82rem;
+  letter-spacing:0.03em;
+}
+table.compare th:first-child{width:32%;}
+table.compare td{
+  padding:0.85rem 1rem;
+  border-top:1px solid var(--border);
+  color:var(--text-2);vertical-align:top;line-height:1.55;
+}
+table.compare td:first-child{font-weight:600;color:var(--ink);}
+table.compare tr:nth-child(even) td{background:#fcfcfa;}
+/* SOURCE CHIPS */
+.sources{
+  background:var(--white);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:1.5rem 1.75rem;
+  margin:2.5rem 0;
+}
+.sources-label{
+  font-size:0.7rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;
+  color:var(--text-3);margin-bottom:1rem;
+}
+.chip-row{display:flex;flex-wrap:wrap;gap:0.6rem;}
+.src-chip{
+  display:inline-flex;align-items:center;gap:0.45rem;
+  background:var(--bg);
+  border:1px solid var(--border);
+  border-radius:8px;
+  padding:0.5rem 0.9rem;
+  font-size:0.82rem;font-weight:500;color:var(--text-2);
+  transition:border-color .2s,color .2s;
+}
+.src-chip:hover{border-color:var(--green);color:var(--green);}
+.src-chip .arrow{color:var(--green);font-weight:700;}
+/* FAQ */
+.faq-section{margin:2.5rem 0;}
+.faq-item{
+  background:var(--white);
+  border:1px solid var(--border);
+  border-radius:12px;
+  margin-bottom:0.75rem;
+  overflow:hidden;
+}
+.faq-item summary{
+  cursor:pointer;list-style:none;
+  padding:1.1rem 1.4rem;
+  font-weight:600;font-size:0.98rem;color:var(--ink);
+  display:flex;justify-content:space-between;align-items:center;gap:1rem;
+}
+.faq-item summary::-webkit-details-marker{display:none;}
+.faq-item summary::after{
+  content:'+';font-size:1.3rem;font-weight:400;color:var(--green);
+  flex-shrink:0;transition:transform .2s;
+}
+.faq-item[open] summary::after{transform:rotate(45deg);}
+.faq-item .faq-a{
+  padding:0 1.4rem 1.2rem;
+  font-size:0.95rem;color:var(--text-2);line-height:1.7;
+}
+/* AUTHOR BOX */
+.author-box{
+  display:flex;gap:1.1rem;align-items:flex-start;
+  background:var(--white);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:1.5rem 1.75rem;
+  margin:2.5rem 0 1.5rem;
+}
+.author-box .avatar{width:52px;height:52px;font-size:1rem;}
+.author-box h4{font-size:1rem;font-weight:700;color:var(--ink);margin-bottom:0.25rem;}
+.author-box p{font-size:0.9rem;color:var(--text-2);margin-bottom:0;line-height:1.6;}
+/* DISCLAIMER */
+.disclaimer{
+  font-size:0.8rem;color:var(--text-3);line-height:1.6;
+  border-top:1px solid var(--border);
+  padding-top:1.25rem;margin-top:1.5rem;
+}
+/* CTA BAND */
+.cta-band{
+  background:var(--ink);
+  position:relative;overflow:hidden;
+  padding:4.5rem 1.5rem;
+  text-align:center;
+}
+.cta-band::before{
+  content:'';position:absolute;inset:0;
+  background-image:radial-gradient(rgba(74,222,128,0.14) 1px,transparent 1px);
+  background-size:22px 22px;
+  pointer-events:none;
+}
+.cta-glow{
+  position:absolute;top:-40%;left:50%;transform:translateX(-50%);
+  width:640px;height:640px;border-radius:50%;
+  background:radial-gradient(circle,rgba(34,197,94,0.22) 0%,transparent 65%);
+  pointer-events:none;
+}
+.cta-inner{position:relative;max-width:640px;margin:0 auto;}
+.cta-tag{
+  font-size:0.72rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;
+  color:var(--green-soft);margin-bottom:1rem;
+}
+.cta-h{
+  font-size:clamp(1.6rem,3.5vw,2.3rem);
+  font-weight:800;letter-spacing:-0.025em;line-height:1.18;
+  color:#fff;margin-bottom:1rem;
+}
+.cta-p{color:rgba(255,255,255,0.75);font-size:1rem;margin-bottom:1.75rem;line-height:1.7;}
+.cta-btn{
+  display:inline-block;background:var(--green);color:#fff;
+  font-weight:600;font-size:0.95rem;
+  padding:0.85rem 1.9rem;border-radius:10px;border:none;cursor:pointer;
+  font-family:inherit;transition:background .2s,transform .2s;
+}
+.cta-btn:hover{background:var(--green-bright);transform:translateY(-1px);}
+.cta-sub{margin-top:1rem;font-size:0.82rem;color:rgba(255,255,255,0.55);}
+/* FOOTER */
+footer{
+  background:var(--bg);
+  border-top:1px solid var(--border);
+  padding:2.5rem 1.5rem;
+  text-align:center;
+}
+.foot-logo{font-weight:700;font-size:1rem;margin-bottom:0.4rem;}
+.foot-logo .dark{color:var(--ink);}
+.foot-logo .green{color:var(--green);}
+footer p{font-size:0.82rem;color:var(--text-3);margin-bottom:0.3rem;}
+footer a{color:var(--text-3);}
+footer a:hover{color:var(--green);}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto;}
+  *{transition:none !important;}
+}
+</style>
+</head>
+<body>
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="logo" href="/" aria-label="Deepvine.AI home">
+      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="50" cy="88" r="5" fill="#16a34a"/>
+        <circle cx="42" cy="76" r="6" fill="#16a34a"/>
+        <circle cx="58" cy="72" r="7" fill="#16a34a"/>
+        <circle cx="36" cy="62" r="5" fill="#22c55e"/>
+        <circle cx="50" cy="56" r="8" fill="#16a34a"/>
+        <circle cx="68" cy="50" r="7" fill="#16a34a"/>
+        <circle cx="80" cy="58" r="4.5" fill="#22c55e"/>
+        <circle cx="34" cy="39" r="5.5" fill="#4ade80"/>
+        <circle cx="52" cy="34" r="8.5" fill="#22c55e"/>
+        <circle cx="70" cy="33" r="6" fill="#4ade80"/>
+        <circle cx="40" cy="22" r="4" fill="#4ade80"/>
+        <circle cx="56" cy="17" r="6" fill="#22c55e"/>
+        <circle cx="72" cy="20" r="3.5" fill="#4ade80"/>
+        <circle cx="46" cy="8" r="3" fill="#4ade80"/>
+        <circle cx="60" cy="5" r="4" fill="#22c55e"/>
+      </svg>
+      <span class="logo-type"><span class="dark">Deepvine</span><span class="green">.AI</span></span>
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a class="nav-link" href="/#how">How It Works</a>
+      <a class="nav-link" href="/#usecases">Use Cases</a>
+      <a class="nav-link" href="/#security">Security</a>
+      <a class="nav-link active" href="/blog/">Blog</a>
+      <button class="nav-cta" onclick="openCalendly()">Book a Demo</button>
+    </div>
+    <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<!-- ARTICLE HEADER -->
+<header class="post-head">
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="/">Home</a><span>/</span><a href="/blog/">Blog</a><span>/</span>AI and the RIA Books-and-Records Rule
+  </nav>
+  <div class="post-eyebrow">
+    <span class="cat-badge">Wealth Management</span>
+    <span class="read-time">9 min read</span>
+  </div>
+  <h1 class="post-h1">AI at your RIA: what the books-and-records rule <em>really</em> means for client data in third-party tools.</h1>
+  <p class="post-dek">The SEC withdrew its AI-specific rule in 2025. That did not deregulate anything. It confirmed that your existing rules govern AI, and two of them make the deployment model the entire question.</p>
+  <div class="byline">
+    <div class="avatar" aria-hidden="true">MB</div>
+    <div>
+      <div class="byline-name">Mitch Boraski</div>
+      <div class="byline-meta">Co-Founder, Deepvine AI &nbsp;·&nbsp; <time datetime="2026-07-21">July 21, 2026</time></div>
+    </div>
+  </div>
+</header>
+<!-- ANSWER BOX -->
+<div class="answer-box">
+  <div class="answer-inner">
+    <div class="answer-label">The Short Answer</div>
+    <p><strong>No SEC rule prohibits RIAs from using AI.</strong> The SEC's AI-specific rule proposal was withdrawn in June 2025, which means existing rules govern instead. Rule 204-2 makes AI-assisted advice and communications potential records the firm must retain and produce. Amended Regulation S-P, fully in effect for all advisers as of June 3, 2026, makes any third-party AI tool that receives client information a service provider the firm must oversee, with a 30-day client notification duty if that vendor is breached. The compliance question is not whether to use AI. It is where client data goes when you do.</p>
+  </div>
+</div>
+<!-- ARTICLE BODY -->
+<article class="post-body">
+<p>Wealth management runs on exactly the kind of knowledge AI is good at: client histories, meeting notes, planning documents, account data, years of email. Which is why advisers at RIAs of every size are already using AI tools, with or without a firm policy. The question principals and CCOs are asking is the right one: what do the rules actually require when client data touches these tools?</p>
+<p>The answer is more navigable than most compliance commentary suggests, and it turns almost entirely on a single variable. Not which model. Not which vendor. Where the data lives.</p>
+<h2 id="no-ai-rule">There is no AI rule for RIAs. That is the point.</h2>
+<p>In August 2023, the SEC proposed a rule targeting conflicts of interest from predictive data analytics and AI used by broker-dealers and investment advisers. The industry pushed back hard on its breadth, and on June 12, 2025 the Commission formally withdrew the proposal along with thirteen others. Any future AI rulemaking starts from scratch.</p>
+<p>Some read the withdrawal as deregulation. That reading gets it backwards. The withdrawal means AI at an RIA is governed by the rules that already exist, all of which are technology-neutral and none of which were written with an AI exception:</p>
+<ul>
+  <li><strong>Rule 204-2</strong> under the Advisers Act, the books-and-records rule, which controls what must be kept, for how long, and how it must be produced.</li>
+  <li><strong>Regulation S-P</strong>, which controls how nonpublic personal information about clients must be safeguarded, and which was substantially amended in May 2024.</li>
+  <li><strong>The adviser's fiduciary duty</strong>, which attaches to any advice regardless of what tools helped produce it.</li>
+</ul>
+<p>The first two are where AI decisions get made, so let's take them in order.</p>
+<h2 id="rule-204-2">Rule 204-2: when AI output becomes a record</h2>
+<p>The books-and-records rule requires every registered adviser to make and keep true, accurate, and current records of its advisory business. That includes communications relating to recommendations and advice given or proposed to be given. Records generally must be kept for five years, the first two in an easily accessible place, and the rule attaches specific conditions to electronic records:</p>
+<div class="rule-quote">
+  <div class="rq-label">Rule 204-2 · Electronic Records</div>
+  <blockquote>"In the case of records on electronic storage media, the investment adviser must establish and maintain procedures: (i) to maintain and preserve the records, so as to reasonably safeguard them from loss, alteration, or destruction; (ii) to limit access to the records to properly authorized personnel..."</blockquote>
+  <cite>17 CFR § 275.204-2(g), Books and records to be maintained by investment advisers</cite>
+</div>
+<p>Now apply that to how AI actually gets used at an advisory firm. An adviser asks an AI tool to summarize a client's planning history before a review meeting. Another uses it to draft a client email explaining a rebalancing decision. A third researches a concentrated-position question for a specific client. Depending on content and use, those interactions can relate to advice given or proposed to be given, which is the heart of what Rule 204-2 exists to capture.</p>
+<p>That raises three questions most firms have not answered:</p>
+<ol>
+  <li><strong>Retention.</strong> If an AI conversation is a record, where is it retained? A consumer AI tool holds it on the vendor's servers, under the vendor's retention schedule, outside the firm's archive.</li>
+  <li><strong>Control.</strong> Rule 204-2 requires safeguarding records from loss and alteration and limiting access to authorized personnel. A firm cannot enforce access controls on infrastructure it does not govern.</li>
+  <li><strong>Production.</strong> Records must be promptly producible in an examination. Could your firm produce its advisers' AI interactions today? For most firms using cloud tools individually, the honest answer is no, because the firm does not even know which tools are in use.</li>
+</ol>
+<p>The industry has run this movie before. The SEC's off-channel communications sweep, which produced billions of dollars in combined penalties across dozens of firms, was at bottom a Rule 204-2 story: business communications happening in systems the firms did not capture. Individual advisers using personal AI accounts for client work is the same fact pattern with a new tool. The lesson is not "ban the tool." The lesson is "the firm must control the system the communication happens in."</p>
+<h2 id="reg-sp">Reg S-P just changed, and both compliance dates have passed</h2>
+<p>In May 2024, the SEC adopted the most significant amendments to Regulation S-P since its adoption. Larger advisers, those with $1.5 billion or more in assets under management, had to comply by December 3, 2025. Every other covered adviser's date was June 3, 2026. As of this writing, both dates have passed. If your firm is registered, this is your current rulebook, and the SEC's Division of Examinations named Reg S-P compliance in its fiscal year 2026 examination priorities.</p>
+<p>Three amended requirements bear directly on AI tools:</p>
+<p><strong>Incident response program.</strong> Firms must maintain written policies and procedures reasonably designed to detect, respond to, and recover from unauthorized access to or use of customer information. Detection presupposes knowing where customer information is. Every third-party tool holding client data expands the surface the program has to cover.</p>
+<p><strong>30-day client notification.</strong> When sensitive customer information was accessed or used without authorization, or is reasonably likely to have been, the firm must notify affected individuals within 30 days of making that determination. Note whose obligation that is. If an AI vendor holding your client data is breached, the notification letter goes out under your firm's name, to your clients.</p>
+<p><strong>Service provider oversight.</strong> The amendments require oversight of service providers through due diligence and monitoring. A third-party AI tool that receives client information is a service provider under this framework. That means vendor security review before adoption, contractual protections, and ongoing monitoring, for every tool, for as long as it is in use.</p>
+<div class="takeaway">
+  <p>Under amended Reg S-P, every third-party AI tool that touches client data is a compliance obligation with a subscription fee attached.</p>
+</div>
+<h2 id="perimeter">The compliance perimeter problem</h2>
+<p>Put the two rules together and a pattern emerges. Every cloud AI tool an adviser uses on client work extends the firm's compliance perimeter to include that vendor: its retention practices become a records question, its security posture becomes a safeguards question, its breach becomes your client conversation, and its terms of service become a document your CCO has to re-read every time it changes.</p>
+<p>For a large firm with dedicated compliance technology staff, that is manageable overhead. For the typical RIA, a principal and a handful of advisers with an outsourced or part-time CCO, it is a recurring diligence burden with no end date. That burden, not any prohibition, is the honest reason many firms have defaulted to "no AI," even while their advisers quietly use it anyway, which is the worst position of all: full exposure, zero control, no records.</p>
+<h2 id="private">How private deployment changes the analysis</h2>
+<p>Now run the same obligations against an AI system deployed in the firm's own environment, on infrastructure the firm controls.</p>
+<div class="tbl-wrap">
+<table class="compare">
+  <thead>
+    <tr>
+      <th scope="col">Obligation</th>
+      <th scope="col">Third-party cloud AI tool</th>
+      <th scope="col">Private deployment</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Rule 204-2 retention</td>
+      <td>AI interactions live on vendor servers, outside the firm's archive and retention schedule.</td>
+      <td>Interactions stay in the firm's environment, retained under the firm's existing 204-2 procedures.</td>
+    </tr>
+    <tr>
+      <td>Access controls on records</td>
+      <td>Governed by the vendor's security model, not the firm's.</td>
+      <td>The firm's existing access controls and permissions apply directly.</td>
+    </tr>
+    <tr>
+      <td>Prompt production in an exam</td>
+      <td>Depends on which tools advisers used and what the vendor can export.</td>
+      <td>Records are in firm systems and producible like any other electronic record.</td>
+    </tr>
+    <tr>
+      <td>Reg S-P safeguards scope</td>
+      <td>Firm's safeguards program must extend to the vendor's environment and practices.</td>
+      <td>Client information never leaves the firm's existing safeguards program.</td>
+    </tr>
+    <tr>
+      <td>Service provider oversight</td>
+      <td>Full due diligence and ongoing monitoring required for each AI vendor holding client data.</td>
+      <td>No third party holds client data, so the oversight obligation does not extend outward.</td>
+    </tr>
+    <tr>
+      <td>Breach notification exposure</td>
+      <td>A vendor breach can trigger the firm's 30-day notification to affected clients.</td>
+      <td>Breach exposure stays within the firm's own perimeter, already covered by its incident response program.</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<p>The consistent theme: private deployment does not eliminate any obligation. It relocates every obligation onto infrastructure the firm already governs, documents, and answers for. The compliance program the firm already runs for its CRM, its portfolio accounting system, and its document storage simply extends to one more internal system, instead of stretching to cover an outside vendor the firm can neither control nor fully see.</p>
+<h2 id="checklist">A practical checklist for principals and CCOs</h2>
+<ol>
+  <li><strong>Inventory actual AI use.</strong> Survey advisers and staff. The gap between the firm's official AI posture and actual behavior is where the risk lives.</li>
+  <li><strong>Write the policy around client data flow, not tool names.</strong> "No client information in systems the firm does not control" tracks both Rule 204-2 and Reg S-P, and it survives every new tool launch.</li>
+  <li><strong>Map AI use cases to the records rule.</strong> Anything touching recommendations, advice, or client communications belongs in a system where the firm can retain and produce it.</li>
+  <li><strong>Fold AI into your Reg S-P program.</strong> Both compliance dates have passed. Your incident response program, service provider oversight, and notification procedures should already name AI tools explicitly. Examiners are prioritizing this.</li>
+  <li><strong>For client-data workloads, require firm-controlled deployment.</strong> It is the cleanest answer to both rules at once, and it converts AI from a compliance liability into a firm asset.</li>
+  <li><strong>Document everything.</strong> Reasonably designed policies and procedures are demonstrated on paper. The firm that can show its analysis is most of the way to passing the exam.</li>
+</ol>
+<h2 id="bottom-line">The bottom line</h2>
+<p>The SEC looked at AI-specific rulemaking and walked away, leaving advisers with rules that were already sufficient: keep your records, safeguard your clients' information, and answer for both. Cloud AI tools make both duties harder, because they move records and client data onto infrastructure the firm does not control. Private deployment makes both duties familiar, because everything stays inside the perimeter the firm already defends.</p>
+<p>Your book of business is the asset. The knowledge around it, decades of client context, planning history, and institutional memory, is what AI can finally make usable. The firms that get this right will be the ones that put that intelligence to work without ever letting it leave the building.</p>
+<!-- SOURCES -->
+<section class="sources" aria-label="Primary sources">
+  <div class="sources-label">Primary Sources</div>
+  <div class="chip-row">
+    <a class="src-chip" href="https://www.law.cornell.edu/cfr/text/17/275.204-2" target="_blank" rel="noopener"><span class="arrow">↗</span> Rule 204-2, 17 CFR § 275.204-2</a>
+    <a class="src-chip" href="https://www.finra.org/rules-guidance/guidance/sec-regulation-s-p-compliance-date-reminder-20251114" target="_blank" rel="noopener"><span class="arrow">↗</span> Reg S-P Amendments &amp; Compliance Dates</a>
+    <a class="src-chip" href="https://www.sec.gov/rules-regulations/2025/06/s7-12-23" target="_blank" rel="noopener"><span class="arrow">↗</span> SEC Withdrawal of AI Rule Proposal (June 2025)</a>
+  </div>
+</section>
+<!-- FAQ (matches FAQPage schema verbatim) -->
+<section class="faq-section" aria-label="Frequently asked questions">
+  <h2>Frequently asked questions</h2>
+  <details class="faq-item">
+    <summary>Is there an SEC rule that prohibits RIAs from using AI?</summary>
+    <div class="faq-a">No. The SEC's only AI-specific rulemaking for advisers, the 2023 predictive data analytics proposal, was formally withdrawn on June 12, 2025 and never took effect. RIAs may use AI, but existing rules govern how: Rule 204-2 controls what must be kept as records, Regulation S-P controls how client information must be safeguarded, and the adviser's fiduciary duty applies to any advice AI helps produce.</div>
+  </details>
+  <details class="faq-item">
+    <summary>Are AI prompts and outputs considered books and records under Rule 204-2?</summary>
+    <div class="faq-a">They can be. Rule 204-2 requires advisers to retain communications and records relating to recommendations and advice given or proposed to be given, regardless of the medium. If an adviser uses an AI tool to research a client question, draft a client communication, or support a recommendation, those interactions can fall within the rule. The practical question is whether the firm can retain, safeguard, and promptly produce them, which depends entirely on where the tool runs and who controls the data.</div>
+  </details>
+  <details class="faq-item">
+    <summary>How do the 2024 Regulation S-P amendments affect AI tools?</summary>
+    <div class="faq-a">The amendments, adopted May 2024 with compliance required by December 3, 2025 for advisers with $1.5 billion or more in assets under management and June 3, 2026 for all others, require a written incident response program, notification to affected clients within 30 days of determining a breach of sensitive customer information occurred or likely occurred, and oversight of service providers through due diligence and monitoring. A third-party AI tool that receives client information is a service provider under this framework, which makes every such tool part of the adviser's compliance perimeter.</div>
+  </details>
+  <details class="faq-item">
+    <summary>Does an RIA have to notify clients if an AI vendor is breached?</summary>
+    <div class="faq-a">If sensitive customer information held by the vendor was accessed or used without authorization, or is reasonably likely to have been, amended Regulation S-P puts the notification obligation on the adviser. The firm must notify affected individuals within 30 days of making that determination. The vendor's breach becomes the adviser's client conversation, which is why service provider selection and the decision to keep client data out of third-party systems entirely are now core compliance decisions.</div>
+  </details>
+  <details class="faq-item">
+    <summary>How does private AI deployment change the compliance analysis for an RIA?</summary>
+    <div class="faq-a">Private deployment keeps both obligations inside systems the firm already controls. Records created with AI assistance stay in the firm's environment where they can be retained under the firm's existing Rule 204-2 procedures and produced on demand. Client information never reaches a third-party service provider, so the Regulation S-P analysis stays within the firm's own safeguards program instead of extending to a vendor's security posture, retention practices, and breach history. The obligations do not disappear, but they attach to infrastructure the firm already governs.</div>
+  </details>
+</section>
+<!-- AUTHOR BOX -->
+<div class="author-box">
+  <div class="avatar" aria-hidden="true">MB</div>
+  <div>
+    <h4>Mitch Boraski</h4>
+    <p>Co-Founder of Deepvine AI. Deepvine installs private AI knowledge systems for law firms, RIAs, CPA firms, and other knowledge-driven businesses: connected to your systems, backfilled with your history, deployed in your environment, and owned by you.</p>
+  </div>
+</div>
+<p class="disclaimer">This article is provided for general informational purposes only and does not constitute legal, compliance, or investment advice. Rules, regulations, and compliance dates are subject to amendment and interpretation. Firms should consult their own compliance counsel or chief compliance officer before adopting any AI tool or policy.</p>
+</article>
+<!-- CTA BAND -->
+<section class="cta-band">
+  <div class="cta-glow" aria-hidden="true"></div>
+  <div class="cta-inner">
+    <div class="cta-tag">Private AI for RIAs</div>
+    <h2 class="cta-h">Your book of business, answerable in seconds.</h2>
+    <p class="cta-p">Deepvine deploys a private AI knowledge system in your firm's environment: client histories, meeting notes, planning documents, and years of institutional memory, answerable in Slack with source-backed citations. Client data never leaves your control.</p>
+    <button class="cta-btn" onclick="openCalendly()">Book a live demo →</button>
+    <div class="cta-sub">Bring us one real question about a client relationship. We will show you where the answer comes from.</div>
+  </div>
+</section>
+<!-- FOOTER -->
+<footer>
+  <div class="foot-logo"><span class="dark">Deepvine</span><span class="green">.AI</span></div>
+  <p>Private AI brain for modern operators.</p>
+  <p><a href="/">Home</a> &nbsp;·&nbsp; <a href="/blog/">Blog</a> &nbsp;·&nbsp; <a href="mailto:info@deepvine.ai">info@deepvine.ai</a></p>
+  <p>© 2026 Deepvine AI</p>
+</footer>
+<script>
+/* Demo CTA: set CALENDLY_URL when scheduling link is ready.
+   Until then, falls back to a pre-filled email to info@deepvine.ai. */
+var CALENDLY_URL = "";
+function openCalendly(){
+  if(typeof gtag==='function'){gtag('event','demo_cta_click',{event_category:'conversion',event_label:'blog_post_ria_books_records'});}
+  if(CALENDLY_URL){window.open(CALENDLY_URL,'_blank');}
+  else{window.location.href='mailto:info@deepvine.ai?subject=Live%20Demo%20Request&body='+encodeURIComponent('I would like to book a live Deepvine demo.');}
+}
+function toggleMenu(){
+  var links=document.getElementById('navLinks');
+  var btn=document.getElementById('hamburger');
+  var open=links.classList.toggle('open');
+  btn.setAttribute('aria-expanded',open?'true':'false');
+}
+/* GA scroll-depth: fires once when reader reaches the FAQ */
+(function(){
+  var fired=false;
+  window.addEventListener('scroll',function(){
+    if(fired)return;
+    var faq=document.querySelector('.faq-section');
+    if(faq && faq.getBoundingClientRect().top<window.innerHeight){
+      fired=true;
+      if(typeof gtag==='function'){gtag('event','article_read_complete',{event_category:'engagement',event_label:'ria_books_records'});}
+    }
+  },{passive:true});
+})();
+</script>
+</body>
+</html>
