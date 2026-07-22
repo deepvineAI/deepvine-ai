@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LQMY9C69YW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-LQMY9C69YW');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IRC §7216 and AI Tools: The Consent Rule CPA Firms Are Quietly Violating | Deepvine.AI</title>
+<meta name="description" content="Entering client tax information into a third-party AI tool is likely a disclosure under IRC §7216, a criminal statute. What the rule requires, why the consent path is harder than firms think, and the three compliant ways to use AI in a tax practice.">
+<link rel="canonical" href="https://www.deepvine.ai/blog/irc-7216-ai-tools-cpa-consent/">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Deepvine.AI">
+<meta property="og:title" content="IRC §7216 and AI Tools: The Consent Rule CPA Firms Are Quietly Violating">
+<meta property="og:description" content="§7216 is a criminal statute, the civil companion penalty requires no intent, and pasting client tax data into a consumer AI tool is likely a disclosure. Here are the three compliant paths, and why only one scales.">
+<meta property="og:url" content="https://www.deepvine.ai/blog/irc-7216-ai-tools-cpa-consent/">
+<meta property="article:published_time" content="2026-07-22T09:00:00-04:00">
+<meta property="article:author" content="Mitch Boraski">
+<meta property="article:section" content="Accounting">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.deepvine.ai/#organization",
+      "name": "Deepvine AI",
+      "url": "https://www.deepvine.ai/",
+      "description": "Deepvine installs private AI knowledge systems for knowledge-driven businesses, connecting company systems, backfilling years of history, and delivering source-backed answers in Slack. Private deployment, full data ownership.",
+      "email": "info@deepvine.ai",
+      "foundingLocation": { "@type": "Place", "name": "Charlotte, North Carolina" }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://www.deepvine.ai/#mitch-boraski",
+      "name": "Mitch Boraski",
+      "jobTitle": "Co-Founder",
+      "worksFor": { "@id": "https://www.deepvine.ai/#organization" },
+      "alumniOf": { "@type": "CollegeOrUniversity", "name": "Norwich University" },
+      "description": "Co-founder of Deepvine AI. Writes on private AI deployment, data ownership, and compliance for professional services firms."
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.deepvine.ai/blog/irc-7216-ai-tools-cpa-consent/#webpage",
+      "url": "https://www.deepvine.ai/blog/irc-7216-ai-tools-cpa-consent/",
+      "name": "IRC §7216 and AI Tools: The Consent Rule CPA Firms Are Quietly Violating",
+      "isPartOf": { "@id": "https://www.deepvine.ai/blog/#blog" },
+      "breadcrumb": { "@id": "https://www.deepvine.ai/blog/irc-7216-ai-tools-cpa-consent/#breadcrumb" },
+      "inLanguage": "en-US"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.deepvine.ai/blog/irc-7216-ai-tools-cpa-consent/#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.deepvine.ai/" },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.deepvine.ai/blog/" },
+        { "@type": "ListItem", "position": 3, "name": "IRC §7216 and AI Tools", "item": "https://www.deepvine.ai/blog/irc-7216-ai-tools-cpa-consent/" }
+      ]
+    },
+    {
+      "@type": "BlogPosting",
+      "@id": "https://www.deepvine.ai/blog/irc-7216-ai-tools-cpa-consent/#article",
+      "mainEntityOfPage": { "@id": "https://www.deepvine.ai/blog/irc-7216-ai-tools-cpa-consent/#webpage" },
+      "headline": "IRC §7216 and AI Tools: The Consent Rule CPA Firms Are Quietly Violating",
+      "alternativeHeadline": "A criminal statute, a strict civil penalty, and the AI habit tax firms have not examined.",
+      "description": "Entering client tax information into a third-party AI tool is likely a disclosure under IRC §7216, a criminal statute. What the rule requires, why the consent path is harder than firms think, and the three compliant ways to use AI in a tax practice.",
+      "author": { "@id": "https://www.deepvine.ai/#mitch-boraski" },
+      "publisher": { "@id": "https://www.deepvine.ai/#organization" },
+      "datePublished": "2026-07-22T09:00:00-04:00",
+      "dateModified": "2026-07-22T09:00:00-04:00",
+      "url": "https://www.deepvine.ai/blog/irc-7216-ai-tools-cpa-consent/",
+      "articleSection": "Accounting",
+      "wordCount": 2150,
+      "inLanguage": "en-US",
+      "keywords": ["IRC 7216", "section 7216 AI", "CPA firm AI compliance", "tax return information disclosure", "7216 consent requirements", "private AI deployment"],
+      "about": [
+        { "@type": "Thing", "name": "Tax return preparer confidentiality" },
+        { "@type": "Thing", "name": "CPA firm compliance" },
+        { "@type": "Thing", "name": "Artificial intelligence in tax practice" }
+      ],
+      "mentions": [
+        {
+          "@type": "CreativeWork",
+          "name": "Internal Revenue Code Section 7216: Disclosure or Use of Information by Preparers of Returns",
+          "author": { "@type": "Organization", "name": "United States Congress" }
+        },
+        {
+          "@type": "CreativeWork",
+          "name": "Treasury Regulations 301.7216-1 through 301.7216-3",
+          "author": { "@type": "Organization", "name": "U.S. Department of the Treasury" }
+        },
+        {
+          "@type": "CreativeWork",
+          "name": "Revenue Procedure 2013-14",
+          "author": { "@type": "Organization", "name": "Internal Revenue Service" },
+          "datePublished": "2013-01-14"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.deepvine.ai/blog/irc-7216-ai-tools-cpa-consent/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Does IRC §7216 prohibit CPA firms from using AI?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Section 7216 does not mention AI and prohibits no technology. It makes it a federal misdemeanor for a tax return preparer to knowingly or recklessly disclose tax return information, or use it for any purpose other than preparing a return, without a regulatory exception or valid taxpayer consent. AI becomes a §7216 issue only when client tax return information leaves the firm and reaches a third-party tool. AI that runs inside the firm's own environment, used to prepare or assist in preparing returns, does not create a third-party disclosure."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is entering client tax information into an AI tool a disclosure under §7216?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The prevailing practitioner reading is yes. The regulations define tax return information broadly, and transmitting it to a third-party AI vendor places it in the hands of a party outside the firm. The statute does not distinguish between disclosing data to a person and disclosing it to a software platform. Commentators consider it unlikely that general-purpose AI tools qualify for the auxiliary services exception, and the IRS has issued no AI-specific guidance under §7216, so no exception can be safely assumed."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What are the penalties for violating IRC §7216 and §6713?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Section 7216 is a criminal statute: a knowing or reckless violation is a misdemeanor punishable by a fine of up to $1,000, up to one year of imprisonment, or both, plus costs of prosecution, for each violation, with the fine rising to $100,000 for violations involving identity theft. Section 6713 adds a civil penalty of $250 per unauthorized disclosure or use, up to $10,000 per calendar year, and it does not require knowledge or recklessness, meaning a firm can incur civil penalties without knowing it violated the rule."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What does a valid §7216 consent for AI use require?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Under Treasury Regulation 301.7216-3, consent must be knowing and voluntary and obtained before the disclosure occurs. For Form 1040-series taxpayers, Revenue Procedure 2013-14 prescribes the mandatory format, content, and electronic signature requirements. The consent must identify the specific recipient of the disclosure, and a generic reference to various AI tools is not sufficient. In practice this means a separate, compliant, signed consent naming the AI vendor, per client, before any client tax information touches the tool."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does private AI deployment change the §7216 analysis?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Section 7216 restricts disclosure to third parties and use outside return preparation. When an AI system runs inside the firm's own environment, client tax return information never reaches a third party, so no disclosure occurs, and using the system to prepare or assist in preparing returns is the purpose the statute expressly permits. The consent machinery that makes third-party AI tools burdensome, per-client signed consents naming each vendor, is largely never triggered, because the condition that requires consent never arises."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+<style>
+:root{
+  --ink:#07120b;
+  --ink-2:#0d1f13;
+  --green:#16a34a;
+  --green-bright:#22c55e;
+  --green-soft:#4ade80;
+  --green-tint:#f0fdf4;
+  --green-line:#bbf7d0;
+  --bg:#fafaf8;
+  --white:#ffffff;
+  --text:#111827;
+  --text-2:#374151;
+  --text-3:#6b7280;
+  --border:#e5e7eb;
+  --radius:16px;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:var(--green);text-decoration:none;}
+a:focus-visible,button:focus-visible{outline:2px solid var(--green);outline-offset:2px;}
+/* NAV */
+.nav{
+  position:sticky;top:0;z-index:100;
+  background:rgba(250,250,248,0.92);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--border);
+}
+.nav-inner{
+  max-width:1200px;margin:0 auto;
+  padding:0.9rem 1.5rem;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.logo{display:flex;align-items:center;gap:0.5rem;}
+.logo svg{width:30px;height:30px;}
+.logo-type{font-weight:700;font-size:1.1rem;letter-spacing:-0.02em;}
+.logo-type .dark{color:var(--ink);}
+.logo-type .green{color:var(--green);}
+.nav-links{display:flex;align-items:center;gap:1.75rem;}
+.nav-link{font-size:0.9rem;font-weight:500;color:var(--text-2);transition:color .2s;}
+.nav-link:hover,.nav-link.active{color:var(--green);}
+.nav-cta{
+  background:var(--green);color:#fff;border:none;cursor:pointer;
+  font-family:inherit;font-size:0.875rem;font-weight:600;
+  padding:0.55rem 1.2rem;border-radius:8px;transition:background .2s;
+}
+.nav-cta:hover{background:#15803d;}
+.hamburger{display:none;background:none;border:none;cursor:pointer;flex-direction:column;gap:5px;padding:6px;}
+.hamburger span{display:block;width:22px;height:2px;background:var(--ink);border-radius:2px;}
+@media(max-width:820px){
+  .nav-links{
+    display:none;position:absolute;top:100%;left:0;right:0;
+    background:var(--white);border-bottom:1px solid var(--border);
+    flex-direction:column;align-items:flex-start;gap:0;padding:0.5rem 0;
+  }
+  .nav-links.open{display:flex;}
+  .nav-links .nav-link{padding:0.8rem 1.5rem;width:100%;}
+  .nav-links .nav-cta{margin:0.6rem 1.5rem;}
+  .hamburger{display:flex;}
+}
+/* ARTICLE HEADER */
+.post-head{
+  max-width:820px;margin:0 auto;
+  padding:3.5rem 1.5rem 2rem;
+}
+.crumbs{font-size:0.8rem;color:var(--text-3);margin-bottom:1.5rem;}
+.crumbs a{color:var(--text-3);}
+.crumbs a:hover{color:var(--green);}
+.crumbs span{margin:0 0.4rem;color:var(--border);}
+.post-eyebrow{display:flex;align-items:center;gap:0.6rem;margin-bottom:1.2rem;}
+.cat-badge{
+  font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;
+  color:var(--green);background:var(--green-tint);
+  border:1px solid var(--green-line);border-radius:999px;
+  padding:0.3rem 0.85rem;
+}
+.read-time{font-size:0.8rem;color:var(--text-3);}
+.post-h1{
+  font-size:clamp(1.9rem,4.5vw,3rem);
+  font-weight:800;letter-spacing:-0.03em;line-height:1.12;
+  color:var(--ink);margin-bottom:1.1rem;
+}
+.post-h1 em{font-style:italic;color:var(--green);}
+.post-dek{
+  font-size:1.15rem;color:var(--text-2);line-height:1.65;
+  max-width:680px;margin-bottom:1.75rem;font-weight:300;
+}
+.byline{
+  display:flex;align-items:center;gap:0.8rem;
+  padding-top:1.5rem;border-top:1px solid var(--border);
+}
+.avatar{
+  width:44px;height:44px;border-radius:50%;
+  background:var(--ink);color:var(--green-soft);
+  display:flex;align-items:center;justify-content:center;
+  font-weight:700;font-size:0.9rem;flex-shrink:0;
+}
+.byline-name{font-weight:600;font-size:0.9rem;color:var(--ink);}
+.byline-meta{font-size:0.8rem;color:var(--text-3);}
+/* ANSWER BOX (AEO extraction target) */
+.answer-box{
+  max-width:820px;margin:0 auto 1rem;padding:0 1.5rem;
+}
+.answer-inner{
+  background:var(--green-tint);
+  border:1px solid var(--green-line);
+  border-left:4px solid var(--green);
+  border-radius:12px;
+  padding:1.5rem 1.75rem;
+}
+.answer-label{
+  font-size:0.7rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;
+  color:var(--green);margin-bottom:0.6rem;
+}
+.answer-inner p{font-size:1rem;color:var(--text);line-height:1.7;}
+.answer-inner strong{font-weight:600;}
+/* ARTICLE BODY */
+.post-body{
+  max-width:720px;margin:0 auto;
+  padding:2rem 1.5rem 3rem;
+}
+.post-body h2{
+  font-size:clamp(1.35rem,2.6vw,1.7rem);
+  font-weight:700;letter-spacing:-0.02em;line-height:1.25;
+  color:var(--ink);
+  margin:2.75rem 0 1rem;
+  scroll-margin-top:90px;
+}
+.post-body h3{
+  font-size:1.1rem;font-weight:600;color:var(--ink);
+  margin:2rem 0 0.75rem;
+}
+.post-body p{margin-bottom:1.2rem;color:var(--text-2);font-size:1.02rem;}
+.post-body ul,.post-body ol{margin:0 0 1.2rem 1.4rem;color:var(--text-2);font-size:1.02rem;}
+.post-body li{margin-bottom:0.55rem;}
+.post-body strong{color:var(--text);font-weight:600;}
+/* RULE QUOTE */
+.rule-quote{
+  background:var(--white);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:1.6rem 1.75rem;
+  margin:1.75rem 0;
+  position:relative;
+  border-top:3px solid var(--green);
+}
+.rule-quote .rq-label{
+  font-size:0.7rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;
+  color:var(--green);margin-bottom:0.7rem;
+}
+.rule-quote blockquote{
+  font-size:1.08rem;line-height:1.65;color:var(--ink);
+  font-weight:400;font-style:italic;
+}
+.rule-quote cite{
+  display:block;margin-top:0.8rem;
+  font-size:0.82rem;font-style:normal;color:var(--text-3);
+}
+/* KEY TAKEAWAY */
+.takeaway{
+  border-left:3px solid var(--green);
+  padding:0.2rem 0 0.2rem 1.25rem;
+  margin:1.75rem 0;
+}
+.takeaway p{font-size:1.05rem;font-weight:500;color:var(--ink);margin-bottom:0;}
+/* COMPARISON TABLE */
+.tbl-wrap{overflow-x:auto;margin:1.75rem 0;}
+table.compare{
+  width:100%;border-collapse:collapse;
+  background:var(--white);
+  border:1px solid var(--border);
+  border-radius:12px;overflow:hidden;
+  font-size:0.92rem;
+}
+table.compare th{
+  background:var(--ink);color:#fff;
+  font-weight:600;text-align:left;
+  padding:0.85rem 1rem;font-size:0.82rem;
+  letter-spacing:0.03em;
+}
+table.compare th:first-child{width:24%;}
+table.compare td{
+  padding:0.85rem 1rem;
+  border-top:1px solid var(--border);
+  color:var(--text-2);vertical-align:top;line-height:1.55;
+}
+table.compare td:first-child{font-weight:600;color:var(--ink);}
+table.compare tr:nth-child(even) td{background:#fcfcfa;}
+/* SOURCE CHIPS */
+.sources{
+  background:var(--white);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:1.5rem 1.75rem;
+  margin:2.5rem 0;
+}
+.sources-label{
+  font-size:0.7rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;
+  color:var(--text-3);margin-bottom:1rem;
+}
+.chip-row{display:flex;flex-wrap:wrap;gap:0.6rem;}
+.src-chip{
+  display:inline-flex;align-items:center;gap:0.45rem;
+  background:var(--bg);
+  border:1px solid var(--border);
+  border-radius:8px;
+  padding:0.5rem 0.9rem;
+  font-size:0.82rem;font-weight:500;color:var(--text-2);
+  transition:border-color .2s,color .2s;
+}
+.src-chip:hover{border-color:var(--green);color:var(--green);}
+.src-chip .arrow{color:var(--green);font-weight:700;}
+/* FAQ */
+.faq-section{margin:2.5rem 0;}
+.faq-item{
+  background:var(--white);
+  border:1px solid var(--border);
+  border-radius:12px;
+  margin-bottom:0.75rem;
+  overflow:hidden;
+}
+.faq-item summary{
+  cursor:pointer;list-style:none;
+  padding:1.1rem 1.4rem;
+  font-weight:600;font-size:0.98rem;color:var(--ink);
+  display:flex;justify-content:space-between;align-items:center;gap:1rem;
+}
+.faq-item summary::-webkit-details-marker{display:none;}
+.faq-item summary::after{
+  content:'+';font-size:1.3rem;font-weight:400;color:var(--green);
+  flex-shrink:0;transition:transform .2s;
+}
+.faq-item[open] summary::after{transform:rotate(45deg);}
+.faq-item .faq-a{
+  padding:0 1.4rem 1.2rem;
+  font-size:0.95rem;color:var(--text-2);line-height:1.7;
+}
+/* AUTHOR BOX */
+.author-box{
+  display:flex;gap:1.1rem;align-items:flex-start;
+  background:var(--white);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:1.5rem 1.75rem;
+  margin:2.5rem 0 1.5rem;
+}
+.author-box .avatar{width:52px;height:52px;font-size:1rem;}
+.author-box h4{font-size:1rem;font-weight:700;color:var(--ink);margin-bottom:0.25rem;}
+.author-box p{font-size:0.9rem;color:var(--text-2);margin-bottom:0;line-height:1.6;}
+/* DISCLAIMER */
+.disclaimer{
+  font-size:0.8rem;color:var(--text-3);line-height:1.6;
+  border-top:1px solid var(--border);
+  padding-top:1.25rem;margin-top:1.5rem;
+}
+/* CTA BAND */
+.cta-band{
+  background:var(--ink);
+  position:relative;overflow:hidden;
+  padding:4.5rem 1.5rem;
+  text-align:center;
+}
+.cta-band::before{
+  content:'';position:absolute;inset:0;
+  background-image:radial-gradient(rgba(74,222,128,0.14) 1px,transparent 1px);
+  background-size:22px 22px;
+  pointer-events:none;
+}
+.cta-glow{
+  position:absolute;top:-40%;left:50%;transform:translateX(-50%);
+  width:640px;height:640px;border-radius:50%;
+  background:radial-gradient(circle,rgba(34,197,94,0.22) 0%,transparent 65%);
+  pointer-events:none;
+}
+.cta-inner{position:relative;max-width:640px;margin:0 auto;}
+.cta-tag{
+  font-size:0.72rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;
+  color:var(--green-soft);margin-bottom:1rem;
+}
+.cta-h{
+  font-size:clamp(1.6rem,3.5vw,2.3rem);
+  font-weight:800;letter-spacing:-0.025em;line-height:1.18;
+  color:#fff;margin-bottom:1rem;
+}
+.cta-p{color:rgba(255,255,255,0.75);font-size:1rem;margin-bottom:1.75rem;line-height:1.7;}
+.cta-btn{
+  display:inline-block;background:var(--green);color:#fff;
+  font-weight:600;font-size:0.95rem;
+  padding:0.85rem 1.9rem;border-radius:10px;border:none;cursor:pointer;
+  font-family:inherit;transition:background .2s,transform .2s;
+}
+.cta-btn:hover{background:var(--green-bright);transform:translateY(-1px);}
+.cta-sub{margin-top:1rem;font-size:0.82rem;color:rgba(255,255,255,0.55);}
+/* FOOTER */
+footer{
+  background:var(--bg);
+  border-top:1px solid var(--border);
+  padding:2.5rem 1.5rem;
+  text-align:center;
+}
+.foot-logo{font-weight:700;font-size:1rem;margin-bottom:0.4rem;}
+.foot-logo .dark{color:var(--ink);}
+.foot-logo .green{color:var(--green);}
+footer p{font-size:0.82rem;color:var(--text-3);margin-bottom:0.3rem;}
+footer a{color:var(--text-3);}
+footer a:hover{color:var(--green);}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto;}
+  *{transition:none !important;}
+}
+</style>
+</head>
+<body>
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="logo" href="/" aria-label="Deepvine.AI home">
+      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="50" cy="88" r="5" fill="#16a34a"/>
+        <circle cx="42" cy="76" r="6" fill="#16a34a"/>
+        <circle cx="58" cy="72" r="7" fill="#16a34a"/>
+        <circle cx="36" cy="62" r="5" fill="#22c55e"/>
+        <circle cx="50" cy="56" r="8" fill="#16a34a"/>
+        <circle cx="68" cy="50" r="7" fill="#16a34a"/>
+        <circle cx="80" cy="58" r="4.5" fill="#22c55e"/>
+        <circle cx="34" cy="39" r="5.5" fill="#4ade80"/>
+        <circle cx="52" cy="34" r="8.5" fill="#22c55e"/>
+        <circle cx="70" cy="33" r="6" fill="#4ade80"/>
+        <circle cx="40" cy="22" r="4" fill="#4ade80"/>
+        <circle cx="56" cy="17" r="6" fill="#22c55e"/>
+        <circle cx="72" cy="20" r="3.5" fill="#4ade80"/>
+        <circle cx="46" cy="8" r="3" fill="#4ade80"/>
+        <circle cx="60" cy="5" r="4" fill="#22c55e"/>
+      </svg>
+      <span class="logo-type"><span class="dark">Deepvine</span><span class="green">.AI</span></span>
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a class="nav-link" href="/#how">How It Works</a>
+      <a class="nav-link" href="/#usecases">Use Cases</a>
+      <a class="nav-link" href="/#security">Security</a>
+      <a class="nav-link active" href="/blog/">Blog</a>
+      <button class="nav-cta" onclick="openCalendly()">Book a Demo</button>
+    </div>
+    <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<!-- ARTICLE HEADER -->
+<header class="post-head">
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="/">Home</a><span>/</span><a href="/blog/">Blog</a><span>/</span>IRC §7216 and AI Tools
+  </nav>
+  <div class="post-eyebrow">
+    <span class="cat-badge">Accounting</span>
+    <span class="read-time">9 min read</span>
+  </div>
+  <h1 class="post-h1">IRC §7216 and AI tools: the consent rule CPA firms are <em>quietly</em> violating.</h1>
+  <p class="post-dek">It is a criminal statute. Its civil companion penalty requires no intent. And the most common AI habit in tax practices today, pasting client information into a consumer chatbot, likely triggers both. Here is the actual rule, and the three compliant ways through it.</p>
+  <div class="byline">
+    <div class="avatar" aria-hidden="true">MB</div>
+    <div>
+      <div class="byline-name">Mitch Boraski</div>
+      <div class="byline-meta">Co-Founder, Deepvine AI &nbsp;·&nbsp; <time datetime="2026-07-22">July 22, 2026</time></div>
+    </div>
+  </div>
+</header>
+<!-- ANSWER BOX -->
+<div class="answer-box">
+  <div class="answer-inner">
+    <div class="answer-label">The Short Answer</div>
+    <p><strong>IRC §7216 does not prohibit AI. It prohibits disclosure.</strong> Entering client tax return information into a third-party AI tool is likely a disclosure under the statute's regulations, and no IRS guidance creates an AI exception. §7216 is criminal: up to $1,000 and a year of imprisonment per knowing or reckless violation. Its civil companion, §6713, adds $250 per violation with no intent requirement. Compliant paths exist: signed per-client consents naming the vendor, sanitized inputs, or AI that runs inside the firm so no third-party disclosure ever occurs.</p>
+  </div>
+</div>
+<!-- ARTICLE BODY -->
+<article class="post-body">
+<p>In the first two posts in this series, on <a href="/blog/law-firm-ai-confidentiality-rule-1-6/">law firms and Rule 1.6(c)</a> and <a href="/blog/ria-ai-books-and-records-rule/">RIAs and the books-and-records rule</a>, the story was the same: the prohibition people fear does not exist, and the real rules reward controlling where data lives.</p>
+<p>Tax practice is different, and it deserves a franker warning. Here there is a real statute, it is criminal, and the most widespread AI habit in accounting firms today runs straight into it. If your staff are pasting client information into consumer AI tools to draft letters, summarize documents, or research positions, your firm has a §7216 problem it has probably never analyzed.</p>
+<h2 id="the-statute">The statute: two verbs, criminal penalties</h2>
+<p>Internal Revenue Code §7216, enacted in 1971, is one of the sharpest confidentiality provisions in American professional practice:</p>
+<div class="rule-quote">
+  <div class="rq-label">26 U.S.C. §7216(a)</div>
+  <blockquote>"Any person who is engaged in the business of preparing, or providing services in connection with the preparation of, returns of the tax imposed by chapter 1... and who knowingly or recklessly (1) discloses any information furnished to him for, or in connection with, the preparation of any such return, or (2) uses any such information for any purpose other than to prepare, or assist in preparing, any such return, shall be guilty of a misdemeanor..."</blockquote>
+  <cite>Internal Revenue Code §7216(a), Disclosure or use of information by preparers of returns</cite>
+</div>
+<p>Note the two verbs, because they do separate work. <strong>Disclosure</strong> means the information reaches someone outside the permitted circle. <strong>Use</strong> means the information is put to any purpose other than preparing or assisting in preparing the return. Either one, done knowingly or recklessly without an exception or consent, is a federal misdemeanor: up to $1,000 in fines, up to one year of imprisonment, or both, plus costs of prosecution, per violation. Where the violation involves identity theft, the maximum fine rises to $100,000.</p>
+<p>And §7216 travels with a civil companion. Under §6713, each unauthorized disclosure or use draws a $250 penalty, capped at $10,000 per calendar year. Here is the detail most firms miss: <strong>§6713 has no intent requirement.</strong> The National Taxpayer Advocate has noted this asymmetry explicitly. A firm does not need to know it violated the rule to owe the civil penalty. "We didn't realize the tool worked that way" is a defense to the crime, not to the penalty.</p>
+<h2 id="tri">"Tax return information" is broader than the return</h2>
+<p>The implementing regulations, Treasury Regulations §301.7216-1 through -3, define tax return information expansively: essentially any information furnished in any form for, or in connection with, the preparation of a return. Not just the 1040. The W-2s and K-1s, the client's questions, the engagement correspondence, the depreciation schedule, the notes from the planning call. If it was furnished in connection with return preparation, it is covered.</p>
+<p>Now hold that definition next to how AI is actually used in a tax practice in 2026. A staff accountant pastes a client's brokerage statement into a chatbot to summarize the transactions. A manager drops a client email thread into an AI tool to draft a response about an IRS notice. A partner describes a client's specific fact pattern, with numbers, to research a position. Every one of those inputs is tax return information moving to a third party's servers.</p>
+<h2 id="disclosure">Why the AI vendor is a third party, not an exception</h2>
+<p>The prevailing practitioner reading is direct: transmitting tax return information to a third-party AI tool is a disclosure under the regulations. The statute does not distinguish between disclosing data to a person and disclosing it to a software platform. What matters is that the information left the firm and reached a party outside it, on infrastructure the firm does not control, under terms the firm did not write.</p>
+<p>Could a general-purpose AI tool qualify as an "auxiliary service" under the regulations, the exception that covers things like processing services supporting return preparation? Commentators consider it unlikely, and here is the decisive fact: <strong>the IRS has issued no §7216 guidance addressing AI at all.</strong> No notice, no ruling, no FAQ. The most recent guidance linked from the IRS's own §7216 Information Center predates the entire generative AI era. A firm relying on an unwritten exception to a criminal statute is not managing risk. It is hoping.</p>
+<p>Meanwhile the IRS Office of Professional Responsibility has begun addressing practitioner AI use within the Circular 230 framework, and the direction of that guidance is consistent: use secure, firm-approved systems, and where §7216-protected information is involved, obtain specific signed client consent before it touches any third-party AI tool.</p>
+<div class="takeaway">
+  <p>There is no AI exception to §7216. There is a broad definition of protected information, a criminal penalty for disclosing it, and a civil penalty that applies whether you knew or not.</p>
+</div>
+<h2 id="consent">The consent path is real, and harder than firms think</h2>
+<p>Section 7216 has a front door: the taxpayer's consent under Treasury Regulation §301.7216-3. But this is not a checkbox. The consent must be knowing and voluntary, must be obtained before the disclosure occurs, and must identify the specific recipient. A blanket line in the engagement letter authorizing "the use of technology tools including artificial intelligence" does not meet the standard. "Various AI tools" is not a recipient.</p>
+<p>For Form 1040-series clients, the bar is higher still. Revenue Procedure 2013-14 prescribes the mandatory format and content of the consent, down to specific language and electronic signature requirements. Get the format wrong and the consent is not valid, which means the disclosure it purported to authorize was not authorized.</p>
+<p>Run the logistics for a typical firm: a separate compliant consent, naming each specific AI vendor, signed by each client, before any of that client's information touches the tool, refreshed as vendors change. During filing season. Across a thousand returns. Firms that look honestly at that workload usually conclude what you would expect: the consent path exists, but as an operating model it fights the calendar, the staff, and the clients all at once.</p>
+<h2 id="three-paths">The three compliant paths, compared</h2>
+<p>A firm that wants AI's leverage on real client work has three defensible routes:</p>
+<div class="tbl-wrap">
+<table class="compare">
+  <thead>
+    <tr>
+      <th scope="col">Dimension</th>
+      <th scope="col">Per-client consents</th>
+      <th scope="col">Sanitized inputs only</th>
+      <th scope="col">Private deployment</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>How it works</td>
+      <td>Compliant §7216-3 consent naming each AI vendor, signed by each client before disclosure.</td>
+      <td>Client-identifying information is stripped before anything reaches a third-party tool.</td>
+      <td>AI runs in the firm's own environment. Information never reaches a third party.</td>
+    </tr>
+    <tr>
+      <td>§7216 exposure</td>
+      <td>Managed, if every consent is valid, current, and correctly formatted per Rev. Proc. 2013-14.</td>
+      <td>Managed, if sanitization is perfect every time, by every staff member, under deadline pressure.</td>
+      <td>Largely never triggered. No third-party disclosure occurs, and preparation use is the permitted purpose.</td>
+    </tr>
+    <tr>
+      <td>Workflow friction</td>
+      <td>High. Consent collection per client, per vendor, during filing season.</td>
+      <td>High. Every prompt requires judgment about what counts as identifying.</td>
+      <td>Low. Staff use the system like any internal tool, under firm access controls.</td>
+    </tr>
+    <tr>
+      <td>Failure mode</td>
+      <td>One invalid or missing consent equals one unauthorized disclosure.</td>
+      <td>One pasted document with a name on it equals one unauthorized disclosure.</td>
+      <td>Failure modes are the firm's existing security program, already managed and documented.</td>
+    </tr>
+    <tr>
+      <td>Scales across the firm?</td>
+      <td>Poorly. Burden grows with every client and every vendor.</td>
+      <td>Poorly. Depends on flawless human behavior at volume.</td>
+      <td>Yes. One system, one policy, whole firm.</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<p>Be clear about what private deployment does and does not solve. It removes the third-party disclosure, which is the trigger for the consent machinery. It does not repeal the statute: using client information inside the firm for purposes unrelated to preparing returns, marketing analysis for instance, still has its own rules. But using an internal AI system to prepare and assist in preparing returns is precisely the purpose §7216 permits on its face. The firm ends up where the statute always assumed it would be: client information inside the firm, used to serve the client.</p>
+<h2 id="checklist">A practical checklist for managing partners</h2>
+<ol>
+  <li><strong>Survey actual AI use this week, not at the partner retreat.</strong> The exposure is happening now, one pasted document at a time, and §6713 does not care whether leadership knew.</li>
+  <li><strong>Issue an interim policy keyed to data flow.</strong> "No client tax return information in tools the firm does not control" is enforceable, tracks the statute, and does not require banning AI for non-client work.</li>
+  <li><strong>Audit your engagement letter.</strong> If it contains generic AI consent language, do not assume it satisfies §301.7216-3 or Rev. Proc. 2013-14. Have it reviewed against the actual requirements.</li>
+  <li><strong>Pick your path deliberately.</strong> Consents, sanitization, or private deployment. Any of the three can be defended. Drifting among them with no analysis cannot.</li>
+  <li><strong>Document the decision.</strong> If the question ever arises, the firm that can show it analyzed §7216 and chose a compliant architecture is in a different conversation than the firm that never looked.</li>
+</ol>
+<h2 id="bottom-line">The bottom line</h2>
+<p>Tax practices hold exactly the kind of dense, document-heavy institutional knowledge that AI turns into leverage: decades of client history, positions taken, workpapers, correspondence. §7216 does not stand between your firm and that leverage. It stands between your clients' information and third parties. Keep the intelligence inside the firm, and the statute is not an obstacle. It is a description of the architecture you should have wanted anyway.</p>
+<!-- SOURCES -->
+<section class="sources" aria-label="Primary sources">
+  <div class="sources-label">Primary Sources</div>
+  <div class="chip-row">
+    <a class="src-chip" href="https://www.law.cornell.edu/cfr/text/26/301.7216-1" target="_blank" rel="noopener"><span class="arrow">↗</span> Treas. Reg. §301.7216-1</a>
+    <a class="src-chip" href="https://www.irs.gov/tax-professionals/section-7216-information-center" target="_blank" rel="noopener"><span class="arrow">↗</span> IRS §7216 Information Center</a>
+    <a class="src-chip" href="https://www.irs.gov/pub/irs-drop/rp-13-14.pdf" target="_blank" rel="noopener"><span class="arrow">↗</span> Rev. Proc. 2013-14</a>
+    <a class="src-chip" href="https://www.aicpa-cima.com/resources/download/section-7216-guidance-and-sample-consent-forms" target="_blank" rel="noopener"><span class="arrow">↗</span> AICPA §7216 Guidance &amp; Consent Forms</a>
+  </div>
+</section>
+<!-- FAQ (matches FAQPage schema verbatim) -->
+<section class="faq-section" aria-label="Frequently asked questions">
+  <h2>Frequently asked questions</h2>
+  <details class="faq-item">
+    <summary>Does IRC §7216 prohibit CPA firms from using AI?</summary>
+    <div class="faq-a">No. Section 7216 does not mention AI and prohibits no technology. It makes it a federal misdemeanor for a tax return preparer to knowingly or recklessly disclose tax return information, or use it for any purpose other than preparing a return, without a regulatory exception or valid taxpayer consent. AI becomes a §7216 issue only when client tax return information leaves the firm and reaches a third-party tool. AI that runs inside the firm's own environment, used to prepare or assist in preparing returns, does not create a third-party disclosure.</div>
+  </details>
+  <details class="faq-item">
+    <summary>Is entering client tax information into an AI tool a disclosure under §7216?</summary>
+    <div class="faq-a">The prevailing practitioner reading is yes. The regulations define tax return information broadly, and transmitting it to a third-party AI vendor places it in the hands of a party outside the firm. The statute does not distinguish between disclosing data to a person and disclosing it to a software platform. Commentators consider it unlikely that general-purpose AI tools qualify for the auxiliary services exception, and the IRS has issued no AI-specific guidance under §7216, so no exception can be safely assumed.</div>
+  </details>
+  <details class="faq-item">
+    <summary>What are the penalties for violating IRC §7216 and §6713?</summary>
+    <div class="faq-a">Section 7216 is a criminal statute: a knowing or reckless violation is a misdemeanor punishable by a fine of up to $1,000, up to one year of imprisonment, or both, plus costs of prosecution, for each violation, with the fine rising to $100,000 for violations involving identity theft. Section 6713 adds a civil penalty of $250 per unauthorized disclosure or use, up to $10,000 per calendar year, and it does not require knowledge or recklessness, meaning a firm can incur civil penalties without knowing it violated the rule.</div>
+  </details>
+  <details class="faq-item">
+    <summary>What does a valid §7216 consent for AI use require?</summary>
+    <div class="faq-a">Under Treasury Regulation 301.7216-3, consent must be knowing and voluntary and obtained before the disclosure occurs. For Form 1040-series taxpayers, Revenue Procedure 2013-14 prescribes the mandatory format, content, and electronic signature requirements. The consent must identify the specific recipient of the disclosure, and a generic reference to various AI tools is not sufficient. In practice this means a separate, compliant, signed consent naming the AI vendor, per client, before any client tax information touches the tool.</div>
+  </details>
+  <details class="faq-item">
+    <summary>How does private AI deployment change the §7216 analysis?</summary>
+    <div class="faq-a">Section 7216 restricts disclosure to third parties and use outside return preparation. When an AI system runs inside the firm's own environment, client tax return information never reaches a third party, so no disclosure occurs, and using the system to prepare or assist in preparing returns is the purpose the statute expressly permits. The consent machinery that makes third-party AI tools burdensome, per-client signed consents naming each vendor, is largely never triggered, because the condition that requires consent never arises.</div>
+  </details>
+</section>
+<!-- AUTHOR BOX -->
+<div class="author-box">
+  <div class="avatar" aria-hidden="true">MB</div>
+  <div>
+    <h4>Mitch Boraski</h4>
+    <p>Co-Founder of Deepvine AI. Deepvine installs private AI knowledge systems for law firms, RIAs, CPA firms, and other knowledge-driven businesses: connected to your systems, backfilled with your history, deployed in your environment, and owned by you.</p>
+  </div>
+</div>
+<p class="disclaimer">This article is provided for general informational purposes only and does not constitute legal or tax advice. Statutes, regulations, and administrative guidance are subject to amendment and interpretation, and the application of IRC §7216 to any particular tool or workflow depends on specific facts. Firms should consult their own counsel before adopting any AI tool, policy, or consent process.</p>
+</article>
+<!-- CTA BAND -->
+<section class="cta-band">
+  <div class="cta-glow" aria-hidden="true"></div>
+  <div class="cta-inner">
+    <div class="cta-tag">Private AI for CPA Firms</div>
+    <h2 class="cta-h">AI leverage without the consent problem.</h2>
+    <p class="cta-p">Deepvine deploys a private AI knowledge system in your firm's environment: client histories, workpapers, positions, and decades of institutional memory, answerable in Slack with source-backed citations. Client tax information never leaves your firm.</p>
+    <button class="cta-btn" onclick="openCalendly()">Book a live demo →</button>
+    <div class="cta-sub">Bring us one real question about a client engagement. We will show you where the answer comes from.</div>
+  </div>
+</section>
+<!-- FOOTER -->
+<footer>
+  <div class="foot-logo"><span class="dark">Deepvine</span><span class="green">.AI</span></div>
+  <p>Private AI brain for modern operators.</p>
+  <p><a href="/">Home</a> &nbsp;·&nbsp; <a href="/blog/">Blog</a> &nbsp;·&nbsp; <a href="mailto:info@deepvine.ai">info@deepvine.ai</a></p>
+  <p>© 2026 Deepvine AI</p>
+</footer>
+<script>
+/* Demo CTA: opens the Deepvine Calendly scheduling page. */
+var CALENDLY_URL = "https://calendly.com/deepvine_ai/30min";
+function openCalendly(){
+  if(typeof gtag==='function'){gtag('event','demo_cta_click',{event_category:'conversion',event_label:'blog_post_irc_7216'});}
+  if(CALENDLY_URL){window.open(CALENDLY_URL,'_blank');}
+  else{window.location.href='mailto:info@deepvine.ai?subject=Live%20Demo%20Request&body='+encodeURIComponent('I would like to book a live Deepvine demo.');}
+}
+function toggleMenu(){
+  var links=document.getElementById('navLinks');
+  var btn=document.getElementById('hamburger');
+  var open=links.classList.toggle('open');
+  btn.setAttribute('aria-expanded',open?'true':'false');
+}
+/* GA scroll-depth: fires once when reader reaches the FAQ */
+(function(){
+  var fired=false;
+  window.addEventListener('scroll',function(){
+    if(fired)return;
+    var faq=document.querySelector('.faq-section');
+    if(faq && faq.getBoundingClientRect().top<window.innerHeight){
+      fired=true;
+      if(typeof gtag==='function'){gtag('event','article_read_complete',{event_category:'engagement',event_label:'irc_7216'});}
+    }
+  },{passive:true});
+})();
+</script>
+</body>
+</html>
