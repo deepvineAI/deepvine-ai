@@ -601,7 +601,7 @@ footer{
 /* ── FOOTER COLUMNS ── */
 .foot-inner{align-items:flex-start;}
 .foot-brand{display:flex;flex-direction:column;gap:0.5rem;max-width:280px;}
-.foot-cols{display:flex;gap:3.5rem;flex-wrap:wrap;}
+.foot-cols{position:static;display:flex;gap:3.5rem;flex-wrap:wrap;}
 .foot-col{display:flex;flex-direction:column;gap:0.65rem;}
 .foot-col-title{font-size:0.7rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--ink);font-weight:600;margin-bottom:0.2rem;}
 .foot-col a{font-size:0.9rem;color:var(--subtle);text-decoration:none;transition:color 0.15s;}
@@ -1027,7 +1027,7 @@ footer{
       </div>
       <div class="foot-tagline">Private AI brain for modern operators.</div>
     </div>
-    <nav class="foot-cols" aria-label="Footer">
+    <div class="foot-cols">
       <div class="foot-col">
         <div class="foot-col-title">Solutions</div>
         <a href="/#usecases">Law Firms</a>
@@ -1045,7 +1045,7 @@ footer{
         <a href="/privacy/">Privacy</a>
         <a href="/terms/">Terms</a>
       </div>
-    </nav>
+    </div>
   </div>
   <div class="foot-bottom">
     <p class="foot-copy">© 2026 Deepvine AI · Local Labs LLC</p>
