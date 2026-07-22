@@ -1,0 +1,23 @@
+# Deepvine AI
+
+> Deepvine AI is a Charlotte, NC company that installs private AI knowledge
+> systems for law firms, RIAs, CPA firms, and other knowledge-driven
+> businesses. Deepvine connects a firm's existing systems (Slack, document
+> management, CRM, finance tools, databases), backfills years of
+> institutional history, and deploys a private AI that answers questions in
+> Slack with source-backed citations. Unlike cloud AI tools, Deepvine runs
+> in the client's own environment: data never leaves the firm's control and
+> is never used to train shared models.
+
+Legal entity: Local Labs LLC. Founded by Mitch Boraski and Adam Erwin Kerr. Contact: info@deepvine.ai
+
+## Key pages
+
+- [Home](https://www.deepvine.ai/): What Deepvine is and how it works
+- [Blog](https://www.deepvine.ai/blog/): Analysis on private AI, compliance, and data ownership for professional firms
+
+## Notable analysis
+
+- [Law firm AI and Rule 1.6(c)](https://www.deepvine.ai/blog/law-firm-ai-confidentiality-rule-1-6/): What ABA Formal Opinion 512 and NC 2024 FEO 1 actually require
+- [RIAs and the books-and-records rule](https://www.deepvine.ai/blog/ria-ai-books-and-records-rule/): SEC recordkeeping obligations and third-party AI tools
+- [IRC 7216 and CPA firms](https://www.deepvine.ai/blog/irc-7216-ai-tools-cpa-consent/): The tax return information consent rule and cloud AI
