@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LQMY9C69YW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-LQMY9C69YW');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Private AI vs. ChatGPT Enterprise: Data Safety Compared | Deepvine.AI</title>
+<meta name="description" content="ChatGPT Enterprise makes real data commitments. So does private AI. But the two promises are made of different material: one is a contract, the other is architecture. The honest comparison.">
+<link rel="canonical" href="https://www.deepvine.ai/blog/private-ai-vs-chatgpt-enterprise/">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Deepvine.AI">
+<meta property="og:title" content="Private AI vs. ChatGPT Enterprise: What &quot;Your Data Is Safe&quot; Actually Means in Each Model">
+<meta property="og:description" content="Both models offer legitimate data protection, but the protection is made of different material. One is a contract. The other is architecture. The difference is invisible in a demo and decisive at the edges.">
+<meta property="og:url" content="https://www.deepvine.ai/blog/private-ai-vs-chatgpt-enterprise/">
+<meta property="article:published_time" content="2026-07-22T09:00:00-04:00">
+<meta property="article:author" content="Mitch Boraski">
+<meta property="article:section" content="Deployment &amp; Security">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.deepvine.ai/#organization",
+      "name": "Deepvine AI",
+      "url": "https://www.deepvine.ai/",
+      "description": "Deepvine installs private AI knowledge systems for knowledge-driven businesses, connecting company systems, backfilling years of history, and delivering source-backed answers in Slack. Private deployment, full data ownership.",
+      "email": "info@deepvine.ai",
+      "foundingLocation": { "@type": "Place", "name": "Charlotte, North Carolina" }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://www.deepvine.ai/#mitch-boraski",
+      "name": "Mitch Boraski",
+      "jobTitle": "Co-Founder",
+      "worksFor": { "@id": "https://www.deepvine.ai/#organization" },
+      "alumniOf": { "@type": "CollegeOrUniversity", "name": "Norwich University" },
+      "description": "Co-founder of Deepvine AI. Writes on private AI deployment, data ownership, and compliance for professional services firms."
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.deepvine.ai/blog/private-ai-vs-chatgpt-enterprise/#webpage",
+      "url": "https://www.deepvine.ai/blog/private-ai-vs-chatgpt-enterprise/",
+      "name": "Private AI vs. ChatGPT Enterprise: What \"Your Data Is Safe\" Actually Means in Each Model",
+      "isPartOf": { "@id": "https://www.deepvine.ai/blog/#blog" },
+      "breadcrumb": { "@id": "https://www.deepvine.ai/blog/private-ai-vs-chatgpt-enterprise/#breadcrumb" },
+      "inLanguage": "en-US"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.deepvine.ai/blog/private-ai-vs-chatgpt-enterprise/#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.deepvine.ai/" },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.deepvine.ai/blog/" },
+        { "@type": "ListItem", "position": 3, "name": "Private AI vs. ChatGPT Enterprise", "item": "https://www.deepvine.ai/blog/private-ai-vs-chatgpt-enterprise/" }
+      ]
+    },
+    {
+      "@type": "BlogPosting",
+      "@id": "https://www.deepvine.ai/blog/private-ai-vs-chatgpt-enterprise/#article",
+      "mainEntityOfPage": { "@id": "https://www.deepvine.ai/blog/private-ai-vs-chatgpt-enterprise/#webpage" },
+      "headline": "Private AI vs. ChatGPT Enterprise: What \"Your Data Is Safe\" Actually Means in Each Model",
+      "alternativeHeadline": "One promise is a contract. The other is architecture.",
+      "description": "Both models offer legitimate data protection, but the protection is made of different material. ChatGPT Enterprise's safety is contractual. Private AI's safety is architectural. The difference is invisible in a demo and decisive at the edges, where legal process, breaches, and changing terms live.",
+      "author": { "@id": "https://www.deepvine.ai/#mitch-boraski" },
+      "publisher": { "@id": "https://www.deepvine.ai/#organization" },
+      "datePublished": "2026-07-22T09:00:00-04:00",
+      "dateModified": "2026-07-22T09:00:00-04:00",
+      "url": "https://www.deepvine.ai/blog/private-ai-vs-chatgpt-enterprise/",
+      "articleSection": "Deployment & Security",
+      "wordCount": 3300,
+      "inLanguage": "en-US",
+      "keywords": ["private AI vs ChatGPT Enterprise", "ChatGPT Enterprise data privacy", "on-premises AI deployment", "AI data custody", "OpenAI preservation order", "enterprise AI security comparison"],
+      "about": [
+        { "@type": "Thing", "name": "Enterprise AI data protection" },
+        { "@type": "Thing", "name": "Private AI deployment" },
+        { "@type": "Thing", "name": "Data custody and legal process" }
+      ],
+      "mentions": [
+        {
+          "@type": "SoftwareApplication",
+          "name": "ChatGPT Enterprise",
+          "creator": { "@type": "Organization", "name": "OpenAI" }
+        },
+        {
+          "@type": "CreativeWork",
+          "name": "In re: OpenAI, Inc. Copyright Infringement Litigation (S.D.N.Y.): preservation and log-production orders",
+          "datePublished": "2025-05"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.deepvine.ai/blog/private-ai-vs-chatgpt-enterprise/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is ChatGPT Enterprise safe for confidential business data?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It is contractually protected to a high standard: no training by default, encryption, SOC 2 Type 2 and ISO certifications, retention controls, and a DPA. Whether that standard satisfies your obligations depends on the obligation. For general business confidentiality, it is a defensible choice. For data governed by client contracts prohibiting third-party processing, or data whose compelled disclosure through a vendor would be unacceptable, contractual protection has a ceiling that architectural protection does not."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does OpenAI train its models on ChatGPT Enterprise data?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. By default, OpenAI does not use data from ChatGPT Enterprise, Business, Edu, or the API for model training, and customers would have to explicitly opt in to change that. The same default applies at Anthropic, Google, and Microsoft for their business tiers. Training use is a consumer-tier issue, not an enterprise-tier issue."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What was the ChatGPT court preservation order, and did it affect enterprise customers?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "In the New York Times copyright litigation, a federal court ordered OpenAI in May 2025 to preserve all output logs, including deleted conversations, across Free, Plus, Pro, and Team plans and non-ZDR API traffic. ChatGPT Enterprise was excluded, and the going-forward order was lifted in October 2025, though preserved logs remained in litigation and 20 million de-identified consumer logs were later ordered produced. Enterprise customers were protected. The episode's lasting lesson is who did the protecting: a court, not the contract and not the customer."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is private AI less capable than ChatGPT?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "At the absolute frontier of reasoning and long multi-step agentic work, the leading closed models retain a modest edge. On the workloads a private knowledge platform actually runs, answering questions over your documents, summarizing, extracting, and drafting from your archive, current open-weight models perform at or near parity, and industry analysis in 2026 treats them as production-grade rather than a compromise. A private system also does something no frontier model can: answer from your firm's own history, which is where most of the practical value lives."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What does Zero Data Retention (ZDR) mean?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "ZDR is an API-level configuration in which the vendor does not retain your inputs and outputs on its servers after processing. It meaningfully reduces retained-data risk and notably kept ZDR API traffic out of the 2025 preservation order. It is a strong option for developers, but it still involves processing on vendor infrastructure in real time, and it applies to API usage, not the chat products most employees actually touch."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which should my firm choose?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Almost certainly both, routed by data classification. Enterprise cloud for generic and moderately sensitive work, where its convenience and frontier capability shine. Private infrastructure for client-confidential material, regulated data, and the proprietary knowledge base you intend to compound as an asset. The firms getting this right are not choosing a tool. They are drawing a custody boundary and enforcing it."
+          }
+        }
+      ]
+    }
+  ]
+}
+<\/script>
+<style>
+:root{
+  --ink:#07120b;
+  --ink-2:#0d1f13;
+  --green:#16a34a;
+  --green-bright:#22c55e;
+  --green-soft:#4ade80;
+  --green-tint:#f0fdf4;
+  --green-line:#bbf7d0;
+  --bg:#fafaf8;
+  --white:#ffffff;
+  --text:#111827;
+  --text-2:#374151;
+  --text-3:#6b7280;
+  --border:#e5e7eb;
+  --radius:16px;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:var(--green);text-decoration:none;}
+a:focus-visible,button:focus-visible{outline:2px solid var(--green);outline-offset:2px;}
+/* NAV */
+.nav{
+  position:sticky;top:0;z-index:100;
+  background:rgba(250,250,248,0.92);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--border);
+}
+.nav-inner{
+  max-width:1200px;margin:0 auto;
+  padding:0.9rem 1.5rem;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.logo{display:flex;align-items:center;gap:0.5rem;}
+.logo svg{width:30px;height:30px;}
+.logo-type{font-weight:700;font-size:1.1rem;letter-spacing:-0.02em;}
+.logo-type .dark{color:var(--ink);}
+.logo-type .green{color:var(--green);}
+.nav-links{display:flex;align-items:center;gap:1.75rem;}
+.nav-link{font-size:0.9rem;font-weight:500;color:var(--text-2);transition:color .2s;}
+.nav-link:hover,.nav-link.active{color:var(--green);}
+.nav-cta{
+  background:var(--green);color:#fff;border:none;cursor:pointer;
+  font-family:inherit;font-size:0.875rem;font-weight:600;
+  padding:0.55rem 1.2rem;border-radius:8px;transition:background .2s;
+}
+.nav-cta:hover{background:#15803d;}
+.hamburger{display:none;background:none;border:none;cursor:pointer;flex-direction:column;gap:5px;padding:6px;}
+.hamburger span{display:block;width:22px;height:2px;background:var(--ink);border-radius:2px;}
+@media(max-width:820px){
+  .nav-links{
+    display:none;position:absolute;top:100%;left:0;right:0;
+    background:var(--white);border-bottom:1px solid var(--border);
+    flex-direction:column;align-items:flex-start;gap:0;padding:0.5rem 0;
+  }
+  .nav-links.open{display:flex;}
+  .nav-links .nav-link{padding:0.8rem 1.5rem;width:100%;}
+  .nav-links .nav-cta{margin:0.6rem 1.5rem;}
+  .hamburger{display:flex;}
+}
+/* ARTICLE HEADER */
+.post-head{
+  max-width:820px;margin:0 auto;
+  padding:3.5rem 1.5rem 2rem;
+}
+.crumbs{font-size:0.8rem;color:var(--text-3);margin-bottom:1.5rem;}
+.crumbs a{color:var(--text-3);}
+.crumbs a:hover{color:var(--green);}
+.crumbs span{margin:0 0.4rem;color:var(--border);}
+.post-eyebrow{display:flex;align-items:center;gap:0.6rem;margin-bottom:1.2rem;}
+.cat-badge{
+  font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;
+  color:var(--green);background:var(--green-tint);
+  border:1px solid var(--green-line);border-radius:999px;
+  padding:0.3rem 0.85rem;
+}
+.read-time{font-size:0.8rem;color:var(--text-3);}
+.post-h1{
+  font-size:clamp(1.9rem,4.5vw,3rem);
+  font-weight:800;letter-spacing:-0.03em;line-height:1.12;
+  color:var(--ink);margin-bottom:1.1rem;
+}
+.post-h1 em{font-style:italic;color:var(--green);}
+.post-dek{
+  font-size:1.15rem;color:var(--text-2);line-height:1.65;
+  max-width:680px;margin-bottom:1.75rem;font-weight:300;
+}
+.byline{
+  display:flex;align-items:center;gap:0.8rem;
+  padding-top:1.5rem;border-top:1px solid var(--border);
+}
+.avatar{
+  width:44px;height:44px;border-radius:50%;
+  background:var(--ink);color:var(--green-soft);
+  display:flex;align-items:center;justify-content:center;
+  font-weight:700;font-size:0.9rem;flex-shrink:0;
+}
+.byline-name{font-weight:600;font-size:0.9rem;color:var(--ink);}
+.byline-meta{font-size:0.8rem;color:var(--text-3);}
+/* ANSWER BOX (AEO extraction target) */
+.answer-box{
+  max-width:820px;margin:0 auto 1rem;padding:0 1.5rem;
+}
+.answer-inner{
+  background:var(--green-tint);
+  border:1px solid var(--green-line);
+  border-left:4px solid var(--green);
+  border-radius:12px;
+  padding:1.5rem 1.75rem;
+}
+.answer-label{
+  font-size:0.7rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;
+  color:var(--green);margin-bottom:0.6rem;
+}
+.answer-inner p{font-size:1rem;color:var(--text);line-height:1.7;}
+.answer-inner strong{font-weight:600;}
+/* ARTICLE BODY */
+.post-body{
+  max-width:720px;margin:0 auto;
+  padding:2rem 1.5rem 3rem;
+}
+.post-body h2{
+  font-size:clamp(1.35rem,2.6vw,1.7rem);
+  font-weight:700;letter-spacing:-0.02em;line-height:1.25;
+  color:var(--ink);
+  margin:2.75rem 0 1rem;
+  scroll-margin-top:90px;
+}
+.post-body h3{
+  font-size:1.1rem;font-weight:600;color:var(--ink);
+  margin:2rem 0 0.75rem;
+}
+.post-body p{margin-bottom:1.2rem;color:var(--text-2);font-size:1.02rem;}
+.post-body ul,.post-body ol{margin:0 0 1.2rem 1.4rem;color:var(--text-2);font-size:1.02rem;}
+.post-body li{margin-bottom:0.55rem;}
+.post-body strong{color:var(--text);font-weight:600;}
+/* RULE QUOTE */
+.rule-quote{
+  background:var(--white);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:1.6rem 1.75rem;
+  margin:1.75rem 0;
+  position:relative;
+  border-top:3px solid var(--green);
+}
+.rule-quote .rq-label{
+  font-size:0.7rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;
+  color:var(--green);margin-bottom:0.7rem;
+}
+.rule-quote blockquote{
+  font-size:1.08rem;line-height:1.65;color:var(--ink);
+  font-weight:400;font-style:italic;
+}
+.rule-quote cite{
+  display:block;margin-top:0.8rem;
+  font-size:0.82rem;font-style:normal;color:var(--text-3);
+}
+/* KEY TAKEAWAY */
+.takeaway{
+  border-left:3px solid var(--green);
+  padding:0.2rem 0 0.2rem 1.25rem;
+  margin:1.75rem 0;
+}
+.takeaway p{font-size:1.05rem;font-weight:500;color:var(--ink);margin-bottom:0;}
+/* COMPARISON TABLE */
+.tbl-wrap{overflow-x:auto;margin:1.75rem 0;}
+table.compare{
+  width:100%;border-collapse:collapse;
+  background:var(--white);
+  border:1px solid var(--border);
+  border-radius:12px;overflow:hidden;
+  font-size:0.92rem;
+}
+table.compare th{
+  background:var(--ink);color:#fff;
+  font-weight:600;text-align:left;
+  padding:0.85rem 1rem;font-size:0.82rem;
+  letter-spacing:0.03em;
+}
+table.compare th:first-child{width:22%;}
+table.compare td{
+  padding:0.85rem 1rem;
+  border-top:1px solid var(--border);
+  color:var(--text-2);vertical-align:top;line-height:1.55;
+}
+table.compare td:first-child{font-weight:600;color:var(--ink);}
+table.compare tr:nth-child(even) td{background:#fcfcfa;}
+/* SOURCE CHIPS */
+.sources{
+  background:var(--white);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:1.5rem 1.75rem;
+  margin:2.5rem 0;
+}
+.sources-label{
+  font-size:0.7rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;
+  color:var(--text-3);margin-bottom:1rem;
+}
+.chip-row{display:flex;flex-wrap:wrap;gap:0.6rem;}
+.src-chip{
+  display:inline-flex;align-items:center;gap:0.45rem;
+  background:var(--bg);
+  border:1px solid var(--border);
+  border-radius:8px;
+  padding:0.5rem 0.9rem;
+  font-size:0.82rem;font-weight:500;color:var(--text-2);
+  transition:border-color .2s,color .2s;
+}
+.src-chip:hover{border-color:var(--green);color:var(--green);}
+.src-chip .arrow{color:var(--green);font-weight:700;}
+.sources .more-refs{
+  margin-top:1rem;font-size:0.82rem;color:var(--text-3);line-height:1.6;
+}
+/* FAQ */
+.faq-section{margin:2.5rem 0;}
+.faq-item{
+  background:var(--white);
+  border:1px solid var(--border);
+  border-radius:12px;
+  margin-bottom:0.75rem;
+  overflow:hidden;
+}
+.faq-item summary{
+  cursor:pointer;list-style:none;
+  padding:1.1rem 1.4rem;
+  font-weight:600;font-size:0.98rem;color:var(--ink);
+  display:flex;justify-content:space-between;align-items:center;gap:1rem;
+}
+.faq-item summary::-webkit-details-marker{display:none;}
+.faq-item summary::after{
+  content:'+';font-size:1.3rem;font-weight:400;color:var(--green);
+  flex-shrink:0;transition:transform .2s;
+}
+.faq-item[open] summary::after{transform:rotate(45deg);}
+.faq-item .faq-a{
+  padding:0 1.4rem 1.2rem;
+  font-size:0.95rem;color:var(--text-2);line-height:1.7;
+}
+/* AUTHOR BOX */
+.author-box{
+  display:flex;gap:1.1rem;align-items:flex-start;
+  background:var(--white);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:1.5rem 1.75rem;
+  margin:2.5rem 0 1.5rem;
+}
+.author-box .avatar{width:52px;height:52px;font-size:1rem;}
+.author-box h4{font-size:1rem;font-weight:700;color:var(--ink);margin-bottom:0.25rem;}
+.author-box p{font-size:0.9rem;color:var(--text-2);margin-bottom:0;line-height:1.6;}
+/* DISCLAIMER */
+.disclaimer{
+  font-size:0.8rem;color:var(--text-3);line-height:1.6;
+  border-top:1px solid var(--border);
+  padding-top:1.25rem;margin-top:1.5rem;
+}
+/* CTA BAND */
+.cta-band{
+  background:var(--ink);
+  position:relative;overflow:hidden;
+  padding:4.5rem 1.5rem;
+  text-align:center;
+}
+.cta-band::before{
+  content:'';position:absolute;inset:0;
+  background-image:radial-gradient(rgba(74,222,128,0.14) 1px,transparent 1px);
+  background-size:22px 22px;
+  pointer-events:none;
+}
+.cta-glow{
+  position:absolute;top:-40%;left:50%;transform:translateX(-50%);
+  width:640px;height:640px;border-radius:50%;
+  background:radial-gradient(circle,rgba(34,197,94,0.22) 0%,transparent 65%);
+  pointer-events:none;
+}
+.cta-inner{position:relative;max-width:640px;margin:0 auto;}
+.cta-tag{
+  font-size:0.72rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;
+  color:var(--green-soft);margin-bottom:1rem;
+}
+.cta-h{
+  font-size:clamp(1.6rem,3.5vw,2.3rem);
+  font-weight:800;letter-spacing:-0.025em;line-height:1.18;
+  color:#fff;margin-bottom:1rem;
+}
+.cta-p{color:rgba(255,255,255,0.75);font-size:1rem;margin-bottom:1.75rem;line-height:1.7;}
+.cta-btn{
+  display:inline-block;background:var(--green);color:#fff;
+  font-weight:600;font-size:0.95rem;
+  padding:0.85rem 1.9rem;border-radius:10px;border:none;cursor:pointer;
+  font-family:inherit;transition:background .2s,transform .2s;
+}
+.cta-btn:hover{background:var(--green-bright);transform:translateY(-1px);}
+.cta-sub{margin-top:1rem;font-size:0.82rem;color:rgba(255,255,255,0.55);}
+/* FOOTER */
+footer{
+  background:var(--bg);
+  border-top:1px solid var(--border);
+  padding:2.5rem 1.5rem;
+  text-align:center;
+}
+.foot-logo{font-weight:700;font-size:1rem;margin-bottom:0.4rem;}
+.foot-logo .dark{color:var(--ink);}
+.foot-logo .green{color:var(--green);}
+footer p{font-size:0.82rem;color:var(--text-3);margin-bottom:0.3rem;}
+footer a{color:var(--text-3);}
+footer a:hover{color:var(--green);}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto;}
+  *{transition:none !important;}
+}
+</style>
+</head>
+<body>
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="logo" href="/" aria-label="Deepvine.AI home">
+      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="50" cy="88" r="5" fill="#16a34a"/>
+        <circle cx="42" cy="76" r="6" fill="#16a34a"/>
+        <circle cx="58" cy="72" r="7" fill="#16a34a"/>
+        <circle cx="36" cy="62" r="5" fill="#22c55e"/>
+        <circle cx="50" cy="56" r="8" fill="#16a34a"/>
+        <circle cx="68" cy="50" r="7" fill="#16a34a"/>
+        <circle cx="80" cy="58" r="4.5" fill="#22c55e"/>
+        <circle cx="34" cy="39" r="5.5" fill="#4ade80"/>
+        <circle cx="52" cy="34" r="8.5" fill="#22c55e"/>
+        <circle cx="70" cy="33" r="6" fill="#4ade80"/>
+        <circle cx="40" cy="22" r="4" fill="#4ade80"/>
+        <circle cx="56" cy="17" r="6" fill="#22c55e"/>
+        <circle cx="72" cy="20" r="3.5" fill="#4ade80"/>
+        <circle cx="46" cy="8" r="3" fill="#4ade80"/>
+        <circle cx="60" cy="5" r="4" fill="#22c55e"/>
+      </svg>
+      <span class="logo-type"><span class="dark">Deepvine</span><span class="green">.AI</span></span>
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a class="nav-link" href="/#how">How It Works</a>
+      <a class="nav-link" href="/#usecases">Use Cases</a>
+      <a class="nav-link" href="/#security">Security</a>
+      <a class="nav-link active" href="/blog/">Blog</a>
+      <button class="nav-cta" onclick="openCalendly()">Book a Demo</button>
+    </div>
+    <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<!-- ARTICLE HEADER -->
+<header class="post-head">
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="/">Home</a><span>/</span><a href="/blog/">Blog</a><span>/</span>Private AI vs. ChatGPT Enterprise
+  </nav>
+  <div class="post-eyebrow">
+    <span class="cat-badge">Deployment &amp; Security</span>
+    <span class="read-time">13 min read</span>
+  </div>
+  <h1 class="post-h1">Private AI vs. ChatGPT Enterprise: what "your data is safe" <em>actually</em> means in each model.</h1>
+  <p class="post-dek">Both make real commitments. But the two promises are made of different material: one is a contract, the other is architecture. The difference is invisible in a demo and decisive at the edges, where legal process, breaches, and changing terms live.</p>
+  <div class="byline">
+    <div class="avatar" aria-hidden="true">MB</div>
+    <div>
+      <div class="byline-name">Mitch Boraski</div>
+      <div class="byline-meta">Co-Founder, Deepvine AI &nbsp;·&nbsp; <time datetime="2026-07-22">July 22, 2026</time></div>
+    </div>
+  </div>
+</header>
+<!-- ANSWER BOX -->
+<div class="answer-box">
+  <div class="answer-inner">
+    <div class="answer-label">The Short Answer</div>
+    <p><strong>Both models offer legitimate data protection, but the protection is made of different material.</strong> ChatGPT Enterprise's safety is contractual: strong, specific promises, enforced by agreement, running on infrastructure OpenAI controls. Private AI's safety is architectural: your data cannot end up in someone else's custody because it never enters someone else's custody. The difference is invisible in a demo and decisive at the edges, where legal process, breaches, and changing terms live.</p>
+  </div>
+</div>
+<!-- ARTICLE BODY -->
+<article class="post-body">
+<p>"Your data is safe with us."</p>
+<p>The sentence appears, in some form, on every AI vendor's website. It is on OpenAI's. It is on Anthropic's, Google's, and Microsoft's. It is on the website of every private AI provider, ours included. The words are nearly identical everywhere. The machinery behind them is not.</p>
+<p>This matters because most firms evaluating AI never get past the words. A partner asks "is our data safe," someone finds the enterprise privacy page, reads "we don't train on your data," and the diligence ends there. That is not wrong, exactly. It is incomplete in a way that only becomes visible under stress: a subpoena, a breach, a lawsuit your vendor is fighting that has nothing to do with you.</p>
+<p>So this article does the comparison properly. What ChatGPT Enterprise actually promises, what that promise is made of, where it held up under real pressure and where the seams showed, what private AI promises instead, and the honest tradeoffs of each. No straw men. Both models are legitimate. The point is to understand what you are actually buying.</p>
+<h2 id="enterprise-promises">What ChatGPT Enterprise actually promises</h2>
+<p>Credit first, because the enterprise tier deserves it. ChatGPT Enterprise represents a genuine, well-engineered data protection regime, and it is a categorical upgrade over the consumer tools your team is probably using today. The current commitments include:</p>
+<p><strong>No training on your data by default.</strong> Inputs and outputs from ChatGPT Enterprise, Business, Edu, and the API platform are excluded from model training unless you explicitly opt in. This is the headline promise, and OpenAI has been consistent about it.</p>
+<p><strong>Ownership and control.</strong> You own your inputs and outputs. Workspace admins control data retention periods, and deleted conversations are removed from OpenAI's systems within 30 days.</p>
+<p><strong>Real security engineering.</strong> Encryption in transit (TLS 1.2+) and at rest (AES-256), SAML SSO, SCIM provisioning, role-based access controls, IP allowlists, audit logs, and an admin console. The certification portfolio is extensive: SOC 2 Type 2, ISO/IEC 27001, 27017, 27018, and 27701, plus CSA STAR.</p>
+<p><strong>Compliance machinery.</strong> A Data Processing Agreement supporting GDPR and state privacy law obligations, HIPAA BAA availability, data residency options for regulated jurisdictions, and Enterprise Key Management for customers who want to hold their own encryption keys.</p>
+<p><strong>Zero Data Retention for the API.</strong> Qualified API customers can configure ZDR so that inputs and outputs are not retained on OpenAI's servers at all.</p>
+<p>To be clear about the category: this is not unique to OpenAI. Claude Enterprise, Google's Gemini enterprise offerings, and Microsoft Copilot make materially similar commitments: no training on business data by default, contractual confidentiality, enterprise security controls. The analysis in this article applies to enterprise cloud AI as a class. ChatGPT Enterprise simply gets top billing because it is the product most firms evaluate first.</p>
+<p>If your alternative is agents and analysts on personal free-tier accounts, moving to any of these enterprise tiers is one of the highest-value compliance moves available to you, full stop.</p>
+<p>Now for the part the privacy page does not dwell on.</p>
+<h2 id="made-of">What the promise is made of</h2>
+<p>Every commitment listed above shares two properties.</p>
+<p>First, each one is a contract term. A promise, made by a company, enforceable through legal remedies, revisable through the mechanisms contracts are always revisable through. The protection is as strong as the agreement, the vendor's ongoing business decisions, and the legal environment the vendor operates in.</p>
+<p>Second, every one of those terms executes on infrastructure you do not control. Your prompts transit OpenAI's network, rest in OpenAI's storage, and are processed by OpenAI's systems, operated by OpenAI's personnel, subject to OpenAI's legal obligations. "You own your data" is true as a legal statement. As a physical statement, your data lives in someone else's building.</p>
+<p>Neither of these is a criticism. It is simply what cloud means. But it produces a load-bearing phrase that appears in OpenAI's own enterprise privacy documentation, and in every competitor's equivalent:</p>
+<div class="rule-quote">
+  <div class="rq-label">The Load-Bearing Clause</div>
+  <blockquote>"Deleted conversations are removed within 30 days, unless we are legally required to retain them."</blockquote>
+  <cite>Standard enterprise cloud retention language, appearing in materially similar form across every major AI vendor's terms</cite>
+</div>
+<p>That "unless" is not sinister. It is the law, and every SaaS company on earth carries the same clause. But it means the final authority over your data's fate is not you, and not even the vendor. It is whatever legal process reaches the vendor. Which brings us to the most instructive AI data story of the past year, and one that most operators evaluating AI tools have never heard.</p>
+<h2 id="stress-test">The stress test: when a lawsuit reached the delete button</h2>
+<p>In its copyright litigation against OpenAI, The New York Times and co-plaintiffs asked the court to make OpenAI preserve user conversations as potential evidence. In May 2025, a federal magistrate judge ordered OpenAI to preserve and segregate all output log data that would otherwise be deleted, indefinitely, across ChatGPT Free, Plus, Pro, and Team, and API traffic without a Zero Data Retention agreement.</p>
+<p>Sit with what that meant. Users who deleted conversations, relying on published deletion policies, had those conversations frozen instead of purged, by court order, in a lawsuit they were not party to. OpenAI called the order an overreach, publicly committed to fighting it, and appealed. The court clarified within weeks that ChatGPT Enterprise was excluded from preservation, and ZDR API traffic was never in scope. In October 2025, the judge lifted the going-forward preservation obligation. But logs preserved under the order remained accessible to litigation, and in November 2025 the court ordered OpenAI to produce 20 million de-identified consumer conversation logs to the plaintiffs, a ruling the district judge affirmed in early 2026.</p>
+<p>Three lessons, and they cut in different directions.</p>
+<p><strong>The enterprise tier held.</strong> Enterprise's exclusion from the preservation order is the strongest real-world validation the tier distinction has ever received. The contractual wall was tested by adversarial litigation and it mattered. Firms on consumer and Team plans were swept in. Enterprise customers were not.</p>
+<p><strong>The vendor fought for users and still did not decide the outcome.</strong> OpenAI's resistance was genuine and public. It also did not control the result. A magistrate judge did. That is the structural point: when your data sits in a third party's custody, the set of people who can determine its fate includes parties you have never met, in disputes you have no stake in.</p>
+<p><strong>The carve-out clause is real.</strong> "Unless legally required to retain them" went from boilerplate to headline in a single court order. Every enterprise cloud agreement, from every vendor, contains that clause, because no contract can override a court.</p>
+<div class="takeaway">
+  <p>The episode ended about as well as it could for enterprise customers. But a diligence process that takes "your data is safe" at face value would never have surfaced the question the episode answered: safe from whom, under whose authority, decided where?</p>
+</div>
+<h2 id="residual-risk">The full residual-risk ledger for enterprise cloud</h2>
+<p>Beyond legal process, four other residual risks survive even a well-negotiated enterprise agreement. None is disqualifying. All belong in the analysis.</p>
+<p><strong>Concentrated breach surface.</strong> A frontier AI vendor's infrastructure holds the confidential prompts of hundreds of thousands of organizations simultaneously, which makes it one of the most valuable intrusion targets on the planet. The vendor's security teams are excellent. They are also defending a target whose value grows with every customer signed. Your risk includes their entire attack surface, and every incident response is on their timeline, not yours.</p>
+<p><strong>Terms and policy drift.</strong> Contracts renew. Products get repriced, repackaged, and deprecated. Vendors get acquired, change leadership, and revise policies as the legal and competitive landscape shifts. Today's commitments are genuinely strong. The agreement you sign governs the term you sign it for, and the AI industry is not famous for stability.</p>
+<p><strong>Human and system access.</strong> OpenAI's own documentation is honest about this: access to stored conversations is limited to authorized personnel for defined purposes such as support, abuse investigation, and legal compliance. Limited is doing real work in that sentence, and it is a reasonable design. It is also categorically different from nobody outside your firm.</p>
+<p><strong>The classification gap.</strong> The enterprise tier protects whatever your people put into it, uniformly. It cannot know that one paste is a public press release and the next is a client's negotiation ceiling wrapped in a privileged memo. Every employee makes a split-second sensitivity judgment with every prompt, and security researchers analyzing enterprise AI usage consistently find those judgments going wrong at scale. The contract is only as protective as the discipline of the ten thousandth prompt.</p>
+<h2 id="private-promise">What private AI promises, and what that promise is made of</h2>
+<p>Private AI means the models, the knowledge base, and the inference all run on infrastructure your organization owns or exclusively controls: on-premises hardware or a dedicated environment with no shared custody. The data protection story is shorter to tell, because it is not a list of commitments. It is a property of the architecture.</p>
+<p><strong>Your data never enters third-party custody.</strong> Prompts, documents, and outputs stay on your hardware, inside your network boundary. There is no vendor-side copy to train on, retain, review, or produce.</p>
+<p><strong>There is no one else to serve legal process on.</strong> Subpoenas, discovery orders, and preservation demands targeting your data come to you, through your counsel, with your privilege arguments, on notice to you. The NYT-style scenario, where a third party's litigation freezes your deleted data without your involvement, has no mechanism to occur. There is no third party in the custody chain.</p>
+<p><strong>There are no terms to drift.</strong> No renewal cycle can change what happens to data that never leaves your building.</p>
+<div class="takeaway">
+  <p>The policy is physics, not paperwork.</p>
+</div>
+<p><strong>The breach surface is yours alone.</strong> Your infrastructure is a target, but it is a target containing one organization's data, defended on your terms, not a shared honeypot aggregating the secrets of a hundred thousand firms.</p>
+<p><strong>Access governance is native.</strong> Who can query what, which matters for ethical walls, client confidentiality boundaries, and need-to-know structures, is enforced by your identity systems, logged in your audit trail, provable in your compliance reviews.</p>
+<p><strong>Some obligations simply require it.</strong> Certain client MSAs prohibit third-party processing of client data outright. Some government, defense, and regulated-industry regimes require air-gapped or sovereign processing. For those obligations, the enterprise cloud question is not "how good is the contract." The answer is no contract suffices, and private infrastructure is the only architecture that satisfies the requirement as written.</p>
+<p>It is worth noticing what the most sophisticated knowledge businesses do here. McKinsey permits general-purpose AI tools internally, but confidential client data is allowed only on the platform the firm built and controls. That is the revealed preference of an organization with unlimited budget and maximal legal sophistication: contractual protection for generic work, architectural protection for the crown jewels.</p>
+<h2 id="tradeoffs">The honest tradeoffs of private AI</h2>
+<p>If this article stopped at the previous section it would be marketing. Private AI carries real costs and real risks, and a serious evaluation names them.</p>
+<p><strong>Security becomes your job.</strong> Architectural safety is only as good as its implementation. A well-run enterprise cloud beats a misconfigured on-premises server every day of the week. Private AI shifts the security burden from the vendor to you, which is an advantage only if you, or the partner operating it for you, actually carry it: patching, monitoring, backups, access review, incident response. This is the strongest argument for managed private AI over pure DIY.</p>
+<p><strong>The capability question, answered honestly.</strong> The best closed frontier models still hold a measurable lead on the hardest reasoning benchmarks and the longest multi-step agentic workflows, typically cited in the range of a few percentage points. If your workload lives at that frontier, that edge is real. But the workloads a firm knowledge platform actually runs, retrieval-augmented question answering over your documents, summarization, extraction, drafting, analysis grounded in your archive, are exactly where 2026's open-weight models (the Llama, DeepSeek, Qwen, Mistral, GLM, and Nemotron families) have closed the gap to the point where analysts now describe them as no longer a compromise. Multiple open-weight models sit in the frontier tier as of this year, and the per-workload consensus across the industry has flipped from "closed unless you have a reason" to "open where sovereignty or cost matters, closed for the narrow frontier edge."</p>
+<p><strong>The cost model inverts.</strong> Enterprise cloud is opex: predictable per-seat pricing, zero hardware. Private AI is capex plus operations: hardware, deployment, and upkeep. The crossover math depends on headcount and usage intensity, but the strategic difference matters more than the arithmetic: cloud spend buys access that ends when payment ends, while owned infrastructure and an owned, structured knowledge base are assets that persist, compound, and carry value in a transaction.</p>
+<p><strong>You still need governance.</strong> Private AI removes vendor risk. It does not remove the need for an AI use policy, output verification standards, and access discipline. A hallucinated citation is just as wrong on your hardware as on anyone else's.</p>
+<h2 id="framework">The decision framework: custody follows classification</h2>
+<p>The practical answer for most firms is not either/or. It is a two-tier architecture that routes data by sensitivity, and it starts with three questions applied to each class of work:</p>
+<ol>
+  <li><strong>Who could ever be compelled to produce this data?</strong> If the honest answer must be "only us," the data cannot live in third-party custody, however good the contract.</li>
+  <li><strong>What happens if the vendor's terms, ownership, or legal posture changes in three years?</strong> If the answer is "unacceptable exposure," the protection needs to be architectural, not contractual.</li>
+  <li><strong>What do our client agreements and regulators actually permit?</strong> Read the MSAs. Some already prohibit third-party processing of client data in terms written before anyone was thinking about AI.</li>
+</ol>
+<p>Then route accordingly:</p>
+<div class="tbl-wrap">
+<table class="compare">
+  <thead>
+    <tr>
+      <th scope="col"></th>
+      <th scope="col">Consumer AI (free / individual plans)</th>
+      <th scope="col">Enterprise cloud AI (ChatGPT Enterprise and peers)</th>
+      <th scope="col">Private AI (owned infrastructure)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Training on your data</td>
+      <td>Possible by default; opt-outs vary</td>
+      <td>Excluded by default</td>
+      <td>Structurally impossible</td>
+    </tr>
+    <tr>
+      <td>Basis of confidentiality</td>
+      <td>None enforceable</td>
+      <td>Contract (DPA, terms, certifications)</td>
+      <td>Architecture</td>
+    </tr>
+    <tr>
+      <td>Physical custody</td>
+      <td>Vendor</td>
+      <td>Vendor</td>
+      <td>You</td>
+    </tr>
+    <tr>
+      <td>Who receives legal process</td>
+      <td>Vendor; you may never know</td>
+      <td>Vendor; enterprise carve-outs helped in 2025, decided by a court</td>
+      <td>You, through your counsel</td>
+    </tr>
+    <tr>
+      <td>Terms drift risk</td>
+      <td>High</td>
+      <td>Real; contract-cycle dependent</td>
+      <td>None; no external terms</td>
+    </tr>
+    <tr>
+      <td>Breach surface</td>
+      <td>Shared, massive</td>
+      <td>Shared, massive, well defended</td>
+      <td>Yours alone, defended to your standard</td>
+    </tr>
+    <tr>
+      <td>Meets "no third-party processing" clauses</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td>Peak model capability</td>
+      <td>Frontier</td>
+      <td>Frontier</td>
+      <td>Near-frontier; parity on knowledge-base workloads</td>
+    </tr>
+    <tr>
+      <td>Cost model</td>
+      <td>Cheap, uncontrolled</td>
+      <td>Opex, per seat</td>
+      <td>Capex plus operations; owned asset</td>
+    </tr>
+    <tr>
+      <td>Right role</td>
+      <td>Nothing confidential, ever</td>
+      <td>Generic and moderately sensitive work</td>
+      <td>Client-confidential data and the firm's crown-jewel knowledge</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<p>Generic research, public-facing drafting, and non-confidential production work belong on enterprise cloud tiers, which are excellent at exactly that. Client-confidential material, regulated data, and the institutional knowledge that constitutes your firm's actual competitive asset belong on infrastructure you own. The most sophisticated firms already run this split. The only question is whether you build it deliberately or discover it in an incident report.</p>
+<p>For how this custody logic plays out inside specific professions, see our posts on <a href="/blog/law-firm-ai-confidentiality-rule-1-6/">Rule 1.6(c) and law firm confidentiality</a>, <a href="/blog/ria-ai-books-and-records-rule/">the RIA books-and-records rule</a>, <a href="/blog/irc-7216-ai-tools-cpa-consent/">IRC §7216 for CPA firms</a>, <a href="/blog/brokerage-ai-client-confidentiality/">brokerage client confidentiality</a>, and <a href="/blog/consulting-firm-institutional-knowledge-ai/">institutional knowledge in consulting</a>.</p>
+<!-- SOURCES -->
+<section class="sources" aria-label="Primary sources">
+  <div class="sources-label">Primary Sources</div>
+  <div class="chip-row">
+    <a class="src-chip" href="https://news.bloomberglaw.com/ip-law/openai-must-turn-over-20-million-chatgpt-logs-judge-affirms" target="_blank" rel="noopener"><span class="arrow">↗</span> Bloomberg Law: 20M Logs Order Affirmed (Jan 2026)</a>
+    <a class="src-chip" href="https://www.abajournal.com/news/article/chatgpt-creator-must-turn-over-20m-chat-logs-in-copyright-litigation-federal-judge-says" target="_blank" rel="noopener"><span class="arrow">↗</span> ABA Journal on the Production Ruling</a>
+    <a class="src-chip" href="https://www.dataprivacyandsecurityinsider.com/2026/01/when-chats-become-evidence-court-affirms-order-requiring-openai-to-produce-20-million-de-identified-chatgpt-logs/" target="_blank" rel="noopener"><span class="arrow">↗</span> When Chats Become Evidence (Robinson+Cole)</a>
+  </div>
+  <p class="more-refs">Additional references cited in this article include OpenAI's Enterprise Privacy and business data documentation (training defaults, retention, certifications, EKM, data residency), OpenAI's public response to the New York Times data demands, coverage of the October 2025 lifting of the preservation order, Terms.Law's analysis of legal-process carve-outs in SaaS privacy terms, and 2026 open-weight model capability assessments from OpenRouter, MindStudio, and Digital Applied.</p>
+</section>
+<!-- FAQ (matches FAQPage schema verbatim) -->
+<section class="faq-section" aria-label="Frequently asked questions">
+  <h2>Frequently asked questions</h2>
+  <details class="faq-item">
+    <summary>Is ChatGPT Enterprise safe for confidential business data?</summary>
+    <div class="faq-a">It is contractually protected to a high standard: no training by default, encryption, SOC 2 Type 2 and ISO certifications, retention controls, and a DPA. Whether that standard satisfies your obligations depends on the obligation. For general business confidentiality, it is a defensible choice. For data governed by client contracts prohibiting third-party processing, or data whose compelled disclosure through a vendor would be unacceptable, contractual protection has a ceiling that architectural protection does not.</div>
+  </details>
+  <details class="faq-item">
+    <summary>Does OpenAI train its models on ChatGPT Enterprise data?</summary>
+    <div class="faq-a">No. By default, OpenAI does not use data from ChatGPT Enterprise, Business, Edu, or the API for model training, and customers would have to explicitly opt in to change that. The same default applies at Anthropic, Google, and Microsoft for their business tiers. Training use is a consumer-tier issue, not an enterprise-tier issue.</div>
+  </details>
+  <details class="faq-item">
+    <summary>What was the ChatGPT court preservation order, and did it affect enterprise customers?</summary>
+    <div class="faq-a">In the New York Times copyright litigation, a federal court ordered OpenAI in May 2025 to preserve all output logs, including deleted conversations, across Free, Plus, Pro, and Team plans and non-ZDR API traffic. ChatGPT Enterprise was excluded, and the going-forward order was lifted in October 2025, though preserved logs remained in litigation and 20 million de-identified consumer logs were later ordered produced. Enterprise customers were protected. The episode's lasting lesson is who did the protecting: a court, not the contract and not the customer.</div>
+  </details>
+  <details class="faq-item">
+    <summary>Is private AI less capable than ChatGPT?</summary>
+    <div class="faq-a">At the absolute frontier of reasoning and long multi-step agentic work, the leading closed models retain a modest edge. On the workloads a private knowledge platform actually runs, answering questions over your documents, summarizing, extracting, and drafting from your archive, current open-weight models perform at or near parity, and industry analysis in 2026 treats them as production-grade rather than a compromise. A private system also does something no frontier model can: answer from your firm's own history, which is where most of the practical value lives.</div>
+  </details>
+  <details class="faq-item">
+    <summary>What does Zero Data Retention (ZDR) mean?</summary>
+    <div class="faq-a">ZDR is an API-level configuration in which the vendor does not retain your inputs and outputs on its servers after processing. It meaningfully reduces retained-data risk and notably kept ZDR API traffic out of the 2025 preservation order. It is a strong option for developers, but it still involves processing on vendor infrastructure in real time, and it applies to API usage, not the chat products most employees actually touch.</div>
+  </details>
+  <details class="faq-item">
+    <summary>Which should my firm choose?</summary>
+    <div class="faq-a">Almost certainly both, routed by data classification. Enterprise cloud for generic and moderately sensitive work, where its convenience and frontier capability shine. Private infrastructure for client-confidential material, regulated data, and the proprietary knowledge base you intend to compound as an asset. The firms getting this right are not choosing a tool. They are drawing a custody boundary and enforcing it.</div>
+  </details>
+</section>
+<!-- AUTHOR BOX -->
+<div class="author-box">
+  <div class="avatar" aria-hidden="true">MB</div>
+  <div>
+    <h4>Mitch Boraski</h4>
+    <p>Co-Founder of Deepvine AI. Deepvine installs private AI knowledge systems for law firms, RIAs, CPA firms, brokerages, consultancies, and other knowledge-driven businesses: connected to your systems, backfilled with your history, deployed in your environment, and owned by you.</p>
+  </div>
+</div>
+<p class="disclaimer">This article is for general information and is not legal advice. Vendor terms, certifications, and case law change; verify current commitments directly and consult counsel on your specific obligations.</p>
+</article>
+<!-- CTA BAND -->
+<section class="cta-band">
+  <div class="cta-glow" aria-hidden="true"></div>
+  <div class="cta-inner">
+    <div class="cta-tag">Private AI, Deployed and Managed</div>
+    <h2 class="cta-h">Draw the custody boundary. We build the vault side.</h2>
+    <p class="cta-p">Deepvine deploys a managed private AI knowledge system in your environment: your documents, your history, your access controls, answerable in Slack with source-backed citations. Architectural protection for the data no contract can cover.</p>
+    <button class="cta-btn" onclick="openCalendly()">Book a live demo →</button>
+    <div class="cta-sub">Bring us your hardest data-custody question. We will answer it straight.</div>
+  </div>
+</section>
+<!-- FOOTER -->
+<footer>
+  <div class="foot-logo"><span class="dark">Deepvine</span><span class="green">.AI</span></div>
+  <p>Private AI brain for modern operators.</p>
+  <p><a href="/">Home</a> &nbsp;·&nbsp; <a href="/blog/">Blog</a> &nbsp;·&nbsp; <a href="mailto:info@deepvine.ai">info@deepvine.ai</a></p>
+  <p>© 2026 Deepvine AI</p>
+</footer>
+<script>
+/* Demo CTA: opens the Deepvine Calendly scheduling page. */
+var CALENDLY_URL = "https://calendly.com/deepvine_ai/30min";
+function openCalendly(){
+  if(typeof gtag==='function'){gtag('event','demo_cta_click',{event_category:'conversion',event_label:'blog_post_private_vs_enterprise'});}
+  if(CALENDLY_URL){window.open(CALENDLY_URL,'_blank');}
+  else{window.location.href='mailto:info@deepvine.ai?subject=Live%20Demo%20Request&body='+encodeURIComponent('I would like to book a live Deepvine demo.');}
+}
+function toggleMenu(){
+  var links=document.getElementById('navLinks');
+  var btn=document.getElementById('hamburger');
+  var open=links.classList.toggle('open');
+  btn.setAttribute('aria-expanded',open?'true':'false');
+}
+/* GA scroll-depth: fires once when reader reaches the FAQ */
+(function(){
+  var fired=false;
+  window.addEventListener('scroll',function(){
+    if(fired)return;
+    var faq=document.querySelector('.faq-section');
+    if(faq && faq.getBoundingClientRect().top<window.innerHeight){
+      fired=true;
+      if(typeof gtag==='function'){gtag('event','article_read_complete',{event_category:'engagement',event_label:'private_vs_enterprise'});}
+    }
+  },{passive:true});
+})();
+<\/script>
+</body>
+</html>
