@@ -21,3 +21,7 @@ Legal entity: Local Labs LLC. Founded by Mitch Boraski and Adam Erwin Kerr. Cont
 - [Law firm AI and Rule 1.6(c)](https://www.deepvine.ai/blog/law-firm-ai-confidentiality-rule-1-6/): What ABA Formal Opinion 512 and NC 2024 FEO 1 actually require
 - [RIAs and the books-and-records rule](https://www.deepvine.ai/blog/ria-ai-books-and-records-rule/): SEC recordkeeping obligations and third-party AI tools
 - [IRC 7216 and CPA firms](https://www.deepvine.ai/blog/irc-7216-ai-tools-cpa-consent/): The tax return information consent rule and cloud AI
+- [Brokerage AI and client confidentiality](https://www.deepvine.ai/blog/brokerage-ai-client-confidentiality/): Private AI, data ownership, and confidentiality duties for real estate brokerages
+- [The consulting firm's real product is memory](https://www.deepvine.ai/blog/consulting-firm-institutional-knowledge-ai/): Institutional knowledge as competitive advantage and how private AI captures it
+- [Where does your data actually go?](https://www.deepvine.ai/blog/private-ai-vs-chatgpt-enterprise/): A plain-English comparison of cloud AI deployment models, data flows, and ownership
+- [The institutional memory problem](https://www.deepvine.ai/blog/institutional-memory-senior-partner-retirement/): What leaves your firm when a senior partner retires, and a 24-month knowledge-capture playbook
