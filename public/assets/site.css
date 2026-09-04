@@ -231,9 +231,19 @@ h1,h2,h3{font-weight:600;letter-spacing:-.035em;line-height:1.05;color:var(--ink
   .nav__drop{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;border:0;padding:0 0 10px;display:none;min-width:0}
   .has-drop.is-open .nav__drop{display:block}
 
+  /* Phones & tablets: one continuous scene. The wall runs behind the copy;
+     the device photo fills the bottom edge-to-edge and fades into the wall. */
+  .hero{background:linear-gradient(180deg,#f9f9f8 0%,#f0f0ee 100%)}
   .hero__inner{flex-direction:column;align-items:stretch;min-height:0}
-  .hero__copy{padding:44px 0 8px;max-width:none}
-  .hero__bg{position:relative;order:2;height:320px;width:calc(100% + 2*var(--gutter));margin:0 calc(-1*var(--gutter));object-position:80% 78%;-webkit-mask-image:none;mask-image:none}
+  .hero__copy{padding:44px 0 0;max-width:none}
+  .hero__bg{
+    position:relative;order:2;display:block;
+    width:calc(100% + 2*var(--gutter));max-width:none;margin:-8px calc(-1*var(--gutter)) 0;
+    height:clamp(300px,52vw,480px);
+    object-fit:cover;object-position:62% 100%;
+    -webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 34%);
+    mask-image:linear-gradient(to bottom,transparent 0,#000 34%);
+  }
   .hero__caption{display:none}
 
   .pillars{padding:64px 0}
@@ -269,7 +279,6 @@ h1,h2,h3{font-weight:600;letter-spacing:-.035em;line-height:1.05;color:var(--ink
   .nav__burger{width:40px}
   .btn--sm{padding:11px 13px;font-size:14px;gap:8px}
   .hero h1{font-size:42px}
-  .hero__bg{height:260px}
   .lead{font-size:16.5px}
   .pill{font-size:12px}
   .btn{padding:15px 22px;font-size:15px}
