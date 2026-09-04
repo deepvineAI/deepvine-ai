@@ -131,7 +131,7 @@ h1,h2,h3{font-weight:600;letter-spacing:-.035em;line-height:1.05;color:var(--ink
 }
 .pill svg{width:17px;height:17px;flex:none}
 .hero__caption{
-  position:absolute;left:67%;bottom:48px;transform:translateX(-50%);z-index:2;
+  position:absolute;left:67%;bottom:40px;transform:translateX(-50%);z-index:2;
   text-align:center;white-space:nowrap;pointer-events:none;
   font-size:10.5px;letter-spacing:.28em;line-height:1.9;color:#57574f;
 }
