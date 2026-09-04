@@ -29,16 +29,19 @@
     });
   });
 
-  /* Video modal ----------------------------------------------------------- */
-  var modal = document.getElementById('video-modal');
-  if (modal) {
-    var frame = modal.querySelector('iframe');
-    var src = frame.getAttribute('data-src');
-    var openModal = function (e) { if (e) e.preventDefault(); frame.src = src; modal.classList.add('is-open'); document.body.style.overflow = 'hidden'; };
-    var closeModal = function () { modal.classList.remove('is-open'); frame.src = ''; document.body.style.overflow = ''; };
-    document.querySelectorAll('[data-open-video]').forEach(function (el) { el.addEventListener('click', openModal); });
-    modal.querySelectorAll('[data-close-video]').forEach(function (el) { el.addEventListener('click', closeModal); });
-    modal.addEventListener('click', function (e) { if (e.target === modal) closeModal(); });
-    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeModal(); });
-  }
+  /* Click-to-load video (YouTube loads only after the visitor presses play) */
+  document.querySelectorAll('.video__frame[data-video]').forEach(function (frame) {
+    var btn = frame.querySelector('.video__play');
+    if (!btn) return;
+    btn.addEventListener('click', function () {
+      var id = frame.getAttribute('data-video');
+      var iframe = document.createElement('iframe');
+      iframe.src = 'https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1&rel=0&modestbranding=1&playsinline=1';
+      iframe.title = frame.getAttribute('data-title') || 'Video';
+      iframe.setAttribute('allow', 'autoplay; encrypted-media; picture-in-picture');
+      iframe.setAttribute('allowfullscreen', '');
+      frame.innerHTML = '';
+      frame.appendChild(iframe);
+    });
+  });
 })();
