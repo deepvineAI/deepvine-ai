@@ -196,9 +196,9 @@ h1,h2,h3{font-weight:600;letter-spacing:-.035em;line-height:1.05;color:var(--ink
 
 /* Difference ------------------------------------------------------------ */
 .difference{background:var(--white);padding:96px 0}
-.difference__grid{display:grid;grid-template-columns:minmax(0,42%) minmax(0,58%);gap:56px;align-items:center}
-.difference h2{font-size:clamp(36px,3.8vw,52px);margin-bottom:24px}
-.difference .lead{font-size:17.5px;color:var(--muted);max-width:480px;margin-bottom:34px}
+.difference__grid{display:grid;grid-template-columns:minmax(0,46%) minmax(0,54%);gap:52px;align-items:center}
+.difference h2{font-size:clamp(32px,2.95vw,42px);margin-bottom:22px}
+.difference .lead{font-size:17.5px;color:var(--muted);max-width:520px;margin-bottom:34px}
 .slack-shot{width:100%;height:auto}
 
 /* Security (compact) ------------------------------------------------------ */
