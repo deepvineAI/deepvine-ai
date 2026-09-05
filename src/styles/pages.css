@@ -325,3 +325,6 @@
 }
 @media (max-width:560px){ .flow5{grid-template-columns:1fr} }
 
+
+/* phones: the How It Works diagram image must yield to the card list (rule order fix) */
+@media (max-width:760px){ .hiw-memory__img{display:none} }
