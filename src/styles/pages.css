@@ -226,3 +226,7 @@
   .offer{padding:26px}
   .prose{font-size:16.5px}
 }
+
+/* 404 ------------------------------------------------------------------------ */
+.ucard a{display:block;color:inherit}
+.ucard a:hover strong{color:var(--green-700)}
