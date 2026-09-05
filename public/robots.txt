@@ -48,4 +48,4 @@ Allow: /
 User-agent: meta-externalagent
 Allow: /
 
-Sitemap: https://www.deepvine.ai/sitemap.xml
+Sitemap: https://www.deepvine.ai/sitemap-index.xml

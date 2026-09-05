@@ -1,0 +1,149 @@
+{
+  "slug": "private-ai-for-cpa-firms",
+  "title": "Private AI for CPA Firms | Deepvine.AI",
+  "description": "A private AI knowledge system deployed in your firm's environment. Client tax information stays under your control and never trains shared models — so no third-party disclosure under IRC §7216 ever occurs. Built for CPA and accounting firms.",
+  "eyebrow": "CPA Firms",
+  "h1": "Private AI for CPA Firms",
+  "lead": "Deepvine is a private AI knowledge system that a CPA firm deploys inside its own environment, connected to the firm's document management system, tax and practice software, email, and Slack, and backfilled with its own engagement history. Staff can ask questions in plain language and get source-cited answers drawn from the firm's actual work product, without client tax information ever leaving the firm's control or being used to train shared models. It is built so that no third-party disclosure under IRC §7216 ever occurs, rather than working around the statute.",
+  "chips": [
+    "Private deployment",
+    "Full history backfill",
+    "Source-cited answers",
+    "You own the data"
+  ],
+  "sections": [
+    {
+      "num": "01",
+      "heading": "What does IRC §7216 require when a CPA firm uses AI?",
+      "paragraphs": [
+        "IRC §7216 does not prohibit AI — it prohibits <strong>disclosure</strong> of tax return information without consent, and it is a criminal statute. <a href=\"/blog/irc-7216-ai-tools-cpa-consent/\">Section 7216</a> makes entering client tax information into a third-party AI tool a likely disclosure, carrying penalties of up to $1,000 and a year of imprisonment per knowing violation, with a civil companion (§6713) that adds $250 per violation and requires no intent at all. What the statute leaves you is a narrow set of compliant paths: signed per-client consents that name the vendor, sanitized inputs, or AI that runs inside the firm so no third-party disclosure ever occurs.",
+        "Private deployment is the path where the disclosure question disappears entirely. When the AI runs inside the firm's own environment, client tax information never leaves the firm and never reaches a third party, so there is no §7216 disclosure to consent to in the first place. For the full breakdown of the statute, why the consent path is harder than firms expect, and the three compliant ways through it, read our deep dive on <a href=\"/blog/irc-7216-ai-tools-cpa-consent/\">IRC §7216 and AI tools for CPA firms</a>."
+      ],
+      "cards": [],
+      "steps": [],
+      "other": []
+    },
+    {
+      "num": "02",
+      "heading": "How is Deepvine different from ChatGPT or Copilot for a CPA firm?",
+      "paragraphs": [
+        "The difference is the environment: Deepvine runs in your infrastructure instead of a shared public cloud. General assistants like ChatGPT and Copilot are powerful, but pasting client tax information into them is the exact habit that triggers an IRC §7216 disclosure — they were built for the open internet, not for a firm that answers for where every return travels.",
+        "Deepvine connects to your document management system, tax and practice software, email, and Slack, and it is backfilled with your firm's own engagement history so its answers come from your work product rather than the public web. Your data stays in your control, and your inputs are never used to train models that other organizations share. The result is an assistant that actually knows your clients, your engagements, and your institutional history — not a generic one you have to keep re-explaining your practice to."
+      ],
+      "cards": [],
+      "steps": [],
+      "other": []
+    },
+    {
+      "num": "03",
+      "heading": "What can staff actually do with it?",
+      "paragraphs": [
+        "Staff use Deepvine to find and reuse the firm's own knowledge without hunting through folders or emailing colleagues who may have left. Because the system is grounded in the firm's actual work product, every answer points back to its source."
+      ],
+      "cards": [
+        {
+          "title": "Engagement history retrieval",
+          "text": "surface the workpapers, memos, and prior-year positions the firm has already documented for a given client."
+        },
+        {
+          "title": "Institutional knowledge from departed partners",
+          "text": "recover the reasoning and client history that used to live only in one person's head."
+        },
+        {
+          "title": "Prep and review context",
+          "text": "pull the background a preparer or reviewer needs to understand an engagement quickly."
+        },
+        {
+          "title": "Grounded drafting",
+          "text": "draft client letters and memos anchored in the firm's own work product rather than generic language."
+        },
+        {
+          "title": "Source-cited answers in Slack",
+          "text": "ask a question where the team already works and get an answer with citations back to the underlying workpapers."
+        }
+      ],
+      "steps": [],
+      "other": []
+    },
+    {
+      "num": "04",
+      "heading": "What does deployment look like?",
+      "paragraphs": [
+        "Deployment is a managed process, not a weekend software install. It moves through four stages: connection, backfill, daily diffs, and ongoing maintenance.",
+        "First we <strong>connect</strong> Deepvine to your existing systems. Then we <strong>backfill</strong> your historical engagements so the assistant starts with real institutional memory instead of a blank slate. From there, <strong>daily diffs</strong> keep the knowledge base current as new documents and messages are created, and we handle <strong>managed maintenance</strong> so your team is not responsible for operating the system. To see the mechanics in more detail, visit <a href=\"/#how\">how it works</a> and our <a href=\"/#security\">security</a> overview."
+      ],
+      "cards": [],
+      "steps": [
+        {
+          "n": "1",
+          "title": "Connect",
+          "text": "We connect Deepvine to your existing systems."
+        },
+        {
+          "n": "2",
+          "title": "Backfill",
+          "text": "Historical engagements load so it starts with real institutional memory."
+        },
+        {
+          "n": "3",
+          "title": "Daily diffs",
+          "text": "New documents and messages keep the knowledge base current."
+        },
+        {
+          "n": "4",
+          "title": "Managed maintenance",
+          "text": "We operate the system so your team does not have to."
+        }
+      ],
+      "other": []
+    },
+    {
+      "num": "05",
+      "heading": "Which CPA firms is this built for?",
+      "paragraphs": [
+        "Deepvine is built for <strong>accounting and tax firms</strong> where years of workpapers, engagement files, client correspondence, and email hold institutional memory that is concentrated in a handful of people. That is where a firm has enough accumulated work product to make retrieval genuinely valuable, but not so much internal engineering that it would build this itself.",
+        "If your firm carries a deep client base, relies on prior-year work and documented positions, and would feel real pain if a senior partner retired tomorrow, this is built for you. You can read more about who we are and why we build this way on our <a href=\"/about/\">about page</a>."
+      ],
+      "cards": [],
+      "steps": [],
+      "other": []
+    }
+  ],
+  "faq": [
+    {
+      "q": "Does our data ever leave our environment?",
+      "a": "No. Deepvine is deployed inside your firm's own infrastructure, and your client tax information, workpapers, and prompts stay there. The system connects to your existing tools and reads your data in place; nothing is copied to a shared cloud, and your inputs are never used to train models that other organizations touch."
+    },
+    {
+      "q": "Can we use it with our tax and practice software?",
+      "a": "Yes. Deepvine is built to connect to the systems a CPA firm already runs on, including your document management system, tax and practice software, email, and Slack. Rather than asking staff to paste client information into a separate tool, it indexes the firm's existing repositories so answers are grounded in the actual engagement record."
+    },
+    {
+      "q": "What happens to the system if we end the engagement?",
+      "a": "You keep your data and the knowledge base built on it, because both live in your environment from day one. Deepvine runs on infrastructure you control, so ending the engagement means we stop managing and maintaining the system, not that your firm's institutional memory walks out the door with a vendor."
+    },
+    {
+      "q": "How long does backfill take?",
+      "a": "Backfill timing depends on the volume and format of your historical engagements, but the connection and initial indexing are typically measured in weeks, not months. Once the backfill completes, daily diffs keep the system current as new documents and messages are created."
+    },
+    {
+      "q": "Does this satisfy our §7216 obligations?",
+      "a": "By running inside your firm, Deepvine avoids the third-party disclosure that IRC §7216 turns on — client tax information never reaches an outside vendor — but no software can guarantee compliance on your firm's behalf. A private deployment removes the hardest part of the analysis by keeping client information in your control; your firm remains responsible for its own consents, recordkeeping, and security decisions."
+    },
+    {
+      "q": "What does it cost?",
+      "a": "Pricing depends on firm size, the systems being connected, and the depth of historical backfill, so we scope it during the demo rather than list a single number. The engagement is structured as an ongoing managed service that includes deployment, maintenance, and updates."
+    }
+  ],
+  "cta": {
+    "eyebrow": "",
+    "heading": "Bring us one real business question.",
+    "sub": "We'll show you how Deepvine researches your company knowledge, where the answer came from, and what becomes possible once that system is always on.",
+    "label": "Book a live demo"
+  },
+  "schema": [
+    "{\n  \"@context\": \"https://schema.org\",\n  \"@type\": \"BreadcrumbList\",\n  \"itemListElement\": [\n    {\n      \"@type\": \"ListItem\",\n      \"position\": 1,\n      \"name\": \"Home\",\n      \"item\": \"https://www.deepvine.ai/\"\n    },\n    {\n      \"@type\": \"ListItem\",\n      \"position\": 2,\n      \"name\": \"Private AI for CPA Firms\",\n      \"item\": \"https://www.deepvine.ai/private-ai-for-cpa-firms/\"\n    }\n  ]\n}",
+    "{\n  \"@context\": \"https://schema.org\",\n  \"@type\": \"FAQPage\",\n  \"mainEntity\": [\n    {\n      \"@type\": \"Question\",\n      \"name\": \"Does our data ever leave our environment?\",\n      \"acceptedAnswer\": {\n        \"@type\": \"Answer\",\n        \"text\": \"No. Deepvine is deployed inside your firm's own infrastructure, and your client tax information, workpapers, and prompts stay there. The system connects to your existing tools and reads your data in place; nothing is copied to a shared cloud, and your inputs are never used to train models that other organizations touch.\"\n      }\n    },\n    {\n      \"@type\": \"Question\",\n      \"name\": \"Can we use it with our tax and practice software?\",\n      \"acceptedAnswer\": {\n        \"@type\": \"Answer\",\n        \"text\": \"Yes. Deepvine is built to connect to the systems a CPA firm already runs on, including your document management system, tax and practice software, email, and Slack. Rather than asking staff to paste client information into a separate tool, it indexes the firm's existing repositories so answers are grounded in the actual engagement record.\"\n      }\n    },\n    {\n      \"@type\": \"Question\",\n      \"name\": \"What happens to the system if we end the engagement?\",\n      \"acceptedAnswer\": {\n        \"@type\": \"Answer\",\n        \"text\": \"You keep your data and the knowledge base built on it, because both live in your environment from day one. Deepvine runs on infrastructure you control, so ending the engagement means we stop managing and maintaining the system, not that your firm's institutional memory walks out the door with a vendor.\"\n      }\n    },\n    {\n      \"@type\": \"Question\",\n      \"name\": \"How long does backfill take?\",\n      \"acceptedAnswer\": {\n        \"@type\": \"Answer\",\n        \"text\": \"Backfill timing depends on the volume and format of your historical engagements, but the connection and initial indexing are typically measured in weeks, not months. Once the backfill completes, daily diffs keep the system current as new documents and messages are created.\"\n      }\n    },\n    {\n      \"@type\": \"Question\",\n      \"name\": \"Does this satisfy our §7216 obligations?\",\n      \"acceptedAnswer\": {\n        \"@type\": \"Answer\",\n        \"text\": \"By running inside your firm, Deepvine avoids the third-party disclosure that IRC §7216 turns on — client tax information never reaches an outside vendor — but no software can guarantee compliance on your firm's behalf. A private deployment removes the hardest part of the analysis by keeping client information in your control; your firm remains responsible for its own consents, recordkeeping, and security decisions.\"\n      }\n    },\n    {\n      \"@type\": \"Question\",\n      \"name\": \"What does it cost?\",\n      \"acceptedAnswer\": {\n        \"@type\": \"Answer\",\n        \"text\": \"Pricing depends on firm size, the systems being connected, and the depth of historical backfill, so we scope it during the demo rather than list a single number. The engagement is structured as an ongoing managed service that includes deployment, maintenance, and updates.\"\n      }\n    }\n  ]\n}",
+    "{\n  \"@context\": \"https://schema.org\",\n  \"@type\": \"Service\",\n  \"@id\": \"https://www.deepvine.ai/private-ai-for-cpa-firms/#service\",\n  \"name\": \"Private AI Knowledge System for CPA Firms\",\n  \"serviceType\": \"Private AI deployment for CPA and accounting firms\",\n  \"provider\": {\n    \"@id\": \"https://www.deepvine.ai/#organization\"\n  },\n  \"audience\": {\n    \"@type\": \"BusinessAudience\",\n    \"name\": \"CPA and accounting firms\"\n  },\n  \"areaServed\": \"US\",\n  \"url\": \"https://www.deepvine.ai/private-ai-for-cpa-firms/\"\n}"
+  ]
+}

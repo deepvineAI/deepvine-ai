@@ -1,0 +1,26 @@
+---
+import { team } from '../data/team';
+interface Props { eyebrow?: string; heading?: string; lead?: string; band?: boolean }
+const { eyebrow = 'Who you will talk to', heading = 'Founder-led, start to finish.', lead, band = true } = Astro.props;
+---
+<section class:list={['founders', { 'founders--band': band }]}>
+  <div class="container">
+    <div class="sec-head">
+      <p class="eyebrow">{eyebrow}</p>
+      <h2>{heading}</h2>
+      {lead && <p class="lead">{lead}</p>}
+    </div>
+    <div class="founders__grid">
+      {team.map((f) => (
+        <article class="founder">
+          {f.photo ? <img class="founder__photo" src={f.photo} width="144" height="144" alt={`${f.name}, ${f.role.toLowerCase()} of Deepvine AI`} loading="lazy" /> : <div class="founder__photo founder__photo--initials" aria-hidden="true">{f.initials}</div>}
+          <div>
+            <h3>{f.name}</h3>
+            <p class="founder__role">{f.role}</p>
+            <p class="founder__bio">{f.bio}</p>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

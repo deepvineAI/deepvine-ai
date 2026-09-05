@@ -1,0 +1,111 @@
+{
+  "slug": "private-ai-for-hoa-management",
+  "title": "Private AI for HOA & Community Association Management Firms | Deepvine.AI",
+  "description": "A private AI knowledge system deployed in your management firm's environment. Governing documents, minutes, and association records stay under your control and never train shared models. Built for community association management firms that answer covenant questions with citations, not guesses.",
+  "eyebrow": "Community Association Management",
+  "h1": "Private AI for HOA & Community Association Management Firms",
+  "lead": "Deepvine is a private AI knowledge system that a community association management firm deploys inside its own environment, indexed against every declaration, bylaw, amendment, resolution, meeting minute, management contract, and vendor agreement across the portfolio. Managers ask questions in plain language and get source-cited answers drawn from the firm’s actual records, without governing documents or homeowner data ever leaving the firm’s control or being used to train shared models. It is built for firms where a covenant answer is a legal position, not a guess.",
+  "chips": [
+    "Private deployment",
+    "Full portfolio backfill",
+    "Source-cited answers",
+    "You own the data"
+  ],
+  "sections": [
+    {
+      "num": "01",
+      "heading": "The 9pm covenant question, answered in 10 seconds",
+      "paragraphs": [
+        "Every firm knows this moment. A board member emails at 9pm asking whether the covenants allow fences over six feet. Your community manager opens a 214-page declaration scanned in 1994, and forty minutes later they think they found the answer. In Article VII. Or was it superseded by the 2003 amendment?",
+        "Multiply that moment by every association in your portfolio, every week. Your managers are operating as human search engines across thousands of pages of governing documents, and the answers live in the heads of whoever has managed each community longest. When that manager leaves, the knowledge leaves with them and the next manager starts from page one. Deepvine turns your entire document universe into a private, searchable brain that answers in seconds, cites the exact section and page, and compounds for the whole firm instead of resetting with every departure."
+      ],
+      "cards": [],
+      "steps": [],
+      "other": []
+    },
+    {
+      "num": "02",
+      "heading": "Where your governing documents go when managers use “free” AI",
+      "paragraphs": [
+        "When a manager pastes a declaration excerpt, a homeowner dispute, or a delinquency situation into a consumer AI tool, that information can leave your control and, in many cases, be retained or used to improve someone else's model. You are the custodian of legal documents, financial records, and homeowner data for every association you serve. Boards trust you with that, and consumer AI tools ask you to hand it to a third party.",
+        "Deepvine gives your team the productivity of AI without the exposure. It runs inside your environment, so governing documents, minutes, and homeowner information never reach an outside vendor in the first place. When a board asks what happens to their association's data with the AI your firm uses, you have the best answer in the industry: it never left the building."
+      ],
+      "cards": [],
+      "steps": [],
+      "other": []
+    },
+    {
+      "num": "03",
+      "heading": "Chapter 47F didn’t get an AI exception",
+      "paragraphs": [
+        "Covenant enforcement in North Carolina lives under Chapter 47F, and consistency is your best legal defense. A misquoted restriction, a missed amendment, or uneven enforcement across similarly situated owners is not a typo. It is exposure for your firm and for the boards you advise. Consumer AI tools guess, and a confident wrong answer about a covenant is worse than no answer at all.",
+        "Deepvine answers only from your documents. Every response cites the source document, section, and page, so your manager verifies with one click instead of one hour. If the governing documents do not address a question, it says so directly. Before a violation letter goes out, your team can confirm the exact covenant language, the amendment history, and how the board has interpreted it before, in a single query."
+      ],
+      "cards": [],
+      "steps": [],
+      "other": []
+    },
+    {
+      "num": "04",
+      "heading": "What your team can actually do with it",
+      "paragraphs": [
+        "Managers and staff ask plain-language questions and get cited answers pulled from your own records:",
+        "“What do the Brookhaven covenants say about accessory structures?”",
+        "“Which of our associations require board approval for fences?”",
+        "“When did Willow Creek amend its rental cap, and what is the current limit?”",
+        "“Show me every management contract that renews in Q1.”",
+        "“What did the Stonebridge board decide about pool contractors in 2023?”",
+        "The same system handles the work that eats your week: resale disclosure research, attorney and homeowner records requests, board meeting prep across years of minutes, vendor contract terms, and due diligence when you take on a new association. New managers become productive in days instead of months, because every answer their predecessor carried in their head is now one question away. Deepvine backfills your full document history, including old scanned PDFs, and keeps itself current as new records are added."
+      ],
+      "cards": [],
+      "steps": [],
+      "other": []
+    },
+    {
+      "num": "05",
+      "heading": "Which management firms this is built for",
+      "paragraphs": [
+        "Deepvine is built for community association management firms that treat their accumulated knowledge as an asset worth protecting and compounding: firms managing dozens to hundreds of associations, AAMC-accredited operators, and teams where portfolio managers field covenant and governance questions daily. If your growth is constrained by manager bandwidth and your liability is tied to document accuracy, a private deployment turns both problems into an advantage your competitors are not offering their boards.",
+        "When you pitch a new board, one sentence changes the room: your firm uses a private AI system that gives boards instant, cited answers from their own governing documents, and those documents never leave your control. No other firm in your market is saying that yet."
+      ],
+      "cards": [],
+      "steps": [],
+      "other": []
+    }
+  ],
+  "faq": [
+    {
+      "q": "Does our associations’ data ever leave our environment?",
+      "a": "No. Deepvine is deployed inside your firm’s own infrastructure, and your governing documents, minutes, financials, homeowner records, and prompts stay there. Nothing is copied to a shared cloud, and your inputs are never used to train an outside model."
+    },
+    {
+      "q": "Will it make up covenant answers like consumer AI tools do?",
+      "a": "No. Deepvine answers only from your documents and cites the source document, section, and page for every answer. If the governing documents do not address a question, it says so directly instead of guessing."
+    },
+    {
+      "q": "Can it read old scanned declarations and amendments?",
+      "a": "Yes. Deepvine processes scanned PDFs, including declarations, amendments, and minutes from the 1980s and 1990s, and makes them searchable alongside your current records."
+    },
+    {
+      "q": "Do we need an IT department to run this?",
+      "a": "No. Deepvine handles deployment, maintenance, and updates as part of the engagement. Most community association management firms run it with no internal IT staff."
+    },
+    {
+      "q": "How is this different from our document portal?",
+      "a": "Portals store documents. Deepvine understands them. Instead of locating the right PDF and reading two hundred pages, your team asks a plain-language question and gets the cited answer in seconds."
+    },
+    {
+      "q": "What does it cost?",
+      "a": "Pricing depends on the size of your firm, the number of associations under management, and the depth of historical document backfill, so we scope it during the demo rather than list a single number. The engagement is structured as an ongoing managed service that includes deployment, maintenance, and updates."
+    }
+  ],
+  "cta": {
+    "eyebrow": "",
+    "heading": "Own the vault. Answer with the citation.",
+    "sub": "Bring the gnarliest governing document question your team fielded this week. We’ll show you how Deepvine answers it from your own records in seconds, where the answer came from, and what becomes possible once your firm’s institutional knowledge is private, source-backed, and always on.",
+    "label": "Book a live demo"
+  },
+  "schema": [
+    "{\n  \"@context\": \"https://schema.org\",\n  \"@graph\": [\n    {\n      \"@type\": \"WebPage\",\n      \"@id\": \"https://www.deepvine.ai/private-ai-for-hoa-management/#webpage\",\n      \"url\": \"https://www.deepvine.ai/private-ai-for-hoa-management/\",\n      \"name\": \"Private AI for HOA & Community Association Management Firms | Deepvine.AI\",\n      \"description\": \"A private AI knowledge system deployed in your management firm's environment. Governing documents, minutes, and association records stay under your control and never train shared models.\",\n      \"isPartOf\": {\n        \"@id\": \"https://www.deepvine.ai/#website\"\n      },\n      \"about\": {\n        \"@id\": \"https://www.deepvine.ai/#organization\"\n      },\n      \"breadcrumb\": {\n        \"@id\": \"https://www.deepvine.ai/private-ai-for-hoa-management/#breadcrumb\"\n      },\n      \"inLanguage\": \"en-US\"\n    },\n    {\n      \"@type\": \"BreadcrumbList\",\n      \"@id\": \"https://www.deepvine.ai/private-ai-for-hoa-management/#breadcrumb\",\n      \"itemListElement\": [\n        {\n          \"@type\": \"ListItem\",\n          \"position\": 1,\n          \"name\": \"Home\",\n          \"item\": \"https://www.deepvine.ai/\"\n        },\n        {\n          \"@type\": \"ListItem\",\n          \"position\": 2,\n          \"name\": \"Private AI for HOA & Community Association Management Firms\",\n          \"item\": \"https://www.deepvine.ai/private-ai-for-hoa-management/\"\n        }\n      ]\n    },\n    {\n      \"@type\": \"Service\",\n      \"@id\": \"https://www.deepvine.ai/private-ai-for-hoa-management/#service\",\n      \"name\": \"Private AI Knowledge System for Community Association Management Firms\",\n      \"serviceType\": \"Private AI knowledge system deployment\",\n      \"provider\": {\n        \"@id\": \"https://www.deepvine.ai/#organization\"\n      },\n      \"areaServed\": {\n        \"@type\": \"State\",\n        \"name\": \"North Carolina\"\n      },\n      \"audience\": {\n        \"@type\": \"BusinessAudience\",\n        \"name\": \"HOA and community association management firms\"\n      },\n      \"description\": \"On-premises private AI deployment that indexes governing documents, amendments, resolutions, meeting minutes, management contracts, and association records so community association management teams get instant, source-cited answers without data leaving their environment.\"\n    },\n    {\n      \"@type\": \"FAQPage\",\n      \"@id\": \"https://www.deepvine.ai/private-ai-for-hoa-management/#faq\",\n      \"mainEntity\": [\n        {\n          \"@type\": \"Question\",\n          \"name\": \"Does our associations' data ever leave our environment?\",\n          \"acceptedAnswer\": {\n            \"@type\": \"Answer\",\n            \"text\": \"No. Deepvine is deployed inside your firm's own infrastructure, and your governing documents, minutes, financials, homeowner records, and prompts stay there. Nothing is copied to a shared cloud, and your inputs are never used to train an outside model.\"\n          }\n        },\n        {\n          \"@type\": \"Question\",\n          \"name\": \"Will it make up covenant answers like consumer AI tools do?\",\n          \"acceptedAnswer\": {\n            \"@type\": \"Answer\",\n            \"text\": \"No. Deepvine answers only from your documents and cites the source document, section, and page for every answer. If the governing documents do not address a question, it says so directly instead of guessing.\"\n          }\n        },\n        {\n          \"@type\": \"Question\",\n          \"name\": \"Can it read old scanned declarations and amendments?\",\n          \"acceptedAnswer\": {\n            \"@type\": \"Answer\",\n            \"text\": \"Yes. Deepvine processes scanned PDFs, including declarations, amendments, and minutes from the 1980s and 1990s, and makes them searchable alongside your current records.\"\n          }\n        },\n        {\n          \"@type\": \"Question\",\n          \"name\": \"Do we need an IT department to run this?\",\n          \"acceptedAnswer\": {\n            \"@type\": \"Answer\",\n            \"text\": \"No. Deepvine handles deployment, maintenance, and updates as part of the engagement. Most community association management firms run it with no internal IT staff.\"\n          }\n        },\n        {\n          \"@type\": \"Question\",\n          \"name\": \"How is this different from our document portal?\",\n          \"acceptedAnswer\": {\n            \"@type\": \"Answer\",\n            \"text\": \"Portals store documents. Deepvine understands them. Instead of locating the right PDF and reading two hundred pages, your team asks a plain-language question and gets the cited answer in seconds.\"\n          }\n        },\n        {\n          \"@type\": \"Question\",\n          \"name\": \"What does it cost?\",\n          \"acceptedAnswer\": {\n            \"@type\": \"Answer\",\n            \"text\": \"Pricing depends on the size of your firm, the number of associations under management, and the depth of historical document backfill, so we scope it during the demo rather than list a single number. The engagement is structured as an ongoing managed service that includes deployment, maintenance, and updates.\"\n          }\n        }\n      ]\n    }\n  ]\n}"
+  ]
+}

@@ -1,0 +1,28 @@
+---
+import Base from '../layouts/Base.astro';
+import Hero from '../components/Hero.astro';
+import Pillars from '../components/Pillars.astro';
+import VideoSection from '../components/VideoSection.astro';
+import MemoryLayer from '../components/MemoryLayer.astro';
+import Difference from '../components/Difference.astro';
+import SecurityRow from '../components/SecurityRow.astro';
+import CtaBand from '../components/CtaBand.astro';
+import { organization } from '../data/schema';
+---
+<Base
+  title="Deepvine.AI | Own the Memory. Swap the Models."
+  description="Deepvine builds your company's memory: years of history backfilled, updated daily, answerable in Slack with sources. It runs on infrastructure you control and works with any AI model. Built for law firms, RIAs, CPA firms, and community association managers."
+  path="/"
+  ogTitle="Deepvine.AI | Own the memory. Swap the models."
+  ogDescription="Company memory, privately owned. Years of history backfilled, updated daily, answerable in Slack with sources. Runs where you control it and works with any model."
+  schema={[organization]}
+  preloadHero
+>
+  <Hero />
+  <Pillars />
+  <VideoSection />
+  <MemoryLayer />
+  <Difference />
+  <SecurityRow />
+  <CtaBand />
+</Base>

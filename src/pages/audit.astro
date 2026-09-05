@@ -1,0 +1,129 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHero from '../components/PageHero.astro';
+import Faq from '../components/Faq.astro';
+import Founders from '../components/Founders.astro';
+import CtaBand from '../components/CtaBand.astro';
+import { CALENDLY_AUDIT } from '../data/schema';
+import legacy from "../data/legacy-audit-schema.json";
+
+const faq = [
+  { q: 'Does the audit require access to our management software?', a: "No. It's documents-only. You export folders; we never request credentials to your management platform, accounting, banking, or email. System connections happen only in a full deployment, inside your own environment." },
+  { q: 'Where are our documents processed?', a: "On Deepvine's own private stack in the U.S., under a signed data handling agreement. Your documents never touch a public AI tool or shared cloud model, are never used for training, and are deleted with a written certificate within ten business days. On-site processing is available on request." },
+  { q: 'Is homeowner personal information involved?', a: 'No. Owner ledgers, delinquency records, contact lists, and payment information are expressly excluded from scope. Most audit documents are recorded instruments that are already public record.' },
+  { q: "What if you don't find anything?", a: "Then it's free. Fewer than five documented findings and we refund the fee in full." },
+  { q: 'How long does the audit take?', a: 'Ten business days from documents received to report delivered, including your live working session.' },
+  { q: 'Does the fee count toward a full deployment?', a: 'Yes, all of it. 100% of the audit fee is credited against a deployment signed within 90 days of your Findings Report.' },
+];
+const deliverables = [
+  { n: '01', t: 'Private ingestion', d: 'Your declarations, amendments, ARC guidelines, policies, and minutes loaded into a private sandbox on our own infrastructure. Never a public AI tool. Never used for training.' },
+  { n: '02', t: 'A live working session', d: 'Sixty minutes where your team queries your own documents in plain language and sees exactly what a full deployment feels like. Bring your hardest questions.' },
+  { n: '03', t: 'The Findings Report', d: 'A written conflicts map: contradictions, compliance gaps, and provisions flagged for counsel review, each verified by hand against the source. Yours to hand to counsel and your boards. The report identifies documentary conflicts; it is not legal advice.' },
+  { n: '04', t: 'A deployment roadmap', d: 'Fixed pricing and a defined path to a full Deepvine deployment inside your own environment, so a yes later has no surprises in it.' },
+];
+const steps = [
+  { n: '1', t: 'Sign & send', d: "Agreement signed, you export your document folders. That's your entire job, and it happens on day one." },
+  { n: '2', t: 'Ingest & analyze', d: 'We load everything and verify every finding against the source text by hand.' },
+  { n: '3', t: 'Working session', d: 'Sixty minutes, live. You query your own portfolio and watch it answer with citations.' },
+  { n: '4', t: 'Report delivered', d: 'Findings Report and deployment roadmap, within ten business days of receiving your documents.' },
+];
+---
+<Base
+  title="The Association Knowledge Audit | Deepvine.AI"
+  description="A $1,500 flat-fee audit for community association management companies. Deepvine ingests 2-3 associations' governing documents into a private AI, surfaces document conflicts and compliance gaps, and delivers a written Findings Report. Fewer than five findings and it's free."
+  path="/audit/"
+  schema={legacy}
+>
+  <PageHero
+    eyebrow="HOA / Community managers"
+    title="Your governing documents contradict each other.<br>We'll prove it in 10 days."
+    lead="A $1,500 flat-fee audit. We load two to three of your associations' governing documents into a private AI and hand you a written map of every conflict, gap, and provision your counsel may want to review. Fewer than five findings? It's free."
+    chips={['Documents only', 'No system access', 'Private processing', 'Findings guaranteed']}
+    actions={[{ label: 'Book your audit', href: CALENDLY_AUDIT }]}
+    note="$1,500 flat · no commitment required"
+  />
+
+  <section class="stats">
+    <div class="container stats__grid">
+      <div class="stat"><strong>10 days</strong><span>From documents to written Findings Report</span></div>
+      <div class="stat"><strong>&lt;5 = $0</strong><span>Fewer than five findings and the audit is free</span></div>
+      <div class="stat"><strong>100%</strong><span>Of the fee credited toward a full deployment</span></div>
+    </div>
+  </section>
+
+  <section class="qa">
+    <div class="container qa__row">
+      <div class="qa__side"><span class="qa__num">01 — The problem</span><h2>Every portfolio older than one board has conflicts hiding in it.</h2></div>
+      <div class="qa__body">
+        <p>A 2002 declaration sets one late fee. A 2023 resolution sets another. An architectural guideline approves door colors the covenants ban. Minutes cite a rental cap that doesn't match the recorded amendment. It isn't negligence. It's what happens when more than one board governs over time.</p>
+        <p>Your management platform's AI can't catch this. It only knows what lives inside your platform. Your declarations, amendments, ARC guidelines, and thirty years of minutes don't live there. They live in file servers, shared drives, and the Register of Deeds.</p>
+        <p>And it costs you twice. <strong>Time:</strong> managers lose hours a week digging through PDFs for answers. <strong>Exposure:</strong> every violation letter or permit that cites the wrong document becomes a written record a homeowner's attorney can find later. The audit maps those conflicts <strong>before</strong> someone else does.</p>
+        <figure class="rule-quote">
+          <figcaption>From a demo portfolio</figcaption>
+          <blockquote>The recorded rental cap was 20%: thirty-six units. The board had been issuing permits against 25%. Every permit above thirty-six was above the legal cap.</blockquote>
+          <cite>The system caught it in seconds, with both documents cited. That's what a finding looks like.</cite>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="qa qa--band">
+    <div class="container qa__row">
+      <div class="qa__side"><span class="qa__num">02 — What you get</span><h2>Four deliverables. Ten business days.</h2></div>
+      <div class="qa__body">
+        <ol class="steps steps--2col">
+          {deliverables.map((d) => <li class="step"><span class="step__n">{d.n}</span><strong>{d.t}</strong><span>{d.d}</span></li>)}
+        </ol>
+        <figure class="findings">
+          <img src="/audit-sample-findings.png" width="1200" height="720" loading="lazy" alt="Sample Findings Report: a conflicts map showing four document conflicts across a demo portfolio of five associations, including a late fee conflict, a window maintenance responsibility conflict, a rental cap discrepancy, and a satellite dish provision flagged for attorney review.">
+          <figcaption>A page from the Findings Report, built from our fictional demo portfolio. Yours is built from your associations' actual recorded documents.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="qa">
+    <div class="container qa__row">
+      <div class="qa__side"><span class="qa__num">03 — Your data</span><h2>Documents only. In writing. Deleted after.</h2></div>
+      <div class="qa__body">
+        <p>The audit runs under a signed data handling agreement before a single file moves. We never touch your management platform, accounting, banking, or email. Owner ledgers, delinquency records, and payment info are <strong>excluded from scope</strong>, and most of what we audit is already public record at the Register of Deeds.</p>
+        <p>Processing happens on Deepvine's own private stack in the U.S., never a shared cloud model. When your report ships, we permanently delete your documents and issue a written certificate of deletion. Prefer the data never leaves your building? We'll process on-site. More on our <a href="/#security">security overview</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="qa qa--band">
+    <div class="container qa__row">
+      <div class="qa__side"><span class="qa__num">04 — The process</span><h2>Four steps. You do one of them.</h2></div>
+      <div class="qa__body">
+        <ol class="steps steps--2col">
+          {steps.map((s) => <li class="step"><span class="step__n">{s.n}</span><strong>{s.t}</strong><span>{s.d}</span></li>)}
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section class="qa">
+    <div class="container qa__row">
+      <div class="qa__side"><span class="qa__num">05 — Pricing</span><h2>One flat fee. Guaranteed findings.</h2></div>
+      <div class="qa__body">
+        <div class="offer">
+          <div class="offer__price"><span class="offer__amount">$1,500</span><span class="offer__terms">flat · no commitment required</span></div>
+          <h3>The findings guarantee</h3>
+          <p>If your report contains fewer than five documented findings, the audit is free. We offer it because every portfolio older than one board has conflicts waiting to be found.</p>
+          <ul class="offer__points">
+            <li><strong>Guarantee:</strong> fewer than five findings and the audit is free.</li>
+            <li><strong>Credit:</strong> 100% of the fee applies to a Deepvine deployment signed within 90 days.</li>
+          </ul>
+          <a class="btn btn--dark" href={CALENDLY_AUDIT} target="_blank" rel="noopener">Claim your slot <span class="arrow">→</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Faq items={faq} heading="Questions, answered." />
+
+  <Founders eyebrow="Who you'll talk to" heading="Your scoping call is with a founder." lead="Four audits per month. Every finding verified by hand." band={false} />
+
+  <CtaBand heading="Bring us one<br>real portfolio." sub="We'll show you what's hiding in your own governing documents, and where every answer came from." label="Book the audit" caption="Every<br>finding,<br>verified<br>by hand." />
+</Base>

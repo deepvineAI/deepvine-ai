@@ -14,7 +14,17 @@ Legal entity: Local Labs LLC. Founded by Mitch Boraski and Adam Erwin Kerr. Cont
 ## Key pages
 
 - [Home](https://www.deepvine.ai/): What Deepvine is and how it works
+- [About](https://www.deepvine.ai/about/): Company background and founders
 - [Blog](https://www.deepvine.ai/blog/): Analysis on private AI, compliance, and data ownership for professional firms
+
+## Solutions
+
+- [Private AI for Law Firms](https://www.deepvine.ai/private-ai-for-law-firms/): Aligned with ABA Model Rule 1.6(c); client data never leaves the firm's control
+- [Private AI for RIAs](https://www.deepvine.ai/private-ai-for-rias/): Books-and-records ready; client data stays inside the firm
+- [Private AI for CPA Firms](https://www.deepvine.ai/private-ai-for-cpa-firms/): IRC 7216-aware deployment; client tax data never leaves
+- [Private AI for Real Estate Brokerages & Teams](https://www.deepvine.ai/private-ai-for-real-estate/): Deal history, files, and institutional knowledge in one private system
+- [Private AI for HOA & Community Association Managers](https://www.deepvine.ai/private-ai-for-hoa-management/): Governing documents, answered with citations
+- [The Association Knowledge Audit](https://www.deepvine.ai/audit/): A $1,500 flat-fee governing-document conflicts audit for community association managers
 
 ## Notable analysis
 

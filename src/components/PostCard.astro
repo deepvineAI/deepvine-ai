@@ -1,0 +1,17 @@
+---
+import { fmtDate, readingTime } from '../data/blog';
+interface Props { post: any; featured?: boolean }
+const { post, featured = false } = Astro.props;
+const href = `/blog/${post.id}/`;
+---
+<a class:list={['pcard', { 'pcard--featured': featured }]} href={href}>
+  <div class="pcard__meta">
+    {post.data.section && <span class="tag">{post.data.section}</span>}
+    <span>{fmtDate(post.data.date)}</span>
+    <span>·</span>
+    <span>{readingTime(post.body)}</span>
+  </div>
+  {featured ? <h2 class="pcard__title">{post.data.title}</h2> : <h3 class="pcard__title">{post.data.title}</h3>}
+  <p class="pcard__desc">{post.data.excerpt || post.data.description}</p>
+  <span class="pcard__more">Read the article <span class="arrow">→</span></span>
+</a>

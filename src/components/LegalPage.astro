@@ -1,0 +1,15 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHero from './PageHero.astro';
+interface Props { page: any }
+const { page } = Astro.props;
+---
+<Base title={page.title} description={page.description} path={`/${page.slug}/`} schema={page.schema}>
+  <PageHero eyebrow="Legal" title={page.h1} size="sm" note={page.effective} />
+  <section class="legal">
+    <div class="container legal__grid">
+      <div class="prose legal__body" set:html={page.body} />
+      {page.contact && <aside class="legal__contact" set:html={page.contact} />}
+    </div>
+  </section>
+</Base>

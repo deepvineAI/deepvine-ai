@@ -1,0 +1,20 @@
+---
+interface Props { heading?: string; sub?: string; label?: string; caption?: string; }
+const {
+  heading = "Memory compounds.<br>Subscriptions don't.",
+  sub = "Build memory your company owns.",
+  label = "Let's Talk",
+  caption = "Same<br>people.<br>Greater<br>potential.",
+} = Astro.props;
+---
+<section class="cta" id="contact">
+  <img class="cta__img" src="/assets/img/cta-leaves.webp" width="1672" height="941" loading="lazy" alt="">
+  <div class="container cta__inner">
+    <div class="cta__copy">
+      <h2 set:html={heading}></h2>
+      <p>{sub}</p>
+      <a class="btn btn--light" href="https://calendly.com/deepvine_ai/30min" target="_blank" rel="noopener">{label} <span class="arrow">→</span></a>
+    </div>
+    <p class="caption cta__caption" aria-hidden="true" set:html={caption}></p>
+  </div>
+</section>

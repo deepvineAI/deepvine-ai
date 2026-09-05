@@ -1,0 +1,59 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHero from '../components/PageHero.astro';
+import Faq from '../components/Faq.astro';
+import CtaBand from '../components/CtaBand.astro';
+import { CALENDLY } from '../data/schema';
+
+export async function getStaticPaths() {
+  const files = import.meta.glob('../data/verticals/*.json', { eager: true });
+  return Object.values(files).map((m: any) => ({ params: { vertical: m.default.slug }, props: { page: m.default } }));
+}
+const { page } = Astro.props;
+const cta = page.cta || {};
+---
+<Base title={page.title} description={page.description} path={`/${page.slug}/`} schema={page.schema}>
+  <PageHero
+    eyebrow={page.eyebrow}
+    title={page.h1}
+    lead={page.lead}
+    chips={page.chips}
+    actions={[{ label: 'Book a live demo', href: CALENDLY }, { label: 'See how it works', href: '/#how', variant: 'light' }]}
+  />
+
+  <div class="qa-list">
+    {page.sections.map((s: any) => (
+      <section class="qa">
+        <div class="container qa__row">
+          <div class="qa__side">
+            <span class="qa__num">{s.num}</span>
+            <h2>{s.heading}</h2>
+          </div>
+          <div class="qa__body">
+            {s.paragraphs.map((p: string) => <p set:html={p} />)}
+            {s.cards.length > 0 && (
+              <ul class="ucards">
+                {s.cards.map((c: any) => <li class="ucard"><strong>{c.title}</strong><span>{c.text}</span></li>)}
+              </ul>
+            )}
+            {s.steps.length > 0 && (
+              <ol class="steps">
+                {s.steps.map((st: any) => <li class="step"><span class="step__n">{st.n}</span><strong>{st.title}</strong><span>{st.text}</span></li>)}
+              </ol>
+            )}
+            {s.other.map((o: string) => <Fragment set:html={o} />)}
+          </div>
+        </div>
+      </section>
+    ))}
+  </div>
+
+  <Faq items={page.faq} lead={`Straight answers for ${page.eyebrow.toLowerCase()} evaluating a private deployment.`} />
+
+  <CtaBand
+    heading={cta.heading || 'Bring us one real business question.'}
+    sub={cta.sub || "We'll show you how Deepvine answers it from your own records, with sources."}
+    label="Book a live demo"
+    caption="Your<br>records.<br>Your<br>answers."
+  />
+</Base>

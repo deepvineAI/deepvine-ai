@@ -1,0 +1,108 @@
+[
+ {
+  "@context": "https://schema.org",
+  "@graph": [
+   {
+    "@type": "Service",
+    "@id": "https://www.deepvine.ai/audit/#service",
+    "name": "Association Knowledge Audit",
+    "serviceType": "AI governing-document audit for community association management companies",
+    "provider": {
+     "@type": "Organization",
+     "@id": "https://www.deepvine.ai/#organization",
+     "name": "Deepvine AI",
+     "url": "https://www.deepvine.ai/",
+     "parentOrganization": {
+      "@type": "Organization",
+      "name": "Local Labs LLC"
+     }
+    },
+    "areaServed": {
+     "@type": "Country",
+     "name": "United States"
+    },
+    "audience": {
+     "@type": "BusinessAudience",
+     "name": "Community association management companies"
+    },
+    "offers": {
+     "@type": "Offer",
+     "price": "1500",
+     "priceCurrency": "USD",
+     "description": "Flat-fee audit of 2-3 associations' governing documents. Fewer than five findings and the audit is free. Fee is 100% credited toward a Deepvine deployment within 90 days."
+    },
+    "description": "Deepvine ingests 2-3 of a management company's associations' complete governing document sets into a private AI environment, identifies document conflicts, compliance gaps, and provisions to flag for attorney review, and delivers a written Findings Report with a deployment roadmap. Documents only: no system access, no owner PII in scope, no public AI used, certificate of deletion issued after delivery."
+   },
+   {
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+     {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.deepvine.ai/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Association Knowledge Audit",
+      "item": "https://www.deepvine.ai/audit/"
+     }
+    ]
+   },
+   {
+    "@type": "FAQPage",
+    "mainEntity": [
+     {
+      "@type": "Question",
+      "name": "Does the audit require access to our management software?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "No. The audit is documents-only. You export folders of governing documents; we never request credentials to your management platform, accounting, banking, or email. System connections happen only in a full deployment, inside your environment."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Where are our documents processed?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "On Deepvine's own private stack in the United States, under a signed data handling agreement. Your documents never touch a public AI tool or shared cloud model, are never used for training, and are deleted with a written certificate within ten business days of your report. On-site processing at your offices is available on request."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Is homeowner personal information involved?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "No. Owner ledgers, delinquency records, contact lists, and payment information are expressly excluded from audit scope. Most audit documents are recorded instruments that are already public record."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "What if you don't find anything?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Then the audit is free. If your Findings Report contains fewer than five documented findings, we refund the fee in full."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "How long does the audit take?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Your written Findings Report is delivered within ten business days of receiving your documents, and includes a live working session where you query your own portfolio with us."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Does the fee count toward a full deployment?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Yes. One hundred percent of the audit fee is credited against a Deepvine deployment engagement signed within 90 days of your Findings Report."
+      }
+     }
+    ]
+   }
+  ]
+ }
+]

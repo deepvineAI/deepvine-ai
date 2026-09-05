@@ -1,0 +1,71 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHero from '../components/PageHero.astro';
+import Founders from '../components/Founders.astro';
+import CtaBand from '../components/CtaBand.astro';
+import { CALENDLY } from '../data/schema';
+
+const schema = [
+  { "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.deepvine.ai/" },
+    { "@type": "ListItem", "position": 2, "name": "About", "item": "https://www.deepvine.ai/about/" } ] },
+  { "@context": "https://schema.org", "@type": "AboutPage", "@id": "https://www.deepvine.ai/about/#webpage",
+    "url": "https://www.deepvine.ai/about/", "name": "About Deepvine AI",
+    "description": "Deepvine AI installs private AI knowledge systems for law firms, RIAs, and CPA firms. Founded by Mitch Boraski and Adam Erwin Kerr in Charlotte, North Carolina.",
+    "isPartOf": { "@id": "https://www.deepvine.ai/#website" }, "about": { "@id": "https://www.deepvine.ai/#organization" } },
+];
+const facts = [
+  { k: 'Founded', v: '2025' },
+  { k: 'Headquarters', v: 'Charlotte, North Carolina' },
+  { k: 'Serves', v: 'United States' },
+  { k: 'Contact', v: 'info@deepvine.ai', href: 'mailto:info@deepvine.ai' },
+];
+---
+<Base
+  title="About Deepvine AI | Founded in Charlotte, NC"
+  description="Deepvine AI installs private AI knowledge systems for law firms, RIAs, and CPA firms. Founded by Mitch Boraski and Adam Erwin Kerr in Charlotte, North Carolina."
+  path="/about/"
+  schema={schema}
+>
+  <PageHero
+    eyebrow="About"
+    title="Own the intelligence.<br>Don't rent it."
+    lead="Deepvine AI is a Charlotte, NC company that installs private AI knowledge systems for law firms, RIAs, CPA firms, and other knowledge-driven businesses. Deepvine connects a firm's existing systems (Slack, document management, CRM, finance tools, databases), backfills years of institutional history, and deploys a private AI that answers questions in Slack with source-backed citations. Unlike cloud AI tools, Deepvine runs in the client's own environment: data never leaves the firm's control and is never used to train shared models."
+    chips={['Founded 2025', 'Charlotte, North Carolina', 'Serving the United States']}
+  />
+
+  <section class="qa">
+    <div class="container qa__row">
+      <div class="qa__side">
+        <span class="qa__num">01</span>
+        <h2>Why we built this</h2>
+      </div>
+      <div class="qa__body">
+        <p>Every professional-services firm is sitting on an asset it never put on the balance sheet: years of institutional knowledge. Pricing judgment, negotiation history, the reasoning behind past decisions, the work product of everyone who ever worked there. In most firms that knowledge lives in people's heads and in files nobody reopens, and it walks out the door every time someone leaves.</p>
+        <p>We also watched regulated firms reach for cloud AI and hit a wall. Law firms, RIAs, and CPA firms operate under confidentiality and recordkeeping duties that consumer AI tools were never designed to respect. Putting client information into a shared model creates compliance friction at best and a genuine breach at worst. The firms that wanted the productivity could not accept the terms.</p>
+        <p>So we built Deepvine on a simple premise: a firm should own its intelligence rather than rent it. Deepvine deploys inside the client's own environment, connects to the systems they already use, backfills their history, and answers questions with source-backed citations, without their data ever leaving their control or training someone else's model. Ownership beats renting, especially when the thing being rented is built out of your own knowledge.</p>
+      </div>
+    </div>
+  </section>
+
+  <Founders eyebrow="The founders" heading="An operator and an architect." />
+
+  <section class="facts">
+    <div class="container">
+      <div class="sec-head">
+        <p class="eyebrow">Company facts</p>
+        <h2>Small team. Founder-led engagements.</h2>
+      </div>
+      <dl class="facts__grid">
+        {facts.map((f) => (
+          <div class="fact">
+            <dt>{f.k}</dt>
+            <dd>{f.href ? <a href={f.href}>{f.v}</a> : f.v}</dd>
+          </div>
+        ))}
+      </dl>
+    </div>
+  </section>
+
+  <CtaBand heading="See what a private AI brain<br>does for your firm." sub="Bring us one real question. We'll show you where the answer comes from." label="Book a live demo" caption="Owned,<br>not<br>rented." />
+</Base>

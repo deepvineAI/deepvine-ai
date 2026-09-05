@@ -1,0 +1,35 @@
+---
+import CheckIcon from './CheckIcon.astro';
+interface Action { label: string; href: string; variant?: 'dark' | 'light' }
+interface Props {
+  eyebrow?: string; title: string; lead?: string; chips?: string[]; actions?: Action[];
+  note?: string; size?: 'lg' | 'md' | 'sm'; align?: 'left' | 'center';
+}
+const { eyebrow, title, lead, chips = [], actions = [], note, size = 'lg', align = 'left' } = Astro.props;
+const ext = (h: string) => h.startsWith('http');
+---
+<section class:list={['phero', `phero--${size}`, `phero--${align}`]}>
+  <div class="container phero__inner">
+    <div class="phero__copy">
+      {eyebrow && <p class="eyebrow">{eyebrow}</p>}
+      <h1 set:html={title} />
+      {lead && <p class="lead" set:html={lead} />}
+      {chips.length > 0 && (
+        <ul class="pills" aria-label="Highlights">
+          {chips.map((c) => <li class="pill"><CheckIcon />{c}</li>)}
+        </ul>
+      )}
+      {actions.length > 0 && (
+        <div class="phero__actions">
+          {actions.map((a) => (
+            <a class:list={['btn', a.variant === 'light' ? 'btn--light' : 'btn--dark']} href={a.href} target={ext(a.href) ? '_blank' : undefined} rel={ext(a.href) ? 'noopener' : undefined}>
+              {a.label} <span class="arrow">→</span>
+            </a>
+          ))}
+        </div>
+      )}
+      {note && <p class="phero__note">{note}</p>}
+    </div>
+    <slot name="aside" />
+  </div>
+</section>
