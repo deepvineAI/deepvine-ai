@@ -6,16 +6,34 @@ import VideoSection from '../components/VideoSection.astro';
 import MemoryLayer from '../components/MemoryLayer.astro';
 import Difference from '../components/Difference.astro';
 import SecurityRow from '../components/SecurityRow.astro';
+import BuiltFor from '../components/BuiltFor.astro';
+import Faq from '../components/Faq.astro';
 import CtaBand from '../components/CtaBand.astro';
-import { organization } from '../data/schema';
+import { organization, persons, website, webPage, faqPage, demoVideo, SITE } from '../data/schema';
+
+const title = 'Private AI Memory Your Firm Owns | Deepvine.AI';
+const description = 'Private AI memory your firm owns: years of history backfilled, updated daily, answerable in Slack with sources. For law firms, RIAs, and CPA firms.';
+const og = `${SITE}/og/home.jpg`;
+
+const faq = [
+  { q: 'What is Deepvine.AI?', a: 'Deepvine.AI is a private AI memory layer for professional firms. It connects to the systems a firm already uses (document management, email, Slack, CRM, finance tools), backfills years of history, keeps it updated daily, and answers questions in Slack with source-backed citations. It runs on infrastructure the firm controls and works with any AI model.' },
+  { q: 'Does our data ever leave our environment?', a: 'No. Deepvine.AI is deployed inside your own environment, in a private cloud or on-premise. Your documents and prompts stay under your control, and they are never used to train shared models.' },
+  { q: 'Which AI models does it work with?', a: 'Any of them. Deepvine.AI is the memory layer, not the model. Run the model you prefer today and swap it later without losing a day of history, because the memory belongs to you rather than to a vendor.' },
+  { q: 'How is this different from ChatGPT or Claude with memory built in?', a: 'Those memories are thin, per-user, and stored on the vendor\'s servers. Deepvine.AI\'s memory is company-wide, spans years of history, survives staff turnover, and sits where you control it. That is the difference between a feature and a compounding asset.' },
+  { q: 'How long does deployment take?', a: 'Connection and the initial backfill are typically measured in weeks, not months. After that, daily diffs keep the knowledge base current and Deepvine.AI handles the maintenance, so your team is never responsible for operating the system.' },
+  { q: 'Who is Deepvine.AI built for?', a: 'Law firms, RIAs, CPA firms, real estate brokerages, and community association managers: document-dense firms of roughly 10 to 75 professionals whose institutional memory is concentrated in a few people.' },
+  { q: 'What does it cost?', a: 'Pricing depends on firm size, the systems being connected, and the depth of historical backfill, so it is scoped on a call rather than listed as a single number. Engagements are structured as a managed service that includes deployment, maintenance, and updates.' },
+  { q: 'What happens if we stop working with Deepvine.AI?', a: 'You keep everything. The knowledge base lives in your environment from day one, so ending the engagement means Deepvine.AI stops managing the system, not that your firm\'s memory leaves with a vendor.' },
+];
 ---
 <Base
-  title="Deepvine.AI | Own the Memory. Swap the Models."
-  description="Private AI memory your firm owns: years of history backfilled, updated daily, answerable in Slack with sources. Works with any model. For law firms, RIAs, CPA firms."
+  title={title}
+  description={description}
   path="/"
-  ogTitle="Deepvine.AI | Own the memory. Swap the models."
+  ogTitle="Own the memory. Swap the models. | Deepvine.AI"
   ogDescription="Company memory, privately owned. Years of history backfilled, updated daily, answerable in Slack with sources. Runs where you control it and works with any model."
-  schema={[organization]}
+  ogImage={og}
+  graph={[organization, ...persons, website, webPage({ path: '/', name: title, description, image: og }), demoVideo, faqPage('/', faq)]}
   preloadHero
 >
   <Hero />
@@ -24,5 +42,7 @@ import { organization } from '../data/schema';
   <MemoryLayer />
   <Difference />
   <SecurityRow />
+  <BuiltFor />
+  <Faq items={faq} heading="Straight answers." lead="The questions firms ask before a first call, answered the way we answer them on the call." />
   <CtaBand />
 </Base>

@@ -1,0 +1,22 @@
+---
+import { getCollection } from 'astro:content';
+import PostCard from './PostCard.astro';
+interface Props { current?: string; sections?: string[]; limit?: number; eyebrow?: string; heading?: string }
+const { current, sections = [], limit = 3, eyebrow = 'Further reading', heading = 'Related analysis from the Deepvine.AI blog' } = Astro.props;
+const all = (await getCollection('blog')).filter((p) => p.id !== current).sort((a, b) => +new Date(b.data.date) - +new Date(a.data.date));
+const preferred = all.filter((p) => p.data.section && sections.includes(p.data.section));
+const picks = [...preferred, ...all.filter((p) => !preferred.includes(p))].slice(0, limit);
+---
+{picks.length > 0 && (
+  <section class="related">
+    <div class="container">
+      <div class="sec-head">
+        <p class="eyebrow">{eyebrow}</p>
+        <h2>{heading}</h2>
+      </div>
+      <div class="bloglist__grid">
+        {picks.map((p) => <PostCard post={p} />)}
+      </div>
+    </div>
+  </section>
+)}

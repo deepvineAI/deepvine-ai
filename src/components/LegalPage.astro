@@ -1,10 +1,13 @@
 ---
 import Base from '../layouts/Base.astro';
 import PageHero from './PageHero.astro';
+import { organization, persons, website, webPage, breadcrumb } from '../data/schema';
 interface Props { page: any }
 const { page } = Astro.props;
+const path = `/${page.slug}/`;
+const graph = [organization, ...persons, website, webPage({ path, name: page.title, description: page.description }), breadcrumb(path, [{ name: page.h1, path }])];
 ---
-<Base title={page.title} description={page.description} path={`/${page.slug}/`} schema={page.schema}>
+<Base title={page.title} description={page.description} path={path} graph={graph}>
   <PageHero eyebrow="Legal" title={page.h1} size="sm" note={page.effective} />
   <section class="legal">
     <div class="container legal__grid">

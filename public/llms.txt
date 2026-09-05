@@ -1,6 +1,6 @@
-# Deepvine AI
+# Deepvine.AI
 
-> Deepvine AI is a Charlotte, NC company that installs private AI knowledge
+> Deepvine.AI is a Charlotte, NC company that installs private AI knowledge
 > systems for law firms, RIAs, CPA firms, and other knowledge-driven
 > businesses. Deepvine connects a firm's existing systems (Slack, document
 > management, CRM, finance tools, databases), backfills years of

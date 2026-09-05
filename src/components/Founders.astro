@@ -13,10 +13,10 @@ const { eyebrow = 'Who you will talk to', heading = 'Founder-led, start to finis
     <div class="founders__grid">
       {team.map((f) => (
         <article class="founder">
-          {f.photo ? <img class="founder__photo" src={f.photo} width="144" height="144" alt={`${f.name}, ${f.role.toLowerCase()} of Deepvine AI`} loading="lazy" /> : <div class="founder__photo founder__photo--initials" aria-hidden="true">{f.initials}</div>}
+          {f.photo ? <img class="founder__photo" src={f.photo} width="144" height="144" alt={`${f.name}, ${f.role.toLowerCase()} of Deepvine.AI`} loading="lazy" /> : <div class="founder__photo founder__photo--initials" aria-hidden="true">{f.initials}</div>}
           <div>
             <h3>{f.name}</h3>
-            <p class="founder__role">{f.role}</p>
+            <p class="founder__role">{f.role} · <a href={f.linkedin} target="_blank" rel="noopener">LinkedIn</a></p>
             <p class="founder__bio">{f.bio}</p>
           </div>
         </article>

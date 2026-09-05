@@ -3,9 +3,10 @@ import { getCollection, render } from 'astro:content';
 import Base from '../../layouts/Base.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import Faq from '../../components/Faq.astro';
+import RelatedPosts from '../../components/RelatedPosts.astro';
 import CtaBand from '../../components/CtaBand.astro';
 import { team } from '../../data/team';
-import { SITE, organization } from '../../data/schema';
+import { SITE, ORG_ID, MITCH_ID, ADAM_ID, organization, persons, website, webPage, breadcrumb, faqPage } from '../../data/schema';
 import { fmtDate, readingTime } from '../../data/blog';
 
 export async function getStaticPaths() {
@@ -16,27 +17,45 @@ const { post } = Astro.props;
 const { Content } = await render(post);
 const d = post.data;
 const path = `/blog/${post.id}/`;
+const url = `${SITE}${path}`;
+const og = `${SITE}/og/blog-${post.id}.jpg`;
 const author = team.find((t) => t.name === d.author) || team[0];
+const authorId = author.name === 'Adam Kerr' ? ADAM_ID : MITCH_ID;
+const seoTitle = d.seoTitle || d.title;
+const pageTitle = (seoTitle + ' | Deepvine.AI').length <= 60 ? `${seoTitle} | Deepvine.AI` : (seoTitle + ' | Deepvine').length <= 60 ? `${seoTitle} | Deepvine` : seoTitle;
+const rt = d.readingTime || readingTime(post.body);
 
-// Structured data: carry over the verbatim graph when present; otherwise generate it from frontmatter.
-const generated = {
-  "@context": "https://schema.org",
-  "@graph": [
-    organization,
-    { "@type": "BreadcrumbList", "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Home", "item": `${SITE}/` },
-      { "@type": "ListItem", "position": 2, "name": "Blog", "item": `${SITE}/blog/` },
-      { "@type": "ListItem", "position": 3, "name": d.title, "item": `${SITE}${path}` } ] },
-    { "@type": "BlogPosting", "@id": `${SITE}${path}#article`, "headline": d.title, "description": d.description,
-      "datePublished": d.date, "dateModified": d.updated || d.date, "author": { "@type": "Person", "name": d.author },
-      "publisher": { "@id": "https://www.deepvine.ai/#organization" }, "mainEntityOfPage": `${SITE}${path}`,
-      "image": `${SITE}/og-home.png`, "articleSection": d.section, "keywords": d.keywords.join(', ') },
-    ...(d.faq?.length ? [{ "@type": "FAQPage", "mainEntity": d.faq.map((f) => ({ "@type": "Question", "name": f.q, "acceptedAnswer": { "@type": "Answer", "text": f.a } })) }] : []),
-  ],
-};
-const schema = d.schema ? [d.schema] : [generated];
+const graph = [
+  organization, ...persons, website,
+  { '@type': 'Blog', '@id': `${SITE}/blog/#blog`, name: 'Compound Intelligence', url: `${SITE}/blog/`, publisher: { '@id': ORG_ID } },
+  webPage({ path, name: seoTitle, description: d.description, image: og, datePublished: d.date, dateModified: d.updated || d.date }),
+  breadcrumb(path, [{ name: 'Blog', path: '/blog/' }, { name: d.title, path }]),
+  {
+    '@type': 'BlogPosting',
+    '@id': `${url}#article`,
+    headline: d.title,
+    ...(d.alternativeHeadline ? { alternativeHeadline: d.alternativeHeadline } : {}),
+    description: d.description,
+    url,
+    mainEntityOfPage: { '@id': `${url}#webpage` },
+    isPartOf: { '@id': `${SITE}/blog/#blog` },
+    image: { '@type': 'ImageObject', url: og, width: 1200, height: 630 },
+    datePublished: d.date,
+    dateModified: d.updated || d.date,
+    author: { '@id': authorId },
+    publisher: { '@id': ORG_ID },
+    inLanguage: 'en-US',
+    ...(d.section ? { articleSection: d.section } : {}),
+    ...(d.keywords.length ? { keywords: d.keywords.join(', ') } : {}),
+    ...(d.wordCount ? { wordCount: d.wordCount } : {}),
+    ...(d.about.length ? { about: d.about } : {}),
+    ...(d.mentions.length ? { mentions: d.mentions } : {}),
+    timeRequired: `PT${parseInt(rt, 10) || 5}M`,
+  },
+  faqPage(path, d.faq),
+];
 ---
-<Base title={`${d.title} | Deepvine.AI`} description={d.description} path={path} ogType="article" publishedTime={d.date} modifiedTime={d.updated} schema={schema}>
+<Base title={pageTitle} description={d.description} path={path} ogTitle={d.title} ogType="article" ogImage={og} publishedTime={d.date} modifiedTime={d.updated} graph={graph}>
   <article class="post">
     <header class="post__head">
       <div class="container post__headinner">
@@ -48,7 +67,7 @@ const schema = d.schema ? [d.schema] : [generated];
           {author.photo ? <img src={author.photo} width="44" height="44" alt="" /> : <span class="byline__initials">{author.initials}</span>}
           <div>
             <strong>{author.name}</strong>
-            <span>{fmtDate(d.date)} · {d.readingTime || readingTime(post.body)}</span>
+            <span>{fmtDate(d.date)} · {rt}</span>
           </div>
         </div>
       </div>
@@ -60,7 +79,7 @@ const schema = d.schema ? [d.schema] : [generated];
       </div>
     </div>
 
-    <Faq items={d.faq || []} lead="The questions we hear most on this topic, answered plainly." />
+    <Faq items={d.faq} lead="The questions we hear most on this topic, answered plainly." />
 
     <section class="authorbox">
       <div class="container">
@@ -68,13 +87,15 @@ const schema = d.schema ? [d.schema] : [generated];
           {author.photo ? <img src={author.photo} width="72" height="72" alt={author.name} loading="lazy" /> : <span class="byline__initials">{author.initials}</span>}
           <div>
             <p class="eyebrow">Written by</p>
-            <h3>{author.name}</h3>
+            <h3>{author.name} · <a href={author.linkedin} target="_blank" rel="noopener">LinkedIn</a></h3>
             <p>{author.short}</p>
           </div>
         </div>
       </div>
     </section>
   </article>
+
+  <RelatedPosts current={post.id} sections={d.section ? [d.section] : []} heading="Keep reading" />
 
   <CtaBand
     heading={d.cta?.heading || "Memory compounds.<br>Subscriptions don't."}

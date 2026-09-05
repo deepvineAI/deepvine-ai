@@ -4,18 +4,26 @@ import Base from '../../layouts/Base.astro';
 import PageHero from '../../components/PageHero.astro';
 import PostCard from '../../components/PostCard.astro';
 import CtaBand from '../../components/CtaBand.astro';
-import legacy from '../../data/legacy-blog-schema.json';
+import { SITE, ORG_ID, MITCH_ID, organization, persons, website, webPage, breadcrumb } from '../../data/schema';
 
 const posts = (await getCollection('blog')).sort((a, b) => +new Date(b.data.date) - +new Date(a.data.date));
 const [featured, ...rest] = posts;
 const sections = [...new Set(posts.map((p) => p.data.section).filter(Boolean))];
+const title = 'Compound Intelligence | Deepvine.AI Blog';
+const description = 'Private AI for law firms, RIAs and CPA firms: confidentiality rules, data ownership, institutional memory, and how private deployment changes the analysis.';
+const og = `${SITE}/og/blog.jpg`;
+const graph = [
+  organization, ...persons, website,
+  webPage({ path: '/blog/', name: title, description, type: 'CollectionPage', image: og }),
+  breadcrumb('/blog/', [{ name: 'Blog', path: '/blog/' }]),
+  {
+    '@type': 'Blog', '@id': `${SITE}/blog/#blog`, url: `${SITE}/blog/`, name: 'Compound Intelligence',
+    description, publisher: { '@id': ORG_ID }, author: { '@id': MITCH_ID }, inLanguage: 'en-US',
+    blogPost: posts.map((p) => ({ '@type': 'BlogPosting', '@id': `${SITE}/blog/${p.id}/#article`, headline: p.data.title, url: `${SITE}/blog/${p.id}/`, datePublished: p.data.date })),
+  },
+];
 ---
-<Base
-  title="Compound Intelligence | The Deepvine.AI Blog"
-  description="Private AI for law firms, RIAs, CPA firms, and knowledge-driven businesses: confidentiality rules, data ownership, institutional memory, and how private deployment changes the analysis."
-  path="/blog/"
-  schema={legacy}
->
+<Base title={title} description={description} path="/blog/" ogImage={og} graph={graph}>
   <PageHero eyebrow="The Deepvine.AI blog" title="Compound<br>Intelligence." lead="What changed, why it matters, and what a firm that owns its memory should do about it. Written for managing partners, principals, and owners who have to answer for where client data goes." size="md" />
 
   <section class="bloglist">

@@ -230,3 +230,25 @@
 /* 404 ------------------------------------------------------------------------ */
 .ucard a{display:block;color:inherit;text-decoration:none}
 .ucard a:hover strong{color:var(--green-700)}
+
+/* Built-for band (homepage) --------------------------------------------------- */
+.builtfor{background:var(--white);border-top:1px solid var(--line);padding:88px 0 96px}
+.icards{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+.icard a{display:flex;flex-direction:column;gap:10px;height:100%;background:var(--band);border:1px solid var(--line);border-radius:var(--radius);padding:22px 20px;color:inherit;text-decoration:none;transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease}
+.icard a:hover{transform:translateY(-2px);box-shadow:0 24px 50px -30px rgba(0,0,0,.25);border-color:var(--line-2)}
+.icard strong{font-size:16.5px;letter-spacing:-.01em;line-height:1.25}
+.icard span{font-size:14px;line-height:1.55;color:var(--muted)}
+.icard em{margin-top:auto;font-style:normal;font-size:13.5px;font-weight:600;color:var(--green-700);display:inline-flex;gap:6px;align-items:center}
+.icard a:hover em .arrow{transform:translateX(3px)}
+.icard .arrow{transition:transform .18s ease}
+
+/* Related posts ---------------------------------------------------------------- */
+.related{background:var(--band);border-top:1px solid var(--line);padding:80px 0 88px}
+.related .pcard{background:#fff}
+
+/* Facts grid: allow five tiles */
+.facts__grid{grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.fact dd a{text-decoration:underline;text-underline-offset:3px;text-decoration-color:rgba(31,74,50,.35)}
+.founder__role a{color:var(--green-700);text-transform:none;letter-spacing:0;font-weight:600}
+@media (max-width:960px){ .icards{grid-template-columns:1fr 1fr} .related{padding:60px 0 68px} }
+@media (max-width:560px){ .icards{grid-template-columns:1fr} }

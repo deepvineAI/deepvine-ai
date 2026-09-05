@@ -4,9 +4,12 @@ import PageHero from '../components/PageHero.astro';
 import Faq from '../components/Faq.astro';
 import Founders from '../components/Founders.astro';
 import CtaBand from '../components/CtaBand.astro';
-import { CALENDLY_AUDIT } from '../data/schema';
-import legacy from "../data/legacy-audit-schema.json";
+import { CALENDLY_AUDIT, SITE, organization, persons, website, webPage, breadcrumb, faqPage, legacyServices } from '../data/schema';
+import legacy from '../data/legacy-audit-schema.json';
 
+const title = 'Association Knowledge Audit | Deepvine.AI';
+const description = "$1,500 flat-fee audit for association managers: we load your governing documents into a private AI and map every conflict. Under five findings, it's free.";
+const og = `${SITE}/og/audit.jpg`;
 const faq = [
   { q: 'Does the audit require access to our management software?', a: "No. It's documents-only. You export folders; we never request credentials to your management platform, accounting, banking, or email. System connections happen only in a full deployment, inside your own environment." },
   { q: 'Where are our documents processed?', a: "On Deepvine's own private stack in the U.S., under a signed data handling agreement. Your documents never touch a public AI tool or shared cloud model, are never used for training, and are deleted with a written certificate within ten business days. On-site processing is available on request." },
@@ -14,6 +17,13 @@ const faq = [
   { q: "What if you don't find anything?", a: "Then it's free. Fewer than five documented findings and we refund the fee in full." },
   { q: 'How long does the audit take?', a: 'Ten business days from documents received to report delivered, including your live working session.' },
   { q: 'Does the fee count toward a full deployment?', a: 'Yes, all of it. 100% of the audit fee is credited against a deployment signed within 90 days of your Findings Report.' },
+];
+const graph = [
+  organization, ...persons, website,
+  webPage({ path: '/audit/', name: title, description, image: og }),
+  breadcrumb('/audit/', [{ name: 'Association Knowledge Audit', path: '/audit/' }]),
+  ...legacyServices(legacy.map((x: any) => JSON.stringify(x)), '/audit/'),
+  faqPage('/audit/', faq),
 ];
 const deliverables = [
   { n: '01', t: 'Private ingestion', d: 'Your declarations, amendments, ARC guidelines, policies, and minutes loaded into a private sandbox on our own infrastructure. Never a public AI tool. Never used for training.' },
@@ -28,12 +38,7 @@ const steps = [
   { n: '4', t: 'Report delivered', d: 'Findings Report and deployment roadmap, within ten business days of receiving your documents.' },
 ];
 ---
-<Base
-  title="The Association Knowledge Audit | Deepvine.AI"
-  description="A $1,500 flat-fee audit for community association management companies. Deepvine ingests 2-3 associations' governing documents into a private AI, surfaces document conflicts and compliance gaps, and delivers a written Findings Report. Fewer than five findings and it's free."
-  path="/audit/"
-  schema={legacy}
->
+<Base title={title} description={description} path="/audit/" ogImage={og} graph={graph}>
   <PageHero
     eyebrow="HOA / Community managers"
     title="Your governing documents contradict each other.<br>We'll prove it in 10 days."

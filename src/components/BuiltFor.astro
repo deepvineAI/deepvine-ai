@@ -1,0 +1,29 @@
+---
+const items = [
+  { name: 'Law Firms', href: '/private-ai-for-law-firms/', desc: 'Aligned with ABA Rule 1.6(c). Matter history and precedent, answered with citations, with client data never leaving the firm.' },
+  { name: 'RIAs', href: '/private-ai-for-rias/', desc: 'Books-and-records ready under Rule 204-2. Client history, portfolio context and communications, kept inside the firm.' },
+  { name: 'CPA Firms', href: '/private-ai-for-cpa-firms/', desc: 'IRC §7216-aware. Engagement history and workpapers answered without a third-party disclosure.' },
+  { name: 'Real Estate Brokerages & Teams', href: '/private-ai-for-real-estate/', desc: 'Deal history, CRM notes and files turned into a private brain that survives agent turnover.' },
+  { name: 'HOA / Community Managers', href: '/private-ai-for-hoa-management/', desc: 'Declarations, amendments, ARC guidelines and decades of minutes, answered with the exact clause cited.' },
+];
+---
+<section class="builtfor" id="industries">
+  <div class="container">
+    <div class="sec-head">
+      <p class="eyebrow">Built for regulated, document-dense firms</p>
+      <h2>One memory layer. Five industries that can't afford a leak.</h2>
+      <p class="lead">Deepvine.AI is deployed inside the firm, so the confidentiality analysis stays yours to answer. Pick your industry to see how it fits.</p>
+    </div>
+    <ul class="icards">
+      {items.map((i) => (
+        <li class="icard">
+          <a href={i.href}>
+            <strong>{i.name}</strong>
+            <span>{i.desc}</span>
+            <em>Explore <span class="arrow">→</span></em>
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>

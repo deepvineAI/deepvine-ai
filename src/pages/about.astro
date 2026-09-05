@@ -2,16 +2,15 @@
 import Base from '../layouts/Base.astro';
 import PageHero from '../components/PageHero.astro';
 import CtaBand from '../components/CtaBand.astro';
-import { CALENDLY } from '../data/schema';
+import { SITE, LINKS, organization, persons, website, webPage, breadcrumb } from '../data/schema';
 
-const schema = [
-  { "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.deepvine.ai/" },
-    { "@type": "ListItem", "position": 2, "name": "About", "item": "https://www.deepvine.ai/about/" } ] },
-  { "@context": "https://schema.org", "@type": "AboutPage", "@id": "https://www.deepvine.ai/about/#webpage",
-    "url": "https://www.deepvine.ai/about/", "name": "About Deepvine AI",
-    "description": "Deepvine AI installs private AI knowledge systems for law firms, RIAs, and CPA firms. Founded by Mitch Boraski and Adam Erwin Kerr in Charlotte, North Carolina.",
-    "isPartOf": { "@id": "https://www.deepvine.ai/#website" }, "about": { "@id": "https://www.deepvine.ai/#organization" } },
+const title = 'About Deepvine.AI | Founders & Company';
+const description = 'Deepvine.AI installs private AI knowledge systems for law firms, RIAs and CPA firms. Founded in 2025 in Charlotte, NC by Mitch Boraski and Adam Kerr.';
+const og = `${SITE}/og/about.jpg`;
+const graph = [
+  organization, ...persons, website,
+  { ...webPage({ path: '/about/', name: title, description, type: 'AboutPage', image: og }), mainEntity: { '@id': organization['@id'] } },
+  breadcrumb('/about/', [{ name: 'About', path: '/about/' }]),
 ];
 const facts = [
   { k: 'Founded', v: '2025' },
@@ -19,17 +18,16 @@ const facts = [
   { k: 'Serves', v: 'United States' },
   { k: 'Contact', v: 'info@deepvine.ai', href: 'mailto:info@deepvine.ai' },
 ];
+const founders = [
+  { name: 'Mitch Boraski', href: LINKS.mitchLinkedin },
+  { name: 'Adam Kerr', href: LINKS.adamLinkedin },
+];
 ---
-<Base
-  title="About Deepvine AI | Founded in Charlotte, NC"
-  description="Deepvine AI installs private AI knowledge systems for law firms, RIAs, and CPA firms. Founded by Mitch Boraski and Adam Erwin Kerr in Charlotte, North Carolina."
-  path="/about/"
-  schema={schema}
->
+<Base title={title} description={description} path="/about/" ogImage={og} graph={graph}>
   <PageHero
     eyebrow="About"
     title="Own the intelligence.<br>Don't rent it."
-    lead="Deepvine AI is a Charlotte, NC company that installs private AI knowledge systems for law firms, RIAs, CPA firms, and other knowledge-driven businesses. Deepvine connects a firm's existing systems (Slack, document management, CRM, finance tools, databases), backfills years of institutional history, and deploys a private AI that answers questions in Slack with source-backed citations. Unlike cloud AI tools, Deepvine runs in the client's own environment: data never leaves the firm's control and is never used to train shared models."
+    lead="Deepvine.AI is a Charlotte, NC company that installs private AI knowledge systems for law firms, RIAs, CPA firms, and other knowledge-driven businesses. Deepvine connects a firm's existing systems (Slack, document management, CRM, finance tools, databases), backfills years of institutional history, and deploys a private AI that answers questions in Slack with source-backed citations. Unlike cloud AI tools, Deepvine runs in the client's own environment: data never leaves the firm's control and is never used to train shared models."
     chips={['Founded 2025', 'Charlotte, North Carolina', 'Serving the United States']}
   />
 
@@ -55,6 +53,10 @@ const facts = [
         <h2>Small team. Founder-led engagements.</h2>
       </div>
       <dl class="facts__grid">
+        <div class="fact">
+          <dt>Founders</dt>
+          <dd>{founders.map((f, i) => <><a href={f.href} target="_blank" rel="noopener">{f.name}</a>{i < founders.length - 1 ? ' & ' : ''}</>)}</dd>
+        </div>
         {facts.map((f) => (
           <div class="fact">
             <dt>{f.k}</dt>

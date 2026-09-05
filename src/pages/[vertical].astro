@@ -2,8 +2,9 @@
 import Base from '../layouts/Base.astro';
 import PageHero from '../components/PageHero.astro';
 import Faq from '../components/Faq.astro';
+import RelatedPosts from '../components/RelatedPosts.astro';
 import CtaBand from '../components/CtaBand.astro';
-import { CALENDLY } from '../data/schema';
+import { CALENDLY, SITE, organization, persons, website, webPage, breadcrumb, faqPage, legacyServices } from '../data/schema';
 
 export async function getStaticPaths() {
   const files = import.meta.glob('../data/verticals/*.json', { eager: true });
@@ -11,8 +12,17 @@ export async function getStaticPaths() {
 }
 const { page } = Astro.props;
 const cta = page.cta || {};
+const path = `/${page.slug}/`;
+const og = `${SITE}/og/${page.slug}.jpg`;
+const graph = [
+  organization, ...persons, website,
+  webPage({ path, name: page.title, description: page.description, image: og }),
+  breadcrumb(path, [{ name: page.h1, path }]),
+  ...legacyServices(page.schema, path),
+  faqPage(path, page.faq),
+];
 ---
-<Base title={page.title} description={page.description} path={`/${page.slug}/`} schema={page.schema}>
+<Base title={page.title} description={page.description} path={path} ogImage={og} graph={graph}>
   <PageHero
     eyebrow={page.eyebrow}
     title={page.h1}
@@ -50,9 +60,11 @@ const cta = page.cta || {};
 
   <Faq items={page.faq} lead={`Straight answers for ${page.eyebrow.toLowerCase()} evaluating a private deployment.`} />
 
+  <RelatedPosts sections={page.relatedSections || []} heading={`Related analysis for ${page.eyebrow.toLowerCase()}`} />
+
   <CtaBand
     heading={cta.heading || 'Bring us one real business question.'}
-    sub={cta.sub || "We'll show you how Deepvine answers it from your own records, with sources."}
+    sub={cta.sub || "We'll show you how Deepvine.AI answers it from your own records, with sources."}
     label="Book a live demo"
     caption="Your<br>records.<br>Your<br>answers."
   />
