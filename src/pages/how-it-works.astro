@@ -151,7 +151,6 @@ const graph = [
         <p class="eyebrow">How it actually works</p>
         <h2>How the system actually works</h2>
       </div>
-      <img class="hiw-arch__img" src="/assets/img/hiw-architecture.webp" width="1640" height="456" loading="lazy" alt="Five steps: Slack or your tools, Deepvine.AI agents, company memory, the AI model, and your infrastructure. The model can change; the memory and operating layer stay consistent.">
       <ol class="flow5">
         {steps.map((s) => <li class="flow5__step"><span class="ico" set:html={s.icon} /><strong>{s.title}</strong><span>{s.sub}</span></li>)}
       </ol>
