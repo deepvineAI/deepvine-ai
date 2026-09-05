@@ -2,7 +2,7 @@
 import Base from '../layouts/Base.astro';
 import PageHero from '../components/PageHero.astro';
 import CtaBand from '../components/CtaBand.astro';
-import { SITE, LINKS, organization, persons, website, webPage, breadcrumb } from '../data/schema';
+import { SITE, organization, persons, website, webPage, breadcrumb } from '../data/schema';
 
 const title = 'About Deepvine.AI | Founders & Company';
 const description = 'Deepvine.AI installs private AI knowledge systems for law firms, RIAs and CPA firms. Founded in 2025 in Charlotte, NC by Mitch Boraski and Adam Kerr.';
@@ -17,10 +17,6 @@ const facts = [
   { k: 'Headquarters', v: 'Charlotte, North Carolina' },
   { k: 'Serves', v: 'United States' },
   { k: 'Contact', v: 'info@deepvine.ai', href: 'mailto:info@deepvine.ai' },
-];
-const founders = [
-  { name: 'Mitch Boraski', href: LINKS.mitchLinkedin },
-  { name: 'Adam Kerr', href: LINKS.adamLinkedin },
 ];
 ---
 <Base title={title} description={description} path="/about/" ogImage={og} graph={graph}>
@@ -50,13 +46,9 @@ const founders = [
     <div class="container">
       <div class="sec-head">
         <p class="eyebrow">Company facts</p>
-        <h2>Small team. Founder-led engagements.</h2>
+        <h2>Experienced team. Founder-led engagements.</h2>
       </div>
       <dl class="facts__grid">
-        <div class="fact">
-          <dt>Founders</dt>
-          <dd>{founders.map((f, i) => <><a href={f.href} target="_blank" rel="noopener">{f.name}</a>{i < founders.length - 1 ? ' & ' : ''}</>)}</dd>
-        </div>
         {facts.map((f) => (
           <div class="fact">
             <dt>{f.k}</dt>
