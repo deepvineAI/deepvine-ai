@@ -174,7 +174,7 @@
 .post__head{background:linear-gradient(180deg,#fafaf9 0%,#f0f0ee 100%);border-bottom:1px solid var(--line)}
 .post__headinner{padding:40px 0 48px;max-width:calc(880px + 2*var(--gutter))}
 .crumbs{margin-bottom:28px;font-size:13.5px;color:var(--subtle)}
-.crumbs ol{display:flex;flex-wrap:wrap;gap:8px}
+.crumbs ol{list-style:none;padding:0;display:flex;flex-wrap:wrap;gap:8px}
 .crumbs li+li::before{content:"/";margin-right:8px;color:var(--line-2)}
 .crumbs a:hover{color:var(--green-700)}
 .post__head h1{font-size:clamp(32px,3.8vw,50px);margin-bottom:18px}
@@ -228,5 +228,5 @@
 }
 
 /* 404 ------------------------------------------------------------------------ */
-.ucard a{display:block;color:inherit}
+.ucard a{display:block;color:inherit;text-decoration:none}
 .ucard a:hover strong{color:var(--green-700)}
