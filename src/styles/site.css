@@ -24,7 +24,7 @@
 }
 
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-x:hidden;overflow-x:clip}
 body{
   font-family:var(--font);
   background:var(--bg);
@@ -33,8 +33,13 @@ body{
   font-size:16px;
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
-  overflow-x:hidden;
+  overflow-x:hidden;overflow-x:clip;
+  overflow-wrap:break-word;
 }
+/* grid and flex children may never force a track wider than the screen */
+.container>*,[class*="__grid"]>*,[class*="__row"]>*,.pillars__grid>*,.qa__row>*,.hiw-hero__grid>*,.hiw-own__grid>*,.faqs__grid>*,.legal__grid>*,.founders__grid>*,.flow3>*{min-width:0}
+img,video,iframe,svg{max-width:100%}
+.prose pre,.prose code{white-space:pre-wrap;overflow-wrap:anywhere}
 img,svg{display:block;max-width:100%}
 img{height:auto}
 a{color:inherit;text-decoration:none}
@@ -308,6 +313,9 @@ h1,h2,h3{font-weight:600;letter-spacing:-.035em;line-height:1.05;color:var(--ink
   :root{--gutter:20px}
   .nav__inner{gap:12px}
   .brand__logo{height:40px}
+  .btn{white-space:normal;text-align:left;line-height:1.25;max-width:100%}
+  .btn .arrow{flex:none}
+  .pill{white-space:normal;text-align:left}
   .nav__right{gap:4px}
   .nav__burger{width:40px}
   .btn--sm{padding:11px 13px;font-size:14px;gap:8px}
@@ -322,4 +330,29 @@ h1,h2,h3{font-weight:600;letter-spacing:-.035em;line-height:1.05;color:var(--ink
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   .btn .arrow,.nav__drop,.has-drop .chev{transition:none}
+}
+
+@media (max-width:380px){
+  .brand__logo{height:34px}
+  .nav__right{gap:2px}
+  .nav__right .btn--sm{padding:10px 11px;font-size:13px;gap:6px}
+  .nav__burger{width:36px}
+  .hero__title h1{font-size:30px}
+  .hero__title .eyebrow{font-size:11px}
+  h1{font-size:34px!important}
+  .phero h1,.hiw-hero h1,.post__head h1{font-size:32px!important}
+}
+
+/* Very narrow effective widths (small phones, Safari page zoom): the header CTA moves into the menu */
+.nav__cta-mobile{display:none}
+@media (max-width:360px){
+  .nav__right>.btn{display:none}
+  .nav--open .nav__cta-mobile{display:block;border-bottom:0!important;padding-top:10px}
+  .nav--open .nav__cta-mobile a{display:inline-flex!important;width:auto!important;justify-content:center!important;background:var(--green-800);color:#fff;border-radius:var(--pill);padding:12px 20px!important;font-size:15px!important}
+}
+@media (max-width:300px){
+  :root{--gutter:14px}
+  .brand__logo{height:30px}
+  .flow3__icons .ico{width:34px;height:34px}
+  .vcard .ico{width:48px;height:48px}
 }
