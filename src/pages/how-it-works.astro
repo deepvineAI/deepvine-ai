@@ -126,10 +126,10 @@ const graph = [
       </div>
       <div class="hiw-own__grid">
         <figure class="hiw-own__art">
-          <img src="/assets/img/hiw-workshop.webp" width="1448" height="1086" loading="lazy" alt="Illustration of a Deepvine.AI worker robot at a desk inside a workshop, with callouts for your workshop, the AI model, tools, the worker, and memory.">
+          <img src="/assets/img/hiw-workshop.webp" width="1536" height="1024" loading="lazy" alt="Illustration of a Deepvine.AI worker robot at a desk inside a workshop, with callouts for your workshop, the AI model, tools, the worker, and memory.">
           <figcaption>
             <ul class="legend">
-              {legend.map((l) => <li><span class="ico" set:html={l.icon} /><div><strong>{l.title}</strong>{l.sub}</div></li>)}
+              {legend.map((l) => <li><span class="ico" set:html={l.icon} /><strong>{l.title}</strong><span class="sr-only">: {l.sub}</span></li>)}
             </ul>
           </figcaption>
         </figure>
