@@ -2,6 +2,7 @@
 import Base from '../layouts/Base.astro';
 import CtaBand from '../components/CtaBand.astro';
 import CheckIcon from '../components/CheckIcon.astro';
+import MemoryDiagramMobile from '../components/MemoryDiagramMobile.astro';
 import { SITE, CALENDLY, organization, persons, website, webPage, breadcrumb } from '../data/schema';
 
 const title = 'How Deepvine.AI Works | Private AI Memory Layer';
@@ -98,21 +99,7 @@ const graph = [
         <h2>One memory. Every system.</h2>
       </div>
       <img class="memory__diagram hiw-memory__img" src="/assets/img/hiw-memory-layer.webp" width="1672" height="941" loading="lazy" alt="Documents, conversations, deal data, and internal systems flow into the Deepvine.AI device, which serves the AI model, Deepvine.AI agents, Slack, and your tools.">
-      <div class="dmobile" aria-hidden="true">
-        <ul class="dmobile__col">
-          <li class="dcard"><span class="ico" set:html={I.doc} />Documents</li>
-          <li class="dcard"><span class="ico" set:html={I.chat} />Conversations</li>
-          <li class="dcard"><span class="ico" set:html={I.db} />Deal Data</li>
-          <li class="dcard"><span class="ico" set:html={I.gear} />Internal Systems</li>
-        </ul>
-        <div class="dmobile__hub"><img src="/assets/img/logo-mark-192.png" width="40" height="40" alt="">Deepvine.AI</div>
-        <ul class="dmobile__col">
-          <li class="dcard"><span class="ico" set:html={I.spark} />AI Model</li>
-          <li class="dcard"><span class="ico" set:html={I.grid} />Deepvine.AI Agents</li>
-          <li class="dcard"><span class="ico" set:html={I.chat} />Slack</li>
-          <li class="dcard"><span class="ico" set:html={I.layers} />Your Tools</li>
-        </ul>
-      </div>
+      <MemoryDiagramMobile />
       <p class="hiw-caption">Deepvine.AI sits between your company's information and the tools your business uses. Your memory stays consistent across the models, agents, and interfaces you control.</p>
     </div>
   </section>
