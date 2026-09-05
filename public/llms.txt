@@ -14,6 +14,7 @@ Legal entity: Local Labs LLC. Founded by Mitch Boraski and Adam Erwin Kerr. Cont
 ## Key pages
 
 - [Home](https://www.deepvine.ai/): What Deepvine is and how it works
+- [How It Works](https://www.deepvine.ai/how-it-works/): How Deepvine.AI turns a firm's systems and history into one company memory that its team and AI agents can use
 - [About](https://www.deepvine.ai/about/): Company background and founders
 - [Blog](https://www.deepvine.ai/blog/): Analysis on private AI, compliance, and data ownership for professional firms
 

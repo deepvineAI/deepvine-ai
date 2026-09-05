@@ -70,7 +70,7 @@
       "heading": "What does deployment look like?",
       "paragraphs": [
         "Deployment is a managed process, not a weekend software install. It moves through four stages: connection, backfill, daily diffs, and ongoing maintenance.",
-        "First we <strong>connect</strong> Deepvine to your existing systems. Then we <strong>backfill</strong> your historical client records so the assistant starts with real institutional memory instead of a blank slate. From there, <strong>daily diffs</strong> keep the knowledge base current as new documents and messages are created, and we handle <strong>managed maintenance</strong> so your team is not responsible for operating the system. To see the mechanics in more detail, visit <a href=\"/#how\">how it works</a> and our <a href=\"/#security\">security</a> overview."
+        "First we <strong>connect</strong> Deepvine to your existing systems. Then we <strong>backfill</strong> your historical client records so the assistant starts with real institutional memory instead of a blank slate. From there, <strong>daily diffs</strong> keep the knowledge base current as new documents and messages are created, and we handle <strong>managed maintenance</strong> so your team is not responsible for operating the system. To see the mechanics in more detail, visit <a href=\"/how-it-works/\">how it works</a> and our <a href=\"/#security\">security</a> overview."
       ],
       "cards": [],
       "steps": [

@@ -13,6 +13,7 @@ const lastmod = {
   '/': gitDate('src/pages/index.astro', 'src/components'),
   '/about/': gitDate('src/pages/about.astro'),
   '/audit/': gitDate('src/pages/audit.astro'),
+  '/how-it-works/': gitDate('src/pages/how-it-works.astro'),
   '/blog/': gitDate('src/pages/blog/index.astro', 'src/content/blog'),
 };
 for (const f of fs.readdirSync('./src/data/verticals')) lastmod[`/${f.replace(/\.json$/, '')}/`] = gitDate(`src/data/verticals/${f}`, 'src/pages/[vertical].astro');

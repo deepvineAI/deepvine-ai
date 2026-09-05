@@ -1,0 +1,176 @@
+---
+import Base from '../layouts/Base.astro';
+import CtaBand from '../components/CtaBand.astro';
+import CheckIcon from '../components/CheckIcon.astro';
+import { SITE, CALENDLY, organization, persons, website, webPage, breadcrumb } from '../data/schema';
+
+const title = 'How Deepvine.AI Works | Private AI Memory Layer';
+const description = "How Deepvine.AI turns your firm's systems and history into one company memory your team and AI agents can use, on infrastructure you control.";
+const path = '/how-it-works/';
+const og = `${SITE}/og/how-it-works.jpg`;
+
+const S = (d: string, extra = '') => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${d}${extra}</svg>`;
+const I = {
+  doc: S('<path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h6"/>'),
+  chat: S('<path d="M4 5h16v11H9l-5 4z"/>'),
+  db: S('<ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v12c0 1.7 3.6 3 8 3s8-1.3 8-3V6"/><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/>'),
+  gear: S('<circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/>'),
+  users: S('<circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 4.3a3.5 3.5 0 0 1 0 7.4M17.5 14.5A6.5 6.5 0 0 1 21.5 20"/>'),
+  spark: S('<path d="M12 3l2.3 6.2L20.5 11.5l-6.2 2.3L12 20l-2.3-6.2L3.5 11.5l6.2-2.3z"/>'),
+  grid: S('<rect x="4" y="4" width="6.5" height="6.5" rx="1.6"/><rect x="13.5" y="4" width="6.5" height="6.5" rx="1.6"/><rect x="4" y="13.5" width="6.5" height="6.5" rx="1.6"/><rect x="13.5" y="13.5" width="6.5" height="6.5" rx="1.6"/>'),
+  server: S('<rect x="3" y="4" width="18" height="6" rx="1.5"/><rect x="3" y="14" width="18" height="6" rx="1.5"/><path d="M7 7h.01M7 17h.01"/>'),
+  bars: S('<path d="M6 20v-6M12 20V9M18 20V4"/>'),
+  home: S('<path d="M3 11 12 4l9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/>'),
+  layers: S('<path d="m12 3 9 5-9 5-9-5z"/><path d="m3 13 9 5 9-5"/>'),
+};
+
+const steps = [
+  { icon: I.chat, title: 'Slack or your tools', sub: 'Employees ask questions or trigger work' },
+  { icon: I.grid, title: 'Deepvine.AI Agents', sub: 'Coordinate approved actions' },
+  { icon: I.db, title: 'Company Memory', sub: 'Firm history, documents, and context' },
+  { icon: I.spark, title: 'AI Model', sub: 'Reasoning layer' },
+  { icon: I.server, title: 'Your Infrastructure', sub: 'Private environment you control' },
+];
+const legend = [
+  { icon: I.home, title: 'Your workshop', sub: 'Your infrastructure, under your control' },
+  { icon: I.spark, title: 'AI model', sub: 'The best model for your use case' },
+  { icon: I.gear, title: 'Tools', sub: 'Approved actions and workflows' },
+  { icon: I.layers, title: 'Worker', sub: 'The Deepvine.AI operating layer' },
+  { icon: I.db, title: 'Memory', sub: 'Your company history and context' },
+];
+const values = [
+  { icon: I.users, title: 'For your team', sub: 'Ask questions and get accurate answers' },
+  { icon: I.gear, title: 'For operations', sub: 'Turn company knowledge into repeatable workflows' },
+  { icon: I.bars, title: 'For leadership', sub: 'Use accurate, trusted context to make better decisions' },
+];
+const checks = [
+  'You control the workshop (your infrastructure)',
+  'Your memory, tools, and environment stay aligned to your business',
+  'Your team works from the same company context',
+  'More value, more security, more flexibility',
+];
+const graph = [
+  organization, ...persons, website,
+  webPage({ path, name: title, description, image: og }),
+  breadcrumb(path, [{ name: 'How It Works', path }]),
+  { '@type': 'ItemList', '@id': `${SITE}${path}#architecture`, name: 'How the Deepvine.AI system works', itemListOrder: 'https://schema.org/ItemListOrderAscending', numberOfItems: steps.length,
+    itemListElement: steps.map((s, i) => ({ '@type': 'ListItem', position: i + 1, name: s.title, description: s.sub })) },
+];
+---
+<Base title={title} description={description} path={path} ogImage={og} ogTitle="How Deepvine.AI works" graph={graph}>
+
+  <!-- Hero -->
+  <section class="hiw-hero">
+    <div class="container hiw-hero__grid">
+      <div class="hiw-hero__copy">
+        <p class="eyebrow">How Deepvine.AI works</p>
+        <h1>Turn your company history <em>into memory</em> your AI can use.</h1>
+        <p class="lead">Deepvine.AI connects your firm's systems, workflows, and history, keeps that memory updated, and makes it usable by your team and AI agents on infrastructure you control.</p>
+        <div class="phero__actions">
+          <a class="btn btn--dark" href="#architecture">See the architecture <span class="arrow">→</span></a>
+          <a class="btn btn--light" href={CALENDLY} target="_blank" rel="noopener">Talk with Deepvine.AI <span class="arrow">→</span></a>
+        </div>
+      </div>
+      <div class="flow3" role="img" aria-label="Your systems feed company memory, which powers AI and agents.">
+        <div class="flow3__card">
+          <div class="flow3__icons"><span class="ico" set:html={I.doc} /><span class="ico" set:html={I.chat} /><span class="ico" set:html={I.db} /><span class="ico" set:html={I.gear} /></div>
+          <strong>Your Systems</strong><span>Documents, conversations, data, and tools</span>
+        </div>
+        <span class="flow3__arrow" aria-hidden="true">→</span>
+        <div class="flow3__hub">
+          <img src="/assets/img/device-cutout.webp" width="484" height="354" alt="" fetchpriority="high">
+          <strong>Company Memory</strong><span>Your firm's context, always up to date</span>
+        </div>
+        <span class="flow3__arrow" aria-hidden="true">→</span>
+        <div class="flow3__card">
+          <div class="flow3__icons flow3__icons--2"><span class="ico" set:html={I.users} /><span class="ico" set:html={I.spark} /></div>
+          <strong>AI + Agents</strong><span>Answers, workflows, better decisions</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- One memory. Every system. -->
+  <section class="hiw-memory" id="memory">
+    <div class="container">
+      <div class="sec-head sec-head--center">
+        <p class="eyebrow">The memory layer</p>
+        <h2>One memory. Every system.</h2>
+      </div>
+      <img class="memory__diagram hiw-memory__img" src="/assets/img/hiw-memory-layer.webp" width="1672" height="941" loading="lazy" alt="Documents, conversations, deal data, and internal systems flow into the Deepvine.AI device, which serves the AI model, Deepvine.AI agents, Slack, and your tools.">
+      <div class="dmobile" aria-hidden="true">
+        <ul class="dmobile__col">
+          <li class="dcard"><span class="ico" set:html={I.doc} />Documents</li>
+          <li class="dcard"><span class="ico" set:html={I.chat} />Conversations</li>
+          <li class="dcard"><span class="ico" set:html={I.db} />Deal Data</li>
+          <li class="dcard"><span class="ico" set:html={I.gear} />Internal Systems</li>
+        </ul>
+        <div class="dmobile__hub"><img src="/assets/img/logo-mark-192.png" width="40" height="40" alt="">Deepvine.AI</div>
+        <ul class="dmobile__col">
+          <li class="dcard"><span class="ico" set:html={I.spark} />AI Model</li>
+          <li class="dcard"><span class="ico" set:html={I.grid} />Deepvine.AI Agents</li>
+          <li class="dcard"><span class="ico" set:html={I.chat} />Slack</li>
+          <li class="dcard"><span class="ico" set:html={I.layers} />Your Tools</li>
+        </ul>
+      </div>
+      <p class="hiw-caption">Deepvine.AI sits between your company's information and the tools your business uses. Your memory stays consistent across the models, agents, and interfaces you control.</p>
+    </div>
+  </section>
+
+  <!-- Ownership -->
+  <section class="hiw-own" id="ownership">
+    <div class="container">
+      <div class="sec-head">
+        <p class="eyebrow">A worker inside your workshop</p>
+        <h2>Ownership, made simple.</h2>
+      </div>
+      <div class="hiw-own__grid">
+        <figure class="hiw-own__art">
+          <img src="/assets/img/hiw-workshop.webp" width="1448" height="1086" loading="lazy" alt="Illustration of a Deepvine.AI worker robot at a desk inside a workshop, with callouts for your workshop, the AI model, tools, the worker, and memory.">
+          <figcaption>
+            <ul class="legend">
+              {legend.map((l) => <li><span class="ico" set:html={l.icon} /><div><strong>{l.title}</strong>{l.sub}</div></li>)}
+            </ul>
+          </figcaption>
+        </figure>
+        <div class="hiw-own__copy">
+          <h3>If you only rent AI, you're renting a worker in someone else's workshop.</h3>
+          <p>Deepvine.AI gives you a company-controlled operating layer, so your memory, tools, and environment stay aligned to your business.</p>
+          <ul class="checks">
+            {checks.map((c) => <li><CheckIcon />{c}</li>)}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Architecture -->
+  <section class="hiw-arch" id="architecture">
+    <div class="container">
+      <div class="sec-head sec-head--center">
+        <p class="eyebrow">How it actually works</p>
+        <h2>How the system actually works</h2>
+      </div>
+      <ol class="flow5">
+        {steps.map((s) => <li class="flow5__step"><span class="ico" set:html={s.icon} /><strong>{s.title}</strong><span>{s.sub}</span></li>)}
+      </ol>
+      <p class="hiw-note"><span>The model can change. The memory and operating layer stay consistent.</span></p>
+    </div>
+  </section>
+
+  <!-- Value -->
+  <section class="hiw-value">
+    <div class="container">
+      <div class="sec-head sec-head--center">
+        <p class="eyebrow">From memory to action</p>
+        <h2>Real value for <em>every part</em> of your business</h2>
+      </div>
+      <ul class="vcards">
+        {values.map((v) => <li class="vcard"><span class="ico" set:html={v.icon} /><strong>{v.title}</strong><span>{v.sub}</span></li>)}
+      </ul>
+      <p class="hiw-note"><span>Every use case starts with the same company memory.</span></p>
+    </div>
+  </section>
+
+  <CtaBand eyebrow="Ready to see it in action?" heading="Build memory your company owns." sub="Deepvine.AI helps turn your company's history into a durable AI asset." label="Talk with Deepvine.AI" caption="" image="/assets/img/cta-leaves-2.webp" />
+</Base>
