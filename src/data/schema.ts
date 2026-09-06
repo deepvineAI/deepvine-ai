@@ -35,7 +35,7 @@ export const organization = {
   logo: { '@type': 'ImageObject', '@id': LOGO_ID, url: `${SITE}/web-app-manifest-512x512.png`, width: 512, height: 512, caption: BRAND },
   image: { '@id': LOGO_ID },
   description: DESCRIPTION,
-  slogan: 'Own the memory. Swap the models.',
+  slogan: 'Own your memory. Watch it compound.',
   email: 'info@deepvine.ai',
   foundingDate: '2025',
   founder: [{ '@id': MITCH_ID }, { '@id': ADAM_ID }],
