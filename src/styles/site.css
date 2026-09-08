@@ -52,6 +52,7 @@ strong,b{font-weight:600}
 
 /* Type ------------------------------------------------------------------ */
 h1,h2,h3{font-weight:600;letter-spacing:-.035em;line-height:1.05;color:var(--ink)}
+h1{line-height:1.12}
 .eyebrow{
   font-size:12px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;
   color:var(--green-tint);margin-bottom:18px;
@@ -126,7 +127,7 @@ h1,h2,h3{font-weight:600;letter-spacing:-.035em;line-height:1.05;color:var(--ink
   /* stop short of the device, whose left edge sits ~51% across the photo */
   max-width:calc(51vw - (100vw - min(100vw,var(--container))) / 2 - var(--gutter) - 24px);
 }
-.hero h1{font-size:clamp(42px,4.3vw,60px);letter-spacing:-.04em;margin-bottom:24px}
+.hero h1{font-size:clamp(42px,4.3vw,60px);letter-spacing:-.04em;line-height:1.16;margin-bottom:24px}
 .hero .lead{max-width:none;margin-bottom:30px}
 .pills{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:32px}
 .pill{
