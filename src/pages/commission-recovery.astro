@@ -4,7 +4,6 @@
 import Base from '../layouts/Base.astro';
 import PageHero from '../components/PageHero.astro';
 import Faq from '../components/Faq.astro';
-import Founders from '../components/Founders.astro';
 import CtaBand from '../components/CtaBand.astro';
 import { CALENDLY } from '../data/schema';
 
@@ -44,11 +43,6 @@ const calc = (c: number, g: number, sh: number) => {
   return { kept, net, roi, keptW: (kept / top) * 100, costW: (COST / top) * 100, line };
 };
 const d0 = calc(D.closings, D.gci, D.share);
-
-const bios = {
-  'Mitch Boraski': "Mitch is the broker and owner of a Charlotte real estate practice ranked in the top 1.5% of eXp Realty agents worldwide. He reads your audit from the owner's chair, because he sits in one.",
-  'Adam Kerr': 'Adam builds and runs the private system behind your audit, your daily briefs and your scorecard.',
-};
 
 const faq = [
   { q: 'Do we have to leave Follow Up Boss?', a: 'No. Follow Up Boss stays exactly as it is. We connect to it, read from it, and write tasks and notes back into it. Nothing is replaced and your agents keep working where they work today.' },
@@ -301,7 +295,6 @@ const faq = [
 
   <Faq items={faq} heading="Questions, answered." />
 
-  <Founders eyebrow="Who you'll talk to" heading="Your audit readout is with a founder." lead="We take on a small number of teams each month, because every install is hands-on." band={false} bios={bios} />
 
   <CtaBand heading="Bring us your<br>Follow Up Boss." sub="In five business days we'll show you what it's leaking, by agent and by source, in dollars." label={cta} caption="Your<br>number,<br>before<br>you pay." />
 </Base>
