@@ -25,13 +25,16 @@ for (const f of fs.readdirSync('./src/content/blog').filter((f) => f.endsWith('.
 }
 
 // https://astro.build/config
+// Unlisted pages (shared by direct link only): never in the sitemap. Each also sets noindex in its <Base> props.
+const UNLISTED = ['/commission-recovery/'];
+
 export default defineConfig({
   site: 'https://www.deepvine.ai',
   trailingSlash: 'always',
   build: { format: 'directory', inlineStylesheets: 'never' },
   integrations: [
     sitemap({
-      filter: (page) => !page.endsWith('/404/'),
+      filter: (page) => !page.endsWith('/404/') && !UNLISTED.some((u) => page.endsWith(u)),
       serialize(item) {
         const path = new URL(item.url).pathname;
         item.lastmod = lastmod[path] || TODAY;

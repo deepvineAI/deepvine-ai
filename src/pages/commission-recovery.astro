@@ -1,0 +1,255 @@
+---
+// UNLISTED OFFER PAGE. Shared by direct link only.
+// Not in the nav, footer, llms.txt or sitemap (see UNLISTED in astro.config.mjs); noindex via <Base noindex> and vercel.json.
+import Base from '../layouts/Base.astro';
+import PageHero from '../components/PageHero.astro';
+import Faq from '../components/Faq.astro';
+import Founders from '../components/Founders.astro';
+import CtaBand from '../components/CtaBand.astro';
+import { CALENDLY } from '../data/schema';
+
+const title = 'Commission Recovery for Real Estate Teams | Deepvine.AI';
+const description = 'We find the commission your team already paid for and did not collect, do the work to recover it, and guarantee the number. Free 5-day audit for qualified teams.';
+const cta = 'See if your team qualifies';
+
+const sources = ['Zillow', 'Realtor.com', 'Google Ads', 'Facebook', 'Homes.com', 'Your website'];
+
+const leaks = [
+  { t: 'Leads that never got a call', d: 'They came in on a busy afternoon or a weekend, and nobody circled back.' },
+  { t: 'Leads dropped after two touches', d: 'Most buyers and sellers take far longer than that to answer. The follow-up stopped first.' },
+  { t: 'An old database nobody works', d: 'Thousands of people who once raised their hand, sitting untouched since the month they came in.' },
+  { t: 'No view by agent or by source', d: 'You can see activity. You cannot see what each agent and each lead source is costing you per closing.' },
+];
+
+const timeline = [
+  { n: '1', t: 'Days 1 to 5: Leak Audit', d: 'Read-only access to Follow Up Boss, joined with your lead spend and closed deals. You get one number: the commission leaking each year, by agent and by source.' },
+  { n: '2', t: 'Day 7: Daily agent briefs', d: 'Every morning each agent gets their five most valuable moves by text, email or Slack, written from your own follow-up standards.' },
+  { n: '3', t: 'Day 14: Dead database revival', d: 'We run the first campaign on your old and unworked leads, through your own accounts, and hand each reply to an agent at the appointment.' },
+  { n: '4', t: 'Day 30: Owner scorecard', d: 'One message every Monday: what was recovered, what stalled, and who stalled it, in dollars.' },
+  { n: '5', t: 'Every day: Escalation', d: 'Moves an agent skipped yesterday reach you this morning, with the value of the lead attached.' },
+  { n: '6', t: 'Every quarter: Re-audit', d: 'We measure against the baseline from your audit, so progress is a number and not an opinion.' },
+];
+
+// ROI calculator (section 04). Server-renders the default state so the page reads correctly before the script runs.
+const COST = 10000 + 12 * 1500;
+const D = { closings: 6, gci: 10000, share: 50 };
+const usd = (n: number) => '$' + Math.round(n).toLocaleString('en-US');
+const signed = (n: number) => (n < 0 ? '-' : '+') + usd(Math.abs(n));
+const pct = (n: number) => (n < 0 ? '-' : '+') + Math.abs(Math.round(n)) + '%';
+const calc = (c: number, g: number, sh: number) => {
+  const kept = c * g * (sh / 100), net = kept - COST, roi = (net / COST) * 100, top = Math.max(kept, COST);
+  const line = net >= 0
+    ? `Every dollar spent returns ${'$' + (kept / COST).toFixed(2)} in commission your company keeps.`
+    : `Not yet covered. You need ${Math.ceil(COST / (g * (sh / 100)))} extra closings at these numbers to break even.`;
+  return { kept, net, roi, keptW: (kept / top) * 100, costW: (COST / top) * 100, line };
+};
+const d0 = calc(D.closings, D.gci, D.share);
+
+const bios = {
+  'Mitch Boraski': "Mitch is the broker and owner of a Charlotte real estate practice ranked in the top 1.5% of eXp Realty agents worldwide. He reads your audit from the owner's chair, because he sits in one.",
+  'Adam Kerr': 'Adam builds and runs the private system behind your audit, your daily briefs and your scorecard.',
+};
+
+const faq = [
+  { q: 'Do we have to leave Follow Up Boss?', a: 'No. Follow Up Boss stays exactly as it is. We connect to it, read from it, and write tasks and notes back into it. Nothing is replaced and your agents keep working where they work today.' },
+  { q: 'We already have dashboards and reporting. How is this different?', a: 'Reporting shows you the problem and leaves the work to your team. We do the work: we find the specific leads, put them in front of the right agent every morning, chase what gets skipped, and run the old database ourselves. The scorecard is there to prove it, not to be the product.' },
+  { q: 'We do not use Zillow. Does this still work?', a: 'Yes. The audit reads whatever sources feed your Follow Up Boss, including Realtor.com, Google Ads, Facebook and your own website. The dollar figure in our case study came from a Zillow team, and we will tell you plainly how your mix compares once we have your numbers.' },
+  { q: 'What do our agents have to do differently?', a: 'Read one message a day and make the calls on it. There is no new login and nothing to install. Your part as the owner is a single 60-minute kickoff.' },
+  { q: 'Where does our data go?', a: 'It runs on a private Deepvine instance dedicated to your team, under a signed agreement. It is never used to train shared models, and we sell neither leads nor a CRM, so nobody on our side benefits from what your numbers say.' },
+  { q: 'What if the audit does not find much?', a: 'Then we tell you not to hire us. If the audit finds less than $84,000 a year in leaking commission, you owe nothing and the engagement does not start.' },
+  { q: 'What happens after 12 months?', a: 'You can continue month to month, add the full team knowledge layer, or stop. Your data and your baseline are yours either way.' },
+];
+---
+<Base title={title} description={description} path="/commission-recovery/" noindex minimal>
+  <a slot="header-cta" class="btn btn--dark btn--sm" href={CALENDLY} target="_blank" rel="noopener">{cta} <span class="arrow">→</span></a>
+
+  <PageHero
+    eyebrow="Commission Recovery · For real estate team owners"
+    title="You paid for every lead in your CRM.<br>We recover the commission your team didn't collect."
+    lead="You already have the CRM and the dashboards. We find the commission that slipped through, do the work to recover it, and guarantee the number before you pay us anything."
+    chips={['Free 5-day audit', 'Done for you', 'Nothing to install', '$84K floor, guaranteed']}
+    actions={[{ label: cta, href: CALENDLY }]}
+    note="Private offer, shared by invitation. For teams on Follow Up Boss that pay for their leads."
+  />
+
+  <section class="sources" aria-label="Lead sources we audit">
+    <ul class="container sources__row">
+      <li><strong>If it lands in Follow Up Boss, we can show you what it's leaking:</strong></li>
+      {sources.map((s) => <li>{s}</li>)}
+    </ul>
+  </section>
+
+  <section class="stats">
+    <div class="container stats__grid">
+      <div class="stat"><strong>5 days</strong><span>From read-only access to your leak number</span></div>
+      <div class="stat"><strong>$84K</strong><span>If the audit finds less, we tell you not to hire us</span></div>
+      <div class="stat"><strong>Day 14</strong><span>First recovery campaign running on your old leads</span></div>
+    </div>
+  </section>
+
+  <section class="qa">
+    <div class="container qa__row">
+      <div class="qa__side"><span class="qa__num">01 · The problem</span><h2>The leads were bought. The commission was not collected.</h2></div>
+      <div class="qa__body">
+        <p>Every team that buys leads at volume leaks some of them. It is not a people problem. It is what happens when hundreds of new names arrive every month and each agent decides alone who gets the next call.</p>
+        <div class="ucards">
+          {leaks.map((l) => <div class="ucard"><strong>{l.t}</strong><span>{l.d}</span></div>)}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="qa qa--band">
+    <div class="container qa__row">
+      <div class="qa__side"><span class="qa__num">02 · What we do</span><h2>We do the recovery. Your team makes the calls.</h2></div>
+      <div class="qa__body">
+        <p>Software hands you a report and leaves the rest to you. This is a managed service. Deepvine runs every step below, and your agents answer one message a day.</p>
+        <ol class="steps steps--2col">
+          {timeline.map((s) => <li class="step"><span class="step__n">{s.n}</span><strong>{s.t}</strong><span>{s.d}</span></li>)}
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section class="qa">
+    <div class="container qa__row">
+      <div class="qa__side"><span class="qa__num">03 · Proof</span><h2>What one audit found.</h2></div>
+      <div class="qa__body">
+        <div class="proof">
+          <p class="proof__label">Client result · team name withheld</p>
+          <p class="proof__num">$119K to $198K a year</p>
+          <p>In commission leaking from the follow-up funnel of a team closing more than 400 transactions a year. We found it by joining their Follow Up Boss data with their lead source metrics across a 90-day cohort.</p>
+          <p class="proof__fine">This is the amount identified by the audit at one team, not a promise of what yours will show. Your audit produces your own number.</p>
+        </div>
+        <p>That team was already running Follow Up Boss and a paid lead program at scale. The leak was still there, because finding it and working it every day is a job nobody on a busy team owns.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="qa qa--band">
+    <div class="container qa__row">
+      <div class="qa__side"><span class="qa__num">04 · The math</span><h2>About six extra closings covers the first year.</h2></div>
+      <div class="qa__body">
+        <p>Six extra closings a year is roughly where this pays for itself, so that is where the example starts. Move the sliders to match your team and see what year one returns.</p>
+        <div class="calc" data-calc data-cost={COST}>
+          <div class="calc__inputs">
+            <label class="calc__field">
+              <span class="calc__label">Extra closings per year <output data-out="closings">{D.closings}</output></span>
+              <input type="range" min="1" max="40" step="1" value={D.closings} data-in="closings" aria-label="Extra closings per year">
+              <span class="calc__scale"><span>1</span><span>40</span></span>
+            </label>
+            <label class="calc__field">
+              <span class="calc__label">Average commission per closing <output data-out="gci">{usd(D.gci)}</output></span>
+              <input type="range" min="5000" max="30000" step="500" value={D.gci} data-in="gci" aria-label="Average commission per closing">
+              <span class="calc__scale"><span>$5,000</span><span>$30,000</span></span>
+            </label>
+            <label class="calc__field">
+              <span class="calc__label">Share the company keeps after agent splits <output data-out="share">{D.share}%</output></span>
+              <input type="range" min="20" max="100" step="5" value={D.share} data-in="share" aria-label="Share of commission the company keeps">
+              <span class="calc__scale"><span>20%</span><span>100%</span></span>
+            </label>
+          </div>
+          <div class="calc__results" aria-live="polite">
+            <div class="calc__big">
+              <div><span class="calc__cap">Year one return</span><strong data-out="net">{signed(d0.net)}</strong></div>
+              <div><span class="calc__cap">Year one ROI</span><strong data-out="roi">{pct(d0.roi)}</strong></div>
+            </div>
+            <div class="calc__bars">
+              <div class="calc__bar"><span>Commission your company keeps</span><b data-out="kept">{usd(d0.kept)}</b><i><em data-bar="kept" style={`width:${d0.keptW}%`}></em></i></div>
+              <div class="calc__bar calc__bar--cost"><span>Year one cost</span><b>{usd(COST)}</b><i><em data-bar="cost" style={`width:${d0.costW}%`}></em></i></div>
+            </div>
+            <p class="calc__line" data-out="line">{d0.line}</p>
+          </div>
+        </div>
+        <p class="qa__fine">How it is calculated: extra closings × average commission × company share, minus the $28,000 year one cost ($10,000 install plus 12 months at $1,500). ROI is that return divided by the cost.</p>
+        <p class="qa__fine">An estimate from the numbers you enter, not a promise of results. Your audit replaces these with your own figures.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="qa">
+    <div class="container qa__row">
+      <div class="qa__side"><span class="qa__num">05 · Pricing</span><h2>You see your number before you pay anything.</h2></div>
+      <div class="qa__body">
+        <div class="offer offer--wide">
+          <ul class="offer__lines">
+            <li><span>Leak Audit<small>5 business days, read-only, for qualified teams</small></span><strong>Free</strong></li>
+            <li><span>Install<small>Due only after your audit clears the $84K floor</small></span><strong>$10,000</strong></li>
+            <li><span>Managed Recovery<small>12 months. Briefs, escalation, revival campaigns, scorecard, quarterly re-audit</small></span><strong>$1,500 / month</strong></li>
+          </ul>
+          <h3>Two guarantees</h3>
+          <ul class="offer__points">
+            <li><strong>Before you pay:</strong> if the audit finds less than $84,000 a year in leaking commission, we tell you not to hire us.</li>
+            <li><strong>Day 90:</strong> if follow-up completion has not improved against your baseline, you can leave.</li>
+          </ul>
+          <a class="btn btn--dark" href={CALENDLY} target="_blank" rel="noopener">{cta} <span class="arrow">→</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="qa qa--band">
+    <div class="container qa__row">
+      <div class="qa__side"><span class="qa__num">06 · Fit</span><h2>Built for a specific kind of team.</h2></div>
+      <div class="qa__body">
+        <div class="fit">
+          <div class="fit__col">
+            <h3>This is for you if</h3>
+            <ul>
+              <li>Your team runs on Follow Up Boss</li>
+              <li>You pay for leads, up front or at closing</li>
+              <li>You close about 170 or more transactions a year, or spend about $10,000 or more a month on leads</li>
+              <li>You want the work done, not another login</li>
+            </ul>
+          </div>
+          <div class="fit__col fit__col--no">
+            <h3>This is not for you if</h3>
+            <ul>
+              <li>You are a solo agent working mostly referrals</li>
+              <li>Your team is small enough that you already see every lead yourself</li>
+              <li>You are looking for a new CRM or a marketing content tool</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Faq items={faq} heading="Questions, answered." />
+
+  <Founders eyebrow="Who you'll talk to" heading="Your audit readout is with a founder." lead="We take on a small number of teams each month, because every install is hands-on." band={false} bios={bios} />
+
+  <CtaBand heading="Bring us your<br>Follow Up Boss." sub="In five business days we'll show you what it's leaking, by agent and by source, in dollars." label={cta} caption="Your<br>number,<br>before<br>you pay." />
+</Base>
+
+<script>
+  // ROI calculator: same arithmetic as the server-rendered default in the frontmatter.
+  document.querySelectorAll<HTMLElement>('[data-calc]').forEach((root) => {
+    const COST = Number(root.dataset.cost);
+    const el = (k: string) => root.querySelector<HTMLElement>(`[data-out="${k}"]`)!;
+    const inp = (k: string) => root.querySelector<HTMLInputElement>(`[data-in="${k}"]`)!;
+    const bar = (k: string) => root.querySelector<HTMLElement>(`[data-bar="${k}"]`)!;
+    const usd = (n: number) => '$' + Math.round(n).toLocaleString('en-US');
+    const sign = (n: number) => (n < 0 ? '-' : '+');
+    const fill = (i: HTMLInputElement) => i.style.setProperty('--fill', ((Number(i.value) - Number(i.min)) / (Number(i.max) - Number(i.min))) * 100 + '%');
+    const update = () => {
+      const c = Number(inp('closings').value), g = Number(inp('gci').value), sh = Number(inp('share').value);
+      const kept = c * g * (sh / 100), net = kept - COST, roi = (net / COST) * 100, top = Math.max(kept, COST);
+      el('closings').textContent = String(c);
+      el('gci').textContent = usd(g);
+      el('share').textContent = sh + '%';
+      el('kept').textContent = usd(kept);
+      el('net').textContent = sign(net) + usd(Math.abs(net));
+      el('roi').textContent = sign(roi) + Math.abs(Math.round(roi)) + '%';
+      el('line').textContent = net >= 0
+        ? `Every dollar spent returns $${(kept / COST).toFixed(2)} in commission your company keeps.`
+        : `Not yet covered. You need ${Math.ceil(COST / (g * (sh / 100)))} extra closings at these numbers to break even.`;
+      root.classList.toggle('calc--neg', net < 0);
+      bar('kept').style.width = (kept / top) * 100 + '%';
+      bar('cost').style.width = (COST / top) * 100 + '%';
+      ['closings', 'gci', 'share'].forEach((k) => fill(inp(k)));
+    };
+    root.addEventListener('input', update);
+    update();
+  });
+</script>
