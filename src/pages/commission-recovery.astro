@@ -22,12 +22,12 @@ const leaks = [
 ];
 
 const timeline = [
-  { n: '1', t: 'Days 1 to 5: Leak Audit', d: 'Read-only access to Follow Up Boss, joined with your lead spend and closed deals. You get one number: the commission leaking each year, by agent and by source.' },
-  { n: '2', t: 'Day 7: Daily agent briefs', d: 'Every morning each agent gets their five most valuable moves by text, email or Slack, written from your own follow-up standards.' },
-  { n: '3', t: 'Day 14: Dead database revival', d: 'We run the first campaign on your old and unworked leads, through your own accounts, and hand each reply to an agent at the appointment.' },
-  { n: '4', t: 'Day 30: Owner scorecard', d: 'One message every Monday: what was recovered, what stalled, and who stalled it, in dollars.' },
-  { n: '5', t: 'Every day: Escalation', d: 'Moves an agent skipped yesterday reach you this morning, with the value of the lead attached.' },
-  { n: '6', t: 'Every quarter: Re-audit', d: 'We measure against the baseline from your audit, so progress is a number and not an opinion.' },
+  { when: 'Days 1 to 5', t: 'Leak Audit', d: 'Read-only access to Follow Up Boss, joined with your lead spend and closed deals. You get one number: the commission leaking each year, by agent and by source.' },
+  { when: 'Day 7', t: 'Daily agent briefs', d: 'Every morning each agent gets their five most valuable moves by text, email or Slack, written from your own follow-up standards.' },
+  { when: 'Day 14', t: 'Dead database revival', d: 'We run the first campaign on your old and unworked leads, through your own accounts, and hand each reply to an agent at the appointment.' },
+  { when: 'Day 30', t: 'Owner scorecard', d: 'One message every Monday: what was recovered, what stalled, and who stalled it, in dollars.' },
+  { when: 'Every day', t: 'Escalation', d: 'Moves an agent skipped yesterday reach you this morning, with the value of the lead attached.' },
+  { when: 'Every quarter', t: 'Re-audit', d: 'We measure against the baseline from your audit, so progress is a number and not an opinion.' },
 ];
 
 // ROI calculator (section 04). Server-renders the default state so the page reads correctly before the script runs.
@@ -72,8 +72,8 @@ const faq = [
     note="Private offer, shared by invitation. For teams on Follow Up Boss that pay for their leads."
   />
 
-  <section class="sources" aria-label="Lead sources we audit">
-    <ul class="container sources__row">
+  <section class="leadsrc" aria-label="Lead sources we audit">
+    <ul class="container leadsrc__row">
       <li><strong>If it lands in Follow Up Boss, we can show you what it's leaking:</strong></li>
       {sources.map((s) => <li>{s}</li>)}
     </ul>
@@ -104,9 +104,93 @@ const faq = [
       <div class="qa__side"><span class="qa__num">02 · What we do</span><h2>We do the recovery. Your team makes the calls.</h2></div>
       <div class="qa__body">
         <p>Software hands you a report and leaves the rest to you. This is a managed service. Deepvine runs every step below, and your agents answer one message a day.</p>
-        <ol class="steps steps--2col">
-          {timeline.map((s) => <li class="step"><span class="step__n">{s.n}</span><strong>{s.t}</strong><span>{s.d}</span></li>)}
-        </ol>
+        <div class="tl" data-flow>
+          <ol class="tl__steps">
+            {timeline.map((s, i) => (
+              <li class:list={['tl__item', { 'is-active': i === 0 }]}>
+                <button type="button" class="tl__btn" aria-current={i === 0 ? 'step' : undefined}>
+                  <span class="tl__when">{s.when}</span>
+                  <strong>{s.t}</strong>
+                </button>
+                <p class="tl__desc">{s.d}</p>
+                <div class="sv-stage">
+                  {i === 0 && (
+                    <div class="sv-card" aria-hidden="true">
+                      <p class="sv-card__head"><span>Leak audit</span><em>Sample</em></p>
+                      <p class="sv-num">$142,000</p>
+                      <p class="sv-sub">leaking per year</p>
+                      <div class="sv-bars">
+                        <div><span>Zillow</span><i><b class="a-grow" style="--w:82%"></b></i></div>
+                        <div><span>Google Ads</span><i><b class="a-grow" style="--w:54%"></b></i></div>
+                        <div><span>Website</span><i><b class="a-grow" style="--w:31%"></b></i></div>
+                      </div>
+                    </div>
+                  )}
+                  {i === 1 && (
+                    <div class="sv-card" aria-hidden="true">
+                      <p class="sv-card__head"><span>Your five for today</span><em>7:30 AM</em></p>
+                      <ul class="sv-list">
+                        <li class="a-in" style="--i:0"><u></u>Seller lead, day 3, no call yet</li>
+                        <li class="a-in" style="--i:1"><u></u>Buyer asked for a showing Friday</li>
+                        <li class="a-in" style="--i:2"><u></u>Pre-approved, gone quiet 9 days</li>
+                        <li class="a-in" style="--i:3"><u></u>Past client, home value request</li>
+                        <li class="a-in" style="--i:4"><u></u>Open house sign-in, two visits</li>
+                      </ul>
+                    </div>
+                  )}
+                  {i === 2 && (
+                    <div class="sv-card" aria-hidden="true">
+                      <p class="sv-card__head"><span>Old leads</span><em>Sample</em></p>
+                      <ul class="sv-rows">
+                        <li>Lead from 2023<small>No reply</small></li>
+                        <li class="is-hot a-in" style="--i:1">Lead from 2024<small>Replied</small></li>
+                        <li>Lead from 2022<small>No reply</small></li>
+                      </ul>
+                      <p class="sv-bubble a-in" style="--i:3">Yes, still looking. Can someone call me?</p>
+                      <p class="sv-tag a-in" style="--i:5">Handed to an agent</p>
+                    </div>
+                  )}
+                  {i === 3 && (
+                    <div class="sv-card" aria-hidden="true">
+                      <p class="sv-card__head"><span>Monday scorecard</span><em>Sample</em></p>
+                      <div class="sv-tiles">
+                        <div><b>$18,400</b><span>Recovered</span></div>
+                        <div class="is-warn"><b>$9,200</b><span>Stalled</span></div>
+                      </div>
+                      <p class="sv-sub sv-sub--gap">Stalled, by agent</p>
+                      <div class="sv-bars sv-bars--warn">
+                        <div><span>Agent A</span><i><b class="a-grow" style="--w:68%"></b></i></div>
+                        <div><span>Agent B</span><i><b class="a-grow" style="--w:24%"></b></i></div>
+                      </div>
+                    </div>
+                  )}
+                  {i === 4 && (
+                    <div class="sv-card" aria-hidden="true">
+                      <p class="sv-card__head"><span>Missed yesterday</span><em>Sample</em></p>
+                      <ul class="sv-alerts">
+                        <li class="a-in" style="--i:0"><u>A</u><span>Seller lead<small>No call in 48 hours</small></span><b>$7,500</b></li>
+                        <li class="a-in" style="--i:2"><u>B</u><span>Showing request<small>Not answered</small></span><b>$5,000</b></li>
+                      </ul>
+                    </div>
+                  )}
+                  {i === 5 && (
+                    <div class="sv-card" aria-hidden="true">
+                      <p class="sv-card__head"><span>Follow-up completed</span><em>Sample</em></p>
+                      <div class="sv-cols">
+                        <div><i><b class="a-rise" style="--h:38%"></b></i><span>Baseline</span></div>
+                        <div><i><b class="a-rise" style="--h:58%"></b></i><span>Q1</span></div>
+                        <div><i><b class="a-rise" style="--h:74%"></b></i><span>Q2</span></div>
+                        <div><i><b class="a-rise" style="--h:86%"></b></i><span>Q3</span></div>
+                      </div>
+                    </div>
+                  )}
+                  <p class="sv-stage__desc">{s.d}</p>
+                </div>
+              </li>
+            ))}
+          </ol>
+        </div>
+        <p class="qa__fine tl__note">The panels show sample screens with made-up figures.</p>
       </div>
     </div>
   </section>
@@ -223,6 +307,25 @@ const faq = [
 </Base>
 
 <script>
+  // Step-by-step timeline: selecting a step shows its sample screen. Without this script every step and screen is simply shown.
+  document.querySelectorAll<HTMLElement>('[data-flow]').forEach((root) => {
+    const items = Array.from(root.querySelectorAll<HTMLElement>('.tl__item'));
+    const pick = (li: HTMLElement) => items.forEach((x) => {
+      const on = x === li;
+      x.classList.toggle('is-active', on);
+      const b = x.querySelector('.tl__btn')!;
+      on ? b.setAttribute('aria-current', 'step') : b.removeAttribute('aria-current');
+    });
+    const hover = window.matchMedia('(hover: hover) and (min-width: 901px)');
+    items.forEach((li) => {
+      const b = li.querySelector<HTMLElement>('.tl__btn')!;
+      b.addEventListener('click', () => pick(li));
+      b.addEventListener('focus', () => pick(li));
+      b.addEventListener('mouseenter', () => { if (hover.matches) pick(li); });
+    });
+    root.classList.add('is-js');
+  });
+
   // ROI calculator: same arithmetic as the server-rendered default in the frontmatter.
   document.querySelectorAll<HTMLElement>('[data-calc]').forEach((root) => {
     const COST = Number(root.dataset.cost);
