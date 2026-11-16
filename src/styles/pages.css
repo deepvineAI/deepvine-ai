@@ -486,3 +486,32 @@
   .tl.is-js .is-active .a-rise{animation:vRise .7s cubic-bezier(.2,.7,.2,1) both}
   .tl.is-js .is-active .a-in{animation:vIn .4s ease both;animation-delay:calc(var(--i,0) * 110ms + 80ms)}
 }
+
+/* Split page hero + lead field illustration (offer page) ------------------ */
+.phero--split .phero__inner{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);gap:clamp(32px,5vw,72px);align-items:center}
+.phero--split .phero__copy{max-width:none}
+.phero--split h1{font-size:clamp(31px,3.15vw,45px);line-height:1.1;letter-spacing:-.032em;margin-bottom:24px;text-wrap:balance}
+.phero--split h1 span{display:block}
+.phero--split h1 span+span{margin-top:.34em}
+.leadfield{margin:0;background:radial-gradient(120% 90% at 85% 0%,#1b3a28 0%,var(--green-900) 62%);border-radius:24px;padding:clamp(22px,2.6vw,34px);color:#fff;box-shadow:0 40px 80px -44px rgba(14,27,17,.75)}
+.leadfield__title{font-size:14px;font-weight:600;color:#cfdad2;margin-bottom:20px}
+.leadfield__grid{display:grid;grid-template-columns:repeat(14,1fr);gap:clamp(5px,.75vw,10px)}
+.leadfield__grid i{display:block;aspect-ratio:1;border-radius:50%}
+.leadfield__grid .is-worked{background:rgba(255,255,255,.2)}
+.leadfield__grid .is-missed{box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.34)}
+.leadfield__grid .is-won{background:var(--green-500);box-shadow:0 0 0 3px rgba(34,197,94,.2)}
+.leadfield__key{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:22px;padding-top:18px;border-top:1px solid rgba(255,255,255,.14);font-size:13px;color:#cfdad2}
+.leadfield__key li{display:flex;align-items:center;gap:8px}
+.leadfield__key li::before{content:"";width:10px;height:10px;border-radius:50%;flex:none}
+.leadfield__key .is-worked::before{background:rgba(255,255,255,.2)}
+.leadfield__key .is-missed::before{box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.34)}
+.leadfield__key .is-won::before{background:var(--green-500)}
+@keyframes leadWon{from{background:transparent;box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.34)}}
+@media (prefers-reduced-motion:no-preference){
+  .leadfield__grid .is-won{animation:leadWon .5s ease both;animation-delay:var(--d,0ms)}
+}
+@media (max-width:980px){
+  .phero--split .phero__inner{grid-template-columns:minmax(0,1fr)}
+  .phero--split h1{font-size:clamp(31px,6vw,44px)}
+  .leadfield{max-width:520px}
+}
