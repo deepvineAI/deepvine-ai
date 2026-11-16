@@ -19,12 +19,15 @@ interface Props {
   publishedTime?: string;
   modifiedTime?: string;
   bodyClass?: string;
+  noindex?: boolean;                  // unlisted pages: keep out of search (also excluded from the sitemap in astro.config.mjs)
+  minimal?: boolean;                  // offer pages: logo-only header and slim footer, no links out
 }
 const {
   title, description, path,
   ogTitle = title, ogDescription = description,
   ogImage = DEFAULT_OG, ogType = 'website',
   schema = [], graph = [], preloadHero = false, publishedTime, modifiedTime, bodyClass,
+  noindex = false, minimal = false,
 } = Astro.props;
 const canonical = SITE + path;
 const ld = [
@@ -50,7 +53,7 @@ const ld = [
 <title>{title}</title>
 <meta name="description" content={description}>
 <link rel="canonical" href={canonical}>
-<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta name="robots" content={noindex ? 'noindex, nofollow, noarchive' : 'index, follow, max-image-preview:large, max-snippet:-1'}>
 <meta name="theme-color" content="#fbfbfa">
 
 <!-- Open Graph -->
@@ -90,11 +93,25 @@ const ld = [
 {ld.map((json) => <script type="application/ld+json" is:inline set:html={json} />)}
 </head>
 <body class={bodyClass}>
-<Nav />
+{minimal ? (
+  <header class="nav nav--minimal">
+    <div class="container nav__bar">
+      <span class="brand"><img class="brand__logo" src="/assets/img/logo-lockup-156.png" width="526" height="156" alt="Deepvine.AI"></span>
+      <slot name="header-cta" />
+    </div>
+  </header>
+) : <Nav />}
 <main>
   <slot />
 </main>
-<Footer />
+{minimal ? (
+  <footer class="footer footer--minimal">
+    <div class="container footer__bottom">
+      <span>© 2026 Deepvine.AI · <a href="mailto:info@deepvine.ai">info@deepvine.ai</a></span>
+      <span><a href="/privacy/">Privacy</a> · <a href="/terms/">Terms</a></span>
+    </div>
+  </footer>
+) : <Footer />}
 <script src="../scripts/site.js"></script>
 </body>
 </html>
