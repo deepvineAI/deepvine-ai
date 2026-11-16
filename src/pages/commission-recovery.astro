@@ -32,7 +32,7 @@ const timeline = [
 
 // ROI calculator (section 04). Server-renders the default state so the page reads correctly before the script runs.
 const COST = 10000 + 12 * 1500;
-const D = { closings: 18, gci: 10000, share: 50 };
+const D = { closings: 6, gci: 10000, share: 50 };
 const usd = (n: number) => '$' + Math.round(n).toLocaleString('en-US');
 const signed = (n: number) => (n < 0 ? '-' : '+') + usd(Math.abs(n));
 const pct = (n: number) => (n < 0 ? '-' : '+') + Math.abs(Math.round(n)) + '%';
@@ -130,7 +130,7 @@ const faq = [
     <div class="container qa__row">
       <div class="qa__side"><span class="qa__num">04 · The math</span><h2>About six extra closings covers the first year.</h2></div>
       <div class="qa__body">
-        <p>Six extra closings a year is roughly where this pays for itself. The example below starts at 18, which is half a point of conversion on 300 paid leads a month. Move the sliders to match your team.</p>
+        <p>Six extra closings a year is roughly where this pays for itself, so that is where the example starts. Move the sliders to match your team and see what year one returns.</p>
         <div class="calc" data-calc data-cost={COST}>
           <div class="calc__inputs">
             <label class="calc__field">
