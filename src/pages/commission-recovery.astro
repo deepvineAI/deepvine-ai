@@ -11,17 +11,16 @@ const title = 'Commission Recovery for Real Estate Teams | Deepvine.AI';
 const description = 'We find the commission your team already paid for and did not collect, show you the leak before you pay, and do the work to recover it. Free 5-day audit for qualified teams.';
 const cta = 'See if your team qualifies';
 
-const sources = ['Zillow', 'Realtor.com', 'Google Ads', 'Facebook', 'Homes.com', 'Your website'];
+const sources = ['Zillow', 'Realtor.com', 'Google Ads', 'Facebook', 'Homes.com', 'your website'];
 
 const leaks = [
-  { t: 'Leads that never got a call', d: 'They came in on a busy afternoon or a weekend, and nobody circled back.' },
-  { t: 'Leads dropped after two touches', d: 'Most buyers and sellers take far longer than that to answer. The follow-up stopped first.' },
-  { t: 'An old database nobody works', d: 'Thousands of people who once raised their hand, sitting untouched since the month they came in.' },
-  { t: 'No view by agent or by source', d: 'You can see activity. You cannot see what each agent and each lead source is costing you per closing.' },
+  { t: 'Never called', d: 'Leads that came in on a busy afternoon or a weekend. Nobody circled back.' },
+  { t: 'Dropped after two touches', d: 'Most buyers and sellers take far longer than that to answer. The follow-up stopped first.' },
+  { t: 'Old leads nobody works', d: 'Thousands of people who once raised their hand, untouched since the month they came in.' },
+  { t: 'No view of the cost', d: 'You can see activity. You cannot see what each agent and each lead source costs you per closing.' },
 ];
 
 const timeline = [
-  { when: 'Days 1 to 5', t: 'Leak Audit', d: 'Read-only access to Follow Up Boss, joined with your lead spend and closed deals. You get one number: the commission leaking each year, by agent and by source.' },
   { when: 'Day 7', t: 'Daily agent briefs', d: 'Every morning each agent gets their five most valuable moves by text, email or Slack, written from your own follow-up standards.' },
   { when: 'Day 14', t: 'Dead database revival', d: 'Your follow-up rules, applied to the old and unworked leads nobody has touched. Outreach goes through your own accounts and action plans, and each reply is handed to an agent.' },
   { when: 'Day 30', t: 'Owner scorecard', d: 'One message every Monday: what was recovered, what stalled, and who stalled it, in dollars.' },
@@ -90,38 +89,56 @@ const faq = [
     </figure>
   </PageHero>
 
-  <section class="leadsrc" aria-label="Lead sources we audit">
-    <ul class="container leadsrc__row">
-      <li><strong>If it lands in Follow Up Boss, we can show you what it's leaking:</strong></li>
-      {sources.map((s) => <li>{s}</li>)}
-    </ul>
+  <section class="cr-problem">
+    <div class="container">
+      <div class="cr-problem__head">
+        <span class="eyebrow">The problem</span>
+        <h2>Your team bought the leads. Nobody worked all of them.</h2>
+        <p class="cr-problem__lead">Hundreds of new names arrive every month, and each agent decides alone who gets the next call. Some leads always fall through. These are the four places the commission goes.</p>
+      </div>
+      <ul class="cr-problem__grid">
+        {leaks.map((l) => <li class="cr-leak"><i aria-hidden="true"></i><strong>{l.t}</strong><span>{l.d}</span></li>)}
+      </ul>
+      <p class="cr-problem__close">You already paid for every one of them.</p>
+    </div>
   </section>
 
-  <section class="stats">
-    <div class="container stats__grid">
-      <div class="stat"><strong>5 days</strong><span>From read-only access to your leak number</span></div>
-      <div class="stat"><strong>$84K</strong><span>If the audit finds less, we tell you not to hire us</span></div>
-      <div class="stat"><strong>Day 14</strong><span>Your follow-up rules running on your old leads</span></div>
+  <section class="cr-audit">
+    <div class="container cr-audit__row">
+      <div class="cr-audit__copy">
+        <span class="eyebrow">How it works · Step 1</span>
+        <h2>A free audit. Five business days.</h2>
+        <p>Give us read-only access to Follow Up Boss. We join it with your lead spend and closed deals, and hand you one number: the commission leaking each year, by agent and by source.</p>
+        <p class="cr-audit__rule">If we find less than $84,000 a year, don't hire us.</p>
+        <ul class="cr-audit__checks">
+          <li>Free for qualified teams</li>
+          <li>Nothing to install</li>
+          <li>Nothing changes in your CRM</li>
+        </ul>
+        <a class="btn btn--dark" href={CALENDLY} target="_blank" rel="noopener">{cta} <span class="arrow">→</span></a>
+        <p class="cr-audit__src">Works with whatever feeds your Follow Up Boss: {sources.join(', ')}.</p>
+      </div>
+      <div class="sv-stage cr-audit__shot">
+        <div class="sv-card" aria-hidden="true">
+        <p class="sv-card__head"><span>Leak audit</span><em>Sample</em></p>
+        <p class="sv-num">$142,000</p>
+        <p class="sv-sub">leaking per year</p>
+        <div class="sv-bars">
+        <div><span>Zillow</span><i><b class="a-grow" style="--w:82%"></b></i></div>
+        <div><span>Google Ads</span><i><b class="a-grow" style="--w:54%"></b></i></div>
+        <div><span>Website</span><i><b class="a-grow" style="--w:31%"></b></i></div>
+        </div>
+        </div>
+        <p class="cr-audit__cap">A sample of what you receive. Figures are made up.</p>
+      </div>
     </div>
   </section>
 
   <section class="qa">
     <div class="container qa__row">
-      <div class="qa__side"><span class="qa__num">01 · The problem</span><h2>The leads were bought. The commission was not collected.</h2></div>
+      <div class="qa__side"><span class="qa__num">How it works · Step 2</span><h2>We do the recovery. Your team makes the calls.</h2></div>
       <div class="qa__body">
-        <p>Every team that buys leads at volume leaks some of them. It is not a people problem. It is what happens when hundreds of new names arrive every month and each agent decides alone who gets the next call.</p>
-        <div class="ucards">
-          {leaks.map((l) => <div class="ucard"><strong>{l.t}</strong><span>{l.d}</span></div>)}
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="qa qa--band">
-    <div class="container qa__row">
-      <div class="qa__side"><span class="qa__num">02 · What we do</span><h2>We do the recovery. Your team makes the calls.</h2></div>
-      <div class="qa__body">
-        <p><strong>You already have follow-up rules. We make sure every lead in your CRM actually gets them.</strong></p>
+        <p><strong>If the audit clears the bar and you hire us, this is what happens. You already have follow-up rules. We make sure every lead in your CRM actually gets them.</strong></p>
         <p>We take your team's own standards, steps and scripts, build them into the system, and apply them to every lead, every day. We don't bring our own campaigns. We enforce yours. Your agents answer one message a day.</p>
         <div class="tl" data-flow>
           <ol class="tl__steps">
@@ -135,18 +152,6 @@ const faq = [
                 <div class="sv-stage">
                   {i === 0 && (
                     <div class="sv-card" aria-hidden="true">
-                      <p class="sv-card__head"><span>Leak audit</span><em>Sample</em></p>
-                      <p class="sv-num">$142,000</p>
-                      <p class="sv-sub">leaking per year</p>
-                      <div class="sv-bars">
-                        <div><span>Zillow</span><i><b class="a-grow" style="--w:82%"></b></i></div>
-                        <div><span>Google Ads</span><i><b class="a-grow" style="--w:54%"></b></i></div>
-                        <div><span>Website</span><i><b class="a-grow" style="--w:31%"></b></i></div>
-                      </div>
-                    </div>
-                  )}
-                  {i === 1 && (
-                    <div class="sv-card" aria-hidden="true">
                       <p class="sv-card__head"><span>Your five for today</span><em>7:30 AM</em></p>
                       <ul class="sv-list">
                         <li class="a-in" style="--i:0"><u></u>Seller lead, day 3, no call yet</li>
@@ -157,7 +162,7 @@ const faq = [
                       </ul>
                     </div>
                   )}
-                  {i === 2 && (
+                  {i === 1 && (
                     <div class="sv-card" aria-hidden="true">
                       <p class="sv-card__head"><span>Old leads</span><em>Sample</em></p>
                       <ul class="sv-rows">
@@ -169,7 +174,7 @@ const faq = [
                       <p class="sv-tag a-in" style="--i:5">Handed to an agent</p>
                     </div>
                   )}
-                  {i === 3 && (
+                  {i === 2 && (
                     <div class="sv-card" aria-hidden="true">
                       <p class="sv-card__head"><span>Monday scorecard</span><em>Sample</em></p>
                       <div class="sv-tiles">
@@ -183,7 +188,7 @@ const faq = [
                       </div>
                     </div>
                   )}
-                  {i === 4 && (
+                  {i === 3 && (
                     <div class="sv-card" aria-hidden="true">
                       <p class="sv-card__head"><span>Missed yesterday</span><em>Sample</em></p>
                       <ul class="sv-alerts">
@@ -192,7 +197,7 @@ const faq = [
                       </ul>
                     </div>
                   )}
-                  {i === 5 && (
+                  {i === 4 && (
                     <div class="sv-card" aria-hidden="true">
                       <p class="sv-card__head"><span>Follow-up completed</span><em>Sample</em></p>
                       <div class="sv-cols">
@@ -214,9 +219,9 @@ const faq = [
     </div>
   </section>
 
-  <section class="qa">
+  <section class="qa qa--band">
     <div class="container qa__row">
-      <div class="qa__side"><span class="qa__num">03 · Proof</span><h2>What one audit found.</h2></div>
+      <div class="qa__side"><span class="qa__num">Proof</span><h2>What one audit found.</h2></div>
       <div class="qa__body">
         <div class="proof">
           <p class="proof__label">Client result · team name withheld</p>
@@ -229,9 +234,9 @@ const faq = [
     </div>
   </section>
 
-  <section class="qa qa--band">
+  <section class="qa">
     <div class="container qa__row">
-      <div class="qa__side"><span class="qa__num">04 · The math</span><h2>About five extra closings covers the first year.</h2></div>
+      <div class="qa__side"><span class="qa__num">The math</span><h2>About five extra closings covers the first year.</h2></div>
       <div class="qa__body">
         <p>At a $13,500 average commission, five extra closings a year covers the cost. The example starts at six. Move the sliders to match your team and see what year one returns.</p>
         <div class="calc" data-calc data-cost={COST}>
@@ -270,9 +275,9 @@ const faq = [
     </div>
   </section>
 
-  <section class="qa">
+  <section class="qa qa--band">
     <div class="container qa__row">
-      <div class="qa__side"><span class="qa__num">05 · Pricing</span><h2>You see your number before you pay anything.</h2></div>
+      <div class="qa__side"><span class="qa__num">Pricing</span><h2>You see your number before you pay anything.</h2></div>
       <div class="qa__body">
         <div class="offer offer--wide">
           <ul class="offer__lines">
@@ -291,9 +296,9 @@ const faq = [
     </div>
   </section>
 
-  <section class="qa qa--band">
+  <section class="qa">
     <div class="container qa__row">
-      <div class="qa__side"><span class="qa__num">06 · Fit</span><h2>Built for a specific kind of team.</h2></div>
+      <div class="qa__side"><span class="qa__num">Fit</span><h2>Built for a specific kind of team.</h2></div>
       <div class="qa__body">
         <div class="fit">
           <div class="fit__col">
