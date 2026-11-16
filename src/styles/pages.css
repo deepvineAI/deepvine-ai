@@ -381,3 +381,31 @@
   .nav--minimal .btn--sm{padding:10px 14px;font-size:13px;white-space:nowrap;gap:6px}
   .nav--minimal .brand__logo{max-width:118px;height:auto}
 }
+
+/* ROI calculator (offer page) -------------------------------------------- */
+.calc{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:0;background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:0 1px 2px rgba(16,16,16,.04);margin:6px 0 18px}
+.calc__inputs{padding:30px 30px 26px;display:grid;gap:26px;align-content:start}
+.calc__field{display:block}
+.calc__label{display:flex;justify-content:space-between;align-items:baseline;gap:14px;font-size:15px;color:var(--ink-2);margin-bottom:12px}
+.calc__label output{font-size:20px;font-weight:600;letter-spacing:-.02em;color:var(--ink);white-space:nowrap}
+.calc__scale{display:flex;justify-content:space-between;font-size:12.5px;color:var(--subtle);margin-top:8px}
+.calc input[type=range]{--fill:50%;-webkit-appearance:none;appearance:none;width:100%;height:6px;border-radius:999px;background:linear-gradient(90deg,var(--green-700) var(--fill),var(--line-2) var(--fill));outline-offset:6px;cursor:pointer;margin:0}
+.calc input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:24px;height:24px;border-radius:50%;background:#fff;border:2px solid var(--green-800);box-shadow:0 2px 6px rgba(16,16,16,.18)}
+.calc input[type=range]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;background:#fff;border:2px solid var(--green-800);box-shadow:0 2px 6px rgba(16,16,16,.18)}
+.calc__results{background:var(--green-900);color:#fff;padding:30px;display:grid;gap:24px;align-content:start}
+.calc__big{display:flex;flex-wrap:wrap;gap:18px 32px}
+.calc__cap{display:block;white-space:nowrap;font-size:11.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#b9c5bc;margin-bottom:8px}
+.calc__big strong{display:block;font-size:clamp(30px,2.7vw,38px);font-weight:600;letter-spacing:-.03em;line-height:1.05;color:#fff;white-space:nowrap;font-variant-numeric:tabular-nums}
+.calc--neg .calc__big strong{color:#f0c9a8}
+.calc__bars{display:grid;gap:14px}
+.calc__bar{display:grid;grid-template-columns:1fr auto;gap:6px 12px;font-size:14px;color:#d9e0da}
+.calc__bar b{font-weight:600;color:#fff;font-variant-numeric:tabular-nums}
+.calc__bar i{grid-column:1/-1;display:block;height:10px;border-radius:999px;background:rgba(255,255,255,.1);overflow:hidden}
+.calc__bar em{display:block;height:100%;border-radius:999px;background:var(--green-500);transition:width .18s ease}
+.calc__bar--cost em{background:#8a968d}
+.calc__line{font-size:15px;line-height:1.5;color:#e7ece8;padding-top:18px;border-top:1px solid rgba(255,255,255,.14)}
+@media (max-width:900px){
+  .calc{grid-template-columns:minmax(0,1fr)}
+  .calc__inputs,.calc__results{padding:24px 20px}
+}
+@media (prefers-reduced-motion:reduce){.calc__bar em{transition:none}}
