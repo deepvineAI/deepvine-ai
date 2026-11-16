@@ -29,6 +29,16 @@ const timeline = [
   { when: 'Every quarter', t: 'Re-audit', d: 'We measure against the baseline from your audit, so progress is a number and not an opinion.' },
 ];
 
+// Hero illustration: one dot per lead. Fixed pattern (no randomness) so every build and every visitor sees the same picture.
+const COLS = 14, ROWS = 10;
+let won = 0;
+const dots = Array.from({ length: COLS * ROWS }, (_, i) => {
+  const h = (i * 73 + ((i * i) % 17) * 29 + Math.floor(i / COLS) * 11) % 100;
+  if (h >= 30) return { state: 'worked', delay: 0 };
+  if (h >= 19) return { state: 'missed', delay: 0 };
+  return { state: 'won', delay: 500 + won++ * 85 };
+});
+
 // ROI calculator (section 04). Server-renders the default state so the page reads correctly before the script runs.
 const COST = 10000 + 12 * 1500;
 const D = { closings: 6, gci: 10000, share: 50 };
@@ -59,12 +69,25 @@ const faq = [
 
   <PageHero
     eyebrow="Commission Recovery · For real estate team owners"
-    title="You paid for every lead in your CRM.<br>We recover what your team didn't collect, every single day."
+    split
+    title="<span>You paid for every lead in your CRM.</span><span>We recover what your team didn't collect, every single day.</span>"
     lead="You already have the CRM and the dashboards. We find the commission that slipped through, do the work to recover it, and guarantee the number before you pay us anything."
     chips={['Free 5-day audit', 'Done for you', 'Nothing to install', '$84K floor, guaranteed']}
     actions={[{ label: cta, href: CALENDLY }]}
     note="Private offer, shared by invitation. For teams on Follow Up Boss that pay for their leads."
-  />
+  >
+    <figure slot="aside" class="leadfield" aria-label="Illustration: a grid of dots, one for each lead a team paid for. Most were worked, some slipped through, and many of those are recovered.">
+      <figcaption class="leadfield__title">Every lead you paid for</figcaption>
+      <div class="leadfield__grid" aria-hidden="true">
+        {dots.map((d) => <i class={`is-${d.state}`} style={d.state === 'won' ? `--d:${d.delay}ms` : undefined}></i>)}
+      </div>
+      <ul class="leadfield__key" aria-hidden="true">
+        <li class="is-worked">Worked</li>
+        <li class="is-missed">Slipped through</li>
+        <li class="is-won">Recovered</li>
+      </ul>
+    </figure>
+  </PageHero>
 
   <section class="leadsrc" aria-label="Lead sources we audit">
     <ul class="container leadsrc__row">

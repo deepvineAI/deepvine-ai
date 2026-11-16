@@ -4,11 +4,12 @@ interface Action { label: string; href: string; variant?: 'dark' | 'light' }
 interface Props {
   eyebrow?: string; title: string; lead?: string; chips?: string[]; actions?: Action[];
   note?: string; size?: 'lg' | 'md' | 'sm'; align?: 'left' | 'center';
+  split?: boolean; // two columns: copy left, the 'aside' slot right
 }
-const { eyebrow, title, lead, chips = [], actions = [], note, size = 'lg', align = 'left' } = Astro.props;
+const { eyebrow, title, lead, chips = [], actions = [], note, size = 'lg', align = 'left', split = false } = Astro.props;
 const ext = (h: string) => h.startsWith('http');
 ---
-<section class:list={['phero', `phero--${size}`, `phero--${align}`]}>
+<section class:list={['phero', `phero--${size}`, `phero--${align}`, { 'phero--split': split }]}>
   <div class="container phero__inner">
     <div class="phero__copy">
       {eyebrow && <p class="eyebrow">{eyebrow}</p>}
