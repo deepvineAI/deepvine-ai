@@ -335,7 +335,11 @@ const faq = [
     const hover = window.matchMedia('(hover: hover) and (min-width: 901px)');
     items.forEach((li) => {
       const b = li.querySelector<HTMLElement>('.tl__btn')!;
-      b.addEventListener('click', () => pick(li));
+      b.addEventListener('click', () => {
+        pick(li);
+        // on phones the open step changes the layout above; keep the tapped step on screen
+        if (!hover.matches) setTimeout(() => { const r = b.getBoundingClientRect(); if (r.top < 90 || r.top > innerHeight - 140) window.scrollTo({ top: Math.max(0, scrollY + r.top - 100), behavior: 'instant' }); }, 60);
+      });
       b.addEventListener('focus', () => pick(li));
       b.addEventListener('mouseenter', () => { if (hover.matches) pick(li); });
     });
