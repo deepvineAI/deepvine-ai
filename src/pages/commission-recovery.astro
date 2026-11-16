@@ -23,7 +23,7 @@ const leaks = [
 const timeline = [
   { when: 'Days 1 to 5', t: 'Leak Audit', d: 'Read-only access to Follow Up Boss, joined with your lead spend and closed deals. You get one number: the commission leaking each year, by agent and by source.' },
   { when: 'Day 7', t: 'Daily agent briefs', d: 'Every morning each agent gets their five most valuable moves by text, email or Slack, written from your own follow-up standards.' },
-  { when: 'Day 14', t: 'Dead database revival', d: 'We run the first campaign on your old and unworked leads, through your own accounts, and hand each reply to an agent at the appointment.' },
+  { when: 'Day 14', t: 'Dead database revival', d: 'Your follow-up rules, applied to the old and unworked leads nobody has touched. Outreach goes through your own accounts and action plans, and each reply is handed to an agent.' },
   { when: 'Day 30', t: 'Owner scorecard', d: 'One message every Monday: what was recovered, what stalled, and who stalled it, in dollars.' },
   { when: 'Every day', t: 'Escalation', d: 'Moves an agent skipped yesterday reach you this morning, with the value of the lead attached.' },
   { when: 'Every quarter', t: 'Re-audit', d: 'We measure against the baseline from your audit, so progress is a number and not an opinion.' },
@@ -56,8 +56,9 @@ const d0 = calc(D.closings, D.gci, D.share);
 
 const faq = [
   { q: 'Do we have to leave Follow Up Boss?', a: 'No. Follow Up Boss stays exactly as it is. We connect to it, read from it, and write tasks and notes back into it. Nothing is replaced and your agents keep working where they work today.' },
-  { q: 'We already have dashboards and reporting. How is this different?', a: 'Reporting shows you the problem and leaves the work to your team. We do the work: we find the specific leads, put them in front of the right agent every morning, chase what gets skipped, and run the old database ourselves. The scorecard is there to prove it, not to be the product.' },
+  { q: 'We already have dashboards and reporting. How is this different?', a: 'Reporting shows you the problem and leaves the work to your team. We do the work: we find the specific leads, put them in front of the right agent every morning, chase what gets skipped, and apply your follow-up rules to the old database too. The scorecard is there to prove it, not to be the product.' },
   { q: 'We do not use Zillow. Does this still work?', a: 'Yes. The audit reads whatever sources feed your Follow Up Boss, including Realtor.com, Google Ads, Facebook and your own website. The dollar figure in our case study came from a Zillow team, and we will tell you plainly how your mix compares once we have your numbers.' },
+  { q: 'Do you write our follow-up campaigns?', a: 'No. Every team has its own rules, and yours are the ones we use. We build your standards into the system and make sure they are applied to every lead. If they are not written down yet, we document what your best agents already do, and you approve it before anything runs.' },
   { q: 'What do our agents have to do differently?', a: 'Read one message a day and make the calls on it. There is no new login and nothing to install. Your part as the owner is a single 60-minute kickoff.' },
   { q: 'Where does our data go?', a: 'It runs on a private Deepvine instance dedicated to your team, under a signed agreement. It is never used to train shared models, and we sell neither leads nor a CRM, so nobody on our side benefits from what your numbers say.' },
   { q: 'What if the audit does not find much?', a: 'Then we tell you not to hire us. If the audit finds less than $84,000 a year in leaking commission, you owe nothing and the engagement does not start.' },
@@ -100,7 +101,7 @@ const faq = [
     <div class="container stats__grid">
       <div class="stat"><strong>5 days</strong><span>From read-only access to your leak number</span></div>
       <div class="stat"><strong>$84K</strong><span>If the audit finds less, we tell you not to hire us</span></div>
-      <div class="stat"><strong>Day 14</strong><span>First recovery campaign running on your old leads</span></div>
+      <div class="stat"><strong>Day 14</strong><span>Your follow-up rules running on your old leads</span></div>
     </div>
   </section>
 
@@ -120,7 +121,8 @@ const faq = [
     <div class="container qa__row">
       <div class="qa__side"><span class="qa__num">02 · What we do</span><h2>We do the recovery. Your team makes the calls.</h2></div>
       <div class="qa__body">
-        <p>Software hands you a report and leaves the rest to you. This is a managed service. Deepvine runs every step below, and your agents answer one message a day.</p>
+        <p><strong>You already have follow-up rules. We make sure every lead in your CRM actually gets them.</strong></p>
+        <p>We take your team's own standards, steps and scripts, build them into the system, and apply them to every lead, every day. We don't bring our own campaigns. We enforce yours. Your agents answer one message a day.</p>
         <div class="tl" data-flow>
           <ol class="tl__steps">
             {timeline.map((s, i) => (
@@ -276,7 +278,7 @@ const faq = [
           <ul class="offer__lines">
             <li><span>Leak Audit<small>5 business days, read-only, for qualified teams</small></span><strong>Free</strong></li>
             <li><span>Install<small>Due only after your audit clears the $84K floor</small></span><strong>$10,000</strong></li>
-            <li><span>Managed Recovery<small>12 months. Briefs, escalation, revival campaigns, scorecard, quarterly re-audit</small></span><strong>$1,500 / month</strong></li>
+            <li><span>Managed Recovery<small>12 months. Briefs, escalation, database revival, scorecard, quarterly re-audit</small></span><strong>$1,500 / month</strong></li>
           </ul>
           <h3>Two guarantees</h3>
           <ul class="offer__points">
