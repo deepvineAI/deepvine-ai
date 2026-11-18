@@ -20,14 +20,6 @@ const leaks = [
   { t: 'Nobody knows who dropped it', d: 'You can see calls and texts. You can\'t see which agent or lead source is losing you money.' },
 ];
 
-const timeline = [
-  { when: 'Day 7', t: 'A daily call list for every agent', d: 'Each morning, every agent gets the five leads most worth calling today.' },
-  { when: 'Day 14', t: 'Old leads get worked', d: 'Your follow-up rules, run on the old leads nobody has touched. Replies go straight to an agent.' },
-  { when: 'Day 30', t: 'Your Monday scorecard', d: 'One message every Monday: what was recovered, what stalled, and who stalled it. In dollars.' },
-  { when: 'Every day', t: 'You see who dropped the ball', d: 'If an agent skips a lead, you hear about it the next morning, with what that lead is worth.' },
-  { when: 'Every quarter', t: 'Quarterly check-up', d: 'We re-run the audit and show you what changed.' },
-];
-
 // Hero illustration: one dot per lead. Fixed pattern (no randomness) so every build and every visitor sees the same picture.
 const COLS = 14, ROWS = 10;
 let won = 0;
@@ -135,88 +127,132 @@ const faq = [
     </div>
   </section>
 
-  <section class="qa">
-    <div class="container qa__row">
-      <div class="qa__side"><span class="qa__num">How it works · Step 2</span><h2>We do the recovery. Your team makes the calls.</h2></div>
-      <div class="qa__body">
-        <p><strong>You already have follow-up rules. We make sure every lead actually gets them.</strong></p>
-        <p>We use your team's rules and scripts, not ours. Your agents get one message a day.</p>
-        <div class="tl" data-flow>
-          <ol class="tl__steps">
-            {timeline.map((s, i) => (
-              <li class:list={['tl__item', { 'is-active': i === 0 }]}>
-                <button type="button" class="tl__btn" aria-current={i === 0 ? 'step' : undefined}>
-                  <span class="tl__when">{s.when}</span>
-                  <strong>{s.t}</strong>
-                </button>
-                <p class="tl__desc">{s.d}</p>
-                <div class="sv-stage">
-                  {i === 0 && (
-                    <div class="sv-card" aria-hidden="true">
-                      <p class="sv-card__head"><span>Your five for today</span><em>7:30 AM</em></p>
-                      <ul class="sv-list">
-                        <li class="a-in" style="--i:0"><u></u>Seller lead, day 3, no call yet</li>
-                        <li class="a-in" style="--i:1"><u></u>Buyer asked for a showing Friday</li>
-                        <li class="a-in" style="--i:2"><u></u>Pre-approved, gone quiet 9 days</li>
-                        <li class="a-in" style="--i:3"><u></u>Past client, home value request</li>
-                        <li class="a-in" style="--i:4"><u></u>Open house sign-in, two visits</li>
-                      </ul>
-                    </div>
-                  )}
-                  {i === 1 && (
-                    <div class="sv-card" aria-hidden="true">
-                      <p class="sv-card__head"><span>Old leads</span><em>Sample</em></p>
-                      <ul class="sv-rows">
-                        <li>Lead from 2023<small>No reply</small></li>
-                        <li class="is-hot a-in" style="--i:1">Lead from 2024<small>Replied</small></li>
-                        <li>Lead from 2022<small>No reply</small></li>
-                      </ul>
-                      <p class="sv-bubble a-in" style="--i:3">Yes, still looking. Can someone call me?</p>
-                      <p class="sv-tag a-in" style="--i:5">Handed to an agent</p>
-                    </div>
-                  )}
-                  {i === 2 && (
-                    <div class="sv-card" aria-hidden="true">
-                      <p class="sv-card__head"><span>Monday scorecard</span><em>Sample</em></p>
-                      <div class="sv-tiles">
-                        <div><b>$18,400</b><span>Recovered</span></div>
-                        <div class="is-warn"><b>$9,200</b><span>Stalled</span></div>
-                      </div>
-                      <p class="sv-sub sv-sub--gap">Stalled, by agent</p>
-                      <div class="sv-bars sv-bars--warn">
-                        <div><span>Agent A</span><i><b class="a-grow" style="--w:68%"></b></i></div>
-                        <div><span>Agent B</span><i><b class="a-grow" style="--w:24%"></b></i></div>
-                      </div>
-                    </div>
-                  )}
-                  {i === 3 && (
-                    <div class="sv-card" aria-hidden="true">
-                      <p class="sv-card__head"><span>Missed yesterday</span><em>Sample</em></p>
-                      <ul class="sv-alerts">
-                        <li class="a-in" style="--i:0"><u>A</u><span>Seller lead<small>No call in 48 hours</small></span><b>$7,500</b></li>
-                        <li class="a-in" style="--i:2"><u>B</u><span>Showing request<small>Not answered</small></span><b>$5,000</b></li>
-                      </ul>
-                    </div>
-                  )}
-                  {i === 4 && (
-                    <div class="sv-card" aria-hidden="true">
-                      <p class="sv-card__head"><span>Follow-up completed</span><em>Sample</em></p>
-                      <div class="sv-cols">
-                        <div><i><b class="a-rise" style="--h:38%"></b></i><span>Baseline</span></div>
-                        <div><i><b class="a-rise" style="--h:58%"></b></i><span>Q1</span></div>
-                        <div><i><b class="a-rise" style="--h:74%"></b></i><span>Q2</span></div>
-                        <div><i><b class="a-rise" style="--h:86%"></b></i><span>Q3</span></div>
-                      </div>
-                    </div>
-                  )}
-                  <p class="sv-stage__desc">{s.d}</p>
-                </div>
-              </li>
-            ))}
-          </ol>
-        </div>
-        <p class="qa__fine tl__note">Sample screens. Figures are made up.</p>
+  <section class="cr-get">
+    <div class="container">
+      <div class="cr-get__head">
+        <span class="eyebrow">How it works · Step 2</span>
+        <h2>We do the recovery. Your team makes the calls.</h2>
+        <p class="cr-get__lead">Here are the five things you get. We use your follow-up rules, not ours, and make sure every lead actually gets them.</p>
       </div>
+
+      <div class="cr-who cr-who--agents">
+        <span class="cr-who__icon" aria-hidden="true">
+          <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="16" cy="12" r="5"/><path d="M6 27c0-5.2 4.5-8 10-8s10 2.8 10 8"/><path d="M8.5 12.5V11a7.5 7.5 0 0 1 15 0v1.5"/><rect x="6.6" y="11.5" width="3" height="5" rx="1.5" fill="currentColor" stroke="none"/><rect x="22.4" y="11.5" width="3" height="5" rx="1.5" fill="currentColor" stroke="none"/><path d="M23.9 16.5c0 2-1.6 3.2-4.4 3.2"/></svg>
+        </span>
+        <div>
+          <h3>Your agents get</h3>
+          <p>Sent to every agent on your team</p>
+        </div>
+      </div>
+      <ul class="cr-get__grid cr-get__grid--2">
+        <li class="cr-item cr-item--wide">
+          <div class="cr-item__text">
+            <p class="cr-item__meta"><b>1</b><span>Every morning</span></p>
+            <h4>A daily call list</h4>
+            <p>The five leads most worth calling today, sent to each agent.</p>
+          </div>
+          <div class="cr-item__shot" aria-hidden="true">
+            <div class="sv-card">
+              <p class="sv-card__head"><span>Your five for today</span><em>7:30 AM</em></p>
+              <ul class="sv-list">
+                <li><u></u>Seller lead, day 3, no call yet</li>
+                <li><u></u>Buyer asked for a showing Friday</li>
+                <li><u></u>Pre-approved, gone quiet 9 days</li>
+                <li><u></u>Past client, home value request</li>
+                <li><u></u>Open house sign-in, two visits</li>
+              </ul>
+            </div>
+          </div>
+        </li>
+        <li class="cr-item cr-item--wide">
+          <div class="cr-item__text">
+            <p class="cr-item__meta"><b>2</b><span>Always running</span></p>
+            <h4>Old leads worked for them</h4>
+            <p>Your follow-up rules run on leads nobody has touched. Replies go straight to an agent.</p>
+          </div>
+          <div class="cr-item__shot" aria-hidden="true">
+            <div class="sv-card">
+              <p class="sv-card__head"><span>Old leads</span><em>Sample</em></p>
+              <ul class="sv-rows">
+                <li>Lead from 2023<small>No reply</small></li>
+                <li class="is-hot">Lead from 2024<small>Replied</small></li>
+                <li>Lead from 2022<small>No reply</small></li>
+              </ul>
+              <p class="sv-bubble">Yes, still looking. Can someone call me?</p>
+              <p class="sv-tag">Handed to an agent</p>
+            </div>
+          </div>
+        </li>
+      </ul>
+
+      <div class="cr-who cr-who--owner">
+        <span class="cr-who__icon" aria-hidden="true">
+          <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="5" width="20" height="23" rx="3"/><path d="M12 5V3.5h8V5"/><path d="M11 22v-4"/><path d="M16 22v-8"/><path d="M21 22v-11"/></svg>
+        </span>
+        <div>
+          <h3>You get</h3>
+          <p>Team leader reports</p>
+        </div>
+      </div>
+      <ul class="cr-get__grid cr-get__grid--3">
+        <li class="cr-item">
+          <div class="cr-item__text">
+            <p class="cr-item__meta"><b>3</b><span>Every Monday</span></p>
+            <h4>A Monday scorecard</h4>
+            <p>By email or text: what was recovered, what stalled, and who stalled it. In dollars.</p>
+          </div>
+          <div class="cr-item__shot" aria-hidden="true">
+            <div class="sv-card">
+              <p class="sv-card__head"><span>Monday scorecard</span><em>Sample</em></p>
+              <div class="sv-tiles">
+                <div><b>$18,400</b><span>Recovered</span></div>
+                <div class="is-warn"><b>$9,200</b><span>Stalled</span></div>
+              </div>
+              <p class="sv-sub sv-sub--gap">Stalled, by agent</p>
+              <div class="sv-bars sv-bars--warn">
+                <div><span>Agent A</span><i><b style="--w:68%"></b></i></div>
+                <div><span>Agent B</span><i><b style="--w:24%"></b></i></div>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="cr-item">
+          <div class="cr-item__text">
+            <p class="cr-item__meta"><b>4</b><span>Every morning</span></p>
+            <h4>A dropped-lead report</h4>
+            <p>The leads with no follow-up yesterday, and what each one is worth.</p>
+          </div>
+          <div class="cr-item__shot" aria-hidden="true">
+            <div class="sv-card">
+              <p class="sv-card__head"><span>No follow-up yesterday</span><em>Sample</em></p>
+              <ul class="sv-alerts">
+                <li><u>A</u><span>Seller lead<small>No call in 48 hours</small></span><b>$7,500</b></li>
+                <li><u>B</u><span>Showing request<small>Not answered</small></span><b>$5,000</b></li>
+              </ul>
+            </div>
+          </div>
+        </li>
+        <li class="cr-item">
+          <div class="cr-item__text">
+            <p class="cr-item__meta"><b>5</b><span>Every quarter</span></p>
+            <h4>A quarterly check-up</h4>
+            <p>We re-run the audit and show you what changed.</p>
+          </div>
+          <div class="cr-item__shot" aria-hidden="true">
+            <div class="sv-card">
+              <p class="sv-card__head"><span>Follow-up completed</span><em>Sample</em></p>
+              <div class="sv-cols">
+                <div><i><b style="--h:38%"></b></i><span>Start</span></div>
+                <div><i><b style="--h:58%"></b></i><span>Q1</span></div>
+                <div><i><b style="--h:74%"></b></i><span>Q2</span></div>
+                <div><i><b style="--h:86%"></b></i><span>Q3</span></div>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+
+      <p class="cr-get__note">Up and running within 30 days of kickoff. <span class="cr-get__note-shots">Screens are samples with made-up figures.</span></p>
     </div>
   </section>
 
@@ -338,29 +374,6 @@ const faq = [
 </Base>
 
 <script>
-  // Step-by-step timeline: selecting a step shows its sample screen. Without this script every step and screen is simply shown.
-  document.querySelectorAll<HTMLElement>('[data-flow]').forEach((root) => {
-    const items = Array.from(root.querySelectorAll<HTMLElement>('.tl__item'));
-    const pick = (li: HTMLElement) => items.forEach((x) => {
-      const on = x === li;
-      x.classList.toggle('is-active', on);
-      const b = x.querySelector('.tl__btn')!;
-      on ? b.setAttribute('aria-current', 'step') : b.removeAttribute('aria-current');
-    });
-    const hover = window.matchMedia('(hover: hover) and (min-width: 901px)');
-    items.forEach((li) => {
-      const b = li.querySelector<HTMLElement>('.tl__btn')!;
-      b.addEventListener('click', () => {
-        pick(li);
-        // on phones the open step changes the layout above; keep the tapped step on screen
-        if (!hover.matches) setTimeout(() => { const r = b.getBoundingClientRect(); if (r.top < 90 || r.top > innerHeight - 140) window.scrollTo({ top: Math.max(0, scrollY + r.top - 100), behavior: 'instant' }); }, 60);
-      });
-      b.addEventListener('focus', () => pick(li));
-      b.addEventListener('mouseenter', () => { if (hover.matches) pick(li); });
-    });
-    root.classList.add('is-js');
-  });
-
   // ROI calculator: same arithmetic as the server-rendered default in the frontmatter.
   document.querySelectorAll<HTMLElement>('[data-calc]').forEach((root) => {
     const COST = Number(root.dataset.cost), SETUP = Number(root.dataset.setup);
