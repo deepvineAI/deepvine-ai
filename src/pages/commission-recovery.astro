@@ -40,7 +40,8 @@ const dots = Array.from({ length: COLS * ROWS }, (_, i) => {
 
 // ROI calculator (section 04). Server-renders the default state so the page reads correctly before the script runs.
 const MONTHLY = 1500;
-const COST = 12 * MONTHLY; // yearly run rate. The one-time setup fee is deliberately left out and said so under the calculator.
+const COST = 12 * MONTHLY; // yearly run rate, the basis for the headline return and ROI
+const SETUP = 10000;        // one-time fee, added only in the 'Year one with setup' line
 const D = { closings: 10, gci: 13500, share: 50 };
 const usd = (n: number) => '$' + Math.round(n).toLocaleString('en-US');
 const signed = (n: number) => (n < 0 ? '-' : '+') + usd(Math.abs(n));
@@ -50,7 +51,8 @@ const calc = (c: number, g: number, sh: number) => {
   const line = net >= 0
     ? `Every $1 you spend brings back ${'$' + (kept / COST).toFixed(2)}.`
     : `Not covered yet. You need ${Math.ceil(COST / (g * (sh / 100)))} extra closings to break even.`;
-  return { kept, net, roi, keptW: (kept / top) * 100, costW: (COST / top) * 100, line };
+  const y1net = kept - COST - SETUP, y1roi = (y1net / (COST + SETUP)) * 100;
+  return { kept, net, roi, y1net, y1roi, keptW: (kept / top) * 100, costW: (COST / top) * 100, line };
 };
 const d0 = calc(D.closings, D.gci, D.share);
 
@@ -238,7 +240,7 @@ const faq = [
       <div class="qa__side"><span class="qa__num">The math</span><h2>About three extra closings covers the year.</h2></div>
       <div class="qa__body">
         <p>Move the sliders to match your team.</p>
-        <div class="calc" data-calc data-cost={COST}>
+        <div class="calc" data-calc data-cost={COST} data-setup={SETUP}>
           <div class="calc__inputs">
             <label class="calc__field">
               <span class="calc__label">Extra closings per year <output data-out="closings">{D.closings}</output></span>
@@ -266,6 +268,10 @@ const faq = [
               <div><span class="calc__cap">Yearly return</span><strong data-out="net">{signed(d0.net)}</strong></div>
               <div><span class="calc__cap">ROI</span><strong data-out="roi">{pct(d0.roi)}</strong></div>
             </div>
+            <div class="calc__y1">
+              <span>Year one, with {usd(SETUP)} setup</span>
+              <b><span data-out="y1net">{signed(d0.y1net)}</span> · <span data-out="y1roi">{pct(d0.y1roi)}</span> ROI</b>
+            </div>
             <div class="calc__bars">
               <div class="calc__bar"><span>What you keep</span><b data-out="kept">{usd(d0.kept)}</b><i><em data-bar="kept" style={`width:${d0.keptW}%`}></em></i></div>
               <div class="calc__bar calc__bar--cost"><span>Your cost</span><b>{usd(COST)}</b><i><em data-bar="cost" style={`width:${d0.costW}%`}></em></i></div>
@@ -273,7 +279,7 @@ const faq = [
             <p class="calc__line" data-out="line">{d0.line}</p>
           </div>
         </div>
-        <p class="qa__fine">Based on the $1,500 monthly fee. The one-time $10,000 setup is not included. This is an estimate, not a promise.</p>
+        <p class="qa__fine">Yearly numbers use the $1,500 monthly fee. Year one adds the one-time $10,000 setup. This is an estimate, not a promise.</p>
       </div>
     </div>
   </section>
@@ -358,7 +364,7 @@ const faq = [
 
   // ROI calculator: same arithmetic as the server-rendered default in the frontmatter.
   document.querySelectorAll<HTMLElement>('[data-calc]').forEach((root) => {
-    const COST = Number(root.dataset.cost);
+    const COST = Number(root.dataset.cost), SETUP = Number(root.dataset.setup);
     const el = (k: string) => root.querySelector<HTMLElement>(`[data-out="${k}"]`)!;
     const inp = (k: string) => root.querySelector<HTMLInputElement>(`[data-in="${k}"]`)!;
     const bar = (k: string) => root.querySelector<HTMLElement>(`[data-bar="${k}"]`)!;
@@ -374,6 +380,9 @@ const faq = [
       el('kept').textContent = usd(kept);
       el('net').textContent = sign(net) + usd(Math.abs(net));
       el('roi').textContent = sign(roi) + Math.abs(Math.round(roi)) + '%';
+      const y1net = kept - COST - SETUP, y1roi = (y1net / (COST + SETUP)) * 100;
+      el('y1net').textContent = sign(y1net) + usd(Math.abs(y1net));
+      el('y1roi').textContent = sign(y1roi) + Math.abs(Math.round(y1roi)) + '%';
       el('line').textContent = net >= 0
         ? `Every $1 you spend brings back $${(kept / COST).toFixed(2)}.`
         : `Not covered yet. You need ${Math.ceil(COST / (g * (sh / 100)))} extra closings to break even.`;

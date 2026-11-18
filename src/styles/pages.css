@@ -400,6 +400,8 @@
 .calc__cost strong{display:block;font-size:clamp(30px,2.7vw,38px);font-weight:600;letter-spacing:-.03em;line-height:1.05;color:#fff;white-space:nowrap;font-variant-numeric:tabular-nums}
 .calc__cost small{font-size:.45em;font-weight:500;letter-spacing:0;color:#b9c5bc}
 .calc__sub{display:block;margin-top:8px;font-size:14px;color:#b9c5bc}
+.calc__y1{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:4px 14px;padding:12px 14px;border-radius:10px;background:rgba(255,255,255,.07);font-size:14px;color:#d9e0da}
+.calc__y1 b{font-weight:600;color:#fff;white-space:nowrap;font-variant-numeric:tabular-nums}
 .calc__cap{display:block;white-space:nowrap;font-size:11.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#b9c5bc;margin-bottom:8px}
 .calc__big strong{display:block;font-size:clamp(30px,2.7vw,38px);font-weight:600;letter-spacing:-.03em;line-height:1.05;color:#fff;white-space:nowrap;font-variant-numeric:tabular-nums}
 .calc--neg .calc__big strong{color:#f0c9a8}
