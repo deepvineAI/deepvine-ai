@@ -582,7 +582,14 @@
 .cr-get__head{max-width:860px;margin-bottom:clamp(28px,3.6vw,44px)}
 .cr-get h2{font-size:clamp(30px,3.8vw,50px);line-height:1.06;letter-spacing:-.034em;margin:14px 0 18px;text-wrap:balance}
 .cr-get__lead{font-size:clamp(17px,1.5vw,20px);line-height:1.55;color:var(--ink-2);max-width:700px}
-.cr-get__group{font-size:clamp(20px,1.9vw,24px);font-weight:600;letter-spacing:-.022em;margin:0 0 16px;padding-top:6px}
+.cr-who{display:flex;align-items:center;gap:16px;margin:0 0 18px;padding-bottom:18px;border-bottom:2px solid var(--line)}
+.cr-who__icon{flex:none;width:64px;height:64px;border-radius:16px;display:flex;align-items:center;justify-content:center}
+.cr-who__icon svg{width:40px;height:40px}
+.cr-who--agents .cr-who__icon{background:#e6f4ea;color:var(--green-800)}
+.cr-who--owner .cr-who__icon{background:var(--green-900);color:#fff}
+.cr-who h3{font-size:clamp(22px,2.1vw,28px);font-weight:600;letter-spacing:-.025em;line-height:1.1}
+.cr-who p{font-size:15.5px;color:var(--muted);margin-top:4px}
+.cr-who--owner~.cr-get__grid .cr-item__meta b{background:var(--green-900)}
 .cr-get__grid{display:grid;gap:16px;margin-bottom:clamp(30px,4vw,48px)}
 .cr-get__grid--2{grid-template-columns:repeat(2,minmax(0,1fr))}
 .cr-get__grid--3{grid-template-columns:repeat(3,minmax(0,1fr))}
@@ -614,3 +621,4 @@
   .cr-item__text{padding:20px 20px 18px}
 }
 @media (max-width:680px){.cr-get__note-shots{display:none}}
+@media (max-width:680px){.cr-who{gap:13px;margin-bottom:14px;padding-bottom:14px}.cr-who__icon{width:50px;height:50px;border-radius:13px}.cr-who__icon svg{width:28px;height:28px}}
