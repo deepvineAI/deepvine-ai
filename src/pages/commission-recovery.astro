@@ -14,18 +14,18 @@ const cta = 'See if your team qualifies';
 const sources = ['Zillow', 'Realtor.com', 'Google Ads', 'Facebook', 'Homes.com', 'your website'];
 
 const leaks = [
-  { t: 'Never called', d: 'Leads that came in on a busy afternoon or a weekend. Nobody circled back.' },
-  { t: 'Dropped after two touches', d: 'Most buyers and sellers take far longer than that to answer. The follow-up stopped first.' },
-  { t: 'Old leads nobody works', d: 'Thousands of people who once raised their hand, untouched since the month they came in.' },
-  { t: 'No view of the cost', d: 'You can see activity. You cannot see what each agent and each lead source costs you per closing.' },
+  { t: 'Never called', d: 'They came in on a busy afternoon or a weekend. Nobody called back.' },
+  { t: 'Dropped after two touches', d: 'Most people need more than two tries. The follow-up stopped first.' },
+  { t: 'Old leads nobody works', d: 'Thousands of people who once raised their hand. Nobody has touched them since.' },
+  { t: 'Nobody knows who dropped it', d: 'You can see calls and texts. You can\'t see which agent or lead source is losing you money.' },
 ];
 
 const timeline = [
-  { when: 'Day 7', t: 'Daily agent briefs', d: 'Every morning each agent gets their five most valuable moves by text, email or Slack, written from your own follow-up standards.' },
-  { when: 'Day 14', t: 'Dead database revival', d: 'Your follow-up rules, applied to the old and unworked leads nobody has touched. Outreach goes through your own accounts and action plans, and each reply is handed to an agent.' },
-  { when: 'Day 30', t: 'Owner scorecard', d: 'One message every Monday: what was recovered, what stalled, and who stalled it, in dollars.' },
-  { when: 'Every day', t: 'Escalation', d: 'Moves an agent skipped yesterday reach you this morning, with the value of the lead attached.' },
-  { when: 'Every quarter', t: 'Re-audit', d: 'We measure against the baseline from your audit, so progress is a number and not an opinion.' },
+  { when: 'Day 7', t: 'A daily call list for every agent', d: 'Each morning, every agent gets the five leads most worth calling today.' },
+  { when: 'Day 14', t: 'Old leads get worked', d: 'Your follow-up rules, run on the old leads nobody has touched. Replies go straight to an agent.' },
+  { when: 'Day 30', t: 'Your Monday scorecard', d: 'One message every Monday: what was recovered, what stalled, and who stalled it. In dollars.' },
+  { when: 'Every day', t: 'You see who dropped the ball', d: 'If an agent skips a lead, you hear about it the next morning, with what that lead is worth.' },
+  { when: 'Every quarter', t: 'Quarterly check-up', d: 'We re-run the audit and show you what changed.' },
 ];
 
 // Hero illustration: one dot per lead. Fixed pattern (no randomness) so every build and every visitor sees the same picture.
@@ -47,21 +47,19 @@ const pct = (n: number) => (n < 0 ? '-' : '+') + Math.abs(Math.round(n)) + '%';
 const calc = (c: number, g: number, sh: number) => {
   const kept = c * g * (sh / 100), net = kept - COST, roi = (net / COST) * 100, top = Math.max(kept, COST);
   const line = net >= 0
-    ? `Every dollar spent returns ${'$' + (kept / COST).toFixed(2)} in commission your company keeps.`
-    : `Not yet covered. You need ${Math.ceil(COST / (g * (sh / 100)))} extra closings at these numbers to break even.`;
+    ? `Every $1 you spend brings back ${'$' + (kept / COST).toFixed(2)}.`
+    : `Not covered yet. You need ${Math.ceil(COST / (g * (sh / 100)))} extra closings to break even.`;
   return { kept, net, roi, keptW: (kept / top) * 100, costW: (COST / top) * 100, line };
 };
 const d0 = calc(D.closings, D.gci, D.share);
 
 const faq = [
-  { q: 'Do we have to change our CRM?', a: 'No. Your CRM stays exactly as it is. We connect to it, read from it, and write tasks and notes back into it. Nothing is replaced and your agents keep working where they work today.' },
-  { q: 'We already have dashboards and reporting. How is this different?', a: 'Reporting shows you the problem and leaves the work to your team. We do the work: we find the specific leads, put them in front of the right agent every morning, chase what gets skipped, and apply your follow-up rules to the old database too. The scorecard is there to prove it, not to be the product.' },
-  { q: 'We do not use Zillow. Does this still work?', a: 'Yes. The audit reads whatever sources feed your CRM, including Realtor.com, Google Ads, Facebook and your own website. The dollar figure in our case study came from a Zillow team, and we will tell you plainly how your mix compares once we have your numbers.' },
-  { q: 'Do you write our follow-up campaigns?', a: 'No. Every team has its own rules, and yours are the ones we use. We build your standards into the system and make sure they are applied to every lead. If they are not written down yet, we document what your best agents already do, and you approve it before anything runs.' },
-  { q: 'What do our agents have to do differently?', a: 'Read one message a day and make the calls on it. There is no new login and nothing to install. Your part as the owner is a single 60-minute kickoff.' },
-  { q: 'Where does our data go?', a: 'It runs on a private Deepvine instance dedicated to your team, under a signed agreement. It is never used to train shared models, and we sell neither leads nor a CRM, so nobody on our side benefits from what your numbers say.' },
-  { q: 'What if the audit does not find much?', a: 'Then we tell you not to hire us. If the audit finds less than $84,000 a year in leaking commission, you owe nothing and the engagement does not start.' },
-  { q: 'What happens after 12 months?', a: 'You can continue month to month, add the full team knowledge layer, or stop. Your data and your baseline are yours either way.' },
+  { q: 'Do we have to change our CRM?', a: 'No. Your CRM stays exactly as it is. Your agents keep working where they work today.' },
+  { q: 'Do you write our follow-up campaigns?', a: 'No. We use your rules. If they are not written down, we write up what your best agents already do, and you approve it first.' },
+  { q: 'What do our agents have to do differently?', a: 'Read one message a day and make the calls. No new login.' },
+  { q: 'We do not use Zillow. Does this still work?', a: 'Yes. The audit reads every lead source in your CRM. Our case study team used Zillow, so your number may look different.' },
+  { q: 'What if the audit does not find much?', a: 'Then we tell you not to hire us. Under $84,000 a year, you owe nothing.' },
+  { q: 'Is our data safe?', a: 'Yes. It stays on a private system set up only for your team, under a signed agreement.' },
 ];
 ---
 <Base title={title} description={description} path="/commission-recovery/" noindex minimal>
@@ -71,8 +69,8 @@ const faq = [
     eyebrow="Commission Recovery · For real estate team owners"
     split
     title="<span>You paid for every lead in your CRM.</span><span>We recover what your team didn't collect, every single day.</span>"
-    lead="You already have the CRM and the dashboards. We find the commission that slipped through, show you the leak before you pay us anything, and then do the work to recover it."
-    chips={['Free 5-day audit', 'Done for you', 'Nothing to install', 'See your number first']}
+    lead="We find the commission that slipped through, show you the number for free, then do the work to get it back."
+    chips={['Free 5-day audit', 'Done for you', 'See your number first']}
     actions={[{ label: cta, href: CALENDLY }]}
     note="Private offer, shared by invitation. For teams that pay for their leads."
   >
@@ -94,7 +92,7 @@ const faq = [
       <div class="cr-problem__head">
         <span class="eyebrow">The problem</span>
         <h2>Your team bought the leads. Nobody worked all of them.</h2>
-        <p class="cr-problem__lead">Hundreds of new names arrive every month, and each agent decides alone who gets the next call. Some leads always fall through. These are the four places the commission goes.</p>
+        <p class="cr-problem__lead">Every month, some leads fall through. Here is where the commission goes.</p>
       </div>
       <ul class="cr-problem__grid">
         {leaks.map((l) => <li class="cr-leak"><i aria-hidden="true"></i><strong>{l.t}</strong><span>{l.d}</span></li>)}
@@ -108,7 +106,7 @@ const faq = [
       <div class="cr-audit__copy">
         <span class="eyebrow">How it works · Step 1</span>
         <h2>A free audit. Five business days.</h2>
-        <p>Give us read-only access to your CRM. We join it with your lead spend and closed deals, and hand you one number: the commission leaking each year, by agent and by source.</p>
+        <p>Give us read-only access to your CRM. In five business days you get one number: the commission you're losing each year, and where it's going.</p>
         <p class="cr-audit__rule">If we find less than $84,000 a year, don't hire us.</p>
         <ul class="cr-audit__checks">
           <li>Free for qualified teams</li>
@@ -138,8 +136,8 @@ const faq = [
     <div class="container qa__row">
       <div class="qa__side"><span class="qa__num">How it works · Step 2</span><h2>We do the recovery. Your team makes the calls.</h2></div>
       <div class="qa__body">
-        <p><strong>If the audit clears the bar and you hire us, this is what happens. You already have follow-up rules. We make sure every lead in your CRM actually gets them.</strong></p>
-        <p>We take your team's own standards, steps and scripts, build them into the system, and apply them to every lead, every day. We don't bring our own campaigns. We enforce yours. Your agents answer one message a day.</p>
+        <p><strong>You already have follow-up rules. We make sure every lead actually gets them.</strong></p>
+        <p>We use your team's rules and scripts, not ours. Your agents get one message a day.</p>
         <div class="tl" data-flow>
           <ol class="tl__steps">
             {timeline.map((s, i) => (
@@ -214,7 +212,7 @@ const faq = [
             ))}
           </ol>
         </div>
-        <p class="qa__fine tl__note">The panels show sample screens with made-up figures.</p>
+        <p class="qa__fine tl__note">Sample screens. Figures are made up.</p>
       </div>
     </div>
   </section>
@@ -224,12 +222,12 @@ const faq = [
       <div class="qa__side"><span class="qa__num">Proof</span><h2>What one audit found.</h2></div>
       <div class="qa__body">
         <div class="proof">
-          <p class="proof__label">Client result · team name withheld</p>
+          <p class="proof__label">One real team · name withheld</p>
           <p class="proof__num">$119K to $198K a year</p>
-          <p>In commission leaking from the follow-up funnel of a team closing more than 400 transactions a year. We found it by joining their CRM data with their lead source metrics across a 90-day cohort.</p>
-          <p class="proof__fine">This is the amount identified by the audit at one team, not a promise of what yours will show. Your audit produces your own number.</p>
+          <p>That's what our audit found leaking at a team closing 400+ deals a year.</p>
+          <p class="proof__fine">One team's result, not a promise. Your audit gives you your own number.</p>
         </div>
-        <p>That team was already running a CRM and a paid lead program at scale. The leak was still there, because finding it and working it every day is a job nobody on a busy team owns.</p>
+        <p>They already had a CRM and a paid lead program. The leak was still there.</p>
       </div>
     </div>
   </section>
@@ -238,7 +236,7 @@ const faq = [
     <div class="container qa__row">
       <div class="qa__side"><span class="qa__num">The math</span><h2>About five extra closings covers the first year.</h2></div>
       <div class="qa__body">
-        <p>At a $13,500 average commission, five extra closings a year covers the cost. The example starts at six. Move the sliders to match your team and see what year one returns.</p>
+        <p>Move the sliders to match your team.</p>
         <div class="calc" data-calc data-cost={COST}>
           <div class="calc__inputs">
             <label class="calc__field">
@@ -252,8 +250,8 @@ const faq = [
               <span class="calc__scale"><span>$5,000</span><span>$30,000</span></span>
             </label>
             <label class="calc__field">
-              <span class="calc__label">Share the company keeps after agent splits <output data-out="share">{D.share}%</output></span>
-              <input type="range" min="20" max="100" step="5" value={D.share} data-in="share" aria-label="Share of commission the company keeps">
+              <span class="calc__label">Your share after agent splits <output data-out="share">{D.share}%</output></span>
+              <input type="range" min="20" max="100" step="5" value={D.share} data-in="share" aria-label="Your share after agent splits">
               <span class="calc__scale"><span>20%</span><span>100%</span></span>
             </label>
           </div>
@@ -263,14 +261,13 @@ const faq = [
               <div><span class="calc__cap">Year one ROI</span><strong data-out="roi">{pct(d0.roi)}</strong></div>
             </div>
             <div class="calc__bars">
-              <div class="calc__bar"><span>Commission your company keeps</span><b data-out="kept">{usd(d0.kept)}</b><i><em data-bar="kept" style={`width:${d0.keptW}%`}></em></i></div>
+              <div class="calc__bar"><span>What you keep</span><b data-out="kept">{usd(d0.kept)}</b><i><em data-bar="kept" style={`width:${d0.keptW}%`}></em></i></div>
               <div class="calc__bar calc__bar--cost"><span>Year one cost</span><b>{usd(COST)}</b><i><em data-bar="cost" style={`width:${d0.costW}%`}></em></i></div>
             </div>
             <p class="calc__line" data-out="line">{d0.line}</p>
           </div>
         </div>
-        <p class="qa__fine">How it is calculated: extra closings × average commission × company share, minus the $28,000 year one cost ($10,000 install plus 12 months at $1,500). ROI is that return divided by the cost.</p>
-        <p class="qa__fine">An estimate from the numbers you enter, not a promise of results. Your audit replaces these with your own figures.</p>
+        <p class="qa__fine">Year one costs $28,000: $10,000 setup plus $1,500 a month. This is an estimate, not a promise.</p>
       </div>
     </div>
   </section>
@@ -281,14 +278,14 @@ const faq = [
       <div class="qa__body">
         <div class="offer offer--wide">
           <ul class="offer__lines">
-            <li><span>Leak Audit<small>5 business days, read-only, for qualified teams</small></span><strong>Free</strong></li>
-            <li><span>Install<small>Due only after your audit clears the $84K floor</small></span><strong>$10,000</strong></li>
-            <li><span>Managed Recovery<small>12 months. Briefs, escalation, database revival, scorecard, quarterly re-audit</small></span><strong>$1,500 / month</strong></li>
+            <li><span>Leak Audit<small>5 business days. Read-only.</small></span><strong>Free</strong></li>
+            <li><span>Setup<small>Only if your audit finds $84,000 or more</small></span><strong>$10,000</strong></li>
+            <li><span>Monthly recovery<small>12 months. We run it. Your agents make the calls.</small></span><strong>$1,500 / month</strong></li>
           </ul>
           <h3>Two guarantees</h3>
           <ul class="offer__points">
-            <li><strong>Before you pay:</strong> if the audit finds less than $84,000 a year in leaking commission, we tell you not to hire us.</li>
-            <li><strong>Day 90:</strong> if follow-up completion has not improved against your baseline, you can leave.</li>
+            <li><strong>Before you pay:</strong> if the audit finds less than $84,000 a year, we tell you not to hire us.</li>
+            <li><strong>Day 90:</strong> if your agents aren't following up more than before, you can leave.</li>
           </ul>
           <a class="btn btn--dark" href={CALENDLY} target="_blank" rel="noopener">{cta} <span class="arrow">→</span></a>
         </div>
@@ -304,18 +301,18 @@ const faq = [
           <div class="fit__col">
             <h3>This is for you if</h3>
             <ul>
-              <li>Your team keeps its leads in one CRM</li>
-              <li>You pay for leads, up front or at closing</li>
-              <li>You close about 170 or more transactions a year, or spend about $10,000 or more a month on leads</li>
-              <li>You want the work done, not another login</li>
+              <li>Your leads live in one CRM</li>
+              <li>You pay for leads</li>
+              <li>You close 170+ deals a year, or spend $10K+ a month on leads</li>
+              <li>You want it done for you</li>
             </ul>
           </div>
           <div class="fit__col fit__col--no">
             <h3>This is not for you if</h3>
             <ul>
-              <li>You are a solo agent working mostly referrals</li>
-              <li>Your team is small enough that you already see every lead yourself</li>
-              <li>You are looking for a new CRM or a marketing content tool</li>
+              <li>You're a solo agent working referrals</li>
+              <li>You already see every lead yourself</li>
+              <li>You want a new CRM or a content tool</li>
             </ul>
           </div>
         </div>
@@ -326,7 +323,7 @@ const faq = [
   <Faq items={faq} heading="Questions, answered." />
 
 
-  <CtaBand heading="Bring us<br>your CRM." sub="In five business days we'll show you what it's leaking, by agent and by source, in dollars." label={cta} caption="Your<br>number,<br>before<br>you pay." />
+  <CtaBand heading="Bring us<br>your CRM." sub="In five business days, we'll show you what it's leaking. In dollars." label={cta} caption="Your<br>number,<br>before<br>you pay." />
 </Base>
 
 <script>
@@ -372,8 +369,8 @@ const faq = [
       el('net').textContent = sign(net) + usd(Math.abs(net));
       el('roi').textContent = sign(roi) + Math.abs(Math.round(roi)) + '%';
       el('line').textContent = net >= 0
-        ? `Every dollar spent returns $${(kept / COST).toFixed(2)} in commission your company keeps.`
-        : `Not yet covered. You need ${Math.ceil(COST / (g * (sh / 100)))} extra closings at these numbers to break even.`;
+        ? `Every $1 you spend brings back $${(kept / COST).toFixed(2)}.`
+        : `Not covered yet. You need ${Math.ceil(COST / (g * (sh / 100)))} extra closings to break even.`;
       root.classList.toggle('calc--neg', net < 0);
       bar('kept').style.width = (kept / top) * 100 + '%';
       bar('cost').style.width = (COST / top) * 100 + '%';
