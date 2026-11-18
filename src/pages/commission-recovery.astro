@@ -24,7 +24,7 @@ const leaks = [
 // ROI calculator (section 04). Server-renders the default state so the page reads correctly before the script runs.
 const MONTHLY = 1500;
 const COST = 12 * MONTHLY; // yearly run rate, the basis for the headline return and ROI
-const SETUP = 5000;         // founding-team setup price (list price is $10,000). Added only in the 'Year one with setup' line
+const SETUP = 9950;         // one-time fee, added only in the 'Year one with setup' line
 const D = { closings: 10, gci: 13500, share: 50 };
 const usd = (n: number) => '$' + Math.round(n).toLocaleString('en-US');
 const signed = (n: number) => (n < 0 ? '-' : '+') + usd(Math.abs(n));
@@ -296,7 +296,7 @@ const faq = [
             <p class="calc__line" data-out="line">{d0.line}</p>
           </div>
         </div>
-        <p class="qa__fine">Yearly numbers use the $1,500 monthly fee. Year one adds the one-time $5,000 founding setup. This is an estimate, not a promise.</p>
+        <p class="qa__fine">Yearly numbers use the $1,500 monthly fee. Year one adds the one-time $9,950 setup. This is an estimate, not a promise.</p>
       </div>
     </div>
   </section>
@@ -323,7 +323,7 @@ const faq = [
         <div class="offer offer--wide">
           <ul class="offer__lines">
             <li><span>Leak Audit<small>5 business days. Read-only.</small></span><strong>Free</strong></li>
-            <li><span>Setup<small>Founding price for our first five teams, in return for a case study. Only if your audit finds $84,000 or more.</small></span><strong><s>$10,000</s> $5,000</strong></li>
+            <li><span>Setup<small>Only if your audit finds $84,000 or more</small></span><strong>$9,950</strong></li>
             <li><span>Monthly recovery<small>12 months. We run it. Your agents make the calls.</small></span><strong>$1,500 / month</strong></li>
           </ul>
           <h3>Our guarantee</h3>
