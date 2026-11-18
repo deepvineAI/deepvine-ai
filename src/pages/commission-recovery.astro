@@ -31,11 +31,12 @@ const signed = (n: number) => (n < 0 ? '-' : '+') + usd(Math.abs(n));
 const pct = (n: number) => (n < 0 ? '-' : '+') + Math.abs(Math.round(n)) + '%';
 const calc = (c: number, g: number, sh: number) => {
   const kept = c * g * (sh / 100), net = kept - COST, roi = (net / COST) * 100, top = Math.max(kept, COST);
-  const line = net >= 0
-    ? `Every $1 you spend brings back ${'$' + (kept / COST).toFixed(2)}.`
-    : `Not covered yet. You need ${Math.ceil(COST / (g * (sh / 100)))} extra closings to break even.`;
+  const be = Math.ceil(COST / (g * (sh / 100)));
+  const punch = net >= 0
+    ? { lead: 'Every $1 you spend brings back', big: '$' + (kept / COST).toFixed(2), neg: false }
+    : { lead: 'Not covered yet. To break even you need', big: be + ' extra closings', neg: true };
   const y1net = kept - COST - SETUP, y1roi = (y1net / (COST + SETUP)) * 100;
-  return { kept, net, roi, y1net, y1roi, keptW: (kept / top) * 100, costW: (COST / top) * 100, line };
+  return { kept, net, roi, y1net, y1roi, keptW: (kept / top) * 100, costW: (COST / top) * 100, punch };
 };
 const d0 = calc(D.closings, D.gci, D.share);
 
@@ -274,6 +275,10 @@ const faq = [
               <input type="range" min="20" max="100" step="5" value={D.share} data-in="share" aria-label="Your share after agent splits">
               <span class="calc__scale"><span>20%</span><span>100%</span></span>
             </label>
+            <p class:list={['calc__punch', { 'is-neg': d0.punch.neg }]} data-out="punch" aria-live="polite">
+              <span data-out="punchLead">{d0.punch.lead}</span>
+              <strong data-out="punchBig">{d0.punch.big}</strong>
+            </p>
           </div>
           <div class="calc__results" aria-live="polite">
             <div class="calc__cost">
@@ -293,7 +298,6 @@ const faq = [
               <div class="calc__bar"><span>What you keep</span><b data-out="kept">{usd(d0.kept)}</b><i><em data-bar="kept" style={`width:${d0.keptW}%`}></em></i></div>
               <div class="calc__bar calc__bar--cost"><span>Your cost</span><b>{usd(COST)}</b><i><em data-bar="cost" style={`width:${d0.costW}%`}></em></i></div>
             </div>
-            <p class="calc__line" data-out="line">{d0.line}</p>
           </div>
         </div>
         <p class="qa__fine">Yearly numbers use the $1,500 monthly fee. Year one adds the one-time $9,950 setup. This is an estimate, not a promise.</p>
@@ -391,9 +395,10 @@ const faq = [
       const y1net = kept - COST - SETUP, y1roi = (y1net / (COST + SETUP)) * 100;
       el('y1net').textContent = sign(y1net) + usd(Math.abs(y1net));
       el('y1roi').textContent = sign(y1roi) + Math.abs(Math.round(y1roi)) + '%';
-      el('line').textContent = net >= 0
-        ? `Every $1 you spend brings back $${(kept / COST).toFixed(2)}.`
-        : `Not covered yet. You need ${Math.ceil(COST / (g * (sh / 100)))} extra closings to break even.`;
+      const neg = net < 0;
+      el('punchLead').textContent = neg ? 'Not covered yet. To break even you need' : 'Every $1 you spend brings back';
+      el('punchBig').textContent = neg ? Math.ceil(COST / (g * (sh / 100))) + ' extra closings' : '$' + (kept / COST).toFixed(2);
+      el('punch').classList.toggle('is-neg', neg);
       root.classList.toggle('calc--neg', net < 0);
       bar('kept').style.width = (kept / top) * 100 + '%';
       bar('cost').style.width = (COST / top) * 100 + '%';
