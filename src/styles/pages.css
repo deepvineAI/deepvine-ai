@@ -396,6 +396,10 @@
 .calc input[type=range]::-moz-range-thumb{width:24px;height:24px;border-radius:50%;background:#fff;border:2px solid var(--green-800);box-shadow:0 2px 6px rgba(16,16,16,.18)}
 .calc__results{background:var(--green-900);color:#fff;padding:30px;display:grid;gap:24px;align-content:start}
 .calc__big{display:flex;flex-wrap:wrap;gap:18px 32px}
+.calc__cost{padding-bottom:22px;border-bottom:1px solid rgba(255,255,255,.14)}
+.calc__cost strong{display:block;font-size:clamp(30px,2.7vw,38px);font-weight:600;letter-spacing:-.03em;line-height:1.05;color:#fff;white-space:nowrap;font-variant-numeric:tabular-nums}
+.calc__cost small{font-size:.45em;font-weight:500;letter-spacing:0;color:#b9c5bc}
+.calc__sub{display:block;margin-top:8px;font-size:14px;color:#b9c5bc}
 .calc__cap{display:block;white-space:nowrap;font-size:11.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#b9c5bc;margin-bottom:8px}
 .calc__big strong{display:block;font-size:clamp(30px,2.7vw,38px);font-weight:600;letter-spacing:-.03em;line-height:1.05;color:#fff;white-space:nowrap;font-variant-numeric:tabular-nums}
 .calc--neg .calc__big strong{color:#f0c9a8}

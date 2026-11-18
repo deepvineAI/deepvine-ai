@@ -39,8 +39,9 @@ const dots = Array.from({ length: COLS * ROWS }, (_, i) => {
 });
 
 // ROI calculator (section 04). Server-renders the default state so the page reads correctly before the script runs.
-const COST = 10000 + 12 * 1500;
-const D = { closings: 6, gci: 13500, share: 50 };
+const MONTHLY = 1500;
+const COST = 12 * MONTHLY; // yearly run rate. The one-time setup fee is deliberately left out and said so under the calculator.
+const D = { closings: 10, gci: 13500, share: 50 };
 const usd = (n: number) => '$' + Math.round(n).toLocaleString('en-US');
 const signed = (n: number) => (n < 0 ? '-' : '+') + usd(Math.abs(n));
 const pct = (n: number) => (n < 0 ? '-' : '+') + Math.abs(Math.round(n)) + '%';
@@ -234,7 +235,7 @@ const faq = [
 
   <section class="qa">
     <div class="container qa__row">
-      <div class="qa__side"><span class="qa__num">The math</span><h2>About five extra closings covers the first year.</h2></div>
+      <div class="qa__side"><span class="qa__num">The math</span><h2>About three extra closings covers the year.</h2></div>
       <div class="qa__body">
         <p>Move the sliders to match your team.</p>
         <div class="calc" data-calc data-cost={COST}>
@@ -256,18 +257,23 @@ const faq = [
             </label>
           </div>
           <div class="calc__results" aria-live="polite">
+            <div class="calc__cost">
+              <span class="calc__cap">Your cost</span>
+              <strong>{usd(COST)} <small>a year</small></strong>
+              <span class="calc__sub">{usd(MONTHLY)} a month × 12 months</span>
+            </div>
             <div class="calc__big">
-              <div><span class="calc__cap">Year one return</span><strong data-out="net">{signed(d0.net)}</strong></div>
-              <div><span class="calc__cap">Year one ROI</span><strong data-out="roi">{pct(d0.roi)}</strong></div>
+              <div><span class="calc__cap">Yearly return</span><strong data-out="net">{signed(d0.net)}</strong></div>
+              <div><span class="calc__cap">ROI</span><strong data-out="roi">{pct(d0.roi)}</strong></div>
             </div>
             <div class="calc__bars">
               <div class="calc__bar"><span>What you keep</span><b data-out="kept">{usd(d0.kept)}</b><i><em data-bar="kept" style={`width:${d0.keptW}%`}></em></i></div>
-              <div class="calc__bar calc__bar--cost"><span>Year one cost</span><b>{usd(COST)}</b><i><em data-bar="cost" style={`width:${d0.costW}%`}></em></i></div>
+              <div class="calc__bar calc__bar--cost"><span>Your cost</span><b>{usd(COST)}</b><i><em data-bar="cost" style={`width:${d0.costW}%`}></em></i></div>
             </div>
             <p class="calc__line" data-out="line">{d0.line}</p>
           </div>
         </div>
-        <p class="qa__fine">Year one costs $28,000: $10,000 setup plus $1,500 a month. This is an estimate, not a promise.</p>
+        <p class="qa__fine">Based on the $1,500 monthly fee. The one-time $10,000 setup is not included. This is an estimate, not a promise.</p>
       </div>
     </div>
   </section>
